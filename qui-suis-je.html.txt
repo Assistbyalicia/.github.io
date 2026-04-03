@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Qui suis-je ? – Assist by Alicia</title>
+  //fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=League+Spartan:wght@700;900&family=Satisfy&display=swap" rel="stylesheet"/>
+  "/>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">Assist<span>by</span>Alicia</a>
+  <ul>
+    ><a href="offres.html">Mes offres</a></li>
+    ><a href="offre-express.html">Express</a></li>
+    ><a href="qui-suis-je.html">Qui suis-je ?</a></li>
+    ><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="min-height:60vh;">
+  <p class="hero-tag">Qui suis-je ?</p>
+  <h1>Alicia,<br><span>OBM</span> spécialisée<br>en systèmes <em>Notion.</em></h1>
+  <p class="hero-sub">J'aide les entrepreneurs à transformer leur organisation chaotique en un système clair, centralisé et automatisé.</p>
+</section>
+
+<!-- PORTRAIT + PARCOURS -->
+<section style="max-width:1100px; margin:0 auto; padding:5rem 2rem;">
+  <div style="display:grid; grid-template-columns: auto 1fr; gap:4rem; align-items:start;">
+    <div class="portrait" style="width:200px; height:200px; font-size:4rem;">👩🏽‍💻</div>
+    <div>
+      <p class="section-tag">Mon parcours</p>
+      <h2>D'assistante digitale<br>à <em>spécialiste systèmes.</em></h2>
+      <p>J'ai démarré comme assistante digitale. Emails, montage vidéo, tunnels de vente, Pinterest... J'étais la personne polyvalente qui gérait tout. Les clients étaient contents. Le travail rentrait.</p>
+      <p>Mais j'ai vu un truc revenir en boucle. Des entrepreneurs qui délèguent. Et pour qui ça tourne mal. Pas par manque de compétences. Par manque de système. Process dans leur tête. Infos éparpillées. Aucune doc.</p>
+      <p>Résultat ? Des allers-retours sans fin. Des malentendus. L'impression de perdre plus de temps qu'autre chose. Et au final, ils reprennent tout en main.</p>
+      <p>J'ai compris que le problème n'était pas les gens. C'était l'absence d'organisation. Alors j'ai arrêté d'être polyvalente pour devenir spécialiste. J'ai appris Notion, les automatisations, l'IA. Et je me suis concentrée sur un truc précis : structurer pour rendre la délégation fluide.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CE QUE JE FAIS -->
+<section style="max-width:1100px; margin:0 auto; padding:0 2rem 5rem;">
+  <div class="probleme">
+    <p class="section-tag">Ce que je fais</p>
+    <h2>Ton opérationnel,<br><em>transformé en système.</em></h2>
+    <p>Je reprends ton opérationnel et je le transforme en système Notion. Un système qui centralise tout : clients, projets, tâches, compta, documents, process. Avec des automatisations qui bossent à ta place. Et de l'IA quand ça a du sens.</p>
+    <div class="highlight-block">
+      Tu arrêtes de gérer l'organisation.<br>
+      Tu reprends le contrôle de ton business.<br><br>
+      Et si tu veux déléguer un jour, tu pourras.<br>Parce que tout sera clair et centralisé.
+    </div>
+  </div>
+</section>
+
+<!-- MA DIFFÉRENCE -->
+<section style="max-width:1100px; margin:0 auto; padding:0 2rem 5rem;">
+  <p class="section-tag">Ma différence</p>
+  <h2>Pas designeuse Notion.<br><em>OBM.</em></h2>
+  <p>Une designeuse te crée un bel outil. Moi, je reprends ton opérationnel pour le structurer. Je pars de ta réalité. De tes vrais besoins. De ton bordel actuel. Et je construis ton système. Pas celui d'un template tout fait.</p>
+
+  <div class="grid-3" style="margin-top:2.5rem;">
+    <div class="card">
+      <div class="card-icon">⬡</div>
+      <h3>Notion</h3>
+      <p>Centralisation de tout ton opérationnel : clients, projets, tâches, compta, documents.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">⚡</div>
+      <h3>Automatisations</h3>
+      <p>Les tâches répétitives se font toutes seules. Tu arrêtes de faire le travail d'un robot.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">◈</div>
+      <h3>IA</h3>
+      <p>Intégrée intelligemment, là où ça a du sens. Pour aller encore plus vite.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHIE -->
+<section style="max-width:1100px; margin:0 auto; padding:0 2rem 5rem;">
+  <p class="section-tag">Ma philosophie</p>
+  <h2>Trois principes.<br><em>Non négociables.</em></h2>
+  <div class="grid-3">
+    <div class="card">
+      <h3>Zéro template</h3>
+      <p>Chaque système est créé sur-mesure. Pas de copier-coller d'une solution toute faite.</p>
+    </div>
+    <div class="card">
+      <h3>Tu repars autonome</h3>
+      <p>Je te forme pour que tu n'aies pas besoin de moi après. Le but, c'est ton indépendance.</p>
+    </div>
+    <div class="card">
+      <h3>Taillé pour toi</h3>
+      <p>Tu reçois un système prêt à l'emploi. Pas adapté par toi. Construit pour toi.</p>
+    </div>
+  </div>
+  <p style="margin-top:2rem; color:rgba(255,255,255,0.5); font-size:0.9rem;">Basée à Rouen. Passionnée de tech, d'organisation et de systèmes bien pensés. Convaincue que structurer, c'est libérer.</p>
+</section>
+
+<!-- CTA -->
+<div class="cta-final">
+  <p class="section-tag">Prêt à mettre fin au chaos ?</p>
+  <h2>Réserve ton appel<br><em>dès maintenant.</em></h2>
+  <p style="max-width:520px; margin:0 auto 2.5rem; color:rgba(255,255,255,0.7);">30 minutes pour faire le point sur ton organisation. Gratuit, sans engagement.</p>
+  <a class="btn-primary" href="https://calendar.notion.so/meet/aliciachouquet/30min" target="_blank">Réserver mon appel (30 min)</a>
+  <p class="note">Gratuit · Sans engagement · Même si tu ne prends pas Express</p>
+</div>
+
+<footer>
+  <span>© 2026 Assist by Alicia – Tous droits réservés</span>
+  <div class="footer-links">
+    <a href="https://www.notion.so/Mentions-l-gales-CGV-674bd4cc82394dc88c43ac7f90706a93" target="_blank">Mentions légales / CGV</a>
+    <a href="https://www.notion.so/Politique-de-confidentialit-babcd3ad4f4f49519038f53b59a30d9a" target="_blank">Politique de confidentialité</a>
+  </div>
+</footer>
+
+</body>
+</html>
