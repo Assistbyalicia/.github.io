@@ -1,37 +1,364 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Offre Express – Assist by Alicia</title>
-  //fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=League+Spartan:wght@700;900&family=Satisfy&display=swap" rel="stylesheet"/>
-  "/>
-</head>
-<body>
-<nav>
-  <a class="logo" href="index.html">
-  <img src="logo.png" alt="Assist by Alicia" style="height: 40px; width: auto;" />
-</a>
-  <ul>
-    <a href="offres.html">Mes offres</a></li>
-    <a href="offre-express.html">Express</a></li>
-    <a href="qui-suis-je.html">Qui suis-je ?</a></li>
-    <a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=League+Spartan:wght@700;900&family=Satisfy&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<!-- HERO -->
-<section class="hero" style="min-height:70vh;">
-  <p class="hero-tag">Offre Express</p>
-  <h1>Ton urgence n°1,<br>réglée en <span>7 jours.</span></h1>
-  <p class="hero-sub">On identifie ce qui te fait perdre le plus de temps. Je crée le système Notion qui règle ça. Tu repars autonome.</p>
-  <div class="hero-ctas">
-    <a class="btn-primary" href="https://calendar.notion.so/meet/aliciachouquet/30min" target="_blank">Réserver mon appel diagnostic</a>
-    <a class="btn-secondary" href="https://assistbyaliciafr.notion.site/29c2f346f9a7806584b1f92380cf77d8" target="_blank">Me contacter</a>
-  </div>
-</section>
+    :root {
+      --blue: #1E2A4A;
+      --coral: #FF4757;
+      --yellow: #CAFF00;
+      --black: #121212;
+      --white: #FFFFFF;
+    }
 
-<!-- CHIFFRES -->
-<section style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; padding:4rem 2rem; max-width:1100px; margin:0 auto;">
-  <div class="card" style="text-align:center;">
-    <p style="font-family:'League Spartan',sans-serif; font-size:3rem; font-weight:900; color:var(--coral)
+    body {
+      background:
+        radial-gradient(circle at top left, rgba(255,71,87,0.08), transparent 30%),
+        radial-gradient(circle at top right, rgba(202,255,0,0.06), transparent 25%),
+        repeating-linear-gradient(0deg, rgba(202,255,0,0.03) 0px, rgba(202,255,0,0.03) 1px, transparent 1px, transparent 60px),
+        repeating-linear-gradient(90deg, rgba(202,255,0,0.03) 0px, rgba(202,255,0,0.03) 1px, transparent 1px, transparent 60px),
+        var(--black);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(18,18,18,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(202,255,0,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 4rem;
+    }
+
+    .logo img {
+      height: 45px;
+      width: auto;
+      display: block;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    nav ul a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    nav ul a:hover,
+    nav ul a.active {
+      color: var(--yellow);
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+
+    .hero {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding-top: 8rem;
+    }
+
+    .section-tag,
+    .hero-tag {
+      font-family: 'Satisfy', cursive;
+      color: var(--coral);
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    h1 {
+      font-family: 'League Spartan', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2.4rem, 5vw, 4.8rem);
+      text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 span,
+    h2 span,
+    .accent {
+      color: var(--yellow);
+    }
+
+    h2 {
+      font-family: 'League Spartan', sans-serif;
+      font-weight: 900;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      text-transform: uppercase;
+      line-height: 1.05;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-sub,
+    .intro,
+    p {
+      color: rgba(255,255,255,0.76);
+    }
+
+    .hero-sub {
+      max-width: 700px;
+      margin-bottom: 2rem;
+      font-size: 1.05rem;
+    }
+
+    .hero-ctas,
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-block;
+      text-decoration: none;
+      font-family: 'League Spartan', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.95rem 1.6rem;
+      border-radius: 4px;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--coral);
+      color: var(--white);
+      box-shadow: 0 0 20px rgba(255,71,87,0.35);
+    }
+
+    .btn-primary:hover {
+      background: #e03343;
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--yellow);
+      color: var(--yellow);
+      background: transparent;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(202,255,0,0.08);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .stat-card,
+    .card,
+    .pricing-box,
+    .cta-box {
+      background: rgba(30,42,74,0.45);
+      border: 1px solid rgba(202,255,0,0.12);
+      border-radius: 10px;
+      box-shadow: 0 0 24px rgba(30,42,74,0.18);
+    }
+
+    .stat-card {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .stat-card strong {
+      display: block;
+      font-family: 'League Spartan', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: var(--coral);
+      margin-bottom: 0.4rem;
+    }
+
+    .card {
+      padding: 2.2rem;
+    }
+
+    .card p:last-child,
+    .card ul:last-child {
+      margin-bottom: 0;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .check-list {
+      list-style: none;
+      margin-top: 1rem;
+    }
+
+    .check-list li {
+      margin-bottom: 0.9rem;
+      padding-left: 1.7rem;
+      position: relative;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .check-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--yellow);
+      font-weight: 700;
+    }
+
+    .pricing-box {
+      padding: 2.2rem;
+      position: sticky;
+      top: 7rem;
+    }
+
+    .pricing-label {
+      font-family: 'Satisfy', cursive;
+      color: var(--coral);
+      font-size: 1.3rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .price {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--yellow);
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-meta {
+      display: grid;
+      gap: 0.9rem;
+      margin-bottom: 2rem;
+    }
+
+    .pricing-meta div {
+      padding: 0.9rem 1rem;
+      background: rgba(255,71,87,0.08);
+      border-left: 3px solid var(--coral);
+      border-radius: 0 6px 6px 0;
+      font-size: 0.95rem;
+    }
+
+    .small-note {
+      margin-top: 1.2rem;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+    }
+
+    .cards-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .cards-3 .card h3 {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.05em;
+    }
+
+    .cta-box {
+      text-align: center;
+      padding: 3rem;
+    }
+
+    .cta-box p {
+      max-width: 620px;
+      margin: 0 auto 2rem;
+    }
+
+    footer {
+      border-top: 1px solid rgba(202,255,0,0.08);
+      padding: 2rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    footer a {
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--white);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      .content-grid,
+      .stats-grid,
+      .cards-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-box {
+        position: static;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem 1.5rem;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 7rem;
+      }
+
+      footer 
