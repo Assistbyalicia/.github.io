@@ -4,146 +4,616 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Assist by Alicia – Systèmes Notion sur-mesure</title>
-  //fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=League+Spartan:wght@700;900&family=Satisfy&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=League+Spartan:wght@700;900&family=Satisfy&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     :root {
-      --blue: #1E2A4A; --coral: #FF4757; --yellow: #CAFF00;
-      --black: #121212; --white: #FFFFFF;
+      --blue: #1E2A4A;
+      --coral: #FF4757;
+      --yellow: #CAFF00;
+      --black: #121212;
+      --white: #FFFFFF;
     }
-    body { background: var(--black); color: var(--white); font-family: 'Montserrat', sans-serif; line-height: 1.7; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.7;
+    }
+
     nav {
-      position: fixed; top: 0; width: 100%; z-index: 100;
-      background: rgba(18,18,18,0.92); backdrop-filter: blur(10px);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(18,18,18,0.92);
+      backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(202,255,0,0.12);
-      display: flex; align-items: center; justify-content: space-between;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       padding: 1rem 4rem;
     }
-    .logo { text-decoration: none; display: flex; align-items: center; }
-    .logo img { height: 45px; width: auto; display: block; }
-    nav ul { list-style: none; display: flex; gap: 2.5rem; }
+
+    .logo {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 45px;
+      width: auto;
+      display: block;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    nav ul li {
+      list-style: none;
+    }
+
     nav ul a {
-      color: var(--white); text-decoration: none;
-      font-size: 0.85rem; font-weight: 600;
-      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       transition: color 0.2s;
     }
-    nav ul a:hover { color: var(--yellow); }
+
+    nav ul a:hover,
+    nav ul a.active {
+      color: var(--yellow);
+    }
+
     .hero {
-      min-height: 100vh; display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      text-align: center; padding: 8rem 2rem 4rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 2rem 4rem;
       background:
         radial-gradient(ellipse 60% 50% at 50% 40%, rgba(30,42,74,0.8) 0%, transparent 70%),
         repeating-linear-gradient(0deg, rgba(202,255,0,0.03) 0px, rgba(202,255,0,0.03) 1px, transparent 1px, transparent 60px),
         repeating-linear-gradient(90deg, rgba(202,255,0,0.03) 0px, rgba(202,255,0,0.03) 1px, transparent 1px, transparent 60px),
         var(--black);
     }
-    .hero-tag { font-family: 'Satisfy', cursive; color: var(--coral); font-size: 1.5rem; margin-bottom: 1.2rem; }
+
+    .hero-tag {
+      font-family: 'Satisfy', cursive;
+      color: var(--coral);
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
+    }
+
     .hero h1 {
       font-family: 'League Spartan', sans-serif;
-      font-weight: 900; font-size: clamp(1.8rem, 4.8vw, 3.8rem);
-      line-height: 1.05; text-transform: uppercase; max-width: 900px;
+      font-weight: 900;
+      font-size: clamp(1.8rem, 4.8vw, 3.8rem);
+      line-height: 1.05;
+      text-transform: uppercase;
+      max-width: 900px;
     }
-    .hero h1 span { color: var(--coral); }
-    .hero h1 em { color: var(--yellow); font-style: normal; }
-    .hero-sub { margin-top: 1.8rem; font-size: 1.05rem; max-width: 640px; color: rgba(255,255,255,0.75); }
-    .hero-ctas { margin-top: 2.8rem; display: flex; gap: 1.2rem; flex-wrap: wrap; justify-content: center; }
+
+    .hero h1 span {
+      color: var(--coral);
+    }
+
+    .hero h1 em {
+      color: var(--yellow);
+      font-style: normal;
+    }
+
+    .hero-sub {
+      margin-top: 1.8rem;
+      font-size: 1.05rem;
+      max-width: 640px;
+      color: rgba(255,255,255,0.75);
+    }
+
+    .hero-ctas {
+      margin-top: 2.8rem;
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
     .btn-primary {
-      background: var(--coral); color: var(--white);
-      padding: 0.9rem 2rem; border-radius: 4px;
-      font-family: 'League Spartan', sans-serif; font-weight: 700; font-size: 0.95rem;
-      text-transform: uppercase; letter-spacing: 0.06em; text-decoration: none;
+      background: var(--coral);
+      color: var(--white);
+      padding: 0.9rem 2rem;
+      border-radius: 4px;
+      font-family: 'League Spartan', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      text-decoration: none;
       transition: background 0.2s, box-shadow 0.2s;
       box-shadow: 0 0 20px rgba(255,71,87,0.35);
     }
-    .btn-primary:hover { background: #e03040; box-shadow: 0 0 32px rgba(255,71,87,0.55); }
+
+    .btn-primary:hover {
+      background: #e03040;
+      box-shadow: 0 0 32px rgba(255,71,87,0.55);
+    }
+
     .btn-secondary {
-      background: transparent; color: var(--yellow);
-      padding: 0.9rem 2rem; border-radius: 4px;
+      background: transparent;
+      color: var(--yellow);
+      padding: 0.9rem 2rem;
+      border-radius: 4px;
       border: 1.5px solid var(--yellow);
-      font-family: 'League Spartan', sans-serif; font-weight: 700; font-size: 0.95rem;
-      text-transform: uppercase; letter-spacing: 0.06em; text-decoration: none;
+      font-family: 'League Spartan', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      text-decoration: none;
       transition: background 0.2s, box-shadow 0.2s;
     }
-    .btn-secondary:hover { background: rgba(202,255,0,0.08); box-shadow: 0 0 20px rgba(202,255,0,0.2); }
-    section { padding: 6rem 2rem; max-width: 1100px; margin: 0 auto; }
-    .section-tag { font-family: 'Satisfy', cursive; color: var(--coral); font-size: 1rem; margin-bottom: 0.8rem; }
-    h2 { font-family: 'League Spartan', sans-serif; font-weight: 900; font-size: clamp(1.8rem, 4vw, 3rem); text-transform: uppercase; line-height: 1.1; margin-bottom: 1.6rem; }
-    h2 span { color: var(--coral); }
-    h2 em { color: var(--yellow); font-style: normal; }
-    p { color: rgba(255,255,255,0.78); margin-bottom: 1rem; }
-    .probleme { background: rgba(30,42,74,0.25); border-left: 3px solid var(--coral); border-radius: 0 8px 8px 0; padding: 3rem; margin: 0 auto; }
-    .highlight-block { margin-top: 2rem; padding: 1.8rem 2rem; background: rgba(255,71,87,0.08); border: 1px solid rgba(255,71,87,0.25); border-radius: 6px; font-family: 'League Spartan', sans-serif; font-size: 1.15rem; font-weight: 700; color: var(--white); text-align: center; }
-    .mon-job { text-align: center; }
-    .result-block { margin: 2.5rem auto 0; max-width: 680px; padding: 2.5rem; background: rgba(202,255,0,0.05); border: 1px solid rgba(202,255,0,0.2); border-radius: 8px; box-shadow: 0 0 40px rgba(202,255,0,0.06); }
-    .result-block p { font-family: 'League Spartan', sans-serif; font-size: 1.4rem; font-weight: 700; color: var(--yellow); margin-bottom: 0.4rem; text-transform: uppercase; }
-    .express-teaser { background: rgba(30,42,74,0.5); border: 1px solid rgba(202,255,0,0.15); border-radius: 10px; padding: 3.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
-    .chiffres { display: flex; flex-direction: column; gap: 1.2rem; }
-    .chiffre-item { padding: 1.2rem 1.5rem; background: rgba(255,71,87,0.08); border-left: 3px solid var(--coral); border-radius: 0 6px 6px 0; }
-    .chiffre-item strong { font-family: 'League Spartan', sans-serif; font-size: 1.6rem; font-weight: 900; color: var(--coral); }
-    .chiffre-item p { margin: 0; font-size: 0.9rem; }
-    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
-    .card { background: rgba(30,42,74,0.4); border: 1px solid rgba(202,255,0,0.1); border-radius: 8px; padding: 2rem; transition: border-color 0.2s, box-shadow 0.2s; }
-    .card:hover { border-color: rgba(202,255,0,0.35); box-shadow: 0 0 24px rgba(202,255,0,0.06); }
-    .card-icon { font-size: 1.8rem; margin-bottom: 1rem; }
-    .card h3 { font-family: 'League Spartan', sans-serif; font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--yellow); margin-bottom: 0.6rem; }
-    .card p { font-size: 0.9rem; }
-    .apropos-teaser { display: grid; grid-template-columns: auto 1fr; gap: 4rem; align-items: center; }
-    .portrait { width: 220px; height: 220px; border-radius: 50%; background: var(--blue); border: 3px solid var(--coral); box-shadow: 0 0 40px rgba(255,71,87,0.2); display: flex; align-items: center; justify-content: center; font-size: 5rem; flex-shrink: 0; }
-    .apropos-text a { display: inline-block; margin-top: 1.5rem; color: var(--yellow); font-weight: 600; text-decoration: none; font-size: 0.9rem; letter-spacing: 0.05em; text-transform: uppercase; border-bottom: 1px solid var(--yellow); padding-bottom: 2px; }
-    .cta-final { text-align: center; padding: 7rem 2rem; max-width: 100%; }
-    .cta-final h2 { margin-bottom: 1rem; }
-    .cta-final p { max-width: 560px; margin: 0 auto 2.5rem; font-size: 0.95rem; }
-    .note { margin-top: 1.2rem; font-size: 0.82rem; color: rgba(255,255,255,0.45); }
-    footer { background: rgba(18,18,18,0.98); border-top: 1px solid rgba(202,255,0,0.08); padding: 2rem 4rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: rgba(255,255,255,0.35); flex-wrap: wrap; gap: 1rem; }
-    footer a { color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
-    footer a:hover { color: var(--white); }
-    .footer-links { display: flex; gap: 2rem; }
+
+    .btn-secondary:hover {
+      background: rgba(202,255,0,0.08);
+      box-shadow: 0 0 20px rgba(202,255,0,0.2);
+    }
+
+    section {
+      padding: 6rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-tag {
+      font-family: 'Satisfy', cursive;
+      color: var(--coral);
+      font-size: 1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    h2 {
+      font-family: 'League Spartan', sans-serif;
+      font-weight: 900;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin-bottom: 1.6rem;
+    }
+
+    h2 span {
+      color: var(--coral);
+    }
+
+    h2 em {
+      color: var(--yellow);
+      font-style: normal;
+    }
+
+    p {
+      color: rgba(255,255,255,0.78);
+      margin-bottom: 1rem;
+    }
+
+    .probleme {
+      background: rgba(30,42,74,0.25);
+      border-left: 3px solid var(--coral);
+      border-radius: 0 8px 8px 0;
+      padding: 3rem;
+      margin: 0 auto;
+    }
+
+    .highlight-block {
+      margin-top: 2rem;
+      padding: 1.8rem 2rem;
+      background: rgba(255,71,87,0.08);
+      border: 1px solid rgba(255,71,87,0.25);
+      border-radius: 6px;
+      font-family: 'League Spartan', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--white);
+      text-align: center;
+    }
+
+    .mon-job {
+      text-align: center;
+    }
+
+    .result-block {
+      margin: 2.5rem auto 0;
+      max-width: 680px;
+      padding: 2.5rem;
+      background: rgba(202,255,0,0.05);
+      border: 1px solid rgba(202,255,0,0.2);
+      border-radius: 8px;
+      box-shadow: 0 0 40px rgba(202,255,0,0.06);
+    }
+
+    .result-block p {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--yellow);
+      margin-bottom: 0.4rem;
+      text-transform: uppercase;
+    }
+
+    .express-teaser {
+      background: rgba(30,42,74,0.5);
+      border: 1px solid rgba(202,255,0,0.15);
+      border-radius: 10px;
+      padding: 3.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .chiffres {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .chiffre-item {
+      padding: 1.2rem 1.5rem;
+      background: rgba(255,71,87,0.08);
+      border-left: 3px solid var(--coral);
+      border-radius: 0 6px 6px 0;
+    }
+
+    .chiffre-item strong {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--coral);
+    }
+
+    .chiffre-item p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .card {
+      background: rgba(30,42,74,0.4);
+      border: 1px solid rgba(202,255,0,0.1);
+      border-radius: 8px;
+      padding: 2rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      border-color: rgba(202,255,0,0.35);
+      box-shadow: 0 0 24px rgba(202,255,0,0.06);
+    }
+
+    .card h3 {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--yellow);
+      margin-bottom: 0.6rem;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+    }
+
+    .apropos-teaser {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .portrait {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid var(--coral);
+      box-shadow: 0 0 40px rgba(255,71,87,0.2);
+      flex-shrink: 0;
+      background: var(--blue);
+    }
+
+    .portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .apropos-text a {
+      display: inline-block;
+      margin-top: 1.5rem;
+      color: var(--yellow);
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--yellow);
+      padding-bottom: 2px;
+    }
+
+    .cta-final {
+      text-align: center;
+      padding: 7rem 2rem;
+      max-width: 100%;
+    }
+
+    .cta-final h2 {
+      margin-bottom: 1rem;
+    }
+
+    .cta-final p {
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+      font-size: 0.95rem;
+    }
+
+    .note {
+      margin-top: 1.2rem;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+    }
+
+    footer {
+      background: rgba(18,18,18,0.98);
+      border-top: 1px solid rgba(202,255,0,0.08);
+      padding: 2rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    footer a {
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    footer a:hover {
+      color: var(--white);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
     @media (max-width: 768px) {
-      nav { padding: 1rem 1.5rem; }
-      nav ul { display: none; }
-      .express-teaser { grid-template-columns: 1fr; }
-      .grid-3 { grid-template-columns: 1fr; }
-      .apropos-teaser { grid-template-columns: 1fr; text-align: center; }
-      .portrait { margin: 0 auto; }
-      footer { flex-direction: column; text-align: center; }
+      nav {
+        padding: 1rem 1.5rem;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      .express-teaser {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .apropos-teaser {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .portrait {
+        margin: 0 auto;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
 
-<nav>
-  <a class="logo" href="index.html">
-    <img src="Logo.png" alt="Assist by Alicia" />
-  </a>
-  <ul>
-    <a href="offres.html">Mes offres</a></li>
-    <a href="offre-express.html">Express</a></li>
-    <a href="qui-suis-je.html">Qui suis-je ?</a></li>
-    <a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+  <nav>
+    <a class="logo" href="index.html">
+      <img src="Logo.png" alt="Assist by Alicia" />
+    </a>
+    <ul>
+      <li><a href="offres.html">Mes offres</a></li>
+      <li><a href="offre-express.html">Express</a></li>
+      <li><a href="qui-suis-je.html">Qui suis-je ?</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-<section class="hero">
-  <p class="hero-tag">OBM · Notion · Automatisations · IA</p>
-  <h1>Arrête de jongler<br>entre <span>10 outils.</span><br><em>Un seul système suffit.</em></h1>
-  <p class="hero-sub">OBM spécialisée en systèmes Notion, j'accompagne les entrepreneurs à transformer leur organisation chaotique en un système centralisé, automatisé et dopé à l'IA. Sans template. 100% sur-mesure.</p>
-  <div class="hero-ctas">
-    <a class="btn-primary" href="https://calendar.notion.so/meet/aliciachouquet/30min" target="_blank">Réserver un appel diagnostic (30 min)</a>
-    <a class="btn-secondary" href="offre-express.html">Découvrir l'offre Express</a>
-  </div>
-</section>
-
-<section>
-  <div class="probleme">
-    <p class="section-tag">Le problème</p>
-    <h2>Tu passes plus de temps à <span>chercher tes infos</span> qu'à bosser</h2>
-    <p>Trello pour les projets, Notion pour les docs, Google Drive pour... bah en fait tu sais plus trop. Un tableur Excel qui traîne. Tes emails. Un carnet papier. Ah, et Asana aussi, non ?</p>
-    <p>La vérité ? Tu n'as pas besoin d'un outil de plus. Le problème, c'est pas que tu manques d'outils. C'est que tu en as trop. Et qu'aucun ne parle aux autres.</p>
-    <div class="highlight-block">
-      Résultat ? C'est toi le logiciel de liaison.<br>
-      Tu passes ta vie à faire le pont entre tous ces outils. Manuellement. Encore et encore.<br><br>
-      Spoiler : ce n'est pas un système. C'est du chaos déguisé.
+  <section class="hero">
+    <p class="hero-tag">OBM · Notion · Automatisations · IA</p>
+    <h1>
+      Arrête de jongler<br>
+      entre <span>10 outils.</span><br>
+      <em>Un seul système suffit.</em>
+    </h1>
+    <p class="hero-sub">
+      OBM spécialisée en systèmes Notion, j'accompagne les entrepreneurs à transformer leur organisation chaotique en un système centralisé, automatisé et dopé à l'IA. Sans template. 100% sur-mesure.
+    </p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="https://calendar.notion.so/meet/aliciachouquet/30min" target="_blank" rel="noopener noreferrer">Réserver un appel diagnostic (30 min)</a>
+      <a class="btn-secondary" href="offre-express.html">Découvrir l'offre Express</a>
     </div>
-  </div>
+  </section>
+
+  <section>
+    <div class="probleme">
+      <p class="section-tag">Le problème</p>
+      <h2>Tu passes plus de temps à <span>chercher tes infos</span> qu'à bosser</h2>
+      <p>
+        Trello pour les projets, Notion pour les docs, Google Drive pour... bah en fait tu sais plus trop. Un tableur Excel qui traîne. Tes emails. Un carnet papier. Ah, et Asana aussi, non ?
+      </p>
+      <p>
+        La vérité ? Tu n'as pas besoin d'un outil de plus. Le problème, c'est pas que tu manques d'outils. C'est que tu en as trop. Et qu'aucun ne parle aux autres.
+      </p>
+      <div class="highlight-block">
+        Résultat ? C'est toi le logiciel de liaison.<br><br>
+        Tu passes ta vie à faire le pont entre tous ces outils. Manuellement. Encore et encore.<br><br>
+        Spoiler : ce n'est pas un système. C'est du chaos déguisé.
+      </div>
+    </div>
+  </section>
+
+  <section class="mon-job">
+    <p class="section-tag">Mon job</p>
+    <h2>Mettre fin au <em>chaos</em></h2>
+    <p>
+      Je suis Alicia, OBM spécialisée en systèmes Notion sur-mesure. Je reprends ton opérationnel et je le transforme en un système centralisé qui regroupe tout : clients, projets, tâches, compta, documents.
+    </p>
+    <p>
+      Zéro template. Zéro solution toute faite. Juste ton système, taillé pour toi.
+    </p>
+    <p>
+      Avec des automatisations qui bossent à ta place et de l'IA intégrée pour que ça aille encore plus vite.
+    </p>
+
+    <div class="result-block">
+      <p>Résultat</p>
+      <div>Tu arrêtes de gérer l'organisation.<br>Et tu reprends le contrôle de ton business.</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="express-teaser">
+      <div>
+        <p class="section-tag">Express</p>
+        <h2>Ton urgence n°1, <span>réglée en 7 jours</span></h2>
+        <p>
+          On identifie ensemble ce qui te fait perdre le plus de temps. Je crée le système Notion qui règle ça. Tu repars autonome.
+        </p>
+        <p>
+          Tu reçois un diagnostic de ce qui coince, un système Notion opérationnel avec tes données et la formation pour t'en servir.
+        </p>
+        <a class="btn-primary" href="offre-express.html">Voir l'offre Express</a>
+      </div>
+
+      <div class="chiffres">
+        <div class="chiffre-item">
+          <strong>2h</strong>
+          <p>Ton temps sur 7 jours. Le reste, c'est moi.</p>
+        </div>
+        <div class="chiffre-item">
+          <strong>5 à 10h</strong>
+          <p>Gagnées par semaine une fois le système en place.</p>
+        </div>
+        <div class="chiffre-item">
+          <strong>Sur-mesure</strong>
+          <p>Pas de template. Pas de copier-coller. Juste ton vrai besoin.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="section-tag">Pourquoi moi ?</p>
+    <h2>Pourquoi moi et pas un <span>template à 50€</span> ?</h2>
+
+    <div class="grid-3">
+      <div class="card">
+        <h3>Je suis OBM</h3>
+        <p>Je ne crée pas juste un outil joli. Je reprends ton opérationnel pour le transformer en système qui tourne vraiment.</p>
+      </div>
+
+      <div class="card">
+        <h3>Triple expertise</h3>
+        <p>Notion pour structurer, les automatisations pour alléger, l'IA pour accélérer intelligemment ce qui peut l'être.</p>
+      </div>
+
+      <div class="card">
+        <h3>Tu repars autonome</h3>
+        <p>Je te forme pour que ton système reste utile sans dépendre de moi toutes les semaines.</p>
+      </div>
+    </div>
+
+    <div class="highlight-block">
+      Un système taillé pour toi, pas adapté par toi.
+    </div>
+  </section>
+
+  <section>
+    <div class="apropos-teaser">
+      <div class="portrait">
+        <img src="Photo-de-profil.jpg" alt="Portrait d'Alicia" />
+      </div>
+
+      <div class="apropos-text">
+        <p class="section-tag">Qui suis-je ?</p>
+        <h2>Alicia, OBM spécialisée en <em>systèmes Notion</em></h2>
+        <p>
+          J'aide les entrepreneurs à transformer leur organisation chaotique en un système clair, centralisé et automatisé.
+        </p>
+        <p>
+          J'ai démarré comme assistante digitale, puis j'ai compris que le vrai problème n'était pas les gens : c'était l'absence de système.
+        </p>
+        <p>
+          Aujourd'hui, je structure le chaos pour rendre la délégation plus fluide et redonner de la clarté à ton business.
+        </p>
+        <a href="qui-suis-je.html">En savoir plus</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-final">
+    <p class="section-tag">Prêt à reprendre le contrôle ?</p>
+    <h2>On clarifie ton besoin en <span>30 minutes</span></h2>
+    <p>
+      Cet appel est gratuit, sans engagement. Son objectif : t'aider à y voir clair, même si tu ne prends pas Express.
+    </p>
+    <a class="btn-primary" href="https://calendar.notion.so/meet/aliciachouquet/30min" target="_blank" rel="noopener noreferrer">Réserver mon appel diagnostic</a>
+    <p class="note">Tu préfères m'écrire d'abord ? Passe par la page Contact.</p>
+  </section>
+
+  <footer>
+    <div>© 2026 Assist by Alicia. Tous droits réservés.</div>
+    <div class="footer-links">
+      <a href="index.html">Accueil</a>
+      <a href="offres.html">Offres</a>
+      <a href="qui-suis-je.html">À propos</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://www.notion.so/Mentions-l-gales-CGV-674bd4cc82394dc88c43ac7f90706a93?pvs=21" target="_blank" rel="noopener noreferrer">Mentions légales / CGV</a>
+      <a href="https://www.notion.so/Politique-de-confidentialit-babcd3ad4f4f49519038f53b59a30d9a?pvs=21" target="_blank" rel="noopener noreferrer">Politique de confidentialité</a>
+    </div>
+  </footer>
+
+</body>
+</html>
