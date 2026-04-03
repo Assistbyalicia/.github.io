@@ -105,8 +105,7 @@
     }
 
     h1 span,
-    h2 span,
-    .accent {
+    h2 span {
       color: var(--yellow);
     }
 
@@ -119,8 +118,6 @@
       margin-bottom: 1.2rem;
     }
 
-    .hero-sub,
-    .intro,
     p {
       color: rgba(255,255,255,0.76);
     }
@@ -206,11 +203,6 @@
 
     .card {
       padding: 2.2rem;
-    }
-
-    .card p:last-child,
-    .card ul:last-child {
-      margin-bottom: 0;
     }
 
     .content-grid {
@@ -304,7 +296,7 @@
       padding: 3rem;
     }
 
-    .cta-box p {
+    .cta-box p:not(.section-tag) {
       max-width: 620px;
       margin: 0 auto 2rem;
     }
@@ -361,4 +353,33 @@
         padding-top: 7rem;
       }
 
-      footer 
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="logo" href="index.html">
+      <img src="Logo.png" alt="Assist by Alicia" />
+    </a>
+    <ul>
+      <li><a href="offres.html">Mes offres</a></li>
+      <li><a href="offre-express.html" class="active">Express</a></li>
+      <li><a href="qui-suis-je.html">Qui suis-je ?</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <p class="hero-tag">Offre Express</p>
+    <h1>Ton urgence n°1,<br><span>réglée en 7 jours.</span></h1>
+    <p class="hero-sub">
+      On identifie ensemble ce qui te fait perdre le plus de temps. Je crée le système Notion qui règle ça. Tu repars autonome.
+    </p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="https://calendar.notion.so/meet/aliciachouquet/30min" target="_blank" rel="noopener noreferrer">Réserver mon appel diagnostic</a>
+      <a 
