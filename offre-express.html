@@ -1,333 +1,684 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Offre Express – Assist by Alicia</title>
-  //fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=League+Spartan:wght@700;900&family=Satisfy&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=League+Spartan:wght@700;900&family=Satisfy&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --blue: #1E2A4A; --coral: #FF4757; --yellow: #CAFF00; --black: #121212; --white: #FFFFFF; }
-    body { background: var(--black); color: var(--white); font-family: 'Montserrat', sans-serif; line-height: 1.7; }
-    nav { position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(18,18,18,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(202,255,0,0.12); display: flex; align-items: center; justify-content: space-between; padding: 1rem 4rem; }
-    .logo { text-decoration: none; display: flex; align-items: center; }
-    .logo img { height: 45px; width: auto; display: block; }
-    nav ul { list-style: none; display: flex; gap: 2.5rem; }
-    nav ul li a { color: var(--white); text-decoration: none; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
-    nav ul li a:hover, nav ul li a.active { color: var(--yellow); }
-    .btn-primary { background: var(--coral); color: var(--white); padding: 0.9rem 2rem; border-radius: 4px; font-family: 'League Spartan', sans-serif; font-weight: 700; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.06em; text-decoration: none; display: inline-block; box-shadow: 0 0 20px rgba(255,71,87,0.35); transition: background 0.2s; }
-    .btn-primary:hover { background: #e03040; }
-    .btn-secondary { background: transparent; color: var(--yellow); padding: 0.9rem 2rem; border-radius: 4px; border: 1.5px solid var(--yellow); font-family: 'League Spartan', sans-serif; font-weight: 700; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.06em; text-decoration: none; display: inline-block; }
-    .section-tag { font-family: 'Satisfy', cursive; color: var(--coral); font-size: 1.5rem; margin-bottom: 0.8rem; }
-    h2 { font-family: 'League Spartan', sans-serif; font-weight: 900; font-size: clamp(1.6rem, 3.5vw, 2.5rem); text-transform: uppercase; line-height: 1.1; margin-bottom: 1.4rem; }
-    h2 span { color: var(--coral); }
-    h2 em { color: var(--yellow); font-style: normal; }
-    h3 { font-family: 'League Spartan', sans-serif; font-weight: 700; font-size: 1.05rem; text-transform: uppercase; color: var(--yellow); margin-bottom: 0.6rem; letter-spacing: 0.05em; }
-    p { color: rgba(255,255,255,0.78); margin-bottom: 1rem; }
-    section { padding: 5rem 2rem; max-width: 900px; margin: 0 auto; }
-    .hero { min-height: 70vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 8rem 2rem 4rem; background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(30,42,74,0.8) 0%, transparent 70%), repeating-linear-gradient(0deg, rgba(202,255,0,0.03) 0px, rgba(202,255,0,0.03) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(90deg, rgba(202,255,0,0.03) 0px, rgba(202,255,0,0.03) 1px, transparent 1px, transparent 60px), var(--black); max-width: 100%; }
-    .hero-tag { font-family: 'Satisfy', cursive; color: var(--coral); font-size: 1.3rem; margin-bottom: 1rem; }
-    .hero h1 { font-family: 'League Spartan', sans-serif; font-weight: 900; font-size: clamp(2rem, 5vw, 3.8rem); line-height: 1.05; text-transform: uppercase; max-width: 800px; }
-    .hero h1 span { color: var(--coral); }
-    .hero-sub { margin-top: 1.5rem; font-size: 1.1rem; max-width: 600px; color: rgba(255,255,255,0.75); }
-    .hero-ctas { margin-top: 2.5rem; display: flex; gap: 1.2rem; flex-wrap: wrap; justify-content: center; }
-    .chiffres-hero { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin: 4rem auto 0; max-width: 900px; padding: 0 2rem; }
-    .chiffre-card { background: rgba(30,42,74,0.4); border: 1px solid rgba(202,255,0,0.12); border-radius: 8px; padding: 2rem; text-align: center; }
-    .chiffre-card strong { font-family: 'League Spartan', sans-serif; font-size: 2.5rem; font-weight: 900; color: var(--coral); display: block; margin-bottom: 0.4rem; }
-    .chiffre-card p { margin: 0; font-size: 0.9rem; color: rgba(255,255,255,0.6); }
-    .aside-block { background: rgba(30,42,74,0.4); border-left: 3px solid var(--coral); border-radius: 0 8px 8px 0; padding: 2rem 2.5rem; margin: 2rem 0; }
-    .aside-block p { margin-bottom: 0.6rem; }
-    .check-list { list-style: none; padding: 0; margin: 1.5rem 0; }
+
+    :root {
+      --blue: #1E2A4A;
+      --coral: #FF4757;
+      --yellow: #CAFF00;
+      --black: #121212;
+      --white: #FFFFFF;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.7;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(18,18,18,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(202,255,0,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 4rem;
+    }
+
+    .logo {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 45px;
+      width: auto;
+      display: block;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    nav ul li a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: var(--yellow);
+    }
+
+    .btn-primary {
+      background: var(--coral);
+      color: var(--white);
+      padding: 0.9rem 2rem;
+      border-radius: 4px;
+      font-family: 'League Spartan', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 0 20px rgba(255,71,87,0.35);
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: #e03040;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--yellow);
+      padding: 0.9rem 2rem;
+      border-radius: 4px;
+      border: 1.5px solid var(--yellow);
+      font-family: 'League Spartan', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .section-tag {
+      font-family: 'Satisfy', cursive;
+      color: var(--coral);
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    h2 {
+      font-family: 'League Spartan', sans-serif;
+      font-weight: 900;
+      font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin-bottom: 1.4rem;
+    }
+
+    h2 span {
+      color: var(--coral);
+    }
+
+    h2 em {
+      color: var(--yellow);
+      font-style: normal;
+    }
+
+    h3 {
+      font-family: 'League Spartan', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.05em;
+    }
+
+    p {
+      color: rgba(255,255,255,0.78);
+      margin-bottom: 1rem;
+    }
+
+    section {
+      padding: 5rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 2rem 4rem;
+      background:
+        radial-gradient(ellipse 60% 50% at 50% 40%, rgba(30,42,74,0.8) 0%, transparent 70%),
+        repeating-linear-gradient(0deg, rgba(202,255,0,0.03) 0px, rgba(202,255,0,0.03) 1px, transparent 1px, transparent 60px),
+        repeating-linear-gradient(90deg, rgba(202,255,0,0.03) 0px, rgba(202,255,0,0.03) 1px, transparent 1px, transparent 60px),
+        var(--black);
+      max-width: 100%;
+    }
+
+    .hero-tag {
+      font-family: 'Satisfy', cursive;
+      color: var(--coral);
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-family: 'League Spartan', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2rem, 5vw, 3.8rem);
+      line-height: 1.05;
+      text-transform: uppercase;
+      max-width: 800px;
+    }
+
+    .hero h1 span {
+      color: var(--coral);
+    }
+
+    .hero-sub {
+      margin-top: 1.5rem;
+      font-size: 1.1rem;
+      max-width: 600px;
+      color: rgba(255,255,255,0.75);
+    }
+
+    .hero-ctas {
+      margin-top: 2.5rem;
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .chiffres-hero {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin: 4rem auto 0;
+      max-width: 900px;
+      padding: 0 2rem;
+    }
+
+    .chiffre-card {
+      background: rgba(30,42,74,0.4);
+      border: 1px solid rgba(202,255,0,0.12);
+      border-radius: 8px;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .chiffre-card strong {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--coral);
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .chiffre-card p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .aside-block {
+      background: rgba(30,42,74,0.4);
+      border-left: 3px solid var(--coral);
+      border-radius: 0 8px 8px 0;
+      padding: 2rem 2.5rem;
+      margin: 2rem 0;
+    }
+
+    .aside-block p {
+      margin-bottom: 0.6rem;
+    }
+
+    .check-list,
+    .cross-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0;
+    }
+
     .check-list li {
-  padding: 0.8rem 1rem;
-  margin-bottom: 0.8rem;
-  background: rgba(30,42,74,0.3);
-  border: 1px solid rgba(202,255,0,0.1);
-  border-radius: 6px;
-  color: rgba(255,255,255,0.85);
-  font-size: 0.95rem;
-  display: block;
-  width: 100%;
-}
-    .cross-list { list-style: none; padding: 0; margin: 1.5rem 0; }
+      padding: 0.8rem 1rem;
+      margin-bottom: 0.8rem;
+      background: rgba(30,42,74,0.3);
+      border: 1px solid rgba(202,255,0,0.1);
+      border-radius: 6px;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.95rem;
+    }
+
     .cross-list li {
-  padding: 0.8rem 1rem;
-  margin-bottom: 0.6rem;
-  background: rgba(255,71,87,0.06);
-  border: 1px solid rgba(255,71,87,0.15);
-  border-radius: 6px;
-  color: rgba(255,255,255,0.75);
-  font-size: 0.9rem;
-  display: block;
-  width: 100%;
-}
-    .timeline { margin: 2rem 0; }
-    .timeline-item { display: grid; grid-template-columns: 3rem 1fr; gap: 1.5rem; margin-bottom: 2rem; align-items: start; }
-    .timeline-icon { font-size: 1.8rem; text-align: center; }
-    .timeline-content { background: rgba(30,42,74,0.3); border: 1px solid rgba(202,255,0,0.1); border-radius: 8px; padding: 1.5rem; }
-    .timeline-content p { font-size: 0.9rem; margin-bottom: 0.5rem; }
-    .timeline-note { color: var(--yellow); font-size: 0.85rem; margin-bottom: 0; }
-    .faq-item { border-bottom: 1px solid rgba(202,255,0,0.1); padding: 1.8rem 0; }
-    .faq-item h3 { color: var(--white); font-size: 1rem; margin-bottom: 0.8rem; }
-    .faq-item p { font-size: 0.9rem; margin-bottom: 0; }
-    .highlight-box { background: rgba(202,255,0,0.05); border: 1px solid rgba(202,255,0,0.2); border-radius: 8px; padding: 2.5rem; text-align: center; margin: 2rem 0; }
-    .highlight-box p { font-family: 'League Spartan', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--yellow); margin-bottom: 0.5rem; text-transform: uppercase; }
-    .cta-final { text-align: center; padding: 7rem 2rem; max-width: 100%; }
-    .cta-final h2 { margin-bottom: 1rem; }
-    .cta-final p { max-width: 560px; margin: 0 auto 2.5rem; color: rgba(255,255,255,0.7); }
-    .note { margin-top: 1.2rem; font-size: 0.82rem; color: rgba(255,255,255,0.4); }
-    footer { background: rgba(18,18,18,0.98); border-top: 1px solid rgba(202,255,0,0.08); padding: 2rem 4rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: rgba(255,255,255,0.35); flex-wrap: wrap; gap: 1rem; }
-    footer a { color: rgba(255,255,255,0.35); text-decoration: none; }
-    footer a:hover { color: var(--white); }
-    .footer-links { display: flex; gap: 2rem; }
+      padding: 0.8rem 1rem;
+      margin-bottom: 0.6rem;
+      background: rgba(255,71,87,0.06);
+      border: 1px solid rgba(255,71,87,0.15);
+      border-radius: 6px;
+      color: rgba(255,255,255,0.75);
+      font-size: 0.9rem;
+    }
+
+    .timeline {
+      margin: 2rem 0;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 3rem 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      align-items: start;
+    }
+
+    .timeline-icon {
+      font-size: 1.8rem;
+      text-align: center;
+    }
+
+    .timeline-content {
+      background: rgba(30,42,74,0.3);
+      border: 1px solid rgba(202,255,0,0.1);
+      border-radius: 8px;
+      padding: 1.5rem;
+    }
+
+    .timeline-content p {
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-note {
+      color: var(--yellow);
+      font-size: 0.85rem;
+      margin-bottom: 0;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(202,255,0,0.1);
+      padding: 1.8rem 0;
+    }
+
+    .faq-item h3 {
+      color: var(--white);
+      font-size: 1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .faq-item p {
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+
+    .highlight-box {
+      background: rgba(202,255,0,0.05);
+      border: 1px solid rgba(202,255,0,0.2);
+      border-radius: 8px;
+      padding: 2.5rem;
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .highlight-box p {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--yellow);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+    }
+
+    .refund-highlight {
+      color: var(--yellow);
+      font-size: 1.1em;
+      font-weight: 700;
+    }
+
+    .cta-final {
+      text-align: center;
+      padding: 7rem 2rem;
+      max-width: 100%;
+    }
+
+    .cta-final h2 {
+      margin-bottom: 1rem;
+    }
+
+    .cta-final p {
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .note {
+      margin-top: 1.2rem;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    footer {
+      background: rgba(18,18,18,0.98);
+      border-top: 1px solid rgba(202,255,0,0.08);
+      padding: 2rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    footer a {
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--white);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
     @media (max-width: 768px) {
-      nav { padding: 1rem 1.5rem; }
-      nav ul { display: none; }
-      .chiffres-hero { grid-template-columns: 1fr; }
-      .timeline-item { grid-template-columns: 2rem 1fr; gap: 1rem; }
-      footer { flex-direction: column; text-align: center; }
+      nav {
+        padding: 1rem 1.5rem;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      .chiffres-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-item {
+        grid-template-columns: 2rem 1fr;
+        gap: 1rem;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
-
-<nav>
-  <a class="logo" href="index.html">
-    <img src="Logo.png" alt="Assist by Alicia" />
-  </a>
- <ul>
+  <nav>
+    <a class="logo" href="index.html">
+      <img src="Logo.png" alt="Assist by Alicia" />
+    </a>
+    <ul>
       <li><a href="offres.html">Mes offres</a></li>
-      <li><a href="offre-express.html">Express</a></li>
+      <li><a href="offre-express.html" class="active">Express</a></li>
       <li><a href="qui-suis-je.html">Qui suis-je ?</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-</nav>
+  </nav>
 
-<div class="hero">
-  <p class="hero-tag">Offre Express</p>
-  <h1>Ton urgence n°1 réglée en <span>7 jours.</span><br>Pas dans 3 mois.</h1>
-  <p class="hero-sub">Un système Notion sur-mesure qui centralise tout et te fait gagner 5-10h par mois</p>
-  <div class="hero-ctas">
-    <a class="btn-primary" href="https://calendar.notion.so/meet/aliciachouquet/30min" target="_blank">Réserver mon appel diagnostic (gratuit)</a>
-    <a class="btn-secondary" href="contact.html">Une question ?</a>
-  </div>
-</div>
-
-<div class="chiffres-hero">
-  <div class="chiffre-card">
-    <strong>7 jours</strong>
-    <p>Pour régler ton urgence n°1</p>
-  </div>
-  <div class="chiffre-card">
-    <strong>2h</strong>
-    <p>Ton temps investi, pas plus</p>
-  </div>
-  <div class="chiffre-card">
-    <strong>5–10h</strong>
-    <p>Gagnées par mois</p>
-  </div>
-</div>
-
-<section>
-  <p class="section-tag">Le constat</p>
-  <h2>Le problème, c'est pas que tu manques <em>de temps.</em></h2>
-  <div class="aside-block">
-    <p>C'est que ton organisation te bouffe ton énergie.</p>
-    <p>Ce qui te manque, c'est pas la motivation. C'est un système clair pour organiser ton business.</p>
-    <p>Un système qui centralise tes infos, qui structure tes process, qui te fait gagner du temps tous les jours.</p>
-    <p>Et le souci ? Tu ne sais pas exactement quel est TON problème n°1, ni par où commencer.</p>
-  </div>
-</section>
-
-<section>
-  <p class="section-tag">La solution</p>
-  <h2>C'est exactement là <em>que j'interviens.</em></h2>
-  <p>Je suis Bras droit spécialisée en systèmes Notion. Mon job : diagnostiquer ce qui coince dans ton organisation, construire le système sur mesure qui te manque, et te former pour que tu sois 100% autonome.</p>
-  <p><strong style="color:var(--white)">En 7 jours, tu as :</strong></p>
-  <ul class="check-list">
-    ✅ Un diagnostic clair de ton problème n°1</li></p>
-    ✅ Un système Notion opérationnel</p>
-    ✅ Un système Notion opérationnel construit avec TES données</li></p>
-    ✅ La formation pour t'en servir sans moi</li></p>
-  </ul>
-  <p>Pas un template générique. Un système sur mesure qui tourne dès la livraison.</p>
-</section>
-
-<section>
-  <p class="section-tag">Le livrable</p>
-  <h2>Ce que tu as à la fin <em>des 7 jours</em></h2>
-  <ul class="check-list">
-    ✅ <strong style="color:var(--white)">Un diagnostic clair</strong> — Une page d'audit complète qui décortique ton urgence (où tu perds du temps, pourquoi c'est bordélique, ce qui manque).</li></p>
-    ✅ <strong style="color:var(--white)">Un plan d'action concret</strong> — Une roadmap avec les 2-3 actions prioritaires. Dans quel ordre, pourquoi, et ce que ça va changer.</li></p>
-    ✅ <strong style="color:var(--white)">Un système Notion opérationnel</strong> — Construit sur mesure avec TES données et TON workflow. Tu l'ouvres, tu l'utilises. Prêt dès la livraison.</li></p>
-    ✅ <strong style="color:var(--white)">La formation complète</strong> </li></p>
-  </ul>
-  <div class="highlight-box">
-    <p>Pas juste un outil.</p>
-    <p>Un diagnostic + une solution + la formation pour que ça tourne sans moi.</p>
-  </div>
-  <p style="text-align:center; margin-top:1.5rem; color:rgba(255,255,255,0.6);">Ton investissement temps total : <strong style="color:var(--white)">2h sur 7 jours</strong> (le reste, c'est moi qui bosse)</p>
-</section>
-
-<section>
-  <p class="section-tag">Avant de démarrer</p>
-  <h2>📞 Appel diagnostic gratuit <em>(30 min)</em></h2>
-  <p>Pendant cet appel :</p>
-  <ul class="check-list">
-    ✅ Je t'aide à clarifier ce qui coince vraiment dans ton organisation</li></p>
-    ✅ On commence à trier pour trouver ton problème n°1</li></p>
-    ✅ Je te dis si Express peut régler ça en 7 jours</li></p>
-    ✅ On valide ensemble que c'est la bonne formule pour toi</li></p>
-  </ul>
-  <p style="color:rgba(255,255,255,0.5); font-size:0.9rem;">Gratuit · Sans engagement · Même si tu ne prends pas Express</p>
-</section>
-
-<section>
-  <p class="section-tag">Le déroulé</p>
-  <h2>⏱️ Comment ça marche : <em>7 jours</em></h2>
-  <div class="timeline">
-    <div class="timeline-item">
-      <div class="timeline-icon">📋</div>
-      <div class="timeline-content">
-        <h3>Jours 1-2 — Questionnaire</h3>
-        <p>Tu remplis un questionnaire Notion ciblé (20-30 min de ton côté). J'analyse tes réponses et identifie les premières pistes.</p>
-        <p class="timeline-note">Tu planifies ton créneau pour le call d'audit du Jour 3.</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-icon">🎤</div>
-      <div class="timeline-content">
-        <h3>Jour 3 matin — Audit</h3>
-        <p>On reprend ton questionnaire ensemble pour définir TON problème n°1. On explore en profondeur ton organisation et on valide ce qu'on va mettre en place.</p>
-        <p class="timeline-note">À la fin, tu sais exactement ce qu'on va régler.</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-icon">📊</div>
-      <div class="timeline-content">
-        <h3>Jour 3 après-midi — Ta solution</h3>
-        <p>Dans ton espace client Notion : la page d'audit complète avec le diagnostic détaillé et la roadmap avec le plan d'action 7 jours.</p>
-        <p class="timeline-note">Tu consultes tout ça pendant que je travaille.</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-icon">🛠️</div>
-      <div class="timeline-content">
-        <h3>Jours 4 à 6 — Construction</h3>
-        <p>Je produis ton système Notion sur mesure. De ton côté : tu n'as rien à faire. Si j'ai besoin d'une info, je t'envoie un message (5-10 min de ta part max).</p>
-        <p class="timeline-note">Le Jour 6, ta solution est prête dans ton espace.</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-icon">✅</div>
-      <div class="timeline-content">
-        <h3>Jour 7 — Formation</h3>
-        <p>On se retrouve en visio. Je te montre en live comment utiliser ta solution, on passe en revue tous les scénarios, tu poses toutes tes questions.</p>
-        <p class="timeline-note">À la fin, ton urgence est réglée et tu sais t'en servir sans moi.</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-icon">💬</div>
-      <div class="timeline-content">
-        <h3>J+7 — Support</h3>
-        <p>Je reste dispo 7 jours supplémentaires. Tu peux me contacter par message (réponse sous 24h en semaine). Pas de tunnel noir.</p>
-      </div>
+  <div class="hero">
+    <p class="hero-tag">Offre Express</p>
+    <h1>Ton urgence n°1 réglée en <span>7 jours.</span><br />Pas dans 3 mois.</h1>
+    <p class="hero-sub">Un système Notion sur-mesure qui centralise tout et te fait gagner 5-10h par mois</p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="https://calendar.notion.so/meet/aliciachouquet/30min" target="_blank" rel="noopener noreferrer">Réserver mon appel diagnostic (gratuit)</a>
+      <a class="btn-secondary" href="contact.html">Une question ?</a>
     </div>
   </div>
-</section>
 
-<section>
-  <p class="section-tag">Pour qui</p>
-  <h2>Express est fait <em>pour toi si :</em></h2>
-  <ul class="check-list">
-    ✅ Tu as un problème récurrent dans ton organisation (infos dispersées, process dans ta tête, suivi client bordélique…)</li></p>
-    ✅ Tu veux un résultat en 7 jours, pas dans 3 mois</li></p>
-    ✅ Tu préfères un système sur-mesure qu'un template à adapter toi-même</li></p>
-  </ul>
-  <p style="color:rgba(255,255,255,0.5); font-size:0.9rem; margin-top:1rem;">L'appel diagnostic est sans engagement. Si Express n'est pas la bonne formule pour toi, je te le dis franchement.</p>
-</section>
+  <div class="chiffres-hero">
+    <div class="chiffre-card">
+      <strong>7 jours</strong>
+      <p>Pour régler ton urgence n°1</p>
+    </div>
+    <div class="chiffre-card">
+      <strong>2h</strong>
+      <p>Ton temps investi, pas plus</p>
+    </div>
+    <div class="chiffre-card">
+      <strong>5–10h</strong>
+      <p>Gagnées par mois</p>
+    </div>
+  </div>
 
-<section>
-  <p class="section-tag">Transparence</p>
-  <h2>❌ Ce qui <span>n'est PAS</span> inclus</h2>
-  <ul class="cross-list">
-    ❌ <strong style="color:var(--white)">Automatisations avancées</strong> (n8n, Make, Zapier…)</li></p>
-    ❌ <strong style="color:var(--white)">Intégrations tierces complexes</strong> (CRM, ERP, outils externes)</li></p>
-    ❌ <strong style="color:var(--white)">Formation Notion complète</strong> — je t'apprends à utiliser TON système</li></p>
-    ❌ <strong style="color:var(--white)">Maintenance ou support continu</strong> — après les 7j + 1 semaine, tu es autonome</li></p>
-    ❌ <strong style="color:var(--white)">Refonte complète</strong> — Express règle UNE urgence, pas 10 problèmes</li></p>
-  </ul>
-  <div class="aside-block">
-    <p>⚡ Express fonctionne exclusivement dans Notion.</p>
-    <p><strong style="color:var(--white)">Ce qui EST inclus :</strong> Un système Notion sur mesure, opérationnel, avec tes données, et la formation pour que tu sois autonome.</p>
-  </div>
-</section>
+  <section>
+    <p class="section-tag">Le constat</p>
+    <h2>Le problème, c'est pas que tu manques <em>de temps.</em></h2>
+    <div class="aside-block">
+      <p>C'est que ton organisation te bouffe ton énergie.</p>
+      <p>Ce qui te manque, c'est pas la motivation. C'est un système clair pour organiser ton business.</p>
+      <p>Un système qui centralise tes infos, qui structure tes process, qui te fait gagner du temps tous les jours.</p>
+      <p>Et le souci ? Tu ne sais pas exactement quel est TON problème n°1, ni par où commencer.</p>
+    </div>
+  </section>
 
-<section>
-  <p class="section-tag">Tes questions</p>
-  <h2>🤔 Les questions que tu te poses <em>(et mes réponses honnêtes)</em></h2>
-  <div class="faq-item">
-    <h3>"Pourquoi je paierais 290€ alors que je peux le faire moi-même ?"</h3>
-    <p>Tu peux, oui. Mais soyons honnêtes : tu vas cramer 10 à 15h à chercher, tester, te planter, recommencer… pour un résultat moyen.</p>
-  </div>
-  <div class="faq-item">
-    <h3>"Comment je sais que ça va vraiment fonctionner POUR MOI ?"</h3>
-    <p>C'est exactement pour ça qu'il y a l'appel diagnostic gratuit avant. On ne lance pas Express si je sens que ce n'est pas la bonne formule. Si je dis oui, c'est que je suis certaine de pouvoir régler ton urgence en 7 jours.</p>
-  </div>
-  <div class="faq-item">
-    <h3>"290€, qu'est-ce qui justifie ce prix ?"</h3>
-    <p>Mon expertise de Bras droit + 7 jours de disponibilité + un système sur mesure + ta formation complète. 290€ pour récupérer 5-10h par mois pendant des mois. Ça se rentabilise en 1 mois.</p>
-  </div>
-  <div class="faq-item">
-    <h3>"Pourquoi toi et pas un template à 50€ ?"</h3>
-    <p>Un template = 47€ + 3-5h de ton temps pour l'adapter. Express = 290€ TTC + 2h de ton temps, et c'est réglé. Le template est générique, Express est construit sur-mesure pour TON contexte.</p>
-  </div>
-  <div class="faq-item">
-    <h3>"Et si ce que tu me proposes ne me convient pas ?"</h3>
-    <p>Après l'appel d'audit (Jour 3) : &lt;span style="color: var(--yellow); font-size: 1.1em; font-weight: 700;"&gt;remboursement intégral immédiat&lt;/span&gt; si Express ne correspond pas. Après le Jour 4 : pas de remboursement. Si le système livré ne te convient pas : on ajuste jusqu'à satisfaction.</p>
-  </div>
-</section>
+  <section>
+    <p class="section-tag">La solution</p>
+    <h2>C'est exactement là <em>que j'interviens.</em></h2>
+    <p>Je suis bras droit spécialisée en systèmes Notion. Mon job : diagnostiquer ce qui coince dans ton organisation, construire le système sur mesure qui te manque, et te former pour que tu sois 100% autonome.</p>
+    <p><strong style="color: var(--white);">En 7 jours, tu as :</strong></p>
+    <ul class="check-list">
+      <li>✅ Un diagnostic clair de ton problème n°1</li>
+      <li>✅ Un système Notion opérationnel</li>
+      <li>✅ Un système Notion opérationnel construit avec TES données</li>
+      <li>✅ La formation pour t'en servir sans moi</li>
+    </ul>
+    <p>Pas un template générique. Un système sur mesure qui tourne dès la livraison.</p>
+  </section>
 
-<section>
-  <p class="section-tag">Pratique</p>
-  <h2>❓ Questions <em>pratiques</em></h2>
-  <div class="faq-item">
-    <h3>Comment je réserve ma place ?</h3>
-    <p>Tu cliques sur "Réserver mon appel diagnostic". On se parle 30 min. Si c'est OK, tu payes les 290€ TTC et on cale les dates. Si ça ne match pas, aucune obligation.</p>
-  </div>
-  <div class="faq-item">
-    <h3>Comment ça se passe pour le paiement ?</h3>
-    <p>Paiement en une fois par virement ou carte bancaire après l'appel diagnostic. Pas de paiement avant l'appel.</p>
-  </div>
-  <div class="faq-item">
-    <h3>Je ne connais pas du tout Notion, c'est un problème ?</h3>
-    <p>Non. La formation est là pour ça. Tu sauras ajouter des infos, retrouver tes données, et maintenir ton système au quotidien.</p>
-  </div>
-  <div class="faq-item">
-    <h3>Et après les 7 jours, si j'ai une question ?</h3>
-    <p>1 semaine de support par email après livraison (réponse sous 48h). N'inclut pas : support continu, modifications du système, formation supplémentaire.</p>
-  </div>
-  <div class="faq-item">
-    <h3>Qu'est-ce que l'espace client Notion ?</h3>
-    <p>Ta page Notion privée où tu retrouves tout : questionnaire, audit, roadmap, solution, enregistrements des calls. Accès dès ton paiement et pour toujours.</p>
-  </div>
-</section>
+  <section>
+    <p class="section-tag">Le livrable</p>
+    <h2>Ce que tu as à la fin <em>des 7 jours</em></h2>
+    <ul class="check-list">
+      <li>✅ <strong style="color: var(--white);">Un diagnostic clair</strong> — Une page d'audit complète qui décortique ton urgence (où tu perds du temps, pourquoi c'est bordélique, ce qui manque).</li>
+      <li>✅ <strong style="color: var(--white);">Un plan d'action concret</strong> — Une roadmap avec les 2-3 actions prioritaires. Dans quel ordre, pourquoi, et ce que ça va changer.</li>
+      <li>✅ <strong style="color: var(--white);">Un système Notion opérationnel</strong> — Construit sur mesure avec TES données et TON workflow. Tu l'ouvres, tu l'utilises. Prêt dès la livraison.</li>
+      <li>✅ <strong style="color: var(--white);">La formation complète</strong></li>
+    </ul>
+    <div class="highlight-box">
+      <p>Pas juste un outil.</p>
+      <p>Un diagnostic + une solution + la formation pour que ça tourne sans moi.</p>
+    </div>
+    <p style="text-align: center; margin-top: 1.5rem; color: rgba(255,255,255,0.6);">
+      Ton investissement temps total : <strong style="color: var(--white);">2h sur 7 jours</strong> (le reste, c'est moi qui bosse)
+    </p>
+  </section>
 
-<div class="cta-final">
-  <p class="section-tag">Prêt à régler ton urgence n°1 ?</p>
-  <h2>Réserve ton appel<br><em>diagnostic gratuit</em></h2>
-  <p>30 minutes pour identifier ton problème n°1 et voir si Express est la bonne formule pour toi.</p>
-  <a class="btn-primary" href="https://calendar.notion.so/meet/aliciachouquet/30min" target="_blank">Réserver mon appel (30 min)</a>
-  <p class="note">Gratuit · Sans engagement · Même si tu ne prends pas Express</p>
-</div>
+  <section>
+    <p class="section-tag">Avant de démarrer</p>
+    <h2>📞 Appel diagnostic gratuit <em>(30 min)</em></h2>
+    <p>Pendant cet appel :</p>
+    <ul class="check-list">
+      <li>✅ Je t'aide à clarifier ce qui coince vraiment dans ton organisation</li>
+      <li>✅ On commence à trier pour trouver ton problème n°1</li>
+      <li>✅ Je te dis si Express peut régler ça en 7 jours</li>
+      <li>✅ On valide ensemble que c'est la bonne formule pour toi</li>
+    </ul>
+    <p style="color: rgba(255,255,255,0.5); font-size: 0.9rem;">Gratuit · Sans engagement · Même si tu ne prends pas Express</p>
+  </section>
 
-<footer>
-  <span>© 2026 Assist by Alicia – Tous droits réservés</span>
-  <div class="footer-links">
-    <a href="Mention légale - CGV.html">Mentions légales / CGV</a>
-    <a href="Politique de confidentialité.html">Politique de confidentialité</a>
+  <section>
+    <p class="section-tag">Le déroulé</p>
+    <h2>⏱️ Comment ça marche : <em>7 jours</em></h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-icon">📋</div>
+        <div class="timeline-content">
+          <h3>Jours 1-2 — Questionnaire</h3>
+          <p>Tu remplis un questionnaire Notion ciblé (20-30 min de ton côté). J'analyse tes réponses et identifie les premières pistes.</p>
+          <p class="timeline-note">Tu planifies ton créneau pour le call d'audit du Jour 3.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-icon">🎤</div>
+        <div class="timeline-content">
+          <h3>Jour 3 matin — Audit</h3>
+          <p>On reprend ton questionnaire ensemble pour définir TON problème n°1. On explore en profondeur ton organisation et on valide ce qu'on va mettre en place.</p>
+          <p class="timeline-note">À la fin, tu sais exactement ce qu'on va régler.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-icon">📊</div>
+        <div class="timeline-content">
+          <h3>Jour 3 après-midi — Ta solution</h3>
+          <p>Dans ton espace client Notion : la page d'audit complète avec le diagnostic détaillé et la roadmap avec le plan d'action 7 jours.</p>
+          <p class="timeline-note">Tu consultes tout ça pendant que je travaille.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-icon">🛠️</div>
+        <div class="timeline-content">
+          <h3>Jours 4 à 6 — Construction</h3>
+          <p>Je produis ton système Notion sur mesure. De ton côté : tu n'as rien à faire. Si j'ai besoin d'une info, je t'envoie un message (5-10 min de ta part max).</p>
+          <p class="timeline-note">Le Jour 6, ta solution est prête dans ton espace.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-icon">✅</div>
+        <div class="timeline-content">
+          <h3>Jour 7 — Formation</h3>
+          <p>On se retrouve en visio. Je te montre en live comment utiliser ta solution, on passe en revue tous les scénarios, tu poses toutes tes questions.</p>
+          <p class="timeline-note">À la fin, ton urgence est réglée et tu sais t'en servir sans moi.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-icon">💬</div>
+        <div class="timeline-content">
+          <h3>J+7 — Support</h3>
+          <p>Je reste dispo 7 jours supplémentaires. Tu peux me contacter par message (réponse sous 24h en semaine). Pas de tunnel noir.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="section-tag">Pour qui</p>
+    <h2>Express est fait <em>pour toi si :</em></h2>
+    <ul class="check-list">
+      <li>✅ Tu as un problème récurrent dans ton organisation (infos dispersées, process dans ta tête, suivi client bordélique…)</li>
+      <li>✅ Tu veux un résultat en 7 jours, pas dans 3 mois</li>
+      <li>✅ Tu préfères un système sur-mesure qu'un template à adapter toi-même</li>
+    </ul>
+    <p style="color: rgba(255,255,255,0.5); font-size: 0.9rem; margin-top: 1rem;">
+      L'appel diagnostic est sans engagement. Si Express n'est pas la bonne formule pour toi, je te le dis franchement.
+    </p>
+  </section>
+
+  <section>
+    <p class="section-tag">Transparence</p>
+    <h2>❌ Ce qui <span>n'est PAS</span> inclus</h2>
+    <ul class="cross-list">
+      <li>❌ <strong style="color: var(--white);">Automatisations avancées</strong> (n8n, Make, Zapier…)</li>
+      <li>❌ <strong style="color: var(--white);">Intégrations tierces complexes</strong> (CRM, ERP, outils externes)</li>
+      <li>❌ <strong style="color: var(--white);">Formation Notion complète</strong> — je t'apprends à utiliser TON système</li>
+      <li>❌ <strong style="color: var(--white);">Maintenance ou support continu</strong> — après les 7j + 1 semaine, tu es autonome</li>
+      <li>❌ <strong style="color: var(--white);">Refonte complète</strong> — Express règle UNE urgence, pas 10 problèmes</li>
+    </ul>
+    <div class="aside-block">
+      <p>⚡ Express fonctionne exclusivement dans Notion.</p>
+      <p><strong style="color: var(--white);">Ce qui EST inclus :</strong> Un système Notion sur mesure, opérationnel, avec tes données, et la formation pour que tu sois autonome.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="section-tag">Tes questions</p>
+    <h2>🤔 Les questions que tu te poses <em>(et mes réponses honnêtes)</em></h2>
+
+    <div class="faq-item">
+      <h3>"Pourquoi je paierais 290€ alors que je peux le faire moi-même ?"</h3>
+      <p>Tu peux, oui. Mais soyons honnêtes : tu vas cramer 10 à 15h à chercher, tester, te planter, recommencer… pour un résultat moyen.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>"Comment je sais que ça va vraiment fonctionner POUR MOI ?"</h3>
+      <p>C'est exactement pour ça qu'il y a l'appel diagnostic gratuit avant. On ne lance pas Express si je sens que ce n'est pas la bonne formule. Si je dis oui, c'est que je suis certaine de pouvoir régler ton urgence en 7 jours.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>"290€, qu'est-ce qui justifie ce prix ?"</h3>
+      <p>Mon expertise de bras droit + 7 jours de disponibilité + un système sur mesure + ta formation complète. 290€ pour récupérer 5-10h par mois pendant des mois. Ça se rentabilise en 1 mois.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>"Pourquoi toi et pas un template à 50€ ?"</h3>
+      <p>Un template = 47€ + 3-5h de ton temps pour l'adapter. Express = 290€ TTC + 2h de ton temps, et c'est réglé. Le template est générique, Express est construit sur-mesure pour TON contexte.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>"Et si ce que tu me proposes ne me convient pas ?"</h3>
+      <p>Après l'appel d'audit (Jour 3) : <span class="refund-highlight">remboursement intégral immédiat</span> si Express ne correspond pas. Après le Jour 4 : pas de remboursement. Si le système livré ne te convient pas : on ajuste jusqu'à satisfaction.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="section-tag">Pratique</p>
+    <h2>❓ Questions <em>pratiques</em></h2>
+
+    <div class="faq-item">
+      <h3>Comment je réserve ma place ?</h3>
+      <p>Tu cliques sur "Réserver mon appel diagnostic". On se parle 30 min. Si c'est OK, tu payes les 290€ TTC et on cale les dates. Si ça ne match pas, aucune obligation.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Comment ça se passe pour le paiement ?</h3>
+      <p>Paiement en une fois par virement ou carte bancaire après l'appel diagnostic. Pas de paiement avant l'appel.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Je ne connais pas du tout Notion, c'est un problème ?</h3>
+      <p>Non. La formation est là pour ça. Tu sauras ajouter des infos, retrouver tes données, et maintenir ton système au quotidien.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Et après les 7 jours, si j'ai une question ?</h3>
+      <p>1 semaine de support par email après livraison (réponse sous 48h). N'inclut pas : support continu, modifications du système, formation supplémentaire.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Qu'est-ce que l'espace client Notion ?</h3>
+      <p>Ta page Notion privée où tu retrouves tout : questionnaire, audit, roadmap, solution, enregistrements des calls. Accès dès ton paiement et pour toujours.</p>
+    </div>
+  </section>
+
+  <div class="cta-final">
+    <p class="section-tag">Prêt à régler ton urgence n°1 ?</p>
+    <h2>Réserve ton appel <br /><em>diagnostic gratuit</em></h2>
+    <p>30 minutes pour identifier ton problème n°1 et voir si Express est la bonne formule pour toi.</p>
+    <a class="btn-primary" href="https://calendar.notion.so/meet/aliciachouquet/30min" target="_blank" rel="noopener noreferrer">Réserver mon appel (30 min)</a>
+    <p class="note">Gratuit · Sans engagement · Même si tu ne prends pas Express</p>
   </div>
-</footer>
 
+  <footer>
+    <span>© 2026 Assist by Alicia – Tous droits réservés</span>
+    <div class="footer-links">
+      <a href="Mention légale - CGV.html">Mentions légales / CGV</a>
+      <a href="Politique de confidentialité.html">Politique de confidentialité</a>
+    </div>
+  </footer>
 </body>
 </html>
