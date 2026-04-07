@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Politique de confidentialité – Assist by Alicia</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=League+Spartan:wght@700;900&family=Satisfy&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=League+Spartan:wght@700;900&family=Satisfy&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -17,16 +17,10 @@
     }
 
     body {
-      background:
-        radial-gradient(circle at top left, rgba(255,71,87,0.08), transparent 30%),
-        radial-gradient(circle at top right, rgba(202,255,0,0.06), transparent 25%),
-        repeating-linear-gradient(0deg, rgba(202,255,0,0.03) 0px, rgba(202,255,0,0.03) 1px, transparent 1px, transparent 60px),
-        repeating-linear-gradient(90deg, rgba(202,255,0,0.03) 0px, rgba(202,255,0,0.03) 1px, transparent 1px, transparent 60px),
-        var(--black);
+      background: var(--black);
       color: var(--white);
       font-family: 'Montserrat', sans-serif;
       line-height: 1.8;
-      min-height: 100vh;
     }
 
     nav {
@@ -59,10 +53,9 @@
       list-style: none;
       display: flex;
       gap: 2.5rem;
-      align-items: center;
     }
 
-    nav ul a {
+    nav ul li a {
       color: var(--white);
       text-decoration: none;
       font-size: 0.85rem;
@@ -72,104 +65,85 @@
       transition: color 0.2s;
     }
 
-    nav ul a:hover,
-    nav ul a.active {
+    nav ul li a:hover {
       color: var(--yellow);
     }
 
-    main {
-      max-width: 980px;
+    .page-content {
+      max-width: 800px;
       margin: 0 auto;
-      padding: 9rem 2rem 6rem;
+      padding: 8rem 2rem 6rem;
     }
 
-    .hero {
-      text-align: center;
-      margin-bottom: 4rem;
+    .page-title {
+      font-family: 'League Spartan', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2rem, 5vw, 3rem);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
     }
 
-    .section-tag {
+    .page-subtitle {
       font-family: 'Satisfy', cursive;
       color: var(--coral);
-      font-size: 1.5rem;
+      font-size: 1.1rem;
+      margin-bottom: 3rem;
+    }
+
+    .legal-section {
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(202,255,0,0.08);
+    }
+
+    .legal-section:last-of-type {
+      border-bottom: none;
+    }
+
+    .legal-section h2 {
+      font-family: 'League Spartan', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      color: var(--yellow);
+      letter-spacing: 0.06em;
+      margin-bottom: 1.2rem;
+    }
+
+    .legal-section p {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.95rem;
       margin-bottom: 0.8rem;
     }
 
-    h1, h2 {
-      font-family: 'League Spartan', sans-serif;
-      font-weight: 900;
-      text-transform: uppercase;
-      line-height: 1.08;
-    }
-
-    h1 {
-      font-size: clamp(2.2rem, 5vw, 4.2rem);
-      margin-bottom: 1rem;
-    }
-
-    h1 em,
-    h2 em {
-      color: var(--yellow);
-      font-style: normal;
-    }
-
-    .hero p {
-      max-width: 700px;
-      margin: 0 auto;
-      color: rgba(255,255,255,0.76);
-    }
-
-    .legal-card {
-      background: rgba(30,42,74,0.45);
-      border: 1px solid rgba(202,255,0,0.12);
-      border-radius: 10px;
-      padding: 2.5rem;
-      box-shadow: 0 0 24px rgba(30,42,74,0.18);
-    }
-
-    .legal-card section + section {
-      margin-top: 2.5rem;
-      padding-top: 2.5rem;
-      border-top: 1px solid rgba(202,255,0,0.08);
-    }
-
-    h2 {
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
-      color: var(--white);
-    }
-
-    p {
-      color: rgba(255,255,255,0.78);
-      margin-bottom: 1rem;
-    }
-
-    ul {
-      margin: 0.5rem 0 1rem 1.2rem;
-      color: rgba(255,255,255,0.78);
-    }
-
-    li {
-      margin-bottom: 0.6rem;
-    }
-
-    a {
-      color: var(--coral);
-    }
-
-    .contact-box {
-      margin-top: 2rem;
-      padding: 1.5rem;
-      background: rgba(255,71,87,0.08);
-      border-left: 3px solid var(--coral);
-      border-radius: 0 6px 6px 0;
-    }
-
-    .contact-box p:last-child {
+    .legal-section p:last-child {
       margin-bottom: 0;
     }
 
+    .legal-section a {
+      color: var(--coral);
+      text-decoration: none;
+    }
+
+    .legal-section a:hover {
+      text-decoration: underline;
+    }
+
+    .info-block {
+      background: rgba(30,42,74,0.4);
+      border-left: 3px solid var(--coral);
+      border-radius: 0 8px 8px 0;
+      padding: 1.5rem 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .info-block p {
+      margin-bottom: 0.4rem;
+      font-size: 0.92rem;
+    }
+
     footer {
+      background: rgba(18,18,18,0.98);
       border-top: 1px solid rgba(202,255,0,0.08);
       padding: 2rem 4rem;
       display: flex;
@@ -205,14 +179,6 @@
         display: none;
       }
 
-      main {
-        padding-top: 8rem;
-      }
-
-      .legal-card {
-        padding: 1.5rem;
-      }
-
       footer {
         flex-direction: column;
         text-align: center;
@@ -234,104 +200,93 @@
     </ul>
   </nav>
 
-  <main>
-    <section class="hero">
-      <p class="section-tag">Légal</p>
-      <h1>Politique de <em>confidentialité</em></h1>
+  <div class="page-content">
+    <h1 class="page-title">Politique de confidentialité</h1>
+    <p class="page-subtitle">Protection des données personnelles</p>
+
+    <div class="legal-section">
       <p>
-        Cette page a pour objectif d’encadrer la conformité des traitements de données à caractère personnel et le respect des droits des personnes concernées.
+        Cette politique a pour objectif d'encadrer la conformité des traitements de données à caractère personnelles et le respect des droits des personnes concernées pour la mise en place du site web <a href="http://assistbyalicia.fr" target="_blank" rel="noopener noreferrer">assistbyalicia.fr</a> par EI Assist By Alicia.
       </p>
-    </section>
-
-    <div class="legal-card">
-      <section>
-        <p>
-          Cette politique a pour objectif d'encadrer la conformité des traitements de données à caractère personnelles et le respect des droits des personnes concernées pour la mise en place du site web <a href="http://assistbyalicia.fr" target="_blank" rel="noopener noreferrer">assistbyalicia.fr</a> par EI Assist By Alicia.
-        </p>
-        <p>
-          Les textes de références de cette politique sont le RGPD (Règlement Général pour la Protection des Données) et la Loi dite « Informatique et Libertés ». Les notions utilisées dans cette politique sont définies dans le RGPD, notamment les notions de traitement, de données personnelles ou données à caractère personnelles, personnes concernées et responsable de traitement.
-        </p>
-        <p>
-          <a href="http://assistbyalicia.fr" target="_blank" rel="noopener noreferrer">assistbyalicia.fr</a> est attaché au respect et à la protection des données personnelles. Nous nous engageons à définir et appliquer les mesures adéquates afin de garantir la sécurité du traitement de vos données personnelles.
-        </p>
-      </section>
-
-      <section>
-        <h2>Finalité de la collecte des données</h2>
-        <p>
-          Les données personnelles et professionnelles, ainsi que les informations liées aux produits et services du Client relevant de la confidentialité (non-concurrence, droits d'auteur, autres), qui seront récoltées auront pour but de fournir les services prévus et commandés par le Client, tels que créer des systèmes Notion sur-mesure, mettre en place des automatisations, structurer et centraliser l'organisation opérationnelle du Client, etc. (liste non exhaustive).
-        </p>
-      </section>
-
-      <section>
-        <h2>Types de données collectées</h2>
-        <p>
-          Noms, prénoms, adresses mails, adresse, numéro de téléphone, identifiants et mots de passe.
-        </p>
-      </section>
-
-      <section>
-        <h2>Base légale de la collecte</h2>
-        <p>
-          Les données collectées sont nécessaires à la réalisation des prestations de service définies par le Client et le Prestataire. Ce contrat est considéré conclu et consenti librement à la signature du devis.
-        </p>
-      </section>
-
-      <section>
-        <h2>Durée de conservation des données</h2>
-        <p>
-          Les données confiées par le Client seront conservées pendant la durée de la relation commerciale, puis 3 ans après le dernier contact, conformément aux obligations légales.
-        </p>
-      </section>
-
-      <section>
-        <h2>Destinataires des données</h2>
-        <p>
-          Les données seront partagées dans le cadre strict de l'équipe du Prestataire et en fonction des besoins spécifiques à la collaboration.
-        </p>
-      </section>
-
-      <section>
-        <h2>Droits des utilisateurs</h2>
-        <p>
-          Le Client a tout droit sur ses données. Il peut, sur simple demande par mail, voir, rectifier, modifier, ou demander la suppression de ses données.
-        </p>
-      </section>
-
-      <section>
-        <h2>Consentement</h2>
-        <p>
-          Le consentement du traitement des données est considéré comme accordé à la signature du devis.
-        </p>
-      </section>
-
-      <section>
-        <h2>Sécurité des données</h2>
-        <p>
-          Les données sont stockées sur des logiciels adaptés, sécurisés par des identifiants et mots de passe. Le Prestataire s'engage à ne pas divulguer celles-ci, autrement que selon les besoins spécifiques et dans la stricte limite de son équipe.
-        </p>
-        <p>
-          Toutefois, les attaques contre ces logiciels adaptés découlant en une fuite des données du Client ne pourront être de la responsabilité du Prestataire qui n'a pas la main sur lesdits logiciels.
-        </p>
-      </section>
-
-      <section>
-        <h2>Contact</h2>
-        <p>
-          Pour toutes questions ou demandes, le Client peut contacter directement l'entreprise par courrier, téléphone ou mail.
-        </p>
-
-        <div class="contact-box">
-          <p><strong>Email :</strong> <a href="mailto:contact@assistbyalicia.fr">contact@assistbyalicia.fr</a></p>
-          <p><strong>Téléphone :</strong> 07 49 55 99 62</p>
-          <p><strong>Adresse :</strong> 58 rue Benjamin Normand, 76300 Sotteville-lès-Rouen</p>
-        </div>
-      </section>
+      <p>
+        Les textes de références de cette politique sont le RGPD (Règlement Général pour la Protection des Données) et la Loi dite « Informatique et Libertés ». Les notions utilisées dans cette politique sont définies dans le RGPD, notamment les notions de traitement, de données personnelles ou données à caractère personnelles, personnes concernées et responsable de traitement.
+      </p>
+      <p>
+        <a href="http://assistbyalicia.fr" target="_blank" rel="noopener noreferrer">assistbyalicia.fr</a> est attaché au respect et à la protection des données personnelles. Nous nous engageons à définir et appliquer les mesures adéquates afin de garantir la sécurité du traitement de vos données personnelles.
+      </p>
     </div>
-  </main>
+
+    <div class="legal-section">
+      <h2>Finalité de la collecte des données</h2>
+      <p>
+        Les données personnelles et professionnelles, ainsi que les informations liées aux produits et services du Client relevant de la confidentialité (non concurrence, droits d'auteur, autres), qui seront récoltées auront pour but de fournir les services prévus et commandés par le Client, tels que créer des systèmes Notion sur-mesure, mettre en place des automatisations, structurer et centraliser l'organisation opérationnelle du Client, etc. (liste non exhaustive).
+      </p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Types de données collectées</h2>
+      <p>
+        Noms, prénoms, adresses mails, adresse, numéro de téléphone, identifiants et mots de passe.
+      </p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Base légale de la collecte</h2>
+      <p>
+        Les données collectées sont nécessaires à la réalisation des prestations de service définies par le Client et le Prestataire. Ce contrat est considéré conclu et consenti librement à la signature du devis.
+      </p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Durée de conservation des données</h2>
+      <p>
+        Les données confiées par le Client seront conservées pendant la durée de la relation commerciale, puis 3 ans après le dernier contact, conformément aux obligations légales.
+      </p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Destinataires des données</h2>
+      <p>
+        Les données seront partagées dans le cadre strict de l'équipe du Prestataire et en fonction des besoins spécifiques à la collaboration.
+      </p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Droits des utilisateurs</h2>
+      <p>
+        Le Client a tout droit sur ses données. Il peut, sur simple demande par mail, voir, rectifier, modifier, ou demander la suppression de ses données.
+      </p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Consentement</h2>
+      <p>
+        Le consentement du traitement des données est considéré comme accordé à la signature du devis.
+      </p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Sécurité des données</h2>
+      <p>
+        Les données sont stockées sur des logiciels adaptés, sécurisés par des identifiants et mots de passe. Le Prestataire s'engage à ne pas divulguer celles-ci, autrement que selon les besoins spécifiques et dans la stricte limite de son équipe.
+      </p>
+      <p>
+        Toutefois, les attaques contre ces logiciels adaptés découlant en une fuite des données du Client ne pourront être de la responsabilité du Prestataire qui n'a pas la main sur lesdits logiciels.
+      </p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Contact</h2>
+      <div class="info-block">
+        <p><strong style="color:var(--white)">Email :</strong> <a href="mailto:contact@assistbyalicia.fr">contact@assistbyalicia.fr</a></p>
+        <p><strong style="color:var(--white)">Téléphone :</strong> 07 49 55 99 62</p>
+        <p><strong style="color:var(--white)">Adresse :</strong> 58 rue Benjamin Normand, 76300 Sotteville-lès-Rouen</p>
+      </div>
+    </div>
+  </div>
 
   <footer>
-    <div>© 2026 Assist by Alicia – Tous droits réservés</div>
+    <span>© 2026 Assist by Alicia – Tous droits réservés</span>
     <div class="footer-links">
       <a href="Mention légale - CGV.html">Mentions légales / CGV</a>
       <a href="Politique de confidentialité.html">Politique de confidentialité</a>
