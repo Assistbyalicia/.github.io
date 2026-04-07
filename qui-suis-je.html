@@ -5,65 +5,113 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Qui suis-je ? – Assist by Alicia</title>
   //fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=League+Spartan:wght@700;900&family=Satisfy&display=swap" rel="stylesheet"/>
-  "/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --blue: #1E2A4A; --coral: #FF4757; --yellow: #CAFF00; --black: #121212; --white: #FFFFFF; }
+    body { background: var(--black); color: var(--white); font-family: 'Montserrat', sans-serif; line-height: 1.7; }
+    nav { position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(18,18,18,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(202,255,0,0.12); display: flex; align-items: center; justify-content: space-between; padding: 1rem 4rem; }
+    .logo { text-decoration: none; display: flex; align-items: center; }
+    .logo img { height: 45px; width: auto; display: block; }
+    nav ul { list-style: none; display: flex; gap: 2.5rem; }
+    nav ul li a { color: var(--white); text-decoration: none; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    nav ul li a:hover, nav ul li a.active { color: var(--yellow); }
+    .btn-primary { background: var(--coral); color: var(--white); padding: 0.9rem 2rem; border-radius: 4px; font-family: 'League Spartan', sans-serif; font-weight: 700; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.06em; text-decoration: none; display: inline-block; box-shadow: 0 0 20px rgba(255,71,87,0.35); transition: background 0.2s; }
+    .btn-primary:hover { background: #e03040; }
+    .section-tag { font-family: 'Satisfy', cursive; color: var(--coral); font-size: 1rem; margin-bottom: 0.8rem; }
+    h2 { font-family: 'League Spartan', sans-serif; font-weight: 900; font-size: clamp(1.6rem, 3.5vw, 2.5rem); text-transform: uppercase; line-height: 1.1; margin-bottom: 1.4rem; }
+    h2 em { color: var(--yellow); font-style: normal; }
+    p { color: rgba(255,255,255,0.78); margin-bottom: 1rem; }
+    section { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
+    .hero { min-height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 8rem 2rem 4rem; background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(30,42,74,0.8) 0%, transparent 70%), repeating-linear-gradient(0deg, rgba(202,255,0,0.03) 0px, rgba(202,255,0,0.03) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(90deg, rgba(202,255,0,0.03) 0px, rgba(202,255,0,0.03) 1px, transparent 1px, transparent 60px), var(--black); max-width: 100%; }
+    .hero-tag { font-family: 'Satisfy', cursive; color: var(--coral); font-size: 1.3rem; margin-bottom: 1rem; }
+    .hero h1 { font-family: 'League Spartan', sans-serif; font-weight: 900; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.05; text-transform: uppercase; max-width: 700px; }
+    .hero h1 span { color: var(--coral); }
+    .hero h1 em { color: var(--yellow); font-style: normal; }
+    .hero-sub { margin-top: 1.5rem; font-size: 1rem; max-width: 580px; color: rgba(255,255,255,0.75); }
+    .parcours-grid { display: grid; grid-template-columns: 220px 1fr; gap: 4rem; align-items: start; }
+    .portrait { width: 200px; height: 200px; border-radius: 50%; background: var(--blue); border: 3px solid var(--coral); box-shadow: 0 0 40px rgba(255,71,87,0.2); display: flex; align-items: center; justify-content: center; font-size: 4rem; flex-shrink: 0; overflow: hidden; }
+    .portrait img { width: 100%; height: 100%; object-fit: cover; }
+    .aside-block { background: rgba(30,42,74,0.4); border-left: 3px solid var(--coral); border-radius: 0 8px 8px 0; padding: 2rem 2.5rem; margin: 2rem 0; }
+    .aside-block p { margin-bottom: 0.6rem; }
+    .aside-block p:last-child { margin-bottom: 0; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
+    .card { background: rgba(30,42,74,0.4); border: 1px solid rgba(202,255,0,0.1); border-radius: 8px; padding: 2rem; transition: border-color 0.2s; }
+    .card:hover { border-color: rgba(202,255,0,0.35); }
+    .card h3 { font-family: 'League Spartan', sans-serif; font-size: 1rem; font-weight: 700; text-transform: uppercase; color: var(--yellow); margin-bottom: 0.6rem; letter-spacing: 0.05em; }
+    .card-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+    .card p { font-size: 0.9rem; }
+    .philo-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 2rem; }
+    .philo-card { background: rgba(202,255,0,0.04); border: 1px solid rgba(202,255,0,0.15); border-radius: 8px; padding: 1.8rem; }
+    .philo-card h3 { font-family: 'League Spartan', sans-serif; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; color: var(--yellow); margin-bottom: 0.5rem; }
+    .philo-card p { font-size: 0.88rem; margin: 0; }
+    .cta-final { text-align: center; padding: 7rem 2rem; }
+    .cta-final h2 { margin-bottom: 1rem; }
+    .cta-final p { max-width: 520px; margin: 0 auto 2.5rem; color: rgba(255,255,255,0.7); }
+    .note { margin-top: 1.2rem; font-size: 0.82rem; color: rgba(255,255,255,0.4); }
+    footer { background: rgba(18,18,18,0.98); border-top: 1px solid rgba(202,255,0,0.08); padding: 2rem 4rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: rgba(255,255,255,0.35); flex-wrap: wrap; gap: 1rem; }
+    footer a { color: rgba(255,255,255,0.35); text-decoration: none; }
+    footer a:hover { color: var(--white); }
+    .footer-links { display: flex; gap: 2rem; }
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      nav ul { display: none; }
+      .parcours-grid { grid-template-columns: 1fr; text-align: center; }
+      .portrait { margin: 0 auto; }
+      .grid-3, .philo-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
 </head>
 <body>
 
 <nav>
   <a class="logo" href="index.html">
-  <img src="logo.png" alt="Assist by Alicia" style="height: 40px; width: auto;" />
-</a>
+    <img src="Logo.png" alt="Assist by Alicia" />
+  </a>
   <ul>
-    <a href="offres.html">Mes offres</a></li>
-    <a href="offre-express.html">Express</a></li>
-    <a href="qui-suis-je.html">Qui suis-je ?</a></li>
-    <a href="contact.html">Contact</a></li>
+    ><a href="offres.html">Mes offres</a></li>
+    ><a href="offre-express.html">Express</a></li>
+    ><a href="qui-suis-je.html" class="active">Qui suis-je ?</a></li>
+    ><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
-<section class="hero" style="min-height:60vh;">
+<div class="hero">
   <p class="hero-tag">Qui suis-je ?</p>
   <h1>Alicia,<br><span>OBM</span> spécialisée<br>en systèmes <em>Notion.</em></h1>
   <p class="hero-sub">J'aide les entrepreneurs à transformer leur organisation chaotique en un système clair, centralisé et automatisé.</p>
-</section>
+</div>
 
-<!-- PORTRAIT + PARCOURS -->
-<section style="max-width:1100px; margin:0 auto; padding:5rem 2rem;">
-  <div style="display:grid; grid-template-columns: auto 1fr; gap:4rem; align-items:start;">
-    <div class="portrait" style="width:200px; height:200px; font-size:4rem;">👩🏽‍💻</div>
+<section>
+  <div class="parcours-grid">
+    <div class="portrait">
+      <img src="Photo de profil.png" alt="Alicia" />
+    </div>
     <div>
       <p class="section-tag">Mon parcours</p>
       <h2>D'assistante digitale<br>à <em>spécialiste systèmes.</em></h2>
       <p>J'ai démarré comme assistante digitale. Emails, montage vidéo, tunnels de vente, Pinterest... J'étais la personne polyvalente qui gérait tout. Les clients étaient contents. Le travail rentrait.</p>
-      <p>Mais j'ai vu un truc revenir en boucle. Des entrepreneurs qui délèguent. Et pour qui ça tourne mal. Pas par manque de compétences. Par manque de système. Process dans leur tête. Infos éparpillées. Aucune doc.</p>
-      <p>Résultat ? Des allers-retours sans fin. Des malentendus. L'impression de perdre plus de temps qu'autre chose. Et au final, ils reprennent tout en main.</p>
+      <p>Mais j'ai vu un truc revenir en boucle. Des entrepreneurs qui délèguent. Et pour qui ça tourne mal. Pas par manque de compétences. Par manque de système.</p>
+      <p>Process dans leur tête. Infos éparpillées. Aucune doc. Résultat ? Des allers-retours sans fin. Des malentendus. L'impression de perdre plus de temps qu'autre chose. Et au final, ils reprennent tout en main.</p>
       <p>J'ai compris que le problème n'était pas les gens. C'était l'absence d'organisation. Alors j'ai arrêté d'être polyvalente pour devenir spécialiste. J'ai appris Notion, les automatisations, l'IA. Et je me suis concentrée sur un truc précis : structurer pour rendre la délégation fluide.</p>
     </div>
   </div>
 </section>
 
-<!-- CE QUE JE FAIS -->
-<section style="max-width:1100px; margin:0 auto; padding:0 2rem 5rem;">
-  <div class="probleme">
+<section>
+  <div class="aside-block">
     <p class="section-tag">Ce que je fais</p>
-    <h2>Ton opérationnel,<br><em>transformé en système.</em></h2>
+    <h2 style="font-family:'League Spartan',sans-serif; font-weight:900; font-size:clamp(1.6rem,3.5vw,2.5rem); text-transform:uppercase; line-height:1.1; margin-bottom:1.4rem;">Ton opérationnel,<br><em style="color:var(--yellow); font-style:normal;">transformé en système.</em></h2>
     <p>Je reprends ton opérationnel et je le transforme en système Notion. Un système qui centralise tout : clients, projets, tâches, compta, documents, process. Avec des automatisations qui bossent à ta place. Et de l'IA quand ça a du sens.</p>
-    <div class="highlight-block">
-      Tu arrêtes de gérer l'organisation.<br>
-      Tu reprends le contrôle de ton business.<br><br>
-      Et si tu veux déléguer un jour, tu pourras.<br>Parce que tout sera clair et centralisé.
-    </div>
+    <p style="font-family:'League Spartan',sans-serif; font-weight:700; color:var(--yellow); text-transform:uppercase; margin-top:1rem;">Tu arrêtes de gérer l'organisation. Tu reprends le contrôle de ton business.</p>
   </div>
 </section>
 
-<!-- MA DIFFÉRENCE -->
-<section style="max-width:1100px; margin:0 auto; padding:0 2rem 5rem;">
+<section>
   <p class="section-tag">Ma différence</p>
   <h2>Pas designeuse Notion.<br><em>OBM.</em></h2>
   <p>Une designeuse te crée un bel outil. Moi, je reprends ton opérationnel pour le structurer. Je pars de ta réalité. De tes vrais besoins. De ton bordel actuel. Et je construis ton système. Pas celui d'un template tout fait.</p>
-
-  <div class="grid-3" style="margin-top:2.5rem;">
+  <div class="grid-3">
     <div class="card">
       <div class="card-icon">⬡</div>
       <h3>Notion</h3>
@@ -82,32 +130,30 @@
   </div>
 </section>
 
-<!-- PHILOSOPHIE -->
-<section style="max-width:1100px; margin:0 auto; padding:0 2rem 5rem;">
+<section>
   <p class="section-tag">Ma philosophie</p>
   <h2>Trois principes.<br><em>Non négociables.</em></h2>
-  <div class="grid-3">
-    <div class="card">
+  <div class="philo-grid">
+    <div class="philo-card">
       <h3>Zéro template</h3>
-      <p>Chaque système est créé sur-mesure. Pas de copier-coller d'une solution toute faite.</p>
+      <p>Chaque système est créé       sur-mesure. Pas de copier-coller d'une solution toute faite.</p>
     </div>
-    <div class="card">
+    <div class="philo-card">
       <h3>Tu repars autonome</h3>
       <p>Je te forme pour que tu n'aies pas besoin de moi après. Le but, c'est ton indépendance.</p>
     </div>
-    <div class="card">
+    <div class="philo-card">
       <h3>Taillé pour toi</h3>
       <p>Tu reçois un système prêt à l'emploi. Pas adapté par toi. Construit pour toi.</p>
     </div>
   </div>
-  <p style="margin-top:2rem; color:rgba(255,255,255,0.5); font-size:0.9rem;">Basée à Rouen. Passionnée de tech, d'organisation et de systèmes bien pensés. Convaincue que structurer, c'est libérer.</p>
+  <p style="margin-top:2rem; color:rgba(255,255,255,0.4); font-size:0.88rem;">Basée à Rouen. Passionnée de tech, d'organisation et de systèmes bien pensés. Convaincue que structurer, c'est libérer.</p>
 </section>
 
-<!-- CTA -->
 <div class="cta-final">
   <p class="section-tag">Prêt à mettre fin au chaos ?</p>
-  <h2>Réserve ton appel<br><em>dès maintenant.</em></h2>
-  <p style="max-width:520px; margin:0 auto 2.5rem; color:rgba(255,255,255,0.7);">30 minutes pour faire le point sur ton organisation. Gratuit, sans engagement.</p>
+  <h2 style="font-family:'League Spartan',sans-serif; font-weight:900; font-size:clamp(1.8rem,4vw,3rem); text-transform:uppercase; line-height:1.1; margin-bottom:1rem;">Réserve ton appel<br><span style="color:var(--yellow)">dès maintenant.</span></h2>
+  <p>30 minutes pour faire le point sur ton organisation. Gratuit, sans engagement.</p>
   <a class="btn-primary" href="https://calendar.notion.so/meet/aliciachouquet/30min" target="_blank">Réserver mon appel (30 min)</a>
   <p class="note">Gratuit · Sans engagement · Même si tu ne prends pas Express</p>
 </div>
