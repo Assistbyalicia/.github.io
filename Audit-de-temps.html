@@ -6,20 +6,18 @@
   <title>Audit de temps – Assist by Alicia</title>
   <meta name="description" content="Télécharge gratuitement ton audit de temps et gagne en clarté sur ton organisation." />
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=League+Spartan:wght@700;900&family=Satisfy&display=swap" rel="stylesheet" />
   <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1775464");</style>
 
-  <!-- Styles globaux (repris de index.html) -->
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --blue:   #1E2A4A;
-      --coral:  #FF4757;
+      --blue: #1E2A4A;
+      --coral: #FF4757;
       --yellow: #CAFF00;
-      --black:  #121212;
-      --white:  #FFFFFF;
+      --black: #121212;
+      --white: #FFFFFF;
     }
 
     html {
@@ -33,7 +31,6 @@
       line-height: 1.7;
     }
 
-    /* NAVBAR identique à index */
     nav {
       position: fixed;
       top: 0;
@@ -67,7 +64,9 @@
       align-items: center;
     }
 
-    nav ul li { list-style: none; }
+    nav ul li {
+      list-style: none;
+    }
 
     nav ul a {
       color: var(--white);
@@ -84,7 +83,6 @@
       color: var(--yellow);
     }
 
-    /* SECTION HERO SPÉCIFIQUE AUDIT */
     .hero-audit {
       min-height: 100vh;
       display: grid;
@@ -160,6 +158,7 @@
       font-family: 'League Spartan', sans-serif;
       font-weight: 700;
       font-size: 0.9rem;
+      flex-shrink: 0;
     }
 
     .benefits strong {
@@ -175,13 +174,6 @@
       color: rgba(255,255,255,0.78);
     }
 
-    .hero-note {
-      font-size: 0.82rem;
-      color: rgba(255,255,255,0.52);
-      margin-top: 0.7rem;
-    }
-
-    /* CARD FORMULAIRE AUDIT */
     .card-audit {
       background: rgba(30,42,74,0.75);
       border-radius: 12px;
@@ -236,7 +228,6 @@
       margin-bottom: 1.4rem;
     }
 
-    /* FOOTER identique à index */
     footer {
       background: rgba(18,18,18,0.98);
       border-top: 1px solid rgba(202,255,0,0.08);
@@ -278,9 +269,11 @@
       nav {
         padding: 1rem 1.5rem;
       }
+
       nav ul {
         display: none;
       }
+
       footer {
         flex-direction: column;
         text-align: center;
@@ -288,7 +281,6 @@
     }
   </style>
 
-  <!-- Styles spécifiques MailerLite adaptés au design -->
   <style>
     .ml-form-embedSubmitLoad {
       display: inline-block;
@@ -343,7 +335,7 @@
     }
 
     #mlb2-39707517 .ml-form-embedContent {
-      display: none; /* on garde ton titre/texte custom dans la colonne gauche */
+      display: none;
     }
 
     #mlb2-39707517 .ml-form-formContent,
@@ -460,7 +452,6 @@
 </head>
 
 <body>
-  <!-- NAV -->
   <nav>
     <a class="logo" href="index.html">
       <img src="Logo.png" alt="Assist by Alicia" />
@@ -474,7 +465,6 @@
     </ul>
   </nav>
 
-  <!-- SECTION AUDIT + FORMULAIRE -->
   <section class="hero-audit">
     <div class="hero-left">
       <p class="hero-tag">Audit de temps · Notion</p>
@@ -505,16 +495,11 @@
         <li>
           <span class="icon">3</span>
           <div>
-            <strong>Une base pour optimiser ton système</strong>
-            <p>Parfait pour préparer une refonte de ton organisation.</p>
+            <strong>Accès au Discord + aide</strong>
+            <p>Tu peux poser tes questions et je t’aide si besoin à analyser les résultats de ton audit.</p>
           </div>
         </li>
       </ul>
-      <p class="hero-note">
-        En plus du template, tu obtiens un accès à mon espace Discord pour poser
-        tes questions et je peux t’aider à analyser les résultats de ton audit.
-      </p>
-     
     </div>
 
     <div class="card-audit">
@@ -527,7 +512,6 @@
         </p>
         <div class="card-divider"></div>
 
-        <!-- FORMULAIRE MAILERLITE INTÉGRÉ -->
         <div id="mlb2-39707517" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-39707517">
           <div class="ml-form-align-center">
             <div class="ml-form-embedWrapper embedForm">
@@ -545,6 +529,7 @@
                                placeholder="Email" autocomplete="email">
                       </div>
                     </div>
+
                     <div class="ml-form-fieldRow">
                       <div class="ml-field-group ml-field-name ml-validate-required">
                         <input aria-label="name" aria-required="true" type="text"
@@ -552,6 +537,7 @@
                                placeholder="Nom" autocomplete="given-name">
                       </div>
                     </div>
+
                     <div class="ml-form-fieldRow ml-last-item">
                       <div class="ml-field-group ml-field-last_name ml-validate-required">
                         <input aria-label="last_name" aria-required="true" type="text"
@@ -593,12 +579,10 @@
             </div>
           </div>
         </div>
-        <!-- FIN FORMULAIRE -->
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <span>© 2026 Assist by Alicia – Tous droits réservés</span>
     <div class="footer-links">
@@ -607,7 +591,6 @@
     </div>
   </footer>
 
-  <!-- Scripts MailerLite -->
   <script>
     function ml_webform_success_39707517() {
       var $ = ml_jQuery || jQuery;
