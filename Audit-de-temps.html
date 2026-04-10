@@ -3,11 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ton audit de temps – Assist by Alicia</title>
+  <title>Audit de temps – Assist by Alicia</title>
   <meta
     name="description"
     content="Télécharge gratuitement ton audit de temps et gagne en clarté sur ton organisation."
   />
+
+  <!-- Polices cohérentes avec ton univers -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800&family=Montserrat:wght@400;500;600;700&family=Satisfy&display=swap" rel="stylesheet">
 
   <style type="text/css">
     @import url("https://assets.mlcdn.com/fonts.css?version=1775464");
@@ -15,16 +20,19 @@
 
   <style>
     :root {
-      --bg: #fffaf8;
-      --surface: #ffffff;
-      --surface-soft: #fff2ef;
-      --text: #1f1f1f;
-      --muted: #5f5f5f;
-      --accent: #ff4757;
-      --accent-dark: #e63a4a;
-      --border: #f1d9d4;
-      --shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
-      --radius: 20px;
+      --bg: #121212;
+      --bg-soft: #1b1b1b;
+      --navy: #1E2A4A;
+      --coral: #FF4757;
+      --lime: #CAFF00;
+      --white: #FFFFFF;
+      --text-soft: rgba(255,255,255,0.82);
+      --text-muted: rgba(255,255,255,0.65);
+      --border: rgba(255,255,255,0.12);
+      --shadow: 0 24px 60px rgba(0,0,0,0.35);
+      --radius-xl: 28px;
+      --radius-lg: 18px;
+      --radius-md: 14px;
     }
 
     * {
@@ -37,15 +45,15 @@
 
     body {
       margin: 0;
-      font-family: "Open Sans", Arial, Helvetica, sans-serif;
-      color: var(--text);
       background:
-        radial-gradient(circle at top left, #ffe8e2 0%, transparent 35%),
-        radial-gradient(circle at bottom right, #fff0eb 0%, transparent 30%),
-        var(--bg);
+        radial-gradient(circle at top left, rgba(255,71,87,0.12), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(202,255,0,0.08), transparent 25%),
+        linear-gradient(135deg, #121212 0%, #171b24 45%, #121212 100%);
+      color: var(--white);
+      font-family: "Montserrat", Arial, sans-serif;
     }
 
-    .wrapper {
+    .page {
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -55,149 +63,183 @@
 
     .container {
       width: 100%;
-      max-width: 1120px;
+      max-width: 1180px;
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 40px;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 42px;
       align-items: center;
     }
 
     .content {
-      padding-right: 10px;
+      max-width: 640px;
     }
 
-    .eyebrow {
+    .tag {
       display: inline-block;
-      margin-bottom: 16px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: var(--surface-soft);
-      color: var(--accent);
-      font-size: 13px;
-      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--lime);
+      font-family: "Satisfy", cursive;
+      font-size: 1.4rem;
+      line-height: 1;
     }
 
     h1 {
       margin: 0 0 18px;
-      font-size: clamp(2rem, 4vw, 3.6rem);
-      line-height: 1.08;
-      letter-spacing: -0.02em;
+      font-family: "League Spartan", Arial, sans-serif;
+      font-size: clamp(3rem, 7vw, 5.6rem);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+    }
+
+    .highlight {
+      color: var(--coral);
     }
 
     .subtitle {
-      margin: 0 0 28px;
-      font-size: 1.05rem;
-      line-height: 1.7;
-      color: var(--muted);
+      margin: 0 0 26px;
+      color: var(--text-soft);
+      font-size: 1.08rem;
+      line-height: 1.8;
       max-width: 58ch;
     }
 
     .benefits {
       display: grid;
       gap: 14px;
-      margin: 0 0 28px;
       padding: 0;
+      margin: 0 0 28px;
       list-style: none;
     }
 
     .benefits li {
       display: flex;
-      gap: 12px;
+      gap: 14px;
       align-items: flex-start;
-      padding: 14px 16px;
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.7);
-      border: 1px solid rgba(241, 217, 212, 0.9);
+      padding: 16px 18px;
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(6px);
     }
 
-    .benefits li span {
-      flex-shrink: 0;
-      width: 26px;
-      height: 26px;
+    .benefits .icon {
+      width: 34px;
+      height: 34px;
       border-radius: 999px;
+      flex-shrink: 0;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      background: var(--accent);
-      color: #fff;
+      background: var(--coral);
+      color: var(--white);
+      font-family: "League Spartan", sans-serif;
+      font-weight: 800;
+      font-size: 0.95rem;
+    }
+
+    .benefits strong {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--white);
       font-weight: 700;
-      font-size: 14px;
-      margin-top: 2px;
+      font-size: 0.98rem;
+    }
+
+    .benefits span:last-child {
+      color: var(--text-muted);
+      line-height: 1.65;
+      font-size: 0.95rem;
     }
 
     .proof {
-      font-size: 0.95rem;
-      color: var(--muted);
+      color: var(--text-muted);
       line-height: 1.7;
+      font-size: 0.95rem;
       max-width: 56ch;
     }
 
     .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
+      position: relative;
+      background: linear-gradient(180deg, rgba(30,42,74,0.94) 0%, rgba(18,18,18,0.98) 100%);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-xl);
       box-shadow: var(--shadow);
-      padding: 28px;
+      padding: 30px;
+      overflow: hidden;
     }
 
-    .card-top {
-      margin-bottom: 18px;
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(255,71,87,0.16), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(202,255,0,0.08), transparent 32%);
+      pointer-events: none;
     }
 
-    .card-kicker {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--accent);
-      font-weight: 700;
+    .card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-tag {
+      display: inline-block;
       margin-bottom: 10px;
+      color: var(--lime);
+      font-family: "Satisfy", cursive;
+      font-size: 1.25rem;
     }
 
     .card h2 {
-      margin: 0 0 12px;
-      font-size: 1.75rem;
-      line-height: 1.2;
+      margin: 0 0 10px;
+      font-family: "League Spartan", sans-serif;
+      font-size: 2.2rem;
+      line-height: 1;
+      text-transform: uppercase;
     }
 
     .card p {
       margin: 0;
-      color: var(--muted);
-      line-height: 1.65;
+      color: var(--text-soft);
+      line-height: 1.7;
+      font-size: 0.98rem;
+    }
+
+    .mini-note,
+    .trust-note {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      line-height: 1.6;
+      margin-top: 14px;
+      text-align: center;
     }
 
     .trust-note {
-      margin-top: 16px;
-      font-size: 0.85rem;
-      color: var(--muted);
-      text-align: center;
+      margin-top: 10px;
     }
 
-    .mini-note {
-      margin-top: 14px;
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.6;
+    .divider {
+      width: 78px;
+      height: 4px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--coral), var(--lime));
+      margin: 18px 0 20px;
     }
 
-    .footer-note {
-      margin-top: 28px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.85rem;
-    }
-
-    @media (max-width: 900px) {
+    @media (max-width: 920px) {
       .container {
         grid-template-columns: 1fr;
         gap: 24px;
       }
 
-      .content {
-        padding-right: 0;
+      .page {
+        padding: 26px 16px 40px;
       }
 
-      .wrapper {
-        padding: 24px 16px 40px;
+      h1 {
+        font-size: clamp(2.7rem, 13vw, 4.4rem);
       }
 
       .card {
@@ -205,7 +247,7 @@
       }
     }
 
-    /* ===== MailerLite original CSS ajusté ===== */
+    /* ===== MailerLite styling harmonisé ===== */
 
     .ml-form-embedSubmitLoad {
       display: inline-block;
@@ -232,7 +274,7 @@
       margin: 1px;
       border-radius: 50%;
       border: 4px solid #fff;
-      border-color: #ffffff #ffffff #ffffff transparent;
+      border-color: #fff #fff #fff transparent;
       animation: ml-form-embedSubmitLoad 1.2s linear infinite;
     }
 
@@ -242,23 +284,13 @@
     }
 
     #mlb2-39707517.ml-form-embedContainer {
-      box-sizing: border-box;
       width: 100%;
       margin: 0 auto;
     }
 
-    #mlb2-39707517.ml-form-embedContainer h4,
-    #mlb2-39707517.ml-form-embedContainer p,
-    #mlb2-39707517.ml-form-embedContainer span,
-    #mlb2-39707517.ml-form-embedContainer button {
-      text-transform: none !important;
-      letter-spacing: normal !important;
-    }
-
     #mlb2-39707517 .ml-form-embedWrapper {
-      background-color: transparent;
+      background: transparent;
       border: 0;
-      border-radius: 0;
       padding: 0;
       width: 100%;
       max-width: 100%;
@@ -271,11 +303,6 @@
 
     #mlb2-39707517 .ml-form-embedContent {
       display: none;
-    }
-
-    #mlb2-39707517 form {
-      margin: 0;
-      width: 100%;
     }
 
     #mlb2-39707517 .ml-form-formContent,
@@ -292,38 +319,35 @@
 
     #mlb2-39707517 .ml-form-fieldRow input {
       width: 100% !important;
-      padding: 14px 16px !important;
-      border: 1px solid var(--border) !important;
+      padding: 15px 16px !important;
       border-radius: 14px !important;
-      background: #fff !important;
-      color: var(--text) !important;
-      font-family: "Open Sans", Arial, Helvetica, sans-serif !important;
+      border: 1px solid rgba(255,255,255,0.14) !important;
+      background: rgba(255,255,255,0.06) !important;
+      color: #ffffff !important;
+      font-family: "Montserrat", Arial, sans-serif !important;
       font-size: 15px !important;
       line-height: 1.4 !important;
       box-shadow: none !important;
       outline: none;
-    }
-
-    #mlb2-39707517 .ml-form-fieldRow input:focus {
-      border-color: var(--accent) !important;
-      box-shadow: 0 0 0 4px rgba(255, 71, 87, 0.12) !important;
+      backdrop-filter: blur(6px);
     }
 
     #mlb2-39707517 .ml-form-fieldRow input::placeholder {
-      color: #7a7a7a;
+      color: rgba(255,255,255,0.58);
     }
 
-    #mlb2-39707517 .ml-form-checkboxRow {
-      position: relative;
+    #mlb2-39707517 .ml-form-fieldRow input:focus {
+      border-color: var(--coral) !important;
+      box-shadow: 0 0 0 4px rgba(255,71,87,0.14) !important;
     }
 
     #mlb2-39707517 .ml-form-checkboxRow label.checkbox {
       display: flex;
       align-items: flex-start;
       gap: 10px;
+      color: var(--text-muted);
       font-size: 13px;
-      line-height: 1.5;
-      color: var(--muted);
+      line-height: 1.55;
       cursor: pointer;
     }
 
@@ -331,239 +355,28 @@
       margin-top: 3px;
       width: 16px;
       height: 16px;
-      accent-color: var(--accent);
+      accent-color: var(--lime);
       flex-shrink: 0;
     }
 
     #mlb2-39707517 .ml-form-checkboxRow .label-description p {
       margin: 0;
+      color: var(--text-muted) !important;
       font-size: 13px !important;
-      line-height: 1.5 !important;
-      color: var(--muted) !important;
+      line-height: 1.55 !important;
     }
 
     #mlb2-39707517 .ml-form-embedSubmit button {
       width: 100% !important;
+      padding: 16px 18px !important;
       border: none !important;
       border-radius: 14px !important;
-      background: var(--accent) !important;
-      color: #ffffff !important;
-      font-size: 15px !important;
+      background: var(--coral) !important;
+      color: var(--white) !important;
+      font-family: "League Spartan", Arial, sans-serif !important;
+      font-size: 1.1rem !important;
       font-weight: 700 !important;
-      line-height: 1.2 !important;
-      padding: 15px 18px !important;
-      cursor: pointer;
-      transition: background 0.2s ease, transform 0.2s ease;
-    }
-
-    #mlb2-39707517 .ml-form-embedSubmit button:hover {
-      background: var(--accent-dark) !important;
-      transform: translateY(-1px);
-    }
-
-    #mlb2-39707517 .ml-form-embedSubmit button.loading {
-      display: none;
-    }
-
-    #mlb2-39707517 .ml-form-successContent {
-      background: #fff7f5;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 18px;
-    }
-
-    #mlb2-39707517 .ml-form-successContent h4 {
-      margin: 0 0 8px;
-      color: var(--accent);
-      font-size: 1.35rem;
-    }
-
-    #mlb2-39707517 .ml-form-successContent p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    .ml-error input,
-    .ml-error textarea,
-    .ml-error select {
-      border-color: #e53935 !important;
-    }
-
-    .ml-error .label-description,
-    .ml-error .label-description p,
-    .ml-error label:first-child {
-      color: #e53935 !important;
-    }
-  </style>
-</head>
-<body>
-  <main class="wrapper">
-    <section class="container">
-      <div class="content">
-        <div class="eyebrow">Template gratuit</div>
-        <h1>Reprends le contrôle sur ton temps avec un audit simple et concret</h1>
-        <p class="subtitle">
-          Télécharge gratuitement ton audit de temps pour identifier ce qui te fait perdre
-          de l’énergie, clarifier tes priorités et mieux organiser tes journées.
-        </p>
-
-        <ul class="benefits">
-          <li>
-            <span>1</span>
-            <div>Repère facilement où part ton temps au quotidien.</div>
-          </li>
-          <li>
-            <span>2</span>
-            <div>Identifie les tâches qui te prennent de l’énergie sans vraie valeur.</div>
-          </li>
-          <li>
-            <span>3</span>
-            <div>Pose les bases d’une organisation plus fluide et plus réaliste.</div>
-          </li>
-        </ul>
-
-        <p class="proof">
-          Cet audit est pensé pour les entrepreneures et freelances qui veulent une
-          organisation plus claire, sans système compliqué ni charge mentale en plus.
-        </p>
-      </div>
-
-      <aside class="card">
-        <div class="card-top">
-          <div class="card-kicker">Accès immédiat</div>
-          <h2>Reçois ton audit de temps</h2>
-          <p>
-            Remplis le formulaire ci-dessous pour recevoir gratuitement ton template
-            directement par email.
-          </p>
-        </div>
-
-        <div id="mlb2-39707517" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-39707517">
-          <div class="ml-form-align-center">
-            <div class="ml-form-embedWrapper embedForm">
-              <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
-                <div class="ml-form-embedContent">
-                  <h4>Ton audit de temps</h4>
-                  <p>Entre ton email pour accéder gratuitement au template d’audit de temps.</p>
-                </div>
-
-                <form
-                  class="ml-block-form"
-                  action="https://assets.mailerlite.com/jsonp/2258522/forms/184344403738887629/subscribe"
-                  data-code=""
-                  method="post"
-                  target="_blank"
-                >
-                  <div class="ml-form-formContent">
-                    <div class="ml-form-fieldRow">
-                      <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                        <input
-                          aria-label="email"
-                          aria-required="true"
-                          type="email"
-                          class="form-control"
-                          name="fields[email]"
-                          placeholder="Email"
-                          autocomplete="email"
-                          required
-                        >
-                      </div>
-                    </div>
-
-                    <div class="ml-form-fieldRow">
-                      <div class="ml-field-group ml-field-name ml-validate-required">
-                        <input
-                          aria-label="name"
-                          aria-required="true"
-                          type="text"
-                          class="form-control"
-                          name="fields[name]"
-                          placeholder="Nom"
-                          autocomplete="family-name"
-                          required
-                        >
-                      </div>
-                    </div>
-
-                    <div class="ml-form-fieldRow ml-last-item">
-                      <div class="ml-field-group ml-field-last_name ml-validate-required">
-                        <input
-                          aria-label="last_name"
-                          aria-required="true"
-                          type="text"
-                          class="form-control"
-                          name="fields[last_name]"
-                          placeholder="Prénom"
-                          autocomplete="given-name"
-                          required
-                        >
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="ml-form-checkboxRow ml-validate-required">
-                    <label class="checkbox">
-                      <input type="checkbox" required>
-                      <div class="label-description">
-                        <p>J’accepte de recevoir les emails d’Assist by Alicia (désinscription possible à tout moment).</p>
-                      </div>
-                    </label>
-                  </div>
-
-                  <input type="hidden" name="ml-submit" value="1">
-
-                  <div class="ml-form-embedSubmit">
-                    <button type="submit" class="primary">Recevoir le template</button>
-                    <button disabled="disabled" style="display:none;" type="button" class="loading">
-                      <div class="ml-form-embedSubmitLoad"></div>
-                      <span class="sr-only">Chargement...</span>
-                    </button>
-                  </div>
-
-                  <input type="hidden" name="anticsrf" value="true">
-                </form>
-              </div>
-
-              <div class="ml-form-successBody row-success" style="display:none;">
-                <div class="ml-form-successContent">
-                  <h4>Merci ✨</h4>
-                  <p>
-                    Tu vas bientôt recevoir le lien d’accès par email.
-                    Pense à vérifier tes spams si tu ne vois rien arriver.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </aside>
-    </section>
-  </main>
-
-  <script>
-    function ml_webform_success_39707517() {
-      var $ = window.ml_jQuery || window.jQuery;
-      if ($) {
-        $('.ml-subscribe-form-39707517 .row-success').show();
-        $('.ml-subscribe-form-39707517 .row-form').hide();
-      } else {
-        var success = document.querySelector('.ml-subscribe-form-39707517 .row-success');
-        var form = document.querySelector('.ml-subscribe-form-39707517 .row-form');
-        if (success) success.style.display = 'block';
-        if (form) form.style.display = 'none';
-      }
-    }
-  </script>
-
-  <script
-    src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b"
-    type="text/javascript"
-  ></script>
-
-  <script>
-    fetch("https://assets.mailerlite.com/jsonp/2258522/forms/184344403738887629/takel");
-  </script>
-</body>
-</html>
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+      box-shadow: 0 12px 30px rgba(255,71,87,0.22);
+      transition: 
