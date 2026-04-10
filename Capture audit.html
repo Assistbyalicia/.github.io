@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Audit de temps – Assist by Alicia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Télécharge gratuitement ton template Notion d’audit de temps et gagne en clarté sur ton organisation." />
+
+  <!-- Typo MailerLite -->
+  <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1775464");</style>
+
+  <!-- Styles généraux landing page -->
+  <style>
+    :root {
+      --bg: #0f1014;
+      --bg-card: #181924;
+      --accent: #ff4757;
+      --text: #f5f5f5;
+      --muted: #c5c5d0;
+      --font-main: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-main);
+      background: radial-gradient(circle at top, #202236 0, #05060a 45%, #020308 100%);
+      color: var(--text);
+    }
+
+    .page-wrapper {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 16px;
+    }
+
+    .container {
+      max-width: 1080px;
+      width: 100%;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 40px;
+      align-items: center;
+    }
+
+    /* Colonne texte */
+    .hero-copy-eyebrow {
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .hero-title {
+      font-size: clamp(30px, 4vw, 40px);
+      line-height: 1.1;
+      margin: 0 0 16px;
+    }
+
+    .hero-title span.highlight {
+      color: var(--accent);
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--muted);
+      margin: 0 0 24px;
+      max-width: 540px;
+    }
+
+    .hero-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .hero-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .hero-bullets li::before {
+      content: "✔";
+      color: var(--accent);
+      font-size: 14px;
+      margin-top: 1px;
+    }
+
+    .hero-meta {
+      font-size: 13px;
+      color: var(--muted);
+      opacity: 0.85;
+    }
+
+    /* Card formulaire */
+    .card {
+      background: var(--bg-card);
+      border-radius: 16px;
+      padding: 24px 20px 20px;
+      box-shadow:
+        0 24px 60px rgba(0, 0, 0, 0.55),
+        0 0 0 1px rgba(255, 255, 255, 0.03);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(255, 71, 87, 0.12), transparent 55%);
+      pointer-events: none;
+    }
+
+    .card-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .card-badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(255, 71, 87, 0.2);
+    }
+
+    .card-title {
+      font-size: 20px;
+      margin: 0 0 8px;
+      color: #ffffff;
+    }
+
+    .card-text {
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--muted);
+      margin: 0 0 18px;
+    }
+
+    .card-guarantee {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    .card-guarantee strong {
+      color: #ffffff;
+    }
+
+    /* Petit mockup template à droite du titre du form */
+    .mockup-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      margin-top: 4px;
+    }
+
+    .mockup-tag-dot {
+      width: 14px;
+      height: 10px;
+      border-radius: 3px;
+      background: linear-gradient(135deg, #ff4757, #ffa502);
+      box-shadow: 0 0 10px rgba(255, 165, 2, 0.4);
+    }
+
+    /* Responsive */
+    @media (max-width: 840px) {
+      .container {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .card {
+        max-width: 420px;
+        margin: 0 auto;
+      }
+
+      .page-wrapper {
+        padding-top: 48px;
+        padding-bottom: 48px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: 26px;
+      }
+    }
+  </style>
+
+  <!-- TON CSS MAILERLITE (inchangé) -->
+  <style type="text/css">
+    /* ... COLLER ICI l’intégralité du CSS MailerLite que tu m’as donné ... */
+  </style>
+</head>
+<body>
+
+  <div class="page-wrapper">
+    <div class="container">
+      <!-- Colonne texte -->
+      <section>
+        <div class="hero-copy-eyebrow">Template Notion offert</div>
+        <h1 class="hero-title">
+          Gagne <span class="highlight">2&nbsp;heures par semaine</span>
+          en clarifiant l’usage réel de ton temps
+        </h1>
+        <p class="hero-subtitle">
+          Pendant 7 jours, tu pistes concrètement où part ton temps, tu repères les fuites d’énergie
+          et tu réorganises ton planning en fonction de tes vraies priorités.
+        </p>
+
+        <ul class="hero-bullets">
+          <li>Une base Notion prête à l’emploi pour auditer tes journées sans te prendre la tête.</li>
+          <li>Un système simple pour distinguer tâches essentielles, urgences et fausses priorités.</li>
+          <li>Une vue claire pour ajuster ton planning et te libérer de la charge mentale.</li>
+        </ul>
+
+        <p class="hero-meta">
+          Idéal pour les solopreneur·e·s qui jonglent entre clients, création de contenu et gestion quotidienne
+          sans voir le temps passer.
+        </p>
+      </section>
+
+      <!-- Colonne formulaire -->
+      <aside>
+        <div class="card">
+          <div class="card-inner">
+
+            <div class="card-badge">
+              <span class="card-badge-dot"></span>
+              <span>Accès immédiat par email</span>
+            </div>
+
+            <!-- Bloc explicatif au-dessus du formulaire -->
+            <h2 class="card-title">Ton audit de temps</h2>
+            <p class="card-text">
+              Entre ton email pour accéder gratuitement au template d’audit de temps
+              et commencer à reprendre le contrôle sur ton organisation dès aujourd’hui.
+            </p>
+            <div class="mockup-tag">
+              <span class="mockup-tag-dot"></span>
+              <span>Format Notion, duplicable en 1 clic</span>
+            </div>
+
+            <!-- ==== FORMULAIRE MAILERLITE TEL QUEL ==== -->
+            <div id="mlb2-39707517" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-39707517">
+              <div class="ml-form-align-center ">
+                <div class="ml-form-embedWrapper embedForm">
+
+                  <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                    <div class="ml-form-embedContent" style="display:none">
+                      <!-- Titre et texte masqués, gérés au-dessus par la card -->
+                    </div>
+
+                    <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2258522/forms/184344403738887629/subscribe" data-code="" method="post" target="_blank">
+                      <div class="ml-form-formContent">
+                        <div class="ml-form-fieldRow ">
+                          <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                            <input aria-label="email" aria-required="true" type="email" class="form-control" name="fields[email]" placeholder="Email" autocomplete="email">
+                          </div>
+                        </div>
+
+                        <div class="ml-form-fieldRow ">
+                          <div class="ml-field-group ml-field-name ml-validate-required">
+                            <input aria-label="name" aria-required="true" type="text" class="form-control" name="fields[name]" placeholder="Nom" autocomplete="given-name">
+                          </div>
+                        </div>
+
+                        <div class="ml-form-fieldRow ml-last-item">
+                          <div class="ml-field-group ml-field-last_name ml-validate-required">
+                            <input aria-label="last_name" aria-required="true" type="text" class="form-control" name="fields[last_name]" placeholder="Prénom" autocomplete="family-name">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="ml-form-checkboxRow ml-validate-required">
+                        <label class="checkbox">
+                          <input type="checkbox">
+                          <div class="label-description">
+                            <p>J’accepte de recevoir les emails d’Assist by Alicia (désinscription possible à tout moment).</p>
+                          </div>
+                        </label>
+                      </div>
+
+                      <input type="hidden" name="ml-submit" value="1">
+
+                      <div class="ml-form-embedSubmit">
+                        <button type="submit" class="primary">Recevoir le template</button>
+                        <button disabled="disabled" style="display: none;" type="button" class="loading">
+                          <div class="ml-form-embedSubmitLoad"></div>
+                          <span class="sr-only">Loading...</span>
+                        </button>
+                      </div>
+
+                      <input type="hidden" name="anticsrf" value="true">
+                    </form>
+                  </div>
+
+                  <div class="ml-form-successBody row-success" style="display: none">
+                    <div class="ml-form-successContent">
+                      <h4>Merci</h4>
+                      <p>Tu vas bientôt recevoir par email le lien d’accès au template. Pense à vérifier tes spams si tu ne vois rien arriver dans les prochaines minutes.</p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <!-- ==== FIN FORMULAIRE MAILERLITE ==== -->
+
+            <p class="card-guarantee">
+              <strong>0 spam, 100 % utile.</strong> Tu peux te désinscrire en un clic à tout moment.
+            </p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- JS MailerLite -->
+  <script>
+    function ml_webform_success_39707517() {
+      var $ = ml_jQuery || jQuery;
+      $('.ml-subscribe-form-39707517 .row-success').show();
+      $('.ml-subscribe-form-39707517 .row-form').hide();
+    }
+  </script>
+  <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
+  <script>
+    fetch("https://assets.mailerlite.com/jsonp/2258522/forms/184344403738887629/takel");
+  </script>
+</body>
+</html>
