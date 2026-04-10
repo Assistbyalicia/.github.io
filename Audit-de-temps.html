@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -10,14 +9,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800&family=Montserrat:wght@400;500;600;700&family=Satisfy&display=swap" rel="stylesheet">
-  <script>document.documentElement.className='js';</script>
 
   <style>
     @import url("https://assets.mlcdn.com/fonts.css?version=1775464");
 
     :root {
       --bg: #121212;
-      --bg-soft: #1b1b1b;
       --navy: #1E2A4A;
       --coral: #FF4757;
       --lime: #CAFF00;
@@ -28,8 +25,6 @@
       --shadow: 0 24px 60px rgba(0,0,0,0.35);
       --radius-xl: 28px;
       --radius-lg: 18px;
-      --radius-md: 14px;
-      --container: 1180px;
     }
 
     * { box-sizing: border-box; }
@@ -45,60 +40,64 @@
       font-family: "Montserrat", Arial, sans-serif;
     }
 
-    a { color: inherit; }
-
-    .site-nav {
-      width: 100%;
-      max-width: var(--container);
-      margin: 0 auto;
+    nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 24px;
-      padding: 28px 20px 10px;
+      padding: 1rem 4rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(18, 18, 18, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
     .logo {
-      color: var(--white);
       text-decoration: none;
-      font-family: "League Spartan", sans-serif;
-      font-weight: 700;
-      font-size: 1.1rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      flex-shrink: 0;
+      display: flex;
+      align-items: center;
     }
 
-    .nav-links {
+    .logo img {
+      height: 45px;
+      width: auto;
+      display: block;
+    }
+
+    nav ul {
       list-style: none;
       display: flex;
-      gap: 26px;
+      gap: 2rem;
       margin: 0;
       padding: 0;
-      flex-wrap: wrap;
-      justify-content: flex-end;
+      align-items: center;
     }
 
-    .nav-links a {
-      color: var(--white);
+    nav ul li {
+      list-style: none;
+    }
+
+    nav ul a {
+      color: #FFFFFF;
       text-decoration: none;
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       font-weight: 600;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       transition: color 0.2s ease;
     }
 
-    .nav-links a:hover,
-    .nav-links a.active {
+    nav ul a:hover,
+    nav ul a.active {
       color: var(--lime);
     }
 
     .page {
       width: 100%;
-      max-width: var(--container);
+      max-width: 1180px;
       margin: 0 auto;
-      padding: 34px 20px 72px;
+      padding: 56px 20px 72px;
     }
 
     .hero {
@@ -108,7 +107,9 @@
       align-items: center;
     }
 
-    .content { max-width: 640px; }
+    .content {
+      max-width: 640px;
+    }
 
     .tag {
       display: inline-block;
@@ -128,7 +129,9 @@
       text-transform: uppercase;
     }
 
-    .highlight { color: var(--coral); }
+    .highlight {
+      color: var(--coral);
+    }
 
     .subtitle {
       margin: 0 0 26px;
@@ -213,7 +216,10 @@
       pointer-events: none;
     }
 
-    .card > * { position: relative; z-index: 1; }
+    .card > * {
+      position: relative;
+      z-index: 1;
+    }
 
     .card-tag {
       display: inline-block;
@@ -280,15 +286,39 @@
       100% { transform: rotate(360deg); }
     }
 
-    #mlb2-39707517 { width: 100%; margin: 0 auto; }
-    #mlb2-39707517 .ml-form-embedWrapper { background: transparent; border: 0; padding: 0; width: 100%; max-width: 100%; }
+    #mlb2-39707517 {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    #mlb2-39707517 .ml-form-embedWrapper {
+      background: transparent;
+      border: 0;
+      padding: 0;
+      width: 100%;
+      max-width: 100%;
+    }
+
     #mlb2-39707517 .ml-form-embedBody,
-    #mlb2-39707517 .ml-form-successBody { padding: 0; }
-    #mlb2-39707517 .ml-form-embedContent { display: none; }
+    #mlb2-39707517 .ml-form-successBody {
+      padding: 0;
+    }
+
+    #mlb2-39707517 .ml-form-embedContent {
+      display: none;
+    }
+
     #mlb2-39707517 .ml-form-formContent,
     #mlb2-39707517 .ml-form-checkboxRow,
-    #mlb2-39707517 .ml-form-embedSubmit { margin: 0 0 16px; width: 100%; }
-    #mlb2-39707517 .ml-form-fieldRow { margin: 0 0 14px; width: 100%; }
+    #mlb2-39707517 .ml-form-embedSubmit {
+      margin: 0 0 16px;
+      width: 100%;
+    }
+
+    #mlb2-39707517 .ml-form-fieldRow {
+      margin: 0 0 14px;
+      width: 100%;
+    }
 
     #mlb2-39707517 .ml-form-fieldRow input[type="email"],
     #mlb2-39707517 .ml-form-fieldRow input[type="text"] {
@@ -306,7 +336,10 @@
       backdrop-filter: blur(6px);
     }
 
-    #mlb2-39707517 .ml-form-fieldRow input::placeholder { color: rgba(255,255,255,0.58); }
+    #mlb2-39707517 .ml-form-fieldRow input::placeholder {
+      color: rgba(255,255,255,0.58);
+    }
+
     #mlb2-39707517 .ml-form-fieldRow input:focus {
       border-color: var(--coral) !important;
       box-shadow: 0 0 0 4px rgba(255,71,87,0.14) !important;
@@ -360,7 +393,9 @@
       box-shadow: 0 16px 34px rgba(255,71,87,0.28);
     }
 
-    #mlb2-39707517 .ml-form-embedSubmit button.loading { display: none; }
+    #mlb2-39707517 .ml-form-embedSubmit button.loading {
+      display: none;
+    }
 
     #mlb2-39707517 .ml-form-successContent {
       padding: 18px;
@@ -384,222 +419,16 @@
       line-height: 1.6;
     }
 
-    .ml-error input,
-    .ml-error textarea,
-    .ml-error select { border-color: #ff6b6b !important; }
-
-    .ml-error .label-description,
-    .ml-error .label-description p,
-    .ml-error label:first-child { color: #ff8a8a !important; }
-
-    .site-footer {
-      width: 100%;
-      max-width: var(--container);
-      margin: 0 auto;
+    footer {
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 20px;
       flex-wrap: wrap;
-      padding: 0 20px 34px;
+      padding: 2rem 4rem;
       color: rgba(255,255,255,0.55);
       font-size: 0.8rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
     }
 
-    .footer-links {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: rgba(255,255,255,0.55);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    .footer-links a:hover { color: var(--white); }
-
-    @media (max-width: 920px) {
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-
-      .page { padding: 24px 16px 56px; }
-      .site-nav { padding: 20px 16px 6px; }
-      .site-footer { padding: 0 16px 26px; }
-      h1 { font-size: clamp(2.7rem, 13vw, 4.4rem); }
-      .card { padding: 22px 18px; }
-    }
-
-    @media (max-width: 768px) {
-      .site-nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .nav-links {
-        gap: 14px 18px;
-      }
-
-      .site-footer {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-  </style>
-</head>
-<body>
-  <nav>
-    <a class="logo" href="index.html">
-      <img src="Logo.png" alt="Assist by Alicia" />
-    </a>
-    <ul>
-      <li><a href="offres.html">Mes offres</a></li>
-      <li><a href="offre-express.html">Express</a></li>
-      <li><a href="Audit-de-temps.html">Audit</a></li>
-      <li><a href="qui-suis-je.html">Qui suis-je ?</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-
-  <main class="page">
-    <section class="hero">
-      <div class="content">
-        <div class="tag">Ton template offert</div>
-        <h1>Fais le point sur <span class="highlight">ton temps</span> sans t’éparpiller</h1>
-        <p class="subtitle">
-          Télécharge gratuitement ton audit de temps pour voir où part réellement ton énergie,
-          identifier ce qui te ralentit et poser une organisation plus fluide au quotidien.
-        </p>
-
-        <ul class="benefits">
-          <li>
-            <span class="icon">01</span>
-            <div>
-              <strong>Visualise tes vraies priorités</strong>
-              <div class="text">Tu identifies les tâches qui méritent réellement ton attention.</div>
-            </div>
-          </li>
-          <li>
-            <span class="icon">02</span>
-            <div>
-              <strong>Repère tes fuites de temps</strong>
-              <div class="text">Tu mets en lumière ce qui te disperse ou t’alourdit inutilement.</div>
-            </div>
-          </li>
-          <li>
-            <span class="icon">03</span>
-            <div>
-              <strong>Pose une base d’organisation claire</strong>
-              <div class="text">Tu repars avec plus de recul pour structurer tes journées.</div>
-            </div>
-          </li>
-        </ul>
-
-        <p class="proof">
-          Une ressource pensée pour les entrepreneures qui veulent une organisation plus simple,
-          plus alignée et plus soutenable, sans ajouter une usine à gaz de plus.
-        </p>
-      </div>
-
-      <aside class="card">
-        <div class="card-tag">Audit offert</div>
-        <h2>Reçois ton template</h2>
-        <div class="divider"></div>
-        <p>
-          Complète le formulaire ci-dessous pour recevoir gratuitement ton audit de temps
-          directement dans ta boîte mail.
-        </p>
-
-        <div style="height:22px"></div>
-
-        <div id="mlb2-39707517" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-39707517">
-          <div class="ml-form-align-center">
-            <div class="ml-form-embedWrapper embedForm">
-              <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
-                <div class="ml-form-embedContent"></div>
-
-                <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2258522/forms/184344403738887629/subscribe" data-code="" method="post" target="_blank">
-                  <div class="ml-form-formContent">
-                    <div class="ml-form-fieldRow">
-                      <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                        <input aria-label="email" aria-required="true" type="email" class="form-control" name="fields[email]" placeholder="Email" autocomplete="email" required>
-                      </div>
-                    </div>
-
-                    <div class="ml-form-fieldRow">
-                      <div class="ml-field-group ml-field-name ml-validate-required">
-                        <input aria-label="name" aria-required="true" type="text" class="form-control" name="fields[name]" placeholder="Nom" autocomplete="family-name" required>
-                      </div>
-                    </div>
-
-                    <div class="ml-form-fieldRow ml-last-item">
-                      <div class="ml-field-group ml-field-last_name ml-validate-required">
-                        <input aria-label="last_name" aria-required="true" type="text" class="form-control" name="fields[last_name]" placeholder="Prénom" autocomplete="given-name" required>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="ml-form-checkboxRow ml-validate-required">
-                    <label class="checkbox">
-                      <input type="checkbox" required>
-                      <div class="label-description">
-                        <p>J’accepte de recevoir les emails d’Assist by Alicia (désinscription possible à tout moment).</p>
-                      </div>
-                    </label>
-                  </div>
-
-                  <input type="hidden" name="ml-submit" value="1">
-
-                  <div class="ml-form-embedSubmit">
-                    <button type="submit" class="primary">Recevoir le template</button>
-                    <button disabled="disabled" style="display:none;" type="button" class="loading">
-                      <div class="ml-form-embedSubmitLoad"></div>
-                      <span class="sr-only">Chargement...</span>
-                    </button>
-                  </div>
-
-                  <input type="hidden" name="anticsrf" value="true">
-                </form>
-              </div>
-
-              <div class="ml-form-successBody row-success" style="display:none;">
-                <div class="ml-form-successContent">
-                  <h4>Merci</h4>
-                  <p>Ton lien d’accès arrive bientôt par email. Pense à vérifier tes spams si besoin.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </aside>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <span>© 2026 Assist by Alicia – Tous droits réservés</span>
-    <div class="footer-links">
-      <a href="Mention légale - CGV.html">Mentions légales / CGV</a>
-      <a href="Politique de confidentialité.html">Politique de confidentialité</a>
-    </div>
-  </footer>
-
-  <script>
-    function ml_webform_success_39707517() {
-      var $ = window.ml_jQuery || window.jQuery;
-      if ($) {
-        $('.ml-subscribe-form-39707517 .row-success').show();
-        $('.ml-subscribe-form-39707517 .row-form').hide();
-      } else {
-        var success = document.querySelector('.ml-subscribe-form-39707517 .row-success');
-        var form = document.querySelector('.ml-subscribe-form-39707517 .row-form');
-        if (success) success.style.display = 'block';
-        if (form) form.style.display = 'none';
-      }
-    }
-  </script>
-  <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
-</body>
-</html>
+    .footer-lin
