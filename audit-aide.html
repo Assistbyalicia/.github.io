@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>J’ai besoin d’aide – Assist by Alicia</title>
   <meta name="description" content="Tu as besoin d’aide pour avancer avec ton audit de temps ? Voici comment obtenir un coup de pouce clair et concret." />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=League+Spartan:wght@700;900&family=Satisfy&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=League+Spartan:wght@700;900&family=Satisfy&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -37,13 +37,14 @@
       color: var(--white);
       font-family: 'Montserrat', sans-serif;
       line-height: 1.7;
+      min-height: 100vh;
     }
 
     nav {
       position: fixed;
       top: 0;
       width: 100%;
-      z-index: 100;
+      z-index: 1000;
       background: rgba(18,18,18,0.92);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(202,255,0,0.12);
@@ -57,6 +58,8 @@
       text-decoration: none;
       display: flex;
       align-items: center;
+      position: relative;
+      z-index: 1002;
     }
 
     .logo img {
@@ -65,19 +68,19 @@
       display: block;
     }
 
-    nav ul {
+    .nav-links {
       list-style: none;
       display: flex;
       gap: 2.5rem;
       align-items: center;
     }
 
-    nav ul li {
+    .nav-links li {
       list-style: none;
       position: relative;
     }
 
-    nav ul a,
+    .nav-links a,
     .menu-label {
       color: var(--white);
       text-decoration: none;
@@ -106,8 +109,8 @@
       transform: translateY(-1px) rotate(180deg);
     }
 
-    nav ul a:hover,
-    nav ul a.active,
+    .nav-links a:hover,
+    .nav-links a.active,
     .dropdown:hover .menu-label {
       color: var(--yellow);
     }
@@ -141,6 +144,59 @@
 
     .dropdown:hover .submenu {
       display: flex;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid rgba(202,255,0,0.18);
+      color: var(--white);
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+      z-index: 1002;
+    }
+
+    .menu-toggle span,
+    .menu-toggle span::before,
+    .menu-toggle span::after {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--white);
+      position: relative;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+      content: "";
+    }
+
+    .menu-toggle span::before {
+      position: absolute;
+      top: -6px;
+    }
+
+    .menu-toggle span::after {
+      position: absolute;
+      top: 6px;
+    }
+
+    .menu-toggle.active span {
+      background: transparent;
+    }
+
+    .menu-toggle.active span::before {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    .menu-toggle.active span::after {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+
+    .mobile-menu {
+      display: none;
     }
 
     a {
@@ -270,7 +326,6 @@
       font-size: 0.95rem;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      text-decoration: none;
       transition: background 0.2s, box-shadow 0.2s;
       box-shadow: 0 0 20px rgba(255,71,87,0.35);
       display: inline-flex;
@@ -295,7 +350,6 @@
       font-size: 0.95rem;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      text-decoration: none;
       transition: background 0.2s, box-shadow 0.2s;
       display: inline-flex;
       align-items: center;
@@ -456,13 +510,82 @@
       flex-wrap: wrap;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
       nav {
         padding: 1rem 1.5rem;
       }
 
-      nav ul {
+      .logo img {
+        height: 56px;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .nav-links {
         display: none;
+      }
+
+      .mobile-menu {
+        position: fixed;
+        top: 88px;
+        left: 1rem;
+        right: 1rem;
+        display: none;
+        flex-direction: column;
+        gap: 0.4rem;
+        padding: 1rem;
+        background: rgba(18,18,18,0.98);
+        border: 1px solid rgba(202,255,0,0.12);
+        border-radius: 14px;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+        z-index: 999;
+      }
+
+      .mobile-menu.open {
+        display: flex;
+      }
+
+      .mobile-menu a,
+      .mobile-menu summary {
+        color: var(--white);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        padding: 0.9rem 0.4rem;
+      }
+
+      .mobile-menu a.active {
+        color: var(--yellow);
+      }
+
+      .mobile-menu details {
+        border-top: 1px solid rgba(255,255,255,0.06);
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+        padding: 0.2rem 0;
+      }
+
+      .mobile-menu summary {
+        list-style: none;
+        cursor: pointer;
+      }
+
+      .mobile-menu summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .mobile-submenu {
+        display: flex;
+        flex-direction: column;
+        padding: 0.2rem 0 0.5rem 0.8rem;
+      }
+
+      .hero-wrap {
+        padding: 100px 0 32px;
+        min-height: auto;
       }
 
       .hero-grid {
@@ -480,6 +603,10 @@
         width: 100%;
       }
 
+      .action-group {
+        min-width: auto;
+      }
+
       .action-help {
         max-width: 100%;
       }
@@ -489,9 +616,25 @@
         grid-template-columns: 1fr;
       }
 
+      .cta-block,
+      .content-grid.centered {
+        max-width: none;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+      }
+
       footer {
+        padding: 2rem 1.2rem;
         flex-direction: column;
         text-align: center;
+      }
+
+      .footer-links {
+        justify-content: center;
+        gap: 1rem;
       }
     }
   </style>
@@ -501,7 +644,8 @@
     <a class="logo" href="index.html">
       <img src="Logo.png" alt="Assist by Alicia" />
     </a>
-    <ul>
+
+    <ul class="nav-links">
       <li><a href="index.html">Accueil</a></li>
       <li class="dropdown">
         <span class="menu-label">Mes offres <span class="dropdown-arrow">▾</span></span>
@@ -514,7 +658,27 @@
       <li><a href="qui-suis-je.html">Qui suis-je ?</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+
+    <button class="menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span>
+    </button>
   </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html">Accueil</a>
+
+    <details open>
+      <summary>Mes offres</summary>
+      <div class="mobile-submenu">
+        <a href="offres.html">Toutes mes offres</a>
+        <a href="offre-express.html">Express</a>
+        <a href="Audit-de-temps.html" class="active">Audit</a>
+      </div>
+    </details>
+
+    <a href="qui-suis-je.html">Qui suis-je ?</a>
+    <a href="contact.html">Contact</a>
+  </div>
 
   <main class="hero-wrap">
     <div class="container">
@@ -523,9 +687,11 @@
           <div class="hero-intro">
             <div class="eyebrow">Assist by Alicia</div>
             <h1>Tu as besoin d’aide ?<br>On débloque ça ensemble.</h1>
+
             <p class="lead">
               Si tu as commencé ton audit mais que tu bloques sur l’interprétation, sur la suite, ou même sur la façon de t’y remettre concrètement, tu n’as pas besoin de rester seule avec ça.
             </p>
+
             <p class="lead">
               Parfois, un regard extérieur suffit pour faire le tri, remettre de l’ordre dans ce que tu observes et t’aider à savoir quoi faire en premier.
             </p>
@@ -549,6 +715,7 @@
 
           <div class="card" style="margin-top: 8px;">
             <h2 class="steps-title">Comment je peux t’aider</h2>
+
             <div class="steps">
               <div class="step">
                 <div class="step-number">1</div>
@@ -617,5 +784,26 @@
       <a href="Politique de confidentialité.html">Politique de confidentialité</a>
     </div>
   </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      menuToggle.classList.toggle('active', isOpen);
+      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      menuToggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+    });
+
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Ouvrir le menu');
+      });
+    });
+  </script>
 </body>
 </html>
