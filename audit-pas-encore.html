@@ -180,31 +180,35 @@
     }
 
     .hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 32px;
-  margin-top: 28px;
-}
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 32px;
+      margin-top: 28px;
+    }
 
-.action-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  min-width: 300px;
-}
+    .hero-actions-with-help {
+      align-items: stretch;
+    }
 
-.action-help {
-  margin: 0;
-  font-size: 0.82rem;
-  line-height: 1.4;
-  color: rgba(255,255,255,0.62);
-  text-align: center;
-  max-width: 22ch;
-  white-space: normal;
-  text-wrap: balance;
-}
+    .action-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      min-width: 300px;
+    }
+
+    .action-help {
+      margin: 0;
+      font-size: 0.82rem;
+      line-height: 1.4;
+      color: rgba(255,255,255,0.62);
+      text-align: center;
+      max-width: 22ch;
+      white-space: normal;
+      text-wrap: balance;
+    }
 
     .btn-primary {
       background: var(--coral);
@@ -275,6 +279,10 @@
       text-transform: uppercase;
     }
 
+    .steps-title {
+      text-align: center;
+    }
+
     .card p {
       margin: 0;
       color: rgba(255,255,255,0.78);
@@ -310,27 +318,27 @@
     }
 
     .step {
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: var(--radius);
-  padding: 22px;
-  text-align: center;
-}
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 22px;
+      text-align: center;
+    }
 
-.step-number {
-  width: 34px;
-  height: 34px;
-  border-radius: 999px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--yellow);
-  color: #121212;
-  font-weight: 700;
-  margin: 0 auto 14px;
-  font-size: 0.95rem;
-  font-family: 'League Spartan', sans-serif;
-}
+    .step-number {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--yellow);
+      color: #121212;
+      font-weight: 700;
+      margin: 0 auto 14px;
+      font-size: 0.95rem;
+      font-family: 'League Spartan', sans-serif;
+    }
 
     .step h3 {
       margin: 0 0 10px;
@@ -418,12 +426,17 @@
 
       .hero-actions {
         flex-direction: column;
+        gap: 20px;
       }
 
       .hero-actions .btn-primary,
       .hero-actions .btn-secondary,
       .action-group {
         width: 100%;
+      }
+
+      .action-help {
+        max-width: 100%;
       }
 
       .cta-block,
@@ -469,14 +482,14 @@
 
             <div class="hero-actions hero-actions-with-help">
               <div class="action-group">
-                <p class="action-help">Pour dupliquer ton audit <br>si ce n'est pas encore fait</p>
+                <p class="action-help">Pour reprendre ton audit<br>là où tu en es</p>
                 <a class="btn-primary" href="https://assistbyaliciafr.notion.site/Ton-audit-de-temps-07a4ac3284534fe9a345e5a4791584c4?source=copy_link" target="_blank" rel="noopener noreferrer">
                   Accéder à l’audit
                 </a>
               </div>
 
               <div class="action-group">
-                <p class="action-help">Pour revoir rapidement comment le dupliquer</p>
+                <p class="action-help">Pour revoir rapidement<br>comment le remplir</p>
                 <a class="btn-secondary" href="https://youtu.be/aHNQPg7CIXM" target="_blank" rel="noopener noreferrer">
                   Voir la vidéo
                 </a>
@@ -485,33 +498,33 @@
           </div>
 
           <div class="card" style="margin-top: 8px;">
-  <h2 class="steps-title">Comment t’y remettre simplement</h2>
-  <div class="steps">
-    <div class="step">
-      <div class="step-number">1</div>
-      <h3>Ouvre juste le template</h3>
-      <p>
-        Ne cherche pas à tout faire d’un coup. La première étape, c’est simplement de rouvrir l’audit et de te remettre dedans.
-      </p>
-    </div>
+            <h2 class="steps-title">Comment t’y remettre simplement</h2>
+            <div class="steps">
+              <div class="step">
+                <div class="step-number">1</div>
+                <h3>Ouvre juste le template</h3>
+                <p>
+                  Ne cherche pas à tout faire d’un coup. La première étape, c’est simplement de rouvrir l’audit et de te remettre dedans.
+                </p>
+              </div>
 
-    <div class="step">
-      <div class="step-number">2</div>
-      <h3>Commence par aujourd’hui</h3>
-      <p>
-        Si tu n’as pas envie de tout reprendre, note seulement ta journée ou ta semaine actuelle. Ça suffit déjà pour faire émerger des schémas.
-      </p>
-    </div>
+              <div class="step">
+                <div class="step-number">2</div>
+                <h3>Commence par aujourd’hui</h3>
+                <p>
+                  Si tu n’as pas envie de tout reprendre, note seulement ta journée ou ta semaine actuelle. Ça suffit déjà pour faire émerger des schémas.
+                </p>
+              </div>
 
-    <div class="step">
-      <div class="step-number">3</div>
-      <h3>Avance sans chercher la perfection</h3>
-      <p>
-        L’objectif n’est pas de remplir un audit parfait. L’objectif, c’est de voir plus clair pour prendre de meilleures décisions ensuite.
-      </p>
-    </div>
-  </div>
-</div>
+              <div class="step">
+                <div class="step-number">3</div>
+                <h3>Avance sans chercher la perfection</h3>
+                <p>
+                  L’objectif n’est pas de remplir un audit parfait. L’objectif, c’est de voir plus clair pour prendre de meilleures décisions ensuite.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
