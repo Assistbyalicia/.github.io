@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mentions légales – Assist by Alicia</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=League+Spartan:wght@700;900&family=Satisfy&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=League+Spartan:wght@700;900&family=Satisfy&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -20,18 +20,23 @@
       --white: #FFFFFF;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       background: var(--black);
       color: var(--white);
       font-family: 'Montserrat', sans-serif;
       line-height: 1.8;
+      min-height: 100vh;
     }
 
     nav {
       position: fixed;
       top: 0;
       width: 100%;
-      z-index: 100;
+      z-index: 1000;
       background: rgba(18,18,18,0.92);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(202,255,0,0.12);
@@ -45,6 +50,8 @@
       text-decoration: none;
       display: flex;
       align-items: center;
+      position: relative;
+      z-index: 1002;
     }
 
     .logo img {
@@ -53,19 +60,19 @@
       display: block;
     }
 
-    nav ul {
+    .nav-links {
       list-style: none;
       display: flex;
       gap: 2.5rem;
       align-items: center;
     }
 
-    nav ul li {
+    .nav-links li {
       list-style: none;
       position: relative;
     }
 
-    nav ul a,
+    .nav-links a,
     .menu-label {
       color: var(--white);
       text-decoration: none;
@@ -94,8 +101,8 @@
       transform: translateY(-1px) rotate(180deg);
     }
 
-    nav ul a:hover,
-    nav ul a.active,
+    .nav-links a:hover,
+    .nav-links a.active,
     .dropdown:hover .menu-label {
       color: var(--yellow);
     }
@@ -131,10 +138,63 @@
       display: flex;
     }
 
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid rgba(202,255,0,0.18);
+      color: var(--white);
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+      z-index: 1002;
+    }
+
+    .menu-toggle span,
+    .menu-toggle span::before,
+    .menu-toggle span::after {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--white);
+      position: relative;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+      content: "";
+    }
+
+    .menu-toggle span::before {
+      position: absolute;
+      top: -6px;
+    }
+
+    .menu-toggle span::after {
+      position: absolute;
+      top: 6px;
+    }
+
+    .menu-toggle.active span {
+      background: transparent;
+    }
+
+    .menu-toggle.active span::before {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    .menu-toggle.active span::after {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+
     .page-content {
       max-width: 800px;
       margin: 0 auto;
-      padding: 8rem 2rem 6rem;
+      padding: 9rem 2rem 6rem;
     }
 
     .page-title {
@@ -143,12 +203,19 @@
       font-size: clamp(2rem, 5vw, 3rem);
       text-transform: uppercase;
       margin-bottom: 0.5rem;
+      line-height: 1.05;
     }
 
     .page-subtitle {
       font-family: 'Satisfy', cursive;
       color: var(--coral);
       font-size: 1.1rem;
+      margin-bottom: 3rem;
+    }
+
+    .intro-note {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.88rem;
       margin-bottom: 3rem;
     }
 
@@ -160,6 +227,8 @@
 
     .legal-section:last-of-type {
       border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
     }
 
     .legal-section h2 {
@@ -170,6 +239,7 @@
       color: var(--yellow);
       letter-spacing: 0.06em;
       margin-bottom: 1.2rem;
+      line-height: 1.3;
     }
 
     .legal-section p {
@@ -204,6 +274,15 @@
       font-size: 0.92rem;
     }
 
+    .info-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    .info-label {
+      color: var(--white);
+      font-weight: 600;
+    }
+
     footer {
       background: rgba(18,18,18,0.98);
       border-top: 1px solid rgba(202,255,0,0.08);
@@ -232,18 +311,106 @@
       flex-wrap: wrap;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
       nav {
         padding: 1rem 1.5rem;
       }
 
-      nav ul {
+      .logo img {
+        height: 56px;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .nav-links {
         display: none;
       }
 
+      .mobile-menu {
+        position: fixed;
+        top: 88px;
+        left: 1rem;
+        right: 1rem;
+        display: none;
+        flex-direction: column;
+        gap: 0.4rem;
+        padding: 1rem;
+        background: rgba(18,18,18,0.98);
+        border: 1px solid rgba(202,255,0,0.12);
+        border-radius: 14px;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+        z-index: 999;
+      }
+
+      .mobile-menu.open {
+        display: flex;
+      }
+
+      .mobile-menu a,
+      .mobile-menu summary {
+        color: var(--white);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        padding: 0.9rem 0.4rem;
+      }
+
+      .mobile-menu details {
+        border-top: 1px solid rgba(255,255,255,0.06);
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+        padding: 0.2rem 0;
+      }
+
+      .mobile-menu summary {
+        list-style: none;
+        cursor: pointer;
+      }
+
+      .mobile-menu summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .mobile-submenu {
+        display: flex;
+        flex-direction: column;
+        padding: 0.2rem 0 0.5rem 0.8rem;
+      }
+
+      .page-content {
+        padding: 8.3rem 1.2rem 4rem;
+      }
+
+      .page-subtitle {
+        font-size: 1.05rem;
+        margin-bottom: 2rem;
+      }
+
+      .intro-note {
+        margin-bottom: 2rem;
+      }
+
+      .legal-section {
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+      }
+
+      .info-block {
+        padding: 1.2rem 1rem;
+      }
+
       footer {
+        padding: 2rem 1.2rem;
         flex-direction: column;
         text-align: center;
+      }
+
+      .footer-links {
+        justify-content: center;
+        gap: 1rem;
       }
     }
   </style>
@@ -253,7 +420,8 @@
     <a class="logo" href="index.html">
       <img src="Logo.png" alt="Assist by Alicia" />
     </a>
-    <ul>
+
+    <ul class="nav-links">
       <li><a href="index.html">Accueil</a></li>
       <li class="dropdown">
         <span class="menu-label">Mes offres <span class="dropdown-arrow">▾</span></span>
@@ -266,34 +434,54 @@
       <li><a href="qui-suis-je.html">Qui suis-je ?</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+
+    <button class="menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span>
+    </button>
   </nav>
 
-  <div class="page-content">
-    <h1 class="page-title">Mentions légales &amp; CGV</h1>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html">Accueil</a>
 
-    <p style="color:rgba(255,255,255,0.5); font-size:0.88rem; margin-bottom:3rem;">
-      Le site assistbyalicia.fr est la propriété exclusive de EI Assist By Alicia, qui l'édite.
+    <details>
+      <summary>Mes offres</summary>
+      <div class="mobile-submenu">
+        <a href="offres.html">Toutes mes offres</a>
+        <a href="offre-express.html">Express</a>
+        <a href="Audit-de-temps.html">Audit</a>
+      </div>
+    </details>
+
+    <a href="qui-suis-je.html">Qui suis-je ?</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <main class="page-content">
+    <h1 class="page-title">Mentions légales &amp; CGV</h1>
+    <p class="intro-note">
+      Le site assistbyalicia.fr est la propriété exclusive de EI Assist By Alicia, qui l’édite.
     </p>
 
-    <div class="legal-section">
+    <section class="legal-section">
       <h2>1. Présentation du site</h2>
       <p>
         Conformément aux dispositions des articles 6-III et 19 de la Loi n° 2004-575 du 21 juin 2004 pour la Confiance dans l'économie numérique, dite L.C.E.N., nous portons à la connaissance des utilisateurs et visiteurs du site de assistbyalicia.fr les informations suivantes :
       </p>
-      <div class="info-block">
-        <p><strong style="color:var(--white)">Nom de la Société :</strong> EI Assist By Alicia</p>
-        <p><strong style="color:var(--white)">Adresse :</strong> 58 rue Benjamin Normand, 76300 Sotteville les Rouen</p>
-        <p><strong style="color:var(--white)">Tél :</strong> 07 49 55 99 62</p>
-        <p><strong style="color:var(--white)">Email :</strong> <a href="mailto:contact@assistbyalicia.fr.fr">contact@assistbyalicia.fr.fr</a></p>
-        <p><strong style="color:var(--white)">SIRET :</strong> 75023930300027</p>
-        <p><strong style="color:var(--white)">Créateur du site :</strong> Alicia Chouquet</p>
-        <p><strong style="color:var(--white)">Responsable de la publication :</strong> Chouquet Alicia — <a href="mailto:contact@assistbyalicia.fr.fr">contact@assistbyalicia.fr.fr</a></p>
-        <p><strong style="color:var(--white)">Webmaster :</strong> Alicia Chouquet — <a href="mailto:contact@assistbyalicia.fr.fr">contact@assistbyalicia.fr.fr</a></p>
-        <p><strong style="color:var(--white)">Hébergeur :</strong> Github</p>
-      </div>
-    </div>
 
-    <div class="legal-section">
+      <div class="info-block">
+        <p><span class="info-label">Nom de la société :</span> EI Assist By Alicia</p>
+        <p><span class="info-label">Adresse :</span> 58 rue Benjamin Normand, 76300 Sotteville les Rouen</p>
+        <p><span class="info-label">Tél :</span> 07 49 55 99 62</p>
+        <p><span class="info-label">Email :</span> <a href="mailto:contact@assistbyalicia.fr">contact@assistbyalicia.fr</a></p>
+        <p><span class="info-label">SIRET :</span> 75023930300027</p>
+        <p><span class="info-label">Créateur du site :</span> Alicia Chouquet</p>
+        <p><span class="info-label">Responsable de la publication :</span> Chouquet Alicia — <a href="mailto:contact@assistbyalicia.fr">contact@assistbyalicia.fr</a></p>
+        <p><span class="info-label">Webmaster :</span> Alicia Chouquet — <a href="mailto:contact@assistbyalicia.fr">contact@assistbyalicia.fr</a></p>
+        <p><span class="info-label">Hébergeur :</span> GitHub</p>
+      </div>
+    </section>
+
+    <section class="legal-section">
       <h2>2. Description des services fournis</h2>
       <p>
         Le site assistbyalicia.fr a pour objet de fournir une information concernant l'ensemble des activités de la société.
@@ -304,34 +492,34 @@
       <p>
         Tous les informations proposées sur le site assistbyalicia.fr sont données à titre indicatif, sont non exhaustives, et sont susceptibles d'évoluer. Elles sont données sous réserve de modifications ayant été apportées depuis leur mise en ligne.
       </p>
-    </div>
+    </section>
 
-    <div class="legal-section">
+    <section class="legal-section">
       <h2>3. Propriété intellectuelle et contrefaçons</h2>
       <p>
         Le propriétaire du site est propriétaire des droits de propriété intellectuelle ou détient les droits d'usage sur tous les éléments accessibles sur le site, notamment les textes, images, graphismes, logo, icônes, sons, logiciels…
       </p>
       <p>
-        Toute reproduction, représentation, modification, publication, adaptation totale ou partielle des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable à l'email : <a href="mailto:contact@assistbyalicia.fr.fr">contact@assistbyalicia.fr.fr</a>
+        Toute reproduction, représentation, modification, publication, adaptation totale ou partielle des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable à l'email : <a href="mailto:contact@assistbyalicia.fr">contact@assistbyalicia.fr</a>
       </p>
       <p>
         Toute exploitation non autorisée du site ou de l'un quelconque de ces éléments qu'il contient sera considérée comme constitutive d'une contrefaçon et poursuivie conformément aux dispositions des articles L.335-2 et suivants du Code de Propriété Intellectuelle.
       </p>
-    </div>
+    </section>
 
-    <div class="legal-section">
+    <section class="legal-section">
       <h2>4. Liens hypertextes et cookies</h2>
       <p>
-        Le site assistbyalicia.fr contient un certain nombre de liens hypertextes vers d'autres sites (partenaires, informations…) mis en place avec l'autorisation du propriétaire du site. Cependant, le propriétaire du site n'a pas la possibilité de vérifier le contenu des sites ainsi visités, et décline donc toute responsabilité de ce fait quant aux risques éventuels de contenus illicites.
+        Le site assistbyalicia.fr contient un certain nombre de liens hypertextes vers d'autres sites mis en place avec l'autorisation du propriétaire du site. Cependant, le propriétaire du site n'a pas la possibilité de vérifier le contenu des sites ainsi visités, et décline donc toute responsabilité quant aux risques éventuels de contenus illicites.
       </p>
       <p>
         L'utilisateur est informé que lors de ses visites sur le site assistbyalicia.fr, un ou des cookies sont susceptibles de s'installer automatiquement sur son ordinateur. Un cookie est un fichier de petite taille, qui ne permet pas l'identification de l'utilisateur, mais qui enregistre des informations relatives à la navigation d'un ordinateur sur un site.
       </p>
       <p>
-        Le paramétrage du logiciel de navigation permet d'informer de la présence de cookie et éventuellement, de refuser de la manière décrite à l'adresse suivante : <a href="http://www.cnil.fr" target="_blank" rel="noopener noreferrer">www.cnil.fr</a>
+        Le paramétrage du logiciel de navigation permet d'informer de la présence de cookie et éventuellement, de les refuser de la manière décrite à l'adresse suivante : <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">www.cnil.fr</a>
       </p>
       <p>
-        Le refus d'installation d'un cookie peut entraîner l'impossibilité d'accéder à certains services. L'utilisateur peut toutefois configurer son ordinateur de la manière suivante pour refuser l'installation des cookies :
+        Le refus d'installation d'un cookie peut entraîner l'impossibilité d'accéder à certains services. L'utilisateur peut toutefois configurer son ordinateur pour refuser l'installation des cookies.
       </p>
       <p>
         Sous Internet Explorer : onglet outil / options internet. Cliquez sur Confidentialité et choisissez Bloquer tous les cookies. Validez sur Ok.
@@ -339,9 +527,9 @@
       <p>
         Sous Netscape : onglet édition / préférences. Cliquez sur Avancées et choisissez Désactiver les cookies. Validez sur Ok.
       </p>
-    </div>
+    </section>
 
-    <div class="legal-section">
+    <section class="legal-section">
       <h2>5. Protection des biens et des personnes – gestion des données personnelles</h2>
       <p>
         En France, les données personnelles sont notamment protégées par la loi n° 78-87 du 6 janvier 1978, la loi n° 2004-801 du 6 août 2004, l'article L. 226-13 du Code pénal et la Directive Européenne du 24 octobre 1995.
@@ -350,7 +538,7 @@
         Sur le site assistbyalicia.fr, le propriétaire du site ne collecte des informations personnelles relatives à l'utilisateur que pour le besoin de certains services proposés par le site. L'utilisateur fournit ces informations en toute connaissance de cause, notamment lorsqu'il procède par lui-même à leur saisie.
       </p>
       <p>
-        Conformément aux dispositions des articles 38 et suivants de la loi 78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertés, tout utilisateur dispose d'un droit d'accès, de rectification, de suppression et d'opposition aux données personnelles le concernant. Pour l'exercer, adressez votre demande par email : <a href="mailto:contact@assistbyalicia.fr.fr">contact@assistbyalicia.fr.fr</a>
+        Conformément aux dispositions des articles 38 et suivants de la loi 78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertés, tout utilisateur dispose d'un droit d'accès, de rectification, de suppression et d'opposition aux données personnelles le concernant. Pour l'exercer, adressez votre demande par email : <a href="mailto:contact@assistbyalicia.fr">contact@assistbyalicia.fr</a>
       </p>
       <p>
         Aucune information personnelle de l'utilisateur du site assistbyalicia.fr n'est publiée à l'insu de l'utilisateur, échangée, transférée, cédée ou vendue sur un support quelconque à des tiers.
@@ -361,8 +549,8 @@
       <p>
         Les bases de données sont protégées par les dispositions de la loi du 1er juillet 1998 transposant la directive 96/9 du 11 mars 1996 relative à la protection juridique des bases de données.
       </p>
-    </div>
-  </div>
+    </section>
+  </main>
 
   <footer>
     <span>© 2026 Assist by Alicia – Tous droits réservés</span>
@@ -371,5 +559,26 @@
       <a href="Politique de confidentialité.html">Politique de confidentialité</a>
     </div>
   </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      menuToggle.classList.toggle('active', isOpen);
+      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      menuToggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+    });
+
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Ouvrir le menu');
+      });
+    });
+  </script>
 </body>
 </html>
