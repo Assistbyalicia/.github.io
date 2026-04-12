@@ -6,7 +6,11 @@
   <title>Offre Express – Assist by Alicia</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=League+Spartan:wght@700;900&family=Satisfy&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     :root {
       --blue: #1E2A4A;
@@ -22,24 +26,101 @@
       font-family: 'Montserrat', sans-serif;
       line-height: 1.7;
     }
-<nav>
-  <a class="logo" href="index.html">
-    <img src="Logo.png" alt="Assist by Alicia" />
-  </a>
-  <ul>
-    <li class="dropdown">
-      <span class="menu-label">Mes offres</span>
-      <ul class="submenu">
-        <li><a href="offres.html">Toutes mes offres</a></li>
-        <li><a href="offre-express.html" class="active">Express</a></li>
-        <li><a href="Audit-de-temps.html">Audit</a></li>
-      </ul>
-    </li>
-    <li><a href="qui-suis-je.html">Qui suis-je ?</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
 
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(18,18,18,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(202,255,0,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 4rem;
+    }
+
+    .logo {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 75px;
+      width: auto;
+      display: block;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    nav ul li {
+      list-style: none;
+      position: relative;
+    }
+
+    nav ul a,
+    .menu-label {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .menu-label {
+      cursor: default;
+      display: inline-block;
+    }
+
+    nav ul a:hover,
+    nav ul a.active,
+    .dropdown:hover .menu-label {
+      color: var(--yellow);
+    }
+
+    .dropdown {
+      padding-bottom: 0.6rem;
+    }
+
+    .submenu {
+      list-style: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 240px;
+      display: none;
+      flex-direction: column;
+      gap: 0;
+      background: rgba(18,18,18,0.98);
+      border: 1px solid rgba(202,255,0,0.12);
+      border-radius: 10px;
+      padding: 0.5rem 0;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+    }
+
+    .submenu li {
+      width: 100%;
+    }
+
+    .submenu a {
+      display: block;
+      padding: 0.85rem 1rem;
+      font-size: 0.78rem;
+      white-space: nowrap;
+    }
+
+    .dropdown:hover .submenu {
+      display: flex;
+    }
 
     .btn-primary {
       background: var(--coral);
@@ -400,8 +481,14 @@
       <img src="Logo.png" alt="Assist by Alicia" />
     </a>
     <ul>
-      <li><a href="offres.html">Mes offres</a></li>
-      <li><a href="offre-express.html" class="active">Express</a></li>
+      <li class="dropdown">
+        <span class="menu-label">Mes offres</span>
+        <ul class="submenu">
+          <li><a href="offres.html">Toutes mes offres</a></li>
+          <li><a href="offre-express.html" class="active">Express</a></li>
+          <li><a href="Audit-de-temps.html">Audit</a></li>
+        </ul>
+      </li>
       <li><a href="qui-suis-je.html">Qui suis-je ?</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
