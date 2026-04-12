@@ -2,9 +2,9 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact – Assist by Alicia</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=League+Spartan:wght@700;900&family=Satisfy&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=League+Spartan:wght@700;900&family=Satisfy&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -210,4 +210,412 @@
     .section-tag {
       font-family: 'Satisfy', cursive;
       color: var(--coral);
-      font-size:
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    h1 {
+      font-family: 'League Spartan', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2.1rem, 5vw, 4rem);
+      text-transform: uppercase;
+      line-height: 1.05;
+      margin-bottom: 1.2rem;
+    }
+
+    h1 span {
+      color: var(--coral);
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto 1rem;
+      color: rgba(255,255,255,0.78);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2rem;
+      align-items: stretch;
+    }
+
+    .contact-card {
+      background: rgba(30,42,74,0.45);
+      border: 1px solid rgba(202,255,0,0.12);
+      border-radius: 10px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-card h2 {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 1.7rem;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      line-height: 1.05;
+    }
+
+    .contact-card h2 span {
+      color: var(--yellow);
+    }
+
+    .contact-card p {
+      color: rgba(255,255,255,0.78);
+      margin-bottom: 1rem;
+    }
+
+    .contact-info {
+      display: grid;
+      gap: 0.9rem;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .contact-info div {
+      padding: 0.9rem 1rem;
+      background: rgba(255,71,87,0.08);
+      border-left: 3px solid var(--coral);
+      border-radius: 0 6px 6px 0;
+      color: rgba(255,255,255,0.9);
+      font-size: 0.95rem;
+    }
+
+    .contact-info a {
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      color: var(--yellow);
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-family: 'League Spartan', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.95rem 1.6rem;
+      border-radius: 4px;
+      min-height: 52px;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--coral);
+      color: var(--white);
+      box-shadow: 0 0 20px rgba(255,71,87,0.35);
+    }
+
+    .btn-primary:hover {
+      background: #e03343;
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--yellow);
+      color: var(--yellow);
+      background: transparent;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(202,255,0,0.08);
+    }
+
+    .buttons-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: auto;
+    }
+
+    .note-box {
+      margin-top: 3rem;
+      background: rgba(202,255,0,0.05);
+      border: 1px solid rgba(202,255,0,0.16);
+      border-radius: 8px;
+      padding: 1.6rem;
+      text-align: center;
+    }
+
+    .note-box p {
+      margin: 0;
+      color: rgba(255,255,255,0.8);
+    }
+
+    footer {
+      border-top: 1px solid rgba(202,255,0,0.08);
+      padding: 2rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    footer a {
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--white);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      nav {
+        padding: 1rem 1.5rem;
+      }
+
+      .logo img {
+        height: 56px;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .mobile-menu {
+        position: fixed;
+        top: 88px;
+        left: 1rem;
+        right: 1rem;
+        display: none;
+        flex-direction: column;
+        gap: 0.4rem;
+        padding: 1rem;
+        background: rgba(18,18,18,0.98);
+        border: 1px solid rgba(202,255,0,0.12);
+        border-radius: 14px;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+        z-index: 999;
+      }
+
+      .mobile-menu.open {
+        display: flex;
+      }
+
+      .mobile-menu a,
+      .mobile-menu summary {
+        color: var(--white);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        padding: 0.9rem 0.4rem;
+      }
+
+      .mobile-menu a.active {
+        color: var(--yellow);
+      }
+
+      .mobile-menu details {
+        border-top: 1px solid rgba(255,255,255,0.06);
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+        padding: 0.2rem 0;
+      }
+
+      .mobile-menu summary {
+        list-style: none;
+        cursor: pointer;
+      }
+
+      .mobile-menu summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .mobile-submenu {
+        display: flex;
+        flex-direction: column;
+        padding: 0.2rem 0 0.5rem 0.8rem;
+      }
+
+      main {
+        padding: 8.3rem 1.2rem 4rem;
+      }
+
+      .hero {
+        margin-bottom: 2.5rem;
+      }
+
+      .section-tag {
+        font-size: 1.2rem;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+
+      .contact-card {
+        padding: 1.5rem 1.2rem;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+      }
+
+      .note-box {
+        margin-top: 2rem;
+        padding: 1.3rem 1.1rem;
+      }
+
+      footer {
+        padding: 2rem 1.2rem;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-links {
+        justify-content: center;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="logo" href="index.html">
+      <img src="Logo.png" alt="Assist by Alicia" />
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li class="dropdown">
+        <span class="menu-label">Mes offres <span class="dropdown-arrow">▾</span></span>
+        <ul class="submenu">
+          <li><a href="offres.html">Toutes mes offres</a></li>
+          <li><a href="offre-express.html">Express</a></li>
+          <li><a href="Audit-de-temps.html">Audit</a></li>
+        </ul>
+      </li>
+      <li><a href="qui-suis-je.html">Qui suis-je ?</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+
+    <button class="menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html">Accueil</a>
+
+    <details>
+      <summary>Mes offres</summary>
+      <div class="mobile-submenu">
+        <a href="offres.html">Toutes mes offres</a>
+        <a href="offre-express.html">Express</a>
+        <a href="Audit-de-temps.html">Audit</a>
+      </div>
+    </details>
+
+    <a href="qui-suis-je.html">Qui suis-je ?</a>
+    <a href="contact.html" class="active">Contact</a>
+  </div>
+
+  <main>
+    <section class="hero">
+      <p class="section-tag">Contact</p>
+      <h1>On échange sur ton <span>besoin</span> ?</h1>
+      <p>
+        Si tu veux clarifier ce qui coince dans ton organisation, vérifier si une offre est adaptée à ta situation, ou simplement me poser une question, tu peux me contacter ici.
+      </p>
+    </section>
+
+    <section class="contact-grid">
+      <article class="contact-card">
+        <h2>Réserver un <span>appel</span></h2>
+        <p>
+          Le plus simple si tu veux qu’on parle directement de ton business, de ton organisation ou d’un besoin précis.
+        </p>
+
+        <div class="contact-info">
+          <div>Appel diagnostic gratuit</div>
+          <div>30 minutes</div>
+          <div>Sans engagement</div>
+        </div>
+
+        <div class="buttons-stack">
+          <a class="btn-primary" href="https://calendar.notion.so/meet/aliciachouquet/30min" target="_blank" rel="noopener noreferrer">
+            Réserver un appel
+          </a>
+        </div>
+      </article>
+
+      <article class="contact-card">
+        <h2>M’écrire <span>directement</span></h2>
+        <p>
+          Si tu préfères commencer par un message, tu peux aussi m’écrire par email. Je reviendrai vers toi dès que possible.
+        </p>
+
+        <div class="contact-info">
+          <div><strong>Email :</strong> <a href="mailto:contact@assistbyalicia.fr">contact@assistbyalicia.fr</a></div>
+          <div><strong>Localisation :</strong> Sotteville-lès-Rouen</div>
+          <div><strong>Réponse :</strong> dès que possible en semaine</div>
+        </div>
+
+        <div class="buttons-stack">
+          <a class="btn-secondary" href="mailto:contact@assistbyalicia.fr">
+            Envoyer un email
+          </a>
+        </div>
+      </article>
+    </section>
+
+    <div class="note-box">
+      <p>
+        Tu ne sais pas encore quelle offre choisir ? Commence par l’appel diagnostic : ce sera le plus simple pour faire le tri.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <span>© 2026 Assist by Alicia – Tous droits réservés</span>
+    <div class="footer-links">
+      <a href="Mention légale - CGV.html">Mentions légales / CGV</a>
+      <a href="Politique de confidentialité.html">Politique de confidentialité</a>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      menuToggle.classList.toggle('active', isOpen);
+      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      menuToggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+    });
+
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Ouvrir le menu');
+      });
+    });
+  </script>
+</body>
+</html>
