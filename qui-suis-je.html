@@ -6,7 +6,11 @@
   <title>Qui suis-je ? – Assist by Alicia</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=League+Spartan:wght@700;900&family=Satisfy&display=swap" rel="stylesheet"/>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     :root {
       --blue: #1E2A4A;
@@ -62,7 +66,13 @@
       align-items: center;
     }
 
-    nav ul a {
+    nav ul li {
+      list-style: none;
+      position: relative;
+    }
+
+    nav ul a,
+    .menu-label {
       color: var(--white);
       text-decoration: none;
       font-size: 0.85rem;
@@ -72,35 +82,74 @@
       transition: color 0.2s;
     }
 
+    .menu-label {
+      cursor: default;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .dropdown-arrow {
+      font-size: 0.7rem;
+      line-height: 1;
+      transform: translateY(-1px);
+      transition: transform 0.2s ease;
+    }
+
+    .dropdown:hover .dropdown-arrow {
+      transform: translateY(-1px) rotate(180deg);
+    }
+
     nav ul a:hover,
-    nav ul a.active {
+    nav ul a.active,
+    .dropdown:hover .menu-label {
       color: var(--yellow);
     }
 
-    section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 5rem 2rem;
+    .submenu {
+      list-style: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 240px;
+      display: none;
+      flex-direction: column;
+      gap: 0;
+      background: rgba(18,18,18,0.98);
+      border: 1px solid rgba(202,255,0,0.12);
+      border-radius: 10px;
+      padding: 0.5rem 0;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
     }
 
-    .hero-about {
-      padding-top: 9rem;
+    .submenu li {
+      width: 100%;
+    }
+
+    .submenu a {
+      display: block;
+      padding: 0.85rem 1rem;
+      font-size: 0.78rem;
+      white-space: nowrap;
+    }
+
+    .dropdown:hover .submenu {
+      display: flex;
+    }
+
+    .hero {
+      padding: 10rem 2rem 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
       display: grid;
       grid-template-columns: 320px 1fr;
       gap: 4rem;
       align-items: center;
-      min-height: 70vh;
-    }
-
-    .portrait-wrap {
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
 
     .portrait {
-      width: 280px;
-      height: 280px;
+      width: 320px;
+      height: 320px;
       border-radius: 50%;
       overflow: hidden;
       border: 3px solid var(--coral);
@@ -131,12 +180,12 @@
 
     h1 {
       font-size: clamp(2.2rem, 5vw, 4.4rem);
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.3rem;
     }
 
-    h2 {
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      margin-bottom: 1.2rem;
+    h1 span,
+    h2 span {
+      color: var(--coral);
     }
 
     h1 em,
@@ -145,80 +194,117 @@
       font-style: normal;
     }
 
+    .hero p {
+      color: rgba(255,255,255,0.78);
+      margin-bottom: 1rem;
+      max-width: 650px;
+    }
+
+    .hero-intro {
+      font-size: 1.05rem;
+    }
+
+    section {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      margin-bottom: 1.3rem;
+    }
+
     p {
       color: rgba(255,255,255,0.78);
       margin-bottom: 1rem;
     }
 
-    .hero-intro p:last-child {
-      margin-bottom: 0;
-    }
-
-    .card {
-      background: rgba(30,42,74,0.45);
-      border: 1px solid rgba(202,255,0,0.12);
+    .story-block {
+      background: rgba(30,42,74,0.38);
+      border: 1px solid rgba(202,255,0,0.1);
       border-radius: 10px;
-      padding: 2.3rem;
-      box-shadow: 0 0 24px rgba(30,42,74,0.18);
+      padding: 2.5rem;
     }
 
-    .grid-3,
-    .philo-grid {
+    .timeline {
+      display: grid;
+      gap: 1.4rem;
+      margin-top: 2rem;
+    }
+
+    .timeline-item {
+      background: rgba(255,71,87,0.06);
+      border-left: 3px solid var(--coral);
+      border-radius: 0 8px 8px 0;
+      padding: 1.4rem 1.5rem;
+    }
+
+    .timeline-item h3 {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .values-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
       margin-top: 2rem;
     }
 
-    .card h3,
-    .philo-card h3 {
+    .value-card {
+      background: rgba(30,42,74,0.4);
+      border: 1px solid rgba(202,255,0,0.1);
+      border-radius: 8px;
+      padding: 2rem;
+    }
+
+    .value-card h3 {
       font-family: 'League Spartan', sans-serif;
       font-size: 1rem;
       font-weight: 700;
       text-transform: uppercase;
       color: var(--yellow);
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.7rem;
       letter-spacing: 0.05em;
     }
 
-    .card-icon {
-      color: var(--coral);
-      font-size: 1.6rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .philo-card {
-      background: rgba(30,42,74,0.35);
-      border: 1px solid rgba(255,71,87,0.12);
-      border-radius: 10px;
+    .highlight-block {
+      margin-top: 2rem;
       padding: 2rem;
+      background: rgba(202,255,0,0.05);
+      border: 1px solid rgba(202,255,0,0.18);
+      border-radius: 8px;
+      text-align: center;
     }
 
-    .strong-line {
+    .highlight-block p {
       font-family: 'League Spartan', sans-serif;
+      font-size: 1.2rem;
       font-weight: 700;
       color: var(--yellow);
       text-transform: uppercase;
-      margin-top: 1rem;
-    }
-
-    .small-note {
-      margin-top: 2rem;
-      color: rgba(255,255,255,0.45);
-      font-size: 0.88rem;
+      margin-bottom: 0.5rem;
     }
 
     .cta-final {
       text-align: center;
-      padding-bottom: 6rem;
+      padding: 6rem 2rem 7rem;
+      max-width: 100%;
     }
 
     .cta-final p:not(.section-tag):not(.note) {
-      max-width: 620px;
+      max-width: 580px;
       margin: 0 auto 2rem;
     }
 
-    .btn-primary {
+    .btn-primary,
+    .btn-secondary {
       display: inline-block;
       text-decoration: none;
       font-family: 'League Spartan', sans-serif;
@@ -226,9 +312,12 @@
       font-size: 0.95rem;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      padding: 0.95rem 1.6rem;
+      padding: 0.95rem 1.8rem;
       border-radius: 4px;
       transition: 0.2s ease;
+    }
+
+    .btn-primary {
       background: var(--coral);
       color: var(--white);
       box-shadow: 0 0 20px rgba(255,71,87,0.35);
@@ -238,8 +327,19 @@
       background: #e03343;
     }
 
+    .btn-secondary {
+      background: transparent;
+      color: var(--yellow);
+      border: 1.5px solid var(--yellow);
+      margin-left: 1rem;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(202,255,0,0.08);
+    }
+
     .note {
-      margin-top: 2rem;
+      margin-top: 1.5rem;
       font-size: 0.82rem;
       color: rgba(255,255,255,0.45);
     }
@@ -272,15 +372,22 @@
     }
 
     @media (max-width: 900px) {
-      .hero-about,
-      .grid-3,
-      .philo-grid {
+      .hero {
         grid-template-columns: 1fr;
+        text-align: center;
       }
 
-      .hero-about {
-        text-align: center;
-        gap: 2rem;
+      .portrait {
+        margin: 0 auto;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -293,140 +400,156 @@
         display: none;
       }
 
+      .portrait {
+        width: 240px;
+        height: 240px;
+      }
+
       footer {
         flex-direction: column;
         text-align: center;
+      }
+
+      .btn-secondary {
+        margin-left: 0;
+        margin-top: 1rem;
       }
     }
   </style>
 </head>
 <body>
-
   <nav>
     <a class="logo" href="index.html">
       <img src="Logo.png" alt="Assist by Alicia" />
     </a>
     <ul>
-      <li><a href="offres.html">Mes offres</a></li>
-      <li><a href="offre-express.html">Express</a></li>
+      <li><a href="index.html">Accueil</a></li>
+      <li class="dropdown">
+        <span class="menu-label">Mes offres <span class="dropdown-arrow">▾</span></span>
+        <ul class="submenu">
+          <li><a href="offres.html">Toutes mes offres</a></li>
+          <li><a href="offre-express.html">Express</a></li>
+          <li><a href="Audit-de-temps.html">Audit</a></li>
+        </ul>
+      </li>
       <li><a href="qui-suis-je.html" class="active">Qui suis-je ?</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
-  <section class="hero-about">
-    <div class="portrait-wrap">
-      <div class="portrait">
-        <img src="Photo de profil.png" alt="Portrait d'Alicia" />
-      </div>
+  <section class="hero">
+    <div class="portrait">
+      <img src="Photo de profil.png" alt="Portrait d'Alicia" />
     </div>
-
-    <div class="hero-intro">
+    <div>
       <p class="section-tag">Qui suis-je ?</p>
-      <h1>Alicia, Bras droit spécialisée en <em>systèmes Notion</em></h1>
-      <p>
-        J'aide les entrepreneurs à transformer leur organisation chaotique en un système clair, centralisé et automatisé.
+      <h1>Moi, c’est Alicia.<br><span>Je structure le chaos</span><br><em>des entrepreneurs.</em></h1>
+      <p class="hero-intro">
+        Je suis bras droit spécialisée en systèmes Notion sur-mesure, automatisations et intégration intelligente d’outils pour aider les entrepreneurs à reprendre le contrôle de leur business.
       </p>
       <p>
-        Mon objectif : structurer ton activité pour que tu arrêtes de subir ton organisation et que tu puisses enfin reprendre le contrôle.
+        Mon rôle, ce n’est pas juste de “faire un bel espace Notion”. Mon job, c’est de transformer une organisation floue, dispersée ou trop dépendante de toi en un système clair, centralisé et réellement utile au quotidien.
       </p>
     </div>
   </section>
 
   <section>
     <p class="section-tag">Mon parcours</p>
-    <h2>De l’assistanat polyvalent à <em>la structuration du chaos</em></h2>
-    <div class="card">
-      <p>J'ai démarré comme assistante digitale. Emails, montage vidéo, tunnels de vente, Pinterest... J'étais la personne polyvalente qui gérait tout.</p>
-      <p>Les clients étaient contents. Le travail rentrait.</p>
-      <p>Mais j'ai vu un truc revenir en boucle : des entrepreneurs qui délèguent, et pour qui ça tourne mal.</p>
-      <p>Pas par manque de compétences. Par manque de système. Process dans leur tête. Infos éparpillées. Aucune doc.</p>
-      <p>Résultat ? Des allers-retours sans fin. Des malentendus. L'impression de perdre plus de temps qu'autre chose. Et au final, ils reprennent tout en main.</p>
-      <p>J'ai compris que le problème n'était pas les gens. C'était l'absence d'organisation.</p>
-      <p>Alors j'ai arrêté d'être polyvalente pour devenir spécialiste. J'ai appris Notion, les automatisations, l'IA. Et je me suis concentrée sur un truc précis : structurer pour rendre la délégation fluide.</p>
+    <h2>Je n’ai pas commencé par vendre <em>Notion.</em></h2>
+    <div class="story-block">
+      <p>
+        Au départ, j’étais assistante digitale. J’aidais mes clientes à gérer leur activité, leurs contenus, leurs tâches, leurs outils, leurs process.
+      </p>
+      <p>
+        Très vite, j’ai remarqué le vrai problème : le souci n’était pas le manque de motivation, ni le manque de compétences. C’était l’absence de système.
+      </p>
+      <p>
+        Trop d’outils, trop d’infos éparpillées, trop de choses gardées en tête, trop de dépendance au “je vais m’en souvenir”. Et forcément, ça bloque la délégation, la clarté et la croissance.
+      </p>
+      <p>
+        C’est là que j’ai décidé de me spécialiser dans la structuration de business via Notion, les automatisations et une logique d’organisation pensée pour la vraie vie d’une entrepreneure.
+      </p>
     </div>
   </section>
 
   <section>
-    <p class="section-tag">Ce que je fais</p>
-    <h2>Ton opérationnel, <em>transformé en système</em></h2>
-    <div class="card">
-      <p>Je reprends ton opérationnel et je le transforme en système Notion. Un système qui centralise tout : clients, projets, tâches, compta, documents, process.</p>
-      <p>Avec des automatisations qui bossent à ta place. Et de l'IA quand ça a du sens.</p>
-      <p class="strong-line">Tu arrêtes de gérer l'organisation. Tu reprends le contrôle de ton business.</p>
-    </div>
-  </section>
-
-  <section>
-    <p class="section-tag">Ma différence</p>
-    <h2>Pas designeuse Notion. <em>Bras droit.</em></h2>
-    <div class="card">
-      <p>Une designeuse te crée un bel outil. Moi, je reprends ton opérationnel pour le structurer.</p>
-      <p>Je pars de ta réalité. De tes vrais besoins. De ton bordel actuel. Et je construis ton système. Pas celui d'un template tout fait.</p>
-
-      <div class="grid-3">
-        <div class="card">
-          <div class="card-icon">⬡</div>
-          <h3>Notion</h3>
-          <p>Centralisation de tout ton opérationnel : clients, projets, tâches, compta, documents.</p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">⚡</div>
-          <h3>Automatisations</h3>
-          <p>Les tâches répétitives se font toutes seules. Tu arrêtes de faire le travail d'un robot.</p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">◈</div>
-          <h3>IA</h3>
-          <p>Intégrée intelligemment, là où ça a du sens. Pour aller encore plus vite.</p>
-        </div>
+    <p class="section-tag">Ce que je fais aujourd’hui</p>
+    <h2>Je construis des systèmes qui <span>te soulagent</span>, pas des usines à gaz.</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>Centraliser</h3>
+        <p>Je regroupe tes infos, tes tâches, tes clients, tes contenus et tes documents dans un seul système cohérent.</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Clarifier</h3>
+        <p>Je remets de la logique dans ton fonctionnement pour que tu saches quoi faire, où trouver l’info, et comment avancer sans t’éparpiller.</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Fluidifier</h3>
+        <p>J’intègre des automatisations et des logiques simples pour te faire gagner du temps sans rendre ton business plus compliqué.</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Rendre autonome</h3>
+        <p>Je ne crée pas un système dépendant de moi. Je t’apprends à l’utiliser pour que tu puisses vraiment t’en servir seule.</p>
       </div>
     </div>
   </section>
 
   <section>
-    <p class="section-tag">Ma philosophie</p>
-    <h2>Trois principes. <em>Non négociables.</em></h2>
-
-    <div class="philo-grid">
-      <div class="philo-card">
-        <h3>Zéro template</h3>
-        <p>Chaque système est créé sur-mesure. Pas de copier-coller d'une solution toute faite.</p>
+    <p class="section-tag">Ma façon de travailler</p>
+    <h2>Mes <em>3 piliers</em></h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <h3>Sur-mesure</h3>
+        <p>Je ne pars pas d’un template générique. Je pars de ton fonctionnement réel, de tes contraintes, de ta manière de penser et de gérer ton business.</p>
       </div>
-
-      <div class="philo-card">
-        <h3>Tu repars autonome</h3>
-        <p>Je te forme pour que tu n'aies pas besoin de moi après. Le but, c'est ton indépendance.</p>
+      <div class="value-card">
+        <h3>Simplicité utile</h3>
+        <p>Je préfère un système simple que tu utilises tous les jours plutôt qu’un espace complexe que tu abandonnes au bout de deux semaines.</p>
       </div>
-
-      <div class="philo-card">
-        <h3>Taillé pour toi</h3>
-        <p>Tu reçois un système prêt à l'emploi. Pas adapté par toi. Construit pour toi.</p>
+      <div class="value-card">
+        <h3>Vision opérationnelle</h3>
+        <p>Je pense comme une bras droit : je ne regarde pas juste l’outil, je regarde comment ton business fonctionne derrière.</p>
       </div>
     </div>
 
-    <p class="small-note">
-      Basée à Rouen. Passionnée de tech, d'organisation et de systèmes bien pensés. Convaincue que structurer, c'est libérer.
+    <div class="highlight-block">
+      <p>Mon objectif n’est pas de te vendre Notion.</p>
+      <p>Mon objectif, c’est de t’aider à mieux piloter ton activité.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="section-tag">Pourquoi ça compte</p>
+    <h2>Quand ton organisation est floue, <span>tout devient plus lourd.</span></h2>
+    <p>
+      Tu perds du temps, tu repousses, tu doutes, tu t’épuises à faire des allers-retours entre tes outils et les infos dispersées.
+    </p>
+    <p>
+      Et à l’inverse, quand ton système est clair, tu prends de meilleures décisions, tu délègues plus facilement, tu gagnes en visibilité et tu respires.
+    </p>
+    <p>
+      C’est exactement cette bascule que je veux créer avec mes clientes.
     </p>
   </section>
 
   <section class="cta-final">
-    <p class="section-tag">Prêt à mettre fin au chaos ?</p>
-    <h2>Réserve ton appel <em>dès maintenant.</em></h2>
-    <p>30 minutes pour faire le point sur ton organisation. Gratuit, sans engagement.</p>
-    <a class="btn-primary" href="https://calendar.notion.so/meet/aliciachouquet/30min" target="_blank" rel="noopener noreferrer">Réserver mon appel (30 min)</a>
-    <p class="note">Gratuit · Sans engagement · Même si tu ne prends pas Express</p>
+    <p class="section-tag">Et maintenant ?</p>
+    <h2>On regarde ensemble ce qui <em>coince vraiment</em> chez toi ?</h2>
+    <p>
+      Si tu sens que ton business a besoin de plus de clarté, d’un meilleur système, ou d’une organisation enfin pensée pour toi, on peut commencer par un appel diagnostic.
+    </p>
+    <a class="btn-primary" href="https://calendar.notion.so/meet/aliciachouquet/30min" target="_blank" rel="noopener noreferrer">Réserver un appel</a>
+    <a class="btn-secondary" href="offres.html">Voir mes offres</a>
+    <p class="note">30 minutes · Gratuit · Sans engagement</p>
   </section>
 
   <footer>
-  <span>© 2026 Assist by Alicia – Tous droits réservés</span>
-  <div class="footer-links">
-    <a href="Mention légale - CGV.html">Mentions légales / CGV</a>
-    <a href="Politique de confidentialité.html">Politique de confidentialité</a>
-  </div>
-</footer>
-
+    <span>© 2026 Assist by Alicia – Tous droits réservés</span>
+    <div class="footer-links">
+      <a href="Mention légale - CGV.html">Mentions légales / CGV</a>
+      <a href="Politique de confidentialité.html">Politique de confidentialité</a>
+    </div>
+  </footer>
 </body>
 </html>
