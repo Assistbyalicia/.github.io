@@ -6,7 +6,11 @@
   <title>Politique de confidentialité – Assist by Alicia</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=League+Spartan:wght@700;900&family=Satisfy&display=swap" rel="stylesheet"/>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     :root {
       --blue: #1E2A4A;
@@ -53,9 +57,16 @@
       list-style: none;
       display: flex;
       gap: 2.5rem;
+      align-items: center;
     }
 
-    nav ul li a {
+    nav ul li {
+      list-style: none;
+      position: relative;
+    }
+
+    nav ul a,
+    .menu-label {
       color: var(--white);
       text-decoration: none;
       font-size: 0.85rem;
@@ -65,8 +76,59 @@
       transition: color 0.2s;
     }
 
-    nav ul li a:hover {
+    .menu-label {
+      cursor: default;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .dropdown-arrow {
+      font-size: 0.7rem;
+      line-height: 1;
+      transform: translateY(-1px);
+      transition: transform 0.2s ease;
+    }
+
+    .dropdown:hover .dropdown-arrow {
+      transform: translateY(-1px) rotate(180deg);
+    }
+
+    nav ul a:hover,
+    nav ul a.active,
+    .dropdown:hover .menu-label {
       color: var(--yellow);
+    }
+
+    .submenu {
+      list-style: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 240px;
+      display: none;
+      flex-direction: column;
+      gap: 0;
+      background: rgba(18,18,18,0.98);
+      border: 1px solid rgba(202,255,0,0.12);
+      border-radius: 10px;
+      padding: 0.5rem 0;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+    }
+
+    .submenu li {
+      width: 100%;
+    }
+
+    .submenu a {
+      display: block;
+      padding: 0.85rem 1rem;
+      font-size: 0.78rem;
+      white-space: nowrap;
+    }
+
+    .dropdown:hover .submenu {
+      display: flex;
     }
 
     .page-content {
@@ -187,14 +249,20 @@
   </style>
 </head>
 <body>
-
   <nav>
     <a class="logo" href="index.html">
       <img src="Logo.png" alt="Assist by Alicia" />
     </a>
     <ul>
-      <li><a href="offres.html">Mes offres</a></li>
-      <li><a href="offre-express.html">Express</a></li>
+      <li><a href="index.html">Accueil</a></li>
+      <li class="dropdown">
+        <span class="menu-label">Mes offres <span class="dropdown-arrow">▾</span></span>
+        <ul class="submenu">
+          <li><a href="offres.html">Toutes mes offres</a></li>
+          <li><a href="offre-express.html">Express</a></li>
+          <li><a href="Audit-de-temps.html">Audit</a></li>
+        </ul>
+      </li>
       <li><a href="qui-suis-je.html">Qui suis-je ?</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -205,7 +273,7 @@
 
     <div class="legal-section">
       <p>
-        Cette politique a pour objectif d'encadrer la conformité des traitements de données à caractère personnelles et le respect des droits des personnes concernées pour la mise en place du site web <a href="index.html" >assistbyalicia.fr</a> par EI Assist By Alicia.
+        Cette politique a pour objectif d'encadrer la conformité des traitements de données à caractère personnelles et le respect des droits des personnes concernées pour la mise en place du site web <a href="index.html">assistbyalicia.fr</a> par EI Assist By Alicia.
       </p>
       <p>
         Les textes de références de cette politique sont le RGPD (Règlement Général pour la Protection des Données) et la Loi dite « Informatique et Libertés ». Les notions utilisées dans cette politique sont définies dans le RGPD, notamment les notions de traitement, de données personnelles ou données à caractère personnelles, personnes concernées et responsable de traitement.
@@ -291,6 +359,5 @@
       <a href="Politique de confidentialité.html">Politique de confidentialité</a>
     </div>
   </footer>
-
 </body>
 </html>
