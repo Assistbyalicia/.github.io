@@ -180,33 +180,30 @@
     }
 
     .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 14px;
-      margin-top: 28px;
-    }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 28px;
+}
 
-    .hero-actions-with-help {
-      align-items: stretch;
-    }
+.action-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-width: 300px;
+}
 
-    .action-group {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      min-width: 260px;
-    }
-
-    .action-help {
-      margin: 0;
-      font-size: 0.82rem;
-      line-height: 1.4;
-      color: rgba(255,255,255,0.62);
-      text-align: center;
-      max-width: 28ch;
-    }
+.action-help {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  color: rgba(255,255,255,0.62);
+  text-align: center;
+  max-width: 34ch;
+  white-space: nowrap;
+}
 
     .btn-primary {
       background: var(--coral);
