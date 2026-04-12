@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Audit fait – Assist by Alicia</title>
+  <meta name="description" content="Tu as terminé ton audit de temps ? Voici la prochaine étape pour analyser tes résultats et avancer avec plus de clarté." />
+  <style>
+    :root {
+      --bg: #121212;
+      --surface: #1E2A4A;
+      --surface-alt: #161f36;
+      --text: #FFFFFF;
+      --muted: #C9CEDA;
+      --line: #2b3960;
+      --primary: #FF4757;
+      --accent: #CAFF00;
+      --radius: 18px;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(202, 255, 0, 0.08), transparent 22%),
+        radial-gradient(circle at bottom right, rgba(255, 71, 87, 0.10), transparent 18%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 32px 0;
+    }
+
+    .hero-wrap {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 32px 0 48px;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(30, 42, 74, 0.98), rgba(22, 31, 54, 0.98));
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(202,255,0,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(202,255,0,0.06) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+      opacity: 0.22;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 32px;
+      padding: 48px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 4vw, 4.2rem);
+      line-height: 1.06;
+      margin: 0 0 18px;
+      max-width: 11ch;
+    }
+
+    .lead {
+      margin: 0 0 24px;
+      max-width: 58ch;
+      font-size: 1.06rem;
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 20px;
+      border-radius: 12px;
+      font-weight: 700;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, border-color 180ms ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 12px 24px rgba(255, 71, 87, 0.20);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.18);
+      color: var(--text);
+    }
+
+    .side-panel {
+      background: rgba(18, 18, 18, 0.72);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 22px;
+      padding: 24px;
+      backdrop-filter: blur(6px);
+    }
+
+    .side-label {
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 10px;
+      font-weight: 700;
+    }
+
+    .side-title {
+      margin: 0 0 12px;
+      font-size: 1.35rem;
+      line-height: 1.2;
+    }
+
+    .side-text {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.4rem;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 8px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(30, 42, 74, 0.95), rgba(20, 27, 45, 0.95));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+    }
+
+    .card h2 {
+      margin: 0 0 12px;
+      font-size: 1.15rem;
+      line-height: 1.25;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .card-accent h2 {
+      color: var(--accent);
+    }
+
+    .card-coral h2 {
+      color: var(--primary);
+    }
+
+    .steps {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .step {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 22px;
+    }
+
+    .step-number {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent);
+      color: #121212;
+      font-weight: 700;
+      margin-bottom: 14px;
+      font-size: 0.95rem;
+    }
+
+    .step h3 {
+      margin: 0 0 10px;
+      font-size: 1.06rem;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .cta-block {
+      margin-top: 18px;
+      padding: 28px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(255, 71, 87, 0.12), rgba(202, 255, 0, 0.08));
+      border: 1px solid rgba(255,255,255,0.10);
+      text-align: center;
+    }
+
+    .cta-block h2 {
+      margin: 0 0 12px;
+      font-size: 1.5rem;
+    }
+
+    .cta-block p {
+      margin: 0 auto 20px;
+      max-width: 60ch;
+      color: var(--muted);
+    }
+
+    .footer-note {
+      margin-top: 20px;
+      text-align: center;
+      color: #9da4b7;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 960px) {
+      .hero-grid,
+      .content-grid,
+      .steps,
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        padding: 32px 22px;
+      }
+
+      h1 {
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="hero-wrap">
+    <div class="container">
+      <section class="hero-card">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">Assist by Alicia</div>
+            <h1>Bravo, tu as fait ton audit.</h1>
+            <p class="lead">
+              Tu as déjà fait le plus important : prendre le temps de regarder où part réellement ton énergie. C’est souvent là que les premiers vrais déclics commencent.
+            </p>
+            <p class="lead">
+              Maintenant, l’objectif est simple : transformer ce que tu as observé en décisions plus claires, plus légères et plus alignées avec ton quotidien.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="https://discord.gg/jR7JdtsWKu" target="_blank" rel="noopener noreferrer">Rejoindre le Discord</a>
+              <a class="btn btn-secondary" href="https://calendar.notion.so/meet/aliciachouquet/30min." target="_blank" rel="noopener noreferrer">Réserver un échange</a>
+            </div>
+          </div>
+
+          <aside class="side-panel">
+            <p class="side-label">Prochaine étape</p>
+            <h2 class="side-title">Ne reste pas seule avec tes résultats.</h2>
+            <p class="side-text">
+              Si tu veux, tu peux venir partager ce que ton audit a mis en lumière dans le Discord. Je peux t’aider à relire tes résultats, repérer les blocages et voir quelles actions prioriser ensuite.
+            </p>
+
+            <div class="stats">
+              <div class="stat">
+                <strong>1</strong>
+                <span>Tu observes</span>
+              </div>
+              <div class="stat">
+                <strong>2</strong>
+                <span>Tu analyses</span>
+              </div>
+              <div class="stat">
+                <strong>3</strong>
+                <span>Tu ajustes</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="content-grid">
+          <article class="card card-accent">
+            <h2>Ce que ton audit t’apporte</h2>
+            <p>
+              Une vision plus nette de tes journées, de tes vraies priorités et des tâches qui prennent trop de place sans t’apporter autant qu’elles devraient.
+            </p>
+          </article>
+
+          <article class="card">
+            <h2>Pourquoi continuer maintenant</h2>
+            <p>
+              Quand les constats sont encore frais, c’est le meilleur moment pour ajuster ton organisation, supprimer du bruit et remettre de la clarté dans ton planning.
+            </p>
+          </article>
+
+          <article class="card card-coral">
+            <h2>Où trouver de l’aide</h2>
+            <p>
+              Si certains résultats te semblent flous ou si tu ne sais pas quoi changer en premier, le Discord est là pour poser tes questions et avancer plus sereinement.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="card">
+          <h2>Comment lire tes résultats</h2>
+          <div class="steps">
+            <div class="step">
+              <div class="step-number">1</div>
+              <h3>Repère les répétitions</h3>
+              <p>
+                Observe les tâches qui reviennent le plus souvent et demande-toi si elles méritent vraiment autant de place dans ta semaine.
+              </p>
+            </div>
+
+            <div class="step">
+              <div class="step-number">2</div>
+              <h3>Identifie les frottements</h3>
+              <p>
+                Note les moments où tu te disperses, repousses ou changes souvent de contexte. C’est souvent là que ton énergie fuit.
+              </p>
+            </div>
+
+            <div class="step">
+              <div class="step-number">3</div>
+              <h3>Choisis un seul ajustement</h3>
+              <p>
+                Inutile de tout changer d’un coup. Commence par une seule amélioration concrète à tester dès cette semaine.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="cta-block">
+          <h2>Tu veux un regard extérieur sur ton audit ?</h2>
+          <p>
+            Rejoins le Discord pour poser tes questions, partager ce que tu as remarqué et obtenir un coup de pouce pour interpréter tes résultats.
+          </p>
+          <a class="btn btn-primary" href="https://discord.gg/jR7JdtsWKu" target="_blank" rel="noopener noreferrer">
+            Accéder au Discord
+          </a>
+        </div>
+
+        <p class="footer-note">
+          Assist by Alicia — organisation, clarté, automatisation.
+        </p>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
