@@ -49,7 +49,7 @@
     }
 
     .section {
-      padding: 32px 0;
+      padding: 20px 0;
     }
 
     .hero-wrap {
@@ -84,8 +84,8 @@
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 32px;
+      grid-template-columns: 1fr;
+      gap: 24px;
       padding: 48px;
       align-items: center;
     }
@@ -118,7 +118,7 @@
     }
 
     .lead {
-      margin: 0 0 24px;
+      margin: 0 0 18px;
       max-width: 58ch;
       font-size: 1.06rem;
       color: var(--muted);
@@ -158,68 +158,6 @@
       color: var(--text);
     }
 
-    .side-panel {
-      background: rgba(18, 18, 18, 0.72);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 22px;
-      padding: 24px;
-      backdrop-filter: blur(6px);
-    }
-
-    .side-label {
-      font-size: 12px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin: 0 0 10px;
-      font-weight: 700;
-    }
-
-    .side-title {
-      margin: 0 0 12px;
-      font-size: 1.35rem;
-      line-height: 1.2;
-    }
-
-    .side-text {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.98rem;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 22px;
-    }
-
-    .stat {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 14px;
-      padding: 16px;
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 1.4rem;
-      color: var(--accent);
-      margin-bottom: 4px;
-    }
-
-    .stat span {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .content-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 8px;
-    }
-
     .card {
       background: linear-gradient(180deg, rgba(30, 42, 74, 0.95), rgba(20, 27, 45, 0.95));
       border: 1px solid var(--line);
@@ -237,6 +175,13 @@
       margin: 0;
       color: var(--muted);
       font-size: 0.98rem;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 8px;
     }
 
     .card-accent h2 {
@@ -314,10 +259,8 @@
     }
 
     @media (max-width: 960px) {
-      .hero-grid,
       .content-grid,
-      .steps,
-      .stats {
+      .steps {
         grid-template-columns: 1fr;
       }
 
@@ -327,6 +270,14 @@
 
       h1 {
         max-width: none;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
       }
     }
   </style>
@@ -351,28 +302,34 @@
             </div>
           </div>
 
-          <aside class="side-panel">
-            <p class="side-label">Prochaine étape</p>
-            <h2 class="side-title">Ne reste pas seule avec tes résultats.</h2>
-            <p class="side-text">
-              Si tu veux, tu peux venir partager ce que ton audit a mis en lumière dans le Discord. Je peux t’aider à relire tes résultats, repérer les blocages et voir quelles actions prioriser ensuite.
-            </p>
+          <div class="card" style="margin-top: 8px;">
+            <h2>Comment lire tes résultats</h2>
+            <div class="steps">
+              <div class="step">
+                <div class="step-number">1</div>
+                <h3>Repère les répétitions</h3>
+                <p>
+                  Observe les tâches qui reviennent le plus souvent et demande-toi si elles méritent vraiment autant de place dans ta semaine.
+                </p>
+              </div>
 
-            <div class="stats">
-              <div class="stat">
-                <strong>1</strong>
-                <span>Tu observes</span>
+              <div class="step">
+                <div class="step-number">2</div>
+                <h3>Identifie les frottements</h3>
+                <p>
+                  Note les moments où tu te disperses, repousses ou changes souvent de contexte. C’est souvent là que ton énergie fuit.
+                </p>
               </div>
-              <div class="stat">
-                <strong>2</strong>
-                <span>Tu analyses</span>
-              </div>
-              <div class="stat">
-                <strong>3</strong>
-                <span>Tu ajustes</span>
+
+              <div class="step">
+                <div class="step-number">3</div>
+                <h3>Choisis un seul ajustement</h3>
+                <p>
+                  Inutile de tout changer d’un coup. Commence par une seule amélioration concrète à tester dès cette semaine.
+                </p>
               </div>
             </div>
-          </aside>
+          </div>
         </div>
       </section>
 
@@ -398,37 +355,6 @@
               Si certains résultats te semblent flous ou si tu ne sais pas quoi changer en premier, le Discord est là pour poser tes questions et avancer plus sereinement.
             </p>
           </article>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="card">
-          <h2>Comment lire tes résultats</h2>
-          <div class="steps">
-            <div class="step">
-              <div class="step-number">1</div>
-              <h3>Repère les répétitions</h3>
-              <p>
-                Observe les tâches qui reviennent le plus souvent et demande-toi si elles méritent vraiment autant de place dans ta semaine.
-              </p>
-            </div>
-
-            <div class="step">
-              <div class="step-number">2</div>
-              <h3>Identifie les frottements</h3>
-              <p>
-                Note les moments où tu te disperses, repousses ou changes souvent de contexte. C’est souvent là que ton énergie fuit.
-              </p>
-            </div>
-
-            <div class="step">
-              <div class="step-number">3</div>
-              <h3>Choisis un seul ajustement</h3>
-              <p>
-                Inutile de tout changer d’un coup. Commence par une seule amélioration concrète à tester dès cette semaine.
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 
