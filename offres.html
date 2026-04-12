@@ -20,6 +20,10 @@
       --white: #FFFFFF;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       background:
         radial-gradient(circle at top left, rgba(255,71,87,0.08), transparent 30%),
@@ -37,7 +41,7 @@
       position: fixed;
       top: 0;
       width: 100%;
-      z-index: 100;
+      z-index: 1000;
       background: rgba(18,18,18,0.92);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(202,255,0,0.12);
@@ -51,6 +55,8 @@
       text-decoration: none;
       display: flex;
       align-items: center;
+      position: relative;
+      z-index: 1002;
     }
 
     .logo img {
@@ -59,19 +65,19 @@
       display: block;
     }
 
-    nav ul {
+    .nav-links {
       list-style: none;
       display: flex;
       gap: 2.5rem;
       align-items: center;
     }
 
-    nav ul li {
+    .nav-links li {
       list-style: none;
       position: relative;
     }
 
-    nav ul a,
+    .nav-links a,
     .menu-label {
       color: var(--white);
       text-decoration: none;
@@ -100,8 +106,8 @@
       transform: translateY(-1px) rotate(180deg);
     }
 
-    nav ul a:hover,
-    nav ul a.active,
+    .nav-links a:hover,
+    .nav-links a.active,
     .dropdown:hover .menu-label {
       color: var(--yellow);
     }
@@ -137,6 +143,59 @@
       display: flex;
     }
 
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid rgba(202,255,0,0.18);
+      color: var(--white);
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+      z-index: 1002;
+    }
+
+    .menu-toggle span,
+    .menu-toggle span::before,
+    .menu-toggle span::after {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--white);
+      position: relative;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+      content: "";
+    }
+
+    .menu-toggle span::before {
+      position: absolute;
+      top: -6px;
+    }
+
+    .menu-toggle span::after {
+      position: absolute;
+      top: 6px;
+    }
+
+    .menu-toggle.active span {
+      background: transparent;
+    }
+
+    .menu-toggle.active span::before {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    .menu-toggle.active span::after {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+
     main {
       padding: 10rem 2rem 6rem;
       max-width: 1100px;
@@ -154,9 +213,9 @@
     h1 {
       font-family: 'League Spartan', sans-serif;
       font-weight: 900;
-      font-size: clamp(2.3rem, 5vw, 4.5rem);
+      font-size: clamp(2.1rem, 5vw, 4.5rem);
       text-transform: uppercase;
-      line-height: 1;
+      line-height: 1.02;
       text-align: center;
       margin-bottom: 1.5rem;
     }
@@ -188,6 +247,8 @@
       padding: 2.2rem;
       position: relative;
       box-shadow: 0 0 30px rgba(30,42,74,0.18);
+      display: flex;
+      flex-direction: column;
     }
 
     .card-soon {
@@ -252,7 +313,9 @@
 
     .btn-primary,
     .btn-secondary {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       text-decoration: none;
       font-family: 'League Spartan', sans-serif;
       font-weight: 700;
@@ -262,6 +325,7 @@
       padding: 0.95rem 1.6rem;
       border-radius: 4px;
       transition: 0.2s ease;
+      min-height: 52px;
     }
 
     .btn-primary {
@@ -298,6 +362,7 @@
       font-size: clamp(1.8rem, 4vw, 3rem);
       text-transform: uppercase;
       margin-bottom: 1rem;
+      line-height: 1.08;
     }
 
     .cta-block h2 span {
@@ -337,22 +402,132 @@
       flex-wrap: wrap;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
       nav {
         padding: 1rem 1.5rem;
       }
 
-      nav ul {
+      .logo img {
+        height: 56px;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .nav-links {
         display: none;
       }
 
+      .mobile-menu {
+        position: fixed;
+        top: 88px;
+        left: 1rem;
+        right: 1rem;
+        display: none;
+        flex-direction: column;
+        gap: 0.4rem;
+        padding: 1rem;
+        background: rgba(18,18,18,0.98);
+        border: 1px solid rgba(202,255,0,0.12);
+        border-radius: 14px;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+        z-index: 999;
+      }
+
+      .mobile-menu.open {
+        display: flex;
+      }
+
+      .mobile-menu a,
+      .mobile-menu summary {
+        color: var(--white);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        padding: 0.9rem 0.4rem;
+      }
+
+      .mobile-menu a.active {
+        color: var(--yellow);
+      }
+
+      .mobile-menu details {
+        border-top: 1px solid rgba(255,255,255,0.06);
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+        padding: 0.2rem 0;
+      }
+
+      .mobile-menu summary {
+        list-style: none;
+        cursor: pointer;
+      }
+
+      .mobile-menu summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .mobile-submenu {
+        display: flex;
+        flex-direction: column;
+        padding: 0.2rem 0 0.5rem 0.8rem;
+      }
+
       main {
-        padding-top: 8rem;
+        padding: 8.3rem 1.2rem 4rem;
+      }
+
+      .section-tag {
+        font-size: 1.2rem;
+      }
+
+      .intro {
+        margin-bottom: 2.5rem;
+        font-size: 0.96rem;
+      }
+
+      .offers-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+
+      .card {
+        padding: 1.5rem 1.2rem;
+      }
+
+      .card h2 {
+        font-size: 1.5rem;
+      }
+
+      .price {
+        font-size: 1.35rem;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+      }
+
+      .cta-block {
+        margin-top: 3rem;
+        padding: 2rem 1.2rem;
+      }
+
+      .cta-block .btn-primary {
+        width: 100%;
       }
 
       footer {
+        padding: 2rem 1.2rem;
         flex-direction: column;
         text-align: center;
+      }
+
+      .footer-links {
+        justify-content: center;
+        gap: 1rem;
       }
     }
   </style>
@@ -362,7 +537,8 @@
     <a class="logo" href="index.html">
       <img src="Logo.png" alt="Assist by Alicia" />
     </a>
-    <ul>
+
+    <ul class="nav-links">
       <li><a href="index.html">Accueil</a></li>
       <li class="dropdown">
         <span class="menu-label">Mes offres <span class="dropdown-arrow">▾</span></span>
@@ -375,11 +551,32 @@
       <li><a href="qui-suis-je.html">Qui suis-je ?</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+
+    <button class="menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span>
+    </button>
   </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html">Accueil</a>
+
+    <details open>
+      <summary>Mes offres</summary>
+      <div class="mobile-submenu">
+        <a href="offres.html" class="active">Toutes mes offres</a>
+        <a href="offre-express.html">Express</a>
+        <a href="Audit-de-temps.html">Audit</a>
+      </div>
+    </details>
+
+    <a href="qui-suis-je.html">Qui suis-je ?</a>
+    <a href="contact.html">Contact</a>
+  </div>
 
   <main>
     <p class="section-tag">Mes offres</p>
     <h1>Un système sur-mesure.<br><em>Choisis ton point de départ.</em></h1>
+
     <p class="intro">
       Aujourd'hui, tu peux commencer avec Express. D'autres formules arrivent pour les besoins plus complets.
     </p>
@@ -431,5 +628,26 @@
       <a href="Politique de confidentialité.html">Politique de confidentialité</a>
     </div>
   </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      menuToggle.classList.toggle('active', isOpen);
+      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      menuToggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+    });
+
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Ouvrir le menu');
+      });
+    });
+  </script>
 </body>
 </html>
