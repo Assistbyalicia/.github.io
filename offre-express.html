@@ -20,6 +20,10 @@
       --white: #FFFFFF;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       background: var(--black);
       color: var(--white);
@@ -31,7 +35,7 @@
       position: fixed;
       top: 0;
       width: 100%;
-      z-index: 100;
+      z-index: 1000;
       background: rgba(18,18,18,0.92);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(202,255,0,0.12);
@@ -45,6 +49,8 @@
       text-decoration: none;
       display: flex;
       align-items: center;
+      position: relative;
+      z-index: 1002;
     }
 
     .logo img {
@@ -53,19 +59,19 @@
       display: block;
     }
 
-    nav ul {
+    .nav-links {
       list-style: none;
       display: flex;
       gap: 2.5rem;
       align-items: center;
     }
 
-    nav ul li {
+    .nav-links li {
       list-style: none;
       position: relative;
     }
 
-    nav ul a,
+    .nav-links a,
     .menu-label {
       color: var(--white);
       text-decoration: none;
@@ -94,8 +100,8 @@
       transform: translateY(-1px) rotate(180deg);
     }
 
-    nav ul a:hover,
-    nav ul a.active,
+    .nav-links a:hover,
+    .nav-links a.active,
     .dropdown:hover .menu-label {
       color: var(--yellow);
     }
@@ -131,6 +137,59 @@
       display: flex;
     }
 
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid rgba(202,255,0,0.18);
+      color: var(--white);
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+      z-index: 1002;
+    }
+
+    .menu-toggle span,
+    .menu-toggle span::before,
+    .menu-toggle span::after {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--white);
+      position: relative;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+      content: "";
+    }
+
+    .menu-toggle span::before {
+      position: absolute;
+      top: -6px;
+    }
+
+    .menu-toggle span::after {
+      position: absolute;
+      top: 6px;
+    }
+
+    .menu-toggle.active span {
+      background: transparent;
+    }
+
+    .menu-toggle.active span::before {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    .menu-toggle.active span::after {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+
     .btn-primary {
       background: var(--coral);
       color: var(--white);
@@ -142,13 +201,17 @@
       text-transform: uppercase;
       letter-spacing: 0.06em;
       text-decoration: none;
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
       box-shadow: 0 0 20px rgba(255,71,87,0.35);
-      transition: background 0.2s;
+      transition: background 0.2s, box-shadow 0.2s;
     }
 
     .btn-primary:hover {
       background: #e03040;
+      box-shadow: 0 0 32px rgba(255,71,87,0.55);
     }
 
     .btn-secondary {
@@ -163,7 +226,16 @@
       text-transform: uppercase;
       letter-spacing: 0.06em;
       text-decoration: none;
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(202,255,0,0.08);
+      box-shadow: 0 0 20px rgba(202,255,0,0.2);
     }
 
     .section-tag {
@@ -447,6 +519,7 @@
     footer a {
       color: rgba(255,255,255,0.35);
       text-decoration: none;
+      transition: color 0.2s;
     }
 
     footer a:hover {
@@ -459,27 +532,163 @@
       flex-wrap: wrap;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
       nav {
         padding: 1rem 1.5rem;
       }
 
-      nav ul {
+      .logo img {
+        height: 56px;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .nav-links {
         display: none;
+      }
+
+      .mobile-menu {
+        position: fixed;
+        top: 88px;
+        left: 1rem;
+        right: 1rem;
+        display: none;
+        flex-direction: column;
+        gap: 0.4rem;
+        padding: 1rem;
+        background: rgba(18,18,18,0.98);
+        border: 1px solid rgba(202,255,0,0.12);
+        border-radius: 14px;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+        z-index: 999;
+      }
+
+      .mobile-menu.open {
+        display: flex;
+      }
+
+      .mobile-menu a,
+      .mobile-menu summary {
+        color: var(--white);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        padding: 0.9rem 0.4rem;
+      }
+
+      .mobile-menu a.active {
+        color: var(--yellow);
+      }
+
+      .mobile-menu details {
+        border-top: 1px solid rgba(255,255,255,0.06);
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+        padding: 0.2rem 0;
+      }
+
+      .mobile-menu summary {
+        list-style: none;
+        cursor: pointer;
+      }
+
+      .mobile-menu summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .mobile-submenu {
+        display: flex;
+        flex-direction: column;
+        padding: 0.2rem 0 0.5rem 0.8rem;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 7.5rem 1.2rem 3rem;
+      }
+
+      .hero-tag {
+        font-size: 1.15rem;
+      }
+
+      .hero-sub {
+        font-size: 0.98rem;
+      }
+
+      .hero-ctas {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.9rem;
+      }
+
+      .hero-ctas .btn-primary,
+      .hero-ctas .btn-secondary {
+        width: 100%;
       }
 
       .chiffres-hero {
         grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-top: 2.5rem;
+        padding: 0 1.2rem;
+      }
+
+      .chiffre-card {
+        padding: 1.4rem;
+      }
+
+      section {
+        padding: 4rem 1.2rem;
+      }
+
+      .aside-block,
+      .highlight-box {
+        padding: 1.5rem 1.2rem;
       }
 
       .timeline-item {
-        grid-template-columns: 2rem 1fr;
-        gap: 1rem;
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+      }
+
+      .timeline-icon {
+        text-align: left;
+        font-size: 1.5rem;
+      }
+
+      .timeline-content {
+        padding: 1.2rem;
+      }
+
+      .check-list li,
+      .cross-list li {
+        padding: 0.85rem 0.9rem;
+      }
+
+      .faq-item {
+        padding: 1.4rem 0;
+      }
+
+      .cta-final {
+        padding: 5rem 1.2rem;
+      }
+
+      .cta-final .btn-primary {
+        width: 100%;
       }
 
       footer {
+        padding: 2rem 1.2rem;
         flex-direction: column;
         text-align: center;
+      }
+
+      .footer-links {
+        justify-content: center;
+        gap: 1rem;
       }
     }
   </style>
@@ -489,7 +698,8 @@
     <a class="logo" href="index.html">
       <img src="Logo.png" alt="Assist by Alicia" />
     </a>
-    <ul>
+
+    <ul class="nav-links">
       <li><a href="index.html">Accueil</a></li>
       <li class="dropdown">
         <span class="menu-label">Mes offres <span class="dropdown-arrow">▾</span></span>
@@ -502,7 +712,27 @@
       <li><a href="qui-suis-je.html">Qui suis-je ?</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+
+    <button class="menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span>
+    </button>
   </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html">Accueil</a>
+
+    <details open>
+      <summary>Mes offres</summary>
+      <div class="mobile-submenu">
+        <a href="offres.html">Toutes mes offres</a>
+        <a href="offre-express.html" class="active">Express</a>
+        <a href="Audit-de-temps.html">Audit</a>
+      </div>
+    </details>
+
+    <a href="qui-suis-je.html">Qui suis-je ?</a>
+    <a href="contact.html">Contact</a>
+  </div>
 
   <div class="hero">
     <p class="hero-tag">Offre Express</p>
@@ -676,27 +906,22 @@
   <section>
     <p class="section-tag">Tes questions</p>
     <h2>🤔 Les questions que tu te poses <em>(et mes réponses honnêtes)</em></h2>
-
     <div class="faq-item">
       <h3>"Pourquoi je paierais 290€ alors que je peux le faire moi-même ?"</h3>
       <p>Tu peux, oui. Mais soyons honnêtes : tu vas cramer 10 à 15h à chercher, tester, te planter, recommencer… pour un résultat moyen.</p>
     </div>
-
     <div class="faq-item">
       <h3>"Comment je sais que ça va vraiment fonctionner POUR MOI ?"</h3>
       <p>C'est exactement pour ça qu'il y a l'appel diagnostic gratuit avant. On ne lance pas Express si je sens que ce n'est pas la bonne formule. Si je dis oui, c'est que je suis certaine de pouvoir régler ton urgence en 7 jours.</p>
     </div>
-
     <div class="faq-item">
       <h3>"290€, qu'est-ce qui justifie ce prix ?"</h3>
       <p>Mon expertise de bras droit + 7 jours de disponibilité + un système sur mesure + ta formation complète. 290€ pour récupérer 5-10h par mois pendant des mois. Ça se rentabilise en 1 mois.</p>
     </div>
-
     <div class="faq-item">
       <h3>"Pourquoi toi et pas un template à 50€ ?"</h3>
-      <p>Template à 50€ : à toi de te débrouiller. Express à 290€ : je le construit pour toi. c'est LA différence principale pour un template vs offre sur mesure</p>
+      <p>Template à 50€ : à toi de te débrouiller. Express à 290€ : je le construis pour toi. C'est la différence principale entre un template et une offre sur mesure.</p>
     </div>
-
     <div class="faq-item">
       <h3>"Et si ce que tu me proposes ne me convient pas ?"</h3>
       <p>Après l'appel d'audit (Jour 3) : <span class="refund-highlight">remboursement intégral immédiat</span> si Express ne correspond pas. Après le Jour 4 : pas de remboursement. Si le système livré ne te convient pas : on ajuste jusqu'à satisfaction.</p>
@@ -706,27 +931,22 @@
   <section>
     <p class="section-tag">Pratique</p>
     <h2>❓ Questions <em>pratiques</em></h2>
-
     <div class="faq-item">
       <h3>Comment je réserve ma place ?</h3>
       <p>Tu cliques sur "Réserver mon appel diagnostic". On se parle 30 min. Si c'est OK, tu payes les 290€ TTC et on cale les dates. Si ça ne match pas, aucune obligation.</p>
     </div>
-
     <div class="faq-item">
       <h3>Comment ça se passe pour le paiement ?</h3>
       <p>Paiement en une fois par virement ou carte bancaire après l'appel diagnostic. Pas de paiement avant l'appel.</p>
     </div>
-
     <div class="faq-item">
       <h3>Je ne connais pas du tout Notion, c'est un problème ?</h3>
       <p>Non. La formation est là pour ça. Tu sauras ajouter des infos, retrouver tes données, et maintenir ton système au quotidien.</p>
     </div>
-
     <div class="faq-item">
       <h3>Et après les 7 jours, si j'ai une question ?</h3>
       <p>1 semaine de support par email après livraison (réponse sous 48h). N'inclut pas : support continu, modifications du système, formation supplémentaire.</p>
     </div>
-
     <div class="faq-item">
       <h3>Qu'est-ce que l'espace client Notion ?</h3>
       <p>Ta page Notion privée où tu retrouves tout : questionnaire, audit, roadmap, solution, enregistrements des calls. Accès dès ton paiement et pour toujours.</p>
@@ -748,5 +968,26 @@
       <a href="Politique de confidentialité.html">Politique de confidentialité</a>
     </div>
   </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      menuToggle.classList.toggle('active', isOpen);
+      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      menuToggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+    });
+
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Ouvrir le menu');
+      });
+    });
+  </script>
 </body>
 </html>
