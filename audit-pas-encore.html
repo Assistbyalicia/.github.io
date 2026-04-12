@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Audit pas encore fait – Assist by Alicia</title>
+  <meta name="description" content="Tu n’as pas encore fait ton audit de temps ? Reprends simplement là où tu en es, sans pression." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=League+Spartan:wght@700;900&family=Satisfy&display=swap" rel="stylesheet"/>
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --blue: #1E2A4A;
+      --coral: #FF4757;
+      --yellow: #CAFF00;
+      --black: #121212;
+      --white: #FFFFFF;
+      --muted: #C9CEDA;
+      --line: #2b3960;
+      --radius: 18px;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at top, rgba(202, 255, 0, 0.08), transparent 22%),
+        radial-gradient(circle at bottom right, rgba(255, 71, 87, 0.10), transparent 18%),
+        var(--black);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.7;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(18,18,18,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(202,255,0,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 4rem;
+    }
+
+    .logo {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 45px;
+      width: auto;
+      display: block;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    nav ul li {
+      list-style: none;
+    }
+
+    nav ul a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    nav ul a:hover,
+    nav ul a.active {
+      color: var(--yellow);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 20px 0;
+    }
+
+    .hero-wrap {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 0 48px;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(30, 42, 74, 0.98), rgba(22, 31, 54, 0.98));
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(202,255,0,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(202,255,0,0.06) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+      opacity: 0.22;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      padding: 56px 48px 48px;
+      align-items: center;
+    }
+
+    .hero-intro {
+      max-width: 920px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      font-family: 'Satisfy', cursive;
+      color: var(--coral);
+      font-size: 1.35rem;
+    }
+
+    h1 {
+      font-family: 'League Spartan', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2rem, 3.6vw, 3.8rem);
+      line-height: 1.08;
+      margin: 0 0 18px;
+      text-transform: uppercase;
+      text-wrap: balance;
+    }
+
+    .lead {
+      margin: 0 auto 18px;
+      max-width: 68ch;
+      font-size: 1.06rem;
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 32px;
+      margin-top: 28px;
+    }
+
+    .hero-actions-with-help {
+      align-items: stretch;
+    }
+
+    .action-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      min-width: 300px;
+    }
+
+    .action-help {
+      margin: 0;
+      font-size: 0.82rem;
+      line-height: 1.4;
+      color: rgba(255,255,255,0.62);
+      text-align: center;
+      max-width: 22ch;
+      white-space: normal;
+      text-wrap: balance;
+    }
+
+    .btn-primary {
+      background: var(--coral);
+      color: var(--white);
+      padding: 0.9rem 2rem;
+      border-radius: 4px;
+      font-family: 'League Spartan', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      transition: background 0.2s, box-shadow 0.2s;
+      box-shadow: 0 0 20px rgba(255,71,87,0.35);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+    }
+
+    .btn-primary:hover {
+      background: #e03040;
+      box-shadow: 0 0 32px rgba(255,71,87,0.55);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--yellow);
+      padding: 0.9rem 2rem;
+      border-radius: 4px;
+      border: 1.5px solid var(--yellow);
+      font-family: 'League Spartan', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      transition: background 0.2s, box-shadow 0.2s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(202,255,0,0.08);
+      box-shadow: 0 0 20px rgba(202,255,0,0.2);
+    }
+
+    .card {
+      background: rgba(30,42,74,0.4);
+      border: 1px solid rgba(202,255,0,0.1);
+      border-radius: 8px;
+      padding: 2rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      border-color: rgba(202,255,0,0.35);
+      box-shadow: 0 0 24px rgba(202,255,0,0.06);
+    }
+
+    .card h2 {
+      margin: 0 0 12px;
+      font-family: 'League Spartan', sans-serif;
+      font-size: 1.15rem;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    .steps-title {
+      text-align: center;
+    }
+
+    .card p {
+      margin: 0;
+      color: rgba(255,255,255,0.78);
+      font-size: 0.98rem;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 8px;
+    }
+
+    .content-grid.centered {
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .card-accent h2 {
+      color: var(--yellow);
+    }
+
+    .card-coral h2 {
+      color: var(--coral);
+    }
+
+    .steps {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .step {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 22px;
+      text-align: center;
+    }
+
+    .step-number {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--yellow);
+      color: #121212;
+      font-weight: 700;
+      margin: 0 auto 14px;
+      font-size: 0.95rem;
+      font-family: 'League Spartan', sans-serif;
+    }
+
+    .step h3 {
+      margin: 0 0 10px;
+      font-family: 'League Spartan', sans-serif;
+      font-size: 1.06rem;
+      text-transform: uppercase;
+    }
+
+    .step p {
+      margin: 0;
+      color: rgba(255,255,255,0.78);
+      font-size: 0.96rem;
+    }
+
+    .cta-block {
+      max-width: 760px;
+      margin: 18px auto 0;
+      padding: 30px;
+      border-radius: 8px;
+      background: rgba(30,42,74,0.5);
+      border: 1px solid rgba(202,255,0,0.15);
+      text-align: center;
+    }
+
+    .cta-block h2 {
+      margin: 0 0 12px;
+      font-family: 'League Spartan', sans-serif;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+    }
+
+    .cta-block p {
+      margin: 0 auto 20px;
+      max-width: 60ch;
+      color: rgba(255,255,255,0.78);
+    }
+
+    footer {
+      background: rgba(18,18,18,0.98);
+      border-top: 1px solid rgba(202,255,0,0.08);
+      padding: 2rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+
+    footer a {
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    footer a:hover {
+      color: var(--white);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem 1.5rem;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      .content-grid,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        padding: 32px 22px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .hero-actions .btn-primary,
+      .hero-actions .btn-secondary,
+      .action-group {
+        width: 100%;
+      }
+
+      .action-help {
+        max-width: 100%;
+      }
+
+      .cta-block,
+      .content-grid.centered {
+        max-width: none;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="logo" href="index.html">
+      <img src="Logo.png" alt="Assist by Alicia" />
+    </a>
+    <ul>
+      <li><a href="offres.html">Mes offres</a></li>
+      <li><a href="offre-express.html">Express</a></li>
+      <li><a href="Audit-de-temps.html" class="active">Audit</a></li>
+      <li><a href="qui-suis-je.html">Qui suis-je ?</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="hero-wrap">
+    <div class="container">
+      <section class="hero-card">
+        <div class="hero-grid">
+          <div class="hero-intro">
+            <div class="eyebrow">Assist by Alicia</div>
+            <h1>Tu ne l’as pas encore fait ?<br>Ce n’est pas grave.</h1>
+            <p class="lead">
+              Si ton audit est encore resté de côté, ne t’en veux pas. Le but n’est pas de rajouter une pression de plus à ton quotidien, mais de t’aider à retrouver un peu plus de clarté.
+            </p>
+            <p class="lead">
+              Tu n’as pas besoin d’avoir une heure devant toi ni d’être “dans de bonnes conditions”. Le plus efficace, c’est souvent de commencer simplement, même imparfaitement.
+            </p>
+
+            <div class="hero-actions hero-actions-with-help">
+              <div class="action-group">
+                <p class="action-help">Pour reprendre ton audit<br>là où tu en es</p>
+                <a class="btn-primary" href="https://assistbyaliciafr.notion.site/Ton-audit-de-temps-07a4ac3284534fe9a345e5a4791584c4?source=copy_link" target="_blank" rel="noopener noreferrer">
+                  Accéder à l’audit
+                </a>
+              </div>
+
+              <div class="action-group">
+                <p class="action-help">Pour revoir rapidement<br>comment le remplir</p>
+                <a class="btn-secondary" href="https://youtu.be/aHNQPg7CIXM" target="_blank" rel="noopener noreferrer">
+                  Voir la vidéo
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top: 8px;">
+            <h2 class="steps-title">Comment t’y remettre simplement</h2>
+            <div class="steps">
+              <div class="step">
+                <div class="step-number">1</div>
+                <h3>Ouvre juste le template</h3>
+                <p>
+                  Ne cherche pas à tout faire d’un coup. La première étape, c’est simplement de rouvrir l’audit et de te remettre dedans.
+                </p>
+              </div>
+
+              <div class="step">
+                <div class="step-number">2</div>
+                <h3>Commence par aujourd’hui</h3>
+                <p>
+                  Si tu n’as pas envie de tout reprendre, note seulement ta journée ou ta semaine actuelle. Ça suffit déjà pour faire émerger des schémas.
+                </p>
+              </div>
+
+              <div class="step">
+                <div class="step-number">3</div>
+                <h3>Avance sans chercher la perfection</h3>
+                <p>
+                  L’objectif n’est pas de remplir un audit parfait. L’objectif, c’est de voir plus clair pour prendre de meilleures décisions ensuite.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="content-grid centered">
+          <article class="card card-accent">
+            <h2>Pourquoi le faire maintenant</h2>
+            <p>
+              Plus tu attends, plus tu restes dans le flou sur ce qui te prend du temps, te disperse ou ralentit ton business au quotidien.
+            </p>
+          </article>
+
+          <article class="card card-coral">
+            <h2>Ce que tu vas débloquer</h2>
+            <p>
+              Même un audit commencé rapidement peut déjà t’aider à repérer une perte de temps, une tâche trop lourde ou une priorité mal placée.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="cta-block">
+          <h2>Tu veux un coup de pouce pour t’y remettre ?</h2>
+          <p>
+            Si tu bloques, si tu repousses parce que tu ne sais pas par où commencer, ou si tu veux simplement poser une question avant de t’y remettre, rejoins le Discord. Je pourrai t’aider à débloquer la première étape.
+          </p>
+          <a class="btn-primary" href="https://discord.gg/jR7JdtsWKu" target="_blank" rel="noopener noreferrer">
+            Accéder au Discord
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <span>© 2026 Assist by Alicia – Tous droits réservés</span>
+    <div class="footer-links">
+      <a href="Mention légale - CGV.html">Mentions légales / CGV</a>
+      <a href="Politique de confidentialité.html">Politique de confidentialité</a>
+    </div>
+  </footer>
+
+</body>
+</html>
