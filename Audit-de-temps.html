@@ -6,9 +6,11 @@
   <title>Audit de temps – Assist by Alicia</title>
   <meta name="description" content="Télécharge gratuitement ton audit de temps et gagne en clarté sur ton organisation." />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=League+Spartan:wght@700;900&family=Satisfy&display=swap" rel="stylesheet" />
+
   <style type="text/css">
     @import url("https://assets.mlcdn.com/fonts.css?version=1775464");
   </style>
+
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -33,13 +35,14 @@
       color: var(--white);
       font-family: 'Montserrat', sans-serif;
       line-height: 1.7;
+      min-height: 100vh;
     }
 
     nav {
       position: fixed;
       top: 0;
       width: 100%;
-      z-index: 100;
+      z-index: 1000;
       background: rgba(18,18,18,0.92);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(202,255,0,0.12);
@@ -53,6 +56,8 @@
       text-decoration: none;
       display: flex;
       align-items: center;
+      position: relative;
+      z-index: 1002;
     }
 
     .logo img {
@@ -61,19 +66,19 @@
       display: block;
     }
 
-    nav ul {
+    .nav-links {
       list-style: none;
       display: flex;
       gap: 2.5rem;
       align-items: center;
     }
 
-    nav ul li {
+    .nav-links li {
       list-style: none;
       position: relative;
     }
 
-    nav ul a,
+    .nav-links a,
     .menu-label {
       color: var(--white);
       text-decoration: none;
@@ -102,8 +107,8 @@
       transform: translateY(-1px) rotate(180deg);
     }
 
-    nav ul a:hover,
-    nav ul a.active,
+    .nav-links a:hover,
+    .nav-links a.active,
     .dropdown:hover .menu-label {
       color: var(--yellow);
     }
@@ -137,6 +142,59 @@
 
     .dropdown:hover .submenu {
       display: flex;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid rgba(202,255,0,0.18);
+      color: var(--white);
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+      z-index: 1002;
+    }
+
+    .menu-toggle span,
+    .menu-toggle span::before,
+    .menu-toggle span::after {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--white);
+      position: relative;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+      content: "";
+    }
+
+    .menu-toggle span::before {
+      position: absolute;
+      top: -6px;
+    }
+
+    .menu-toggle span::after {
+      position: absolute;
+      top: 6px;
+    }
+
+    .menu-toggle.active span {
+      background: transparent;
+    }
+
+    .menu-toggle.active span::before {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    .menu-toggle.active span::after {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+
+    .mobile-menu {
+      display: none;
     }
 
     .hero-audit {
@@ -312,66 +370,6 @@
       border-radius: 10px;
     }
 
-    footer {
-      background: rgba(18,18,18,0.98);
-      border-top: 1px solid rgba(202,255,0,0.08);
-      padding: 2rem 4rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.35);
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-top: 3rem;
-    }
-
-    footer a {
-      color: rgba(255,255,255,0.35);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    footer a:hover {
-      color: var(--white);
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 900px) {
-      .hero-audit {
-        grid-template-columns: 1fr;
-        padding: 8rem 1.5rem 3rem;
-      }
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        padding: 1rem 1.5rem;
-      }
-
-      nav ul {
-        display: none;
-      }
-
-      footer {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-  </style>
-
-  <style>
-    .ml-form-embedSubmitLoad {
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-    }
-
     .sr-only {
       position: absolute;
       width: 1px;
@@ -381,6 +379,12 @@
       overflow: hidden;
       clip: rect(0,0,0,0);
       border: 0;
+    }
+
+    .ml-form-embedSubmitLoad {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
     }
 
     .ml-form-embedSubmitLoad:after {
@@ -532,15 +536,162 @@
       font-size: 0.95rem;
       line-height: 1.6;
     }
+
+    footer {
+      background: rgba(18,18,18,0.98);
+      border-top: 1px solid rgba(202,255,0,0.08);
+      padding: 2rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+
+    footer a {
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    footer a:hover {
+      color: var(--white);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      nav {
+        padding: 1rem 1.5rem;
+      }
+
+      .logo img {
+        height: 56px;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .mobile-menu {
+        position: fixed;
+        top: 88px;
+        left: 1rem;
+        right: 1rem;
+        display: none;
+        flex-direction: column;
+        gap: 0.4rem;
+        padding: 1rem;
+        background: rgba(18,18,18,0.98);
+        border: 1px solid rgba(202,255,0,0.12);
+        border-radius: 14px;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+        z-index: 999;
+      }
+
+      .mobile-menu.open {
+        display: flex;
+      }
+
+      .mobile-menu a,
+      .mobile-menu summary {
+        color: var(--white);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        padding: 0.9rem 0.4rem;
+      }
+
+      .mobile-menu a.active {
+        color: var(--yellow);
+      }
+
+      .mobile-menu details {
+        border-top: 1px solid rgba(255,255,255,0.06);
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+        padding: 0.2rem 0;
+      }
+
+      .mobile-menu summary {
+        list-style: none;
+        cursor: pointer;
+      }
+
+      .mobile-menu summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .mobile-submenu {
+        display: flex;
+        flex-direction: column;
+        padding: 0.2rem 0 0.5rem 0.8rem;
+      }
+
+      .hero-audit {
+        grid-template-columns: 1fr;
+        padding: 8rem 1.5rem 3rem;
+        gap: 2rem;
+      }
+
+      .hero-left {
+        max-width: none;
+      }
+
+      .card-audit {
+        padding: 1.4rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-audit {
+        padding: 7.8rem 1.2rem 2.5rem;
+      }
+
+      .hero-tag {
+        font-size: 1.2rem;
+      }
+
+      .hero-sub {
+        font-size: 0.96rem;
+      }
+
+      .benefits li {
+        padding: 0.85rem 0.9rem;
+      }
+
+      footer {
+        padding: 2rem 1.2rem;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-links {
+        justify-content: center;
+        gap: 1rem;
+      }
+    }
   </style>
 </head>
-
 <body>
   <nav>
     <a class="logo" href="index.html">
       <img src="Logo.png" alt="Assist by Alicia" />
     </a>
-    <ul>
+
+    <ul class="nav-links">
       <li><a href="index.html">Accueil</a></li>
       <li class="dropdown">
         <span class="menu-label">Mes offres <span class="dropdown-arrow">▾</span></span>
@@ -553,7 +704,27 @@
       <li><a href="qui-suis-je.html">Qui suis-je ?</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+
+    <button class="menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span>
+    </button>
   </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html">Accueil</a>
+
+    <details open>
+      <summary>Mes offres</summary>
+      <div class="mobile-submenu">
+        <a href="offres.html">Toutes mes offres</a>
+        <a href="offre-express.html">Express</a>
+        <a href="Audit-de-temps.html" class="active">Audit</a>
+      </div>
+    </details>
+
+    <a href="qui-suis-je.html">Qui suis-je ?</a>
+    <a href="contact.html">Contact</a>
+  </div>
 
   <section class="hero-audit">
     <div class="hero-left">
@@ -600,6 +771,7 @@
           Remplis le formulaire ci-dessous et reçois directement le lien
           d’accès dans ta boîte mail.
         </p>
+
         <div class="card-divider"></div>
 
         <div class="audit-preview audit-preview-card">
@@ -708,12 +880,34 @@
   </footer>
 
   <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      menuToggle.classList.toggle('active', isOpen);
+      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      menuToggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+    });
+
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Ouvrir le menu');
+      });
+    });
+
     function ml_webform_success_39707517() {
-      var $ = ml_jQuery || jQuery;
-      $('.ml-subscribe-form-39707517 .row-success').show();
-      $('.ml-subscribe-form-39707517 .row-form').hide();
+      var $ = window.ml_jQuery || window.jQuery;
+      if ($) {
+        $('.ml-subscribe-form-39707517 .row-success').show();
+        $('.ml-subscribe-form-39707517 .row-form').hide();
+      }
     }
   </script>
+
   <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
   <script>
     fetch("https://assets.mailerlite.com/jsonp/2258522/forms/184344403738887629/takel");
