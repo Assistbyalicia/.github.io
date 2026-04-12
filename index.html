@@ -65,7 +65,8 @@
       position: relative;
     }
 
-    nav ul a {
+    nav ul a,
+    .menu-label {
       color: var(--white);
       text-decoration: none;
       font-size: 0.85rem;
@@ -75,8 +76,14 @@
       transition: color 0.2s;
     }
 
+    .menu-label {
+      cursor: default;
+      display: inline-block;
+    }
+
     nav ul a:hover,
-    nav ul a.active {
+    nav ul a.active,
+    .dropdown:hover .menu-label {
       color: var(--yellow);
     }
 
@@ -485,8 +492,9 @@
     </a>
     <ul>
       <li class="dropdown">
-        <a href="offres.html">Mes offres</a>
+        <span class="menu-label">Mes offres</span>
         <ul class="submenu">
+          <li><a href="offres.html">Toutes mes offres</a></li>
           <li><a href="offre-express.html">Express</a></li>
           <li><a href="Audit-de-temps.html">Audit</a></li>
         </ul>
