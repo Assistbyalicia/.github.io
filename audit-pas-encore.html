@@ -163,14 +163,14 @@
     }
 
     h1 {
-  font-family: 'League Spartan', sans-serif;
-  font-weight: 900;
-  font-size: clamp(2rem, 3.6vw, 3.8rem);
-  line-height: 1.08;
-  margin: 0 0 18px;
-  text-transform: uppercase;
-  text-wrap: balance;
-}
+      font-family: 'League Spartan', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2rem, 3.6vw, 3.8rem);
+      line-height: 1.08;
+      margin: 0 0 18px;
+      text-transform: uppercase;
+      text-wrap: balance;
+    }
 
     .lead {
       margin: 0 auto 18px;
@@ -185,6 +185,27 @@
       justify-content: center;
       gap: 14px;
       margin-top: 28px;
+    }
+
+    .hero-actions-with-help {
+      align-items: stretch;
+    }
+
+    .action-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      min-width: 260px;
+    }
+
+    .action-help {
+      margin: 0;
+      font-size: 0.82rem;
+      line-height: 1.4;
+      color: rgba(255,255,255,0.62);
+      text-align: center;
+      max-width: 28ch;
     }
 
     .btn-primary {
@@ -402,7 +423,8 @@
       }
 
       .hero-actions .btn-primary,
-      .hero-actions .btn-secondary {
+      .hero-actions .btn-secondary,
+      .action-group {
         width: 100%;
       }
 
@@ -446,21 +468,22 @@
             <p class="lead">
               Tu n’as pas besoin d’avoir une heure devant toi ni d’être “dans de bonnes conditions”. Le plus efficace, c’est souvent de commencer simplement, même imparfaitement.
             </p>
-            <div class="hero-actions hero-actions-with-help">
-  <div class="action-group">
-    <p class="action-help">Pour reprendre ton audit là où tu en es</p>
-    <a class="btn-primary" href="https://assistbyaliciafr.notion.site/Ton-audit-de-temps-07a4ac3284534fe9a345e5a4791584c4?source=copy_link" target="_blank" rel="noopener noreferrer">
-      Accéder à l’audit
-    </a>
-  </div>
 
-  <div class="action-group">
-    <p class="action-help">Pour revoir rapidement comment le remplir</p>
-    <a class="btn-secondary" href="https://youtu.be/aHNQPg7CIXM" target="_blank" rel="noopener noreferrer">
-      Voir la vidéo
-    </a>
-  </div>
-</div>
+            <div class="hero-actions hero-actions-with-help">
+              <div class="action-group">
+                <p class="action-help">Pour reprendre ton audit là où tu en es</p>
+                <a class="btn-primary" href="https://assistbyaliciafr.notion.site/Ton-audit-de-temps-07a4ac3284534fe9a345e5a4791584c4?source=copy_link" target="_blank" rel="noopener noreferrer">
+                  Accéder à l’audit
+                </a>
+              </div>
+
+              <div class="action-group">
+                <p class="action-help">Pour revoir rapidement comment le remplir</p>
+                <a class="btn-secondary" href="https://youtu.be/aHNQPg7CIXM" target="_blank" rel="noopener noreferrer">
+                  Voir la vidéo
+                </a>
+              </div>
+            </div>
           </div>
 
           <div class="card" style="margin-top: 8px;">
