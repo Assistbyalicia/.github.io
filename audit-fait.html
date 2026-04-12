@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Audit fait – Assist by Alicia</title>
-  <meta name="description" content="Tu as terminé ton audit de temps ? Voici la prochaine étape pour analyser tes résultats et avancer avec plus de clarté." />
+  <meta name="description" content="Tu as terminé ton audit de temps ? Voici la suite pour lire tes résultats et avancer avec plus de clarté." />
   <style>
     :root {
       --bg: #121212;
@@ -86,13 +86,20 @@
       display: grid;
       grid-template-columns: 1fr;
       gap: 24px;
-      padding: 48px;
+      padding: 56px 48px 48px;
       align-items: center;
+    }
+
+    .hero-intro {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 10px;
       margin-bottom: 18px;
       font-size: 12px;
@@ -102,7 +109,8 @@
       font-weight: 700;
     }
 
-    .eyebrow::before {
+    .eyebrow::before,
+    .eyebrow::after {
       content: "";
       width: 28px;
       height: 1px;
@@ -114,11 +122,10 @@
       font-size: clamp(2.2rem, 4vw, 4.2rem);
       line-height: 1.06;
       margin: 0 0 18px;
-      max-width: 11ch;
     }
 
     .lead {
-      margin: 0 0 18px;
+      margin: 0 auto 18px;
       max-width: 58ch;
       font-size: 1.06rem;
       color: var(--muted);
@@ -127,6 +134,7 @@
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 14px;
       margin-top: 28px;
     }
@@ -179,9 +187,15 @@
 
     .content-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 18px;
       margin-top: 8px;
+    }
+
+    .content-grid.centered {
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .card-accent h2 {
@@ -204,6 +218,7 @@
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: var(--radius);
       padding: 22px;
+      text-align: left;
     }
 
     .step-number {
@@ -232,8 +247,9 @@
     }
 
     .cta-block {
-      margin-top: 18px;
-      padding: 28px;
+      max-width: 760px;
+      margin: 18px auto 0;
+      padding: 30px;
       border-radius: 22px;
       background: linear-gradient(135deg, rgba(255, 71, 87, 0.12), rgba(202, 255, 0, 0.08));
       border: 1px solid rgba(255,255,255,0.10);
@@ -268,7 +284,7 @@
         padding: 32px 22px;
       }
 
-      h1 {
+      .hero-intro {
         max-width: none;
       }
 
@@ -279,6 +295,11 @@
       .hero-actions .btn {
         width: 100%;
       }
+
+      .cta-block,
+      .content-grid.centered {
+        max-width: none;
+      }
     }
   </style>
 </head>
@@ -287,7 +308,7 @@
     <div class="container">
       <section class="hero-card">
         <div class="hero-grid">
-          <div>
+          <div class="hero-intro">
             <div class="eyebrow">Assist by Alicia</div>
             <h1>Bravo, tu as fait ton audit.</h1>
             <p class="lead">
@@ -334,7 +355,7 @@
       </section>
 
       <section class="section">
-        <div class="content-grid">
+        <div class="content-grid centered">
           <article class="card card-accent">
             <h2>Ce que ton audit t’apporte</h2>
             <p>
@@ -342,17 +363,10 @@
             </p>
           </article>
 
-          <article class="card">
+          <article class="card card-coral">
             <h2>Pourquoi continuer maintenant</h2>
             <p>
               Quand les constats sont encore frais, c’est le meilleur moment pour ajuster ton organisation, supprimer du bruit et remettre de la clarté dans ton planning.
-            </p>
-          </article>
-
-          <article class="card card-coral">
-            <h2>Où trouver de l’aide</h2>
-            <p>
-              Si certains résultats te semblent flous ou si tu ne sais pas quoi changer en premier, le Discord est là pour poser tes questions et avancer plus sereinement.
             </p>
           </article>
         </div>
@@ -362,7 +376,7 @@
         <div class="cta-block">
           <h2>Tu veux un regard extérieur sur ton audit ?</h2>
           <p>
-            Rejoins le Discord pour poser tes questions, partager ce que tu as remarqué et obtenir un coup de pouce pour interpréter tes résultats.
+            Si certains résultats te semblent flous, si tu ne sais pas quoi changer en premier, ou si tu veux simplement être accompagnée dans la suite, rejoins le Discord. Tu pourras poser tes questions, partager ce que tu as remarqué et obtenir un vrai coup de pouce pour interpréter tes résultats.
           </p>
           <a class="btn btn-primary" href="https://discord.gg/jR7JdtsWKu" target="_blank" rel="noopener noreferrer">
             Accéder au Discord
