@@ -78,7 +78,20 @@
 
     .menu-label {
       cursor: default;
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .dropdown-arrow {
+      font-size: 0.7rem;
+      line-height: 1;
+      transform: translateY(-1px);
+      transition: transform 0.2s ease;
+    }
+
+    .dropdown:hover .dropdown-arrow {
+      transform: translateY(-1px) rotate(180deg);
     }
 
     nav ul a:hover,
@@ -88,20 +101,20 @@
     }
 
     .submenu {
-  list-style: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  min-width: 240px;
-  display: none;
-  flex-direction: column;
-  gap: 0;
-  background: rgba(18,18,18,0.98);
-  border: 1px solid rgba(202,255,0,0.12);
-  border-radius: 10px;
-  padding: 0.5rem 0;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
-}
+      list-style: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 240px;
+      display: none;
+      flex-direction: column;
+      gap: 0;
+      background: rgba(18,18,18,0.98);
+      border: 1px solid rgba(202,255,0,0.12);
+      border-radius: 10px;
+      padding: 0.5rem 0;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+    }
 
     .submenu li {
       width: 100%;
@@ -492,7 +505,7 @@
     </a>
     <ul>
       <li class="dropdown">
-        <span class="menu-label">Mes offres</span>
+        <span class="menu-label">Mes offres <span class="dropdown-arrow">▾</span></span>
         <ul class="submenu">
           <li><a href="offres.html">Toutes mes offres</a></li>
           <li><a href="offre-express.html">Express</a></li>
