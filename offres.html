@@ -6,7 +6,11 @@
   <title>Mes offres – Assist by Alicia</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=League+Spartan:wght@700;900&family=Satisfy&display=swap" rel="stylesheet"/>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     :root {
       --blue: #1E2A4A;
@@ -43,6 +47,12 @@
       padding: 1rem 4rem;
     }
 
+    .logo {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+
     .logo img {
       height: 75px;
       width: auto;
@@ -56,7 +66,13 @@
       align-items: center;
     }
 
-    nav ul a {
+    nav ul li {
+      list-style: none;
+      position: relative;
+    }
+
+    nav ul a,
+    .menu-label {
       color: var(--white);
       text-decoration: none;
       font-size: 0.85rem;
@@ -66,9 +82,46 @@
       transition: color 0.2s;
     }
 
+    .menu-label {
+      cursor: default;
+      display: inline-block;
+    }
+
     nav ul a:hover,
-    nav ul a.active {
+    nav ul a.active,
+    .dropdown:hover .menu-label {
       color: var(--yellow);
+    }
+
+    .submenu {
+      list-style: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 240px;
+      display: none;
+      flex-direction: column;
+      gap: 0;
+      background: rgba(18,18,18,0.98);
+      border: 1px solid rgba(202,255,0,0.12);
+      border-radius: 10px;
+      padding: 0.5rem 0;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+    }
+
+    .submenu li {
+      width: 100%;
+    }
+
+    .submenu a {
+      display: block;
+      padding: 0.85rem 1rem;
+      font-size: 0.78rem;
+      white-space: nowrap;
+    }
+
+    .dropdown:hover .submenu {
+      display: flex;
     }
 
     main {
@@ -292,14 +345,19 @@
   </style>
 </head>
 <body>
-
   <nav>
     <a class="logo" href="index.html">
       <img src="Logo.png" alt="Assist by Alicia" />
     </a>
     <ul>
-      <li><a href="offres.html" class="active">Mes offres</a></li>
-      <li><a href="offre-express.html">Express</a></li>
+      <li class="dropdown">
+        <span class="menu-label">Mes offres</span>
+        <ul class="submenu">
+          <li><a href="offres.html" class="active">Toutes mes offres</a></li>
+          <li><a href="offre-express.html">Express</a></li>
+          <li><a href="Audit-de-temps.html">Audit</a></li>
+        </ul>
+      </li>
       <li><a href="qui-suis-je.html">Qui suis-je ?</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -321,13 +379,11 @@
           Ton urgence n°1 réglée en 7 jours. Un diagnostic, un système Notion opérationnel, une formation pour être autonome.
         </p>
         <div class="price">290 € TTC</div>
-
         <div class="meta">
           <div><strong>Durée :</strong> 7 jours</div>
           <div><strong>Ton temps :</strong> 2h sur 7 jours</div>
           <div><strong>Résultat :</strong> 5 à 10h gagnées par semaine</div>
         </div>
-
         <a class="btn-primary" href="offre-express.html">Voir l’offre</a>
       </article>
 
@@ -355,12 +411,11 @@
   </main>
 
   <footer>
-  <span>© 2026 Assist by Alicia – Tous droits réservés</span>
-  <div class="footer-links">
-    <a href="Mention légale - CGV.html">Mentions légales / CGV</a>
-    <a href="Politique de confidentialité.html">Politique de confidentialité</a>
-  </div>
-</footer>
-
+    <span>© 2026 Assist by Alicia – Tous droits réservés</span>
+    <div class="footer-links">
+      <a href="Mention légale - CGV.html">Mentions légales / CGV</a>
+      <a href="Politique de confidentialité.html">Politique de confidentialité</a>
+    </div>
+  </footer>
 </body>
 </html>
