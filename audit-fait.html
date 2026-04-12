@@ -5,22 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Audit fait – Assist by Alicia</title>
   <meta name="description" content="Tu as terminé ton audit de temps ? Voici la suite pour lire tes résultats et avancer avec plus de clarté." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=League+Spartan:wght@700;900&family=Satisfy&display=swap" rel="stylesheet"/>
+
   <style>
-    :root {
-      --bg: #121212;
-      --surface: #1E2A4A;
-      --surface-alt: #161f36;
-      --text: #FFFFFF;
-      --muted: #C9CEDA;
-      --line: #2b3960;
-      --primary: #FF4757;
-      --accent: #CAFF00;
-      --radius: 18px;
-      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    * {
-      box-sizing: border-box;
+    :root {
+      --blue: #1E2A4A;
+      --coral: #FF4757;
+      --yellow: #CAFF00;
+      --black: #121212;
+      --white: #FFFFFF;
+      --muted: #C9CEDA;
+      --line: #2b3960;
+      --radius: 18px;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
     }
 
     html {
@@ -28,14 +32,65 @@
     }
 
     body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
       background:
         radial-gradient(circle at top, rgba(202, 255, 0, 0.08), transparent 22%),
         radial-gradient(circle at bottom right, rgba(255, 71, 87, 0.10), transparent 18%),
-        var(--bg);
-      color: var(--text);
-      line-height: 1.6;
+        var(--black);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.7;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(18,18,18,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(202,255,0,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 4rem;
+    }
+
+    .logo {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 45px;
+      width: auto;
+      display: block;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    nav ul li {
+      list-style: none;
+    }
+
+    nav ul a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    nav ul a:hover,
+    nav ul a.active {
+      color: var(--yellow);
     }
 
     a {
@@ -56,7 +111,7 @@
       min-height: 100vh;
       display: flex;
       align-items: center;
-      padding: 32px 0 48px;
+      padding: 120px 0 48px;
     }
 
     .hero-card {
@@ -91,10 +146,10 @@
     }
 
     .hero-intro {
-  max-width: 920px;
-  margin: 0 auto;
-  text-align: center;
-}
+      max-width: 920px;
+      margin: 0 auto;
+      text-align: center;
+    }
 
     .eyebrow {
       display: inline-flex;
@@ -102,34 +157,26 @@
       justify-content: center;
       gap: 10px;
       margin-bottom: 18px;
-      font-size: 12px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    .eyebrow::before,
-    .eyebrow::after {
-      content: "";
-      width: 28px;
-      height: 1px;
-      background: var(--accent);
-      display: inline-block;
+      font-family: 'Satisfy', cursive;
+      color: var(--coral);
+      font-size: 1.35rem;
     }
 
     h1 {
+      font-family: 'League Spartan', sans-serif;
+      font-weight: 900;
       font-size: clamp(2.2rem, 4vw, 4.2rem);
       line-height: 1.06;
       margin: 0 0 18px;
+      text-transform: uppercase;
     }
 
     .lead {
-  margin: 0 auto 18px;
-  max-width: 68ch;
-  font-size: 1.06rem;
-  color: var(--muted);
-}
+      margin: 0 auto 18px;
+      max-width: 68ch;
+      font-size: 1.06rem;
+      color: var(--muted);
+    }
 
     .hero-actions {
       display: flex;
@@ -139,49 +186,78 @@
       margin-top: 28px;
     }
 
-    .btn {
+    .btn-primary {
+      background: var(--coral);
+      color: var(--white);
+      padding: 0.9rem 2rem;
+      border-radius: 4px;
+      font-family: 'League Spartan', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      transition: background 0.2s, box-shadow 0.2s;
+      box-shadow: 0 0 20px rgba(255,71,87,0.35);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 50px;
-      padding: 0 20px;
-      border-radius: 12px;
-      font-weight: 700;
-      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, border-color 180ms ease;
+      min-height: 52px;
     }
 
-    .btn:hover {
-      transform: translateY(-1px);
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: #fff;
-      box-shadow: 0 12px 24px rgba(255, 71, 87, 0.20);
+    .btn-primary:hover {
+      background: #e03040;
+      box-shadow: 0 0 32px rgba(255,71,87,0.55);
     }
 
     .btn-secondary {
       background: transparent;
-      border: 1px solid rgba(255,255,255,0.18);
-      color: var(--text);
+      color: var(--yellow);
+      padding: 0.9rem 2rem;
+      border-radius: 4px;
+      border: 1.5px solid var(--yellow);
+      font-family: 'League Spartan', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      transition: background 0.2s, box-shadow 0.2s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(202,255,0,0.08);
+      box-shadow: 0 0 20px rgba(202,255,0,0.2);
     }
 
     .card {
-      background: linear-gradient(180deg, rgba(30, 42, 74, 0.95), rgba(20, 27, 45, 0.95));
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 22px;
+      background: rgba(30,42,74,0.4);
+      border: 1px solid rgba(202,255,0,0.1);
+      border-radius: 8px;
+      padding: 2rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      border-color: rgba(202,255,0,0.35);
+      box-shadow: 0 0 24px rgba(202,255,0,0.06);
     }
 
     .card h2 {
       margin: 0 0 12px;
+      font-family: 'League Spartan', sans-serif;
       font-size: 1.15rem;
-      line-height: 1.25;
+      line-height: 1.2;
+      text-transform: uppercase;
     }
 
     .card p {
       margin: 0;
-      color: var(--muted);
+      color: rgba(255,255,255,0.78);
       font-size: 0.98rem;
     }
 
@@ -199,11 +275,11 @@
     }
 
     .card-accent h2 {
-      color: var(--accent);
+      color: var(--yellow);
     }
 
     .card-coral h2 {
-      color: var(--primary);
+      color: var(--coral);
     }
 
     .steps {
@@ -228,21 +304,24 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      background: var(--accent);
+      background: var(--yellow);
       color: #121212;
       font-weight: 700;
       margin-bottom: 14px;
       font-size: 0.95rem;
+      font-family: 'League Spartan', sans-serif;
     }
 
     .step h3 {
       margin: 0 0 10px;
+      font-family: 'League Spartan', sans-serif;
       font-size: 1.06rem;
+      text-transform: uppercase;
     }
 
     .step p {
       margin: 0;
-      color: var(--muted);
+      color: rgba(255,255,255,0.78);
       font-size: 0.96rem;
     }
 
@@ -250,21 +329,23 @@
       max-width: 760px;
       margin: 18px auto 0;
       padding: 30px;
-      border-radius: 22px;
-      background: linear-gradient(135deg, rgba(255, 71, 87, 0.12), rgba(202, 255, 0, 0.08));
-      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 8px;
+      background: rgba(30,42,74,0.5);
+      border: 1px solid rgba(202,255,0,0.15);
       text-align: center;
     }
 
     .cta-block h2 {
       margin: 0 0 12px;
+      font-family: 'League Spartan', sans-serif;
       font-size: 1.5rem;
+      text-transform: uppercase;
     }
 
     .cta-block p {
       margin: 0 auto 20px;
       max-width: 60ch;
-      color: var(--muted);
+      color: rgba(255,255,255,0.78);
     }
 
     .footer-note {
@@ -274,7 +355,45 @@
       font-size: 0.92rem;
     }
 
-    @media (max-width: 960px) {
+    footer {
+      background: rgba(18,18,18,0.98);
+      border-top: 1px solid rgba(202,255,0,0.08);
+      padding: 2rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+
+    footer a {
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    footer a:hover {
+      color: var(--white);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem 1.5rem;
+      }
+
+      nav ul {
+        display: none;
+      }
+
       .content-grid,
       .steps {
         grid-template-columns: 1fr;
@@ -284,15 +403,12 @@
         padding: 32px 22px;
       }
 
-      .hero-intro {
-        max-width: none;
-      }
-
       .hero-actions {
         flex-direction: column;
       }
 
-      .hero-actions .btn {
+      .hero-actions .btn-primary,
+      .hero-actions .btn-secondary {
         width: 100%;
       }
 
@@ -300,10 +416,29 @@
       .content-grid.centered {
         max-width: none;
       }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
+
+  <nav>
+    <a class="logo" href="index.html">
+      <img src="Logo.png" alt="Assist by Alicia" />
+    </a>
+    <ul>
+      <li><a href="offres.html">Mes offres</a></li>
+      <li><a href="offre-express.html">Express</a></li>
+      <li><a href="Audit-de-temps.html" class="active">Audit</a></li>
+      <li><a href="qui-suis-je.html">Qui suis-je ?</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
   <main class="hero-wrap">
     <div class="container">
       <section class="hero-card">
@@ -318,8 +453,8 @@
               Maintenant, l’objectif est simple : transformer ce que tu as observé en décisions plus claires, plus légères et plus alignées avec ton quotidien.
             </p>
             <div class="hero-actions">
-              <a class="btn btn-primary" href="https://discord.gg/jR7JdtsWKu" target="_blank" rel="noopener noreferrer">Rejoindre le Discord</a>
-              <a class="btn btn-secondary" href="https://calendar.notion.so/meet/aliciachouquet/30min." target="_blank" rel="noopener noreferrer">Réserver un échange</a>
+              <a class="btn-primary" href="https://discord.gg/jR7JdtsWKu" target="_blank" rel="noopener noreferrer">Rejoindre le Discord</a>
+              <a class="btn-secondary" href="https://calendar.notion.so/meet/aliciachouquet/30min." target="_blank" rel="noopener noreferrer">Réserver un échange</a>
             </div>
           </div>
 
@@ -378,7 +513,7 @@
           <p>
             Si certains résultats te semblent flous, si tu ne sais pas quoi changer en premier, ou si tu veux simplement être accompagnée dans la suite, rejoins le Discord. Tu pourras poser tes questions, partager ce que tu as remarqué et obtenir un vrai coup de pouce pour interpréter tes résultats.
           </p>
-          <a class="btn btn-primary" href="https://discord.gg/jR7JdtsWKu" target="_blank" rel="noopener noreferrer">
+          <a class="btn-primary" href="https://discord.gg/jR7JdtsWKu" target="_blank" rel="noopener noreferrer">
             Accéder au Discord
           </a>
         </div>
@@ -389,5 +524,14 @@
       </section>
     </div>
   </main>
+
+  <footer>
+    <span>© 2026 Assist by Alicia – Tous droits réservés</span>
+    <div class="footer-links">
+      <a href="Mention légale - CGV.html">Mentions légales / CGV</a>
+      <a href="Politique de confidentialité.html">Politique de confidentialité</a>
+    </div>
+  </footer>
+
 </body>
 </html>
