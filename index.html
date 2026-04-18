@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -70,9 +71,11 @@
     }
 
     .logo img {
-      height: 75px;
-      width: auto;
       display: block;
+      width: auto;
+      max-width: 220px;
+      height: 75px;
+      object-fit: contain;
     }
 
     .nav-links {
@@ -554,7 +557,9 @@
       }
 
       .logo img {
+        max-width: 170px;
         height: 56px;
+        object-fit: contain;
       }
 
       .menu-toggle {
@@ -705,12 +710,32 @@
         gap: 1rem;
       }
     }
+  
+
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 1rem;
+      background: var(--yellow);
+      color: var(--black);
+      padding: 0.75rem 1rem;
+      text-decoration: none;
+      font-weight: 700;
+      z-index: 2000;
+      border-radius: 6px;
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Aller au contenu principal</a>
   <nav>
     <a class="logo" href="index.html">
-      <img src="Logo.png" alt="Assist by Alicia" />
+      <img src="./Logo.png" alt="Assist by Alicia" width="220" height="75" />
     </a>
 
     <ul class="nav-links">
@@ -748,6 +773,7 @@
     <a href="contact.html">Contact</a>
   </div>
 
+  <main id="main-content">
   <section class="hero">
     <p class="hero-tag">Bras droit · Notion · Automatisations · IA</p>
     <h1>
@@ -855,7 +881,7 @@
   <section>
     <div class="apropos-teaser">
       <div class="portrait">
-        <img src="Photo de profil.png" alt="Portrait d'Alicia" />
+        <img src="Photo de profil.png" alt="Portrait d'Alicia" width="220" height="220" />
       </div>
       <div class="apropos-text">
         <p class="section-tag">Qui suis-je ?</p>
@@ -883,6 +909,8 @@
     <a class="btn-primary" href="https://calendar.notion.so/meet/aliciachouquet/30min" target="_blank" rel="noopener noreferrer">Réserver mon appel diagnostic</a>
     <p class="note">Tu préfères m'écrire d'abord ? Passe par la page Contact.</p>
   </section>
+
+  </main>
 
   <footer>
     <span>© 2026 Assist by Alicia – Tous droits réservés</span>
