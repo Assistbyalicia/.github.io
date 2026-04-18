@@ -21,8 +21,8 @@
   <meta name="twitter:image" content="https://assistbyalicia.github.io/.github.io/Photo%20de%20profil.png" />
 
   //fonts.googleapis.com">
-  //fonts.gstatic.com" crossorigin>
-  //fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=League+Spartan:wght@700;900&family=Satisfy&display=swap" rel="stylesheet" />
+//fonts.gstatic.com" crossorigin>
+//fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=League+Spartan:wght@700;900&family=Satisfy&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -238,7 +238,24 @@
   max-width: 780px;
   margin: 0 auto 1.5rem;
 }
+h2 {
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 1.6rem;
+}
 
+h3 {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--yellow);
+  margin-bottom: 0.6rem;
+}
     h1 em {
       color: var(--yellow);
       font-style: normal;
@@ -553,7 +570,7 @@
 </head>
 <body>
   <nav>
-    <a class="logo" href="index.html">
+    <a class="logo" href="index.html" aria-label="Accueil Assist by Alicia">
       <img src="Logo.png" alt="Assist by Alicia" width="220" height="75" />
     </a>
 
