@@ -2,11 +2,33 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mes offres – Assist by Alicia</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=League+Spartan:wght@700;900&family=Satisfy&display=swap" rel="stylesheet"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Mes offres : systèmes Notion sur-mesure & bras droit opérationnel – Assist by Alicia</title>
+  <meta name="description" content="Découvre mes offres de systèmes Notion sur-mesure, automatisations et accompagnement opérationnel pour entrepreneurs : Express 7 jours, formules complètes." />
+  <meta name="robots" content="index, follow" />
+  //assistbyalicia.github.io/.github.io/offres.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Offres : systèmes Notion sur-mesure & bras droit – Assist by Alicia" />
+  <meta property="og:description" content="Offre Express 7 jours ou accompagnement complet : systèmes Notion, automatisations et organisation opérationnelle pour entrepreneurs." />
+  <meta property="og:url" content="https://assistbyalicia.github.io/.github.io/offres.html" />
+  <meta property="og:image" content="https://assistbyalicia.github.io/.github.io/Photo%20de%20profil.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Offres : systèmes Notion sur-mesure & bras droit – Assist by Alicia" />
+  <meta name="twitter:description" content="Express 7 jours ou accompagnement complet : systèmes Notion, automatisations et organisation opérationnelle pour entrepreneurs." />
+  <meta name="twitter:image" content="https://assistbyalicia.github.io/.github.io/Photo%20de%20profil.png" />
+
+  //fonts.googleapis.com">
+//fonts.gstatic.com" crossorigin>
+//fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=League+Spartan:wght@700;900&family=Satisfy&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     :root {
       --blue: #1E2A4A;
@@ -14,6 +36,10 @@
       --yellow: #CAFF00;
       --black: #121212;
       --white: #FFFFFF;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -33,7 +59,7 @@
       position: fixed;
       top: 0;
       width: 100%;
-      z-index: 100;
+      z-index: 1000;
       background: rgba(18,18,18,0.92);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(202,255,0,0.12);
@@ -43,20 +69,34 @@
       padding: 1rem 4rem;
     }
 
+    .logo {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      position: relative;
+      z-index: 1002;
+    }
+
     .logo img {
-      height: 45px;
+      height: 75px;
       width: auto;
       display: block;
     }
 
-    nav ul {
+    .nav-links {
       list-style: none;
       display: flex;
       gap: 2.5rem;
       align-items: center;
     }
 
-    nav ul a {
+    .nav-links li {
+      list-style: none;
+      position: relative;
+    }
+
+    .nav-links a,
+    .menu-label {
       color: var(--white);
       text-decoration: none;
       font-size: 0.85rem;
@@ -66,9 +106,112 @@
       transition: color 0.2s;
     }
 
-    nav ul a:hover,
-    nav ul a.active {
+    .menu-label {
+      cursor: default;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .dropdown-arrow {
+      font-size: 0.7rem;
+      line-height: 1;
+      transform: translateY(-1px);
+      transition: transform 0.2s ease;
+    }
+
+    .dropdown:hover .dropdown-arrow {
+      transform: translateY(-1px) rotate(180deg);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active,
+    .dropdown:hover .menu-label {
       color: var(--yellow);
+    }
+
+    .submenu {
+      list-style: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 240px;
+      display: none;
+      flex-direction: column;
+      gap: 0;
+      background: rgba(18,18,18,0.98);
+      border: 1px solid rgba(202,255,0,0.12);
+      border-radius: 10px;
+      padding: 0.5rem 0;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+    }
+
+    .submenu li {
+      width: 100%;
+    }
+
+    .submenu a {
+      display: block;
+      padding: 0.85rem 1rem;
+      font-size: 0.78rem;
+      white-space: nowrap;
+    }
+
+    .dropdown:hover .submenu {
+      display: flex;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid rgba(202,255,0,0.18);
+      color: var(--white);
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+      z-index: 1002;
+    }
+
+    .menu-toggle span,
+    .menu-toggle span::before,
+    .menu-toggle span::after {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--white);
+      position: relative;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+      content: "";
+    }
+
+    .menu-toggle span::before {
+      position: absolute;
+      top: -6px;
+    }
+
+    .menu-toggle span::after {
+      position: absolute;
+      top: 6px;
+    }
+
+    .menu-toggle.active span {
+      background: transparent;
+    }
+
+    .menu-toggle.active span::before {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    .menu-toggle.active span::after {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+
+    .mobile-menu {
+      display: none;
     }
 
     main {
@@ -86,15 +229,33 @@
     }
 
     h1 {
-      font-family: 'League Spartan', sans-serif;
-      font-weight: 900;
-      font-size: clamp(2.3rem, 5vw, 4.5rem);
-      text-transform: uppercase;
-      line-height: 1;
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.5rem, 3.4vw, 2.8rem);
+  text-transform: uppercase;
+  line-height: 1.1;
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 1.5rem;
+}
+h2 {
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 1.6rem;
+}
 
+h3 {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--yellow);
+  margin-bottom: 0.6rem;
+}
     h1 em {
       color: var(--yellow);
       font-style: normal;
@@ -122,6 +283,8 @@
       padding: 2.2rem;
       position: relative;
       box-shadow: 0 0 30px rgba(30,42,74,0.18);
+      display: flex;
+      flex-direction: column;
     }
 
     .card-soon {
@@ -186,7 +349,9 @@
 
     .btn-primary,
     .btn-secondary {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       text-decoration: none;
       font-family: 'League Spartan', sans-serif;
       font-weight: 700;
@@ -196,6 +361,7 @@
       padding: 0.95rem 1.6rem;
       border-radius: 4px;
       transition: 0.2s ease;
+      min-height: 52px;
     }
 
     .btn-primary {
@@ -232,6 +398,7 @@
       font-size: clamp(1.8rem, 4vw, 3rem);
       text-transform: uppercase;
       margin-bottom: 1rem;
+      line-height: 1.08;
     }
 
     .cta-block h2 span {
@@ -271,43 +438,181 @@
       flex-wrap: wrap;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
       nav {
         padding: 1rem 1.5rem;
       }
 
-      nav ul {
+      .logo img {
+        height: 56px;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .nav-links {
         display: none;
       }
 
+      .mobile-menu {
+        position: fixed;
+        top: 88px;
+        left: 1rem;
+        right: 1rem;
+        display: none;
+        flex-direction: column;
+        gap: 0.4rem;
+        padding: 1rem;
+        background: rgba(18,18,18,0.98);
+        border: 1px solid rgba(202,255,0,0.12);
+        border-radius: 14px;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+        z-index: 999;
+      }
+
+      .mobile-menu.open {
+        display: flex;
+      }
+
+      .mobile-menu a,
+      .mobile-menu summary {
+        color: var(--white);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        padding: 0.9rem 0.4rem;
+      }
+
+      .mobile-menu a.active {
+        color: var(--yellow);
+      }
+
+      .mobile-menu details {
+        border-top: 1px solid rgba(255,255,255,0.06);
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+        padding: 0.2rem 0;
+      }
+
+      .mobile-menu summary {
+        list-style: none;
+        cursor: pointer;
+      }
+
+      .mobile-menu summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .mobile-submenu {
+        display: flex;
+        flex-direction: column;
+        padding: 0.2rem 0 0.5rem 0.8rem;
+      }
+
       main {
-        padding-top: 8rem;
+        padding: 8.3rem 1.2rem 4rem;
+      }
+
+      .section-tag {
+        font-size: 1.2rem;
+      }
+
+      .intro {
+        margin-bottom: 2.5rem;
+        font-size: 0.96rem;
+      }
+
+      .offers-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+
+      .card {
+        padding: 1.5rem 1.2rem;
+      }
+
+      .card h2 {
+        font-size: 1.5rem;
+      }
+
+      .price {
+        font-size: 1.35rem;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+      }
+
+      .cta-block {
+        margin-top: 3rem;
+        padding: 2rem 1.2rem;
+      }
+
+      .cta-block .btn-primary {
+        width: 100%;
       }
 
       footer {
+        padding: 2rem 1.2rem;
         flex-direction: column;
         text-align: center;
+      }
+
+      .footer-links {
+        justify-content: center;
+        gap: 1rem;
       }
     }
   </style>
 </head>
 <body>
-
   <nav>
-    <a class="logo" href="index.html">
-      <img src="Logo.png" alt="Assist by Alicia" />
+    <a class="logo" href="index.html" aria-label="Accueil Assist by Alicia">
+      <img src="Logo.png" alt="Assist by Alicia" width="220" height="75" />
     </a>
-    <ul>
-      <li><a href="offres.html" class="active">Mes offres</a></li>
-      <li><a href="offre-express.html">Express</a></li>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li class="dropdown">
+        <span class="menu-label">Mes offres <span class="dropdown-arrow">▾</span></span>
+        <ul class="submenu">
+          <li><a href="offres.html" class="active">Toutes mes offres</a></li>
+          <li><a href="offre-express.html">Express</a></li>
+          <li><a href="Audit-de-temps.html">Audit</a></li>
+        </ul>
+      </li>
       <li><a href="qui-suis-je.html">Qui suis-je ?</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+
+    <button class="menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span>
+    </button>
   </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html">Accueil</a>
+
+    <details open>
+      <summary>Mes offres</summary>
+      <div class="mobile-submenu">
+        <a href="offres.html" class="active">Toutes mes offres</a>
+        <a href="offre-express.html">Express</a>
+        <a href="Audit-de-temps.html">Audit</a>
+      </div>
+    </details>
+
+    <a href="qui-suis-je.html">Qui suis-je ?</a>
+    <a href="contact.html">Contact</a>
+  </div>
 
   <main>
     <p class="section-tag">Mes offres</p>
     <h1>Un système sur-mesure.<br><em>Choisis ton point de départ.</em></h1>
+
     <p class="intro">
       Aujourd'hui, tu peux commencer avec Express. D'autres formules arrivent pour les besoins plus complets.
     </p>
@@ -321,13 +626,11 @@
           Ton urgence n°1 réglée en 7 jours. Un diagnostic, un système Notion opérationnel, une formation pour être autonome.
         </p>
         <div class="price">290 € TTC</div>
-
         <div class="meta">
           <div><strong>Durée :</strong> 7 jours</div>
           <div><strong>Ton temps :</strong> 2h sur 7 jours</div>
           <div><strong>Résultat :</strong> 5 à 10h gagnées par semaine</div>
         </div>
-
         <a class="btn-primary" href="offre-express.html">Voir l’offre</a>
       </article>
 
@@ -355,12 +658,32 @@
   </main>
 
   <footer>
-  <span>© 2026 Assist by Alicia – Tous droits réservés</span>
-  <div class="footer-links">
-    <a href="Mention légale - CGV.html">Mentions légales / CGV</a>
-    <a href="Politique de confidentialité.html">Politique de confidentialité</a>
-  </div>
-</footer>
+    <span>© 2026 Assist by Alicia – Tous droits réservés</span>
+    <div class="footer-links">
+      <a href="Mention légale - CGV.html">Mentions légales / CGV</a>
+      <a href="Politique de confidentialité.html">Politique de confidentialité</a>
+    </div>
+  </footer>
 
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      menuToggle.classList.toggle('active', isOpen);
+      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      menuToggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+    });
+
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Ouvrir le menu');
+      });
+    });
+  </script>
 </body>
 </html>
