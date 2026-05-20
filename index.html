@@ -1,27 +1,33 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="dark">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OBM & Systèmes Notion sur-mesure – Assist by Alicia</title>
-  <meta name="description" content="Alicia, OBM spécialisée Notion, IA et automatisation. Je pilote ton business, structure tes systèmes et automatise tes process." />
+  <title>Assist by Alicia | OBM & Systèmes Notion sur-mesure</title>
+  <meta
+    name="description"
+    content="Alicia, OBM spécialisée Notion, IA et automatisation. Je structure ton business, pilote tes opérations et crée des systèmes sur-mesure."
+  />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800;900&family=Satisfy&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800;900&family=Satisfy&family=Montserrat:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
     :root {
-      --coral: #FF4757;
-      --yellow: #CAFF00;
-      --blue-dark: #1E2A4A;
+      --coral: #ff4757;
+      --yellow: #caff00;
+      --blue-dark: #1e2a4a;
       --black: #121212;
-      --white: #FFFFFF;
+      --white: #ffffff;
       --surface: #1a1a1a;
       --surface-2: #202020;
-      --border: rgba(202,255,0,0.12);
-      --text-muted: rgba(255,255,255,0.7);
-      --text-faint: rgba(255,255,255,0.42);
+      --border: rgba(202, 255, 0, 0.12);
+      --text-muted: rgba(255, 255, 255, 0.7);
+      --text-faint: rgba(255, 255, 255, 0.42);
 
       --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
       --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
@@ -52,20 +58,20 @@
 
       --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
 
-      --shadow-sm: 0 1px 2px rgba(0,0,0,0.2);
-      --shadow-md: 0 4px 12px rgba(0,0,0,0.32);
-      --shadow-lg: 0 12px 32px rgba(0,0,0,0.45);
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+      --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.32);
+      --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.45);
 
-      --content-narrow: 640px;
       --content-default: 1000px;
-      --content-wide: 1200px;
 
-      --font-display: 'League Spartan', sans-serif;
-      --font-script: 'Satisfy', cursive;
-      --font-body: 'Montserrat', sans-serif;
+      --font-display: "League Spartan", sans-serif;
+      --font-script: "Satisfy", cursive;
+      --font-body: "Montserrat", sans-serif;
     }
 
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -83,25 +89,32 @@
       font-size: var(--text-base);
       line-height: 1.7;
       min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
     }
 
-    img, video {
+    main {
+      flex: 1;
+    }
+
+    img,
+    video {
       display: block;
       max-width: 100%;
       height: auto;
     }
 
-    a, button {
-      transition: color var(--transition), background var(--transition), box-shadow var(--transition);
+    a,
+    button {
+      transition:
+        color var(--transition),
+        background var(--transition),
+        box-shadow var(--transition);
     }
 
     p {
       color: var(--text-muted);
       max-width: 68ch;
-    }
-
-    ul[role="list"] {
-      list-style: none;
     }
 
     :focus-visible {
@@ -110,19 +123,12 @@
       border-radius: var(--radius-sm);
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
-
     nav {
       position: fixed;
       top: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(18,18,18,0.92);
+      background: rgba(18, 18, 18, 0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
       display: flex;
@@ -151,7 +157,7 @@
     }
 
     .nav-links a,
-    .menu-label {
+    .menu-link {
       color: var(--white);
       text-decoration: none;
       font-size: var(--text-xs);
@@ -160,25 +166,13 @@
       text-transform: uppercase;
     }
 
-    .menu-label {
-      cursor: default;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .dropdown-arrow {
-      font-size: 0.65rem;
-      transition: transform 0.2s;
-    }
-
-    .dropdown:hover .dropdown-arrow {
-      transform: rotate(180deg);
-    }
-
     .nav-links a:hover,
-    .dropdown:hover .menu-label {
+    .dropdown:hover .menu-link {
       color: var(--yellow);
+    }
+
+    .dropdown {
+      position: relative;
     }
 
     .submenu {
@@ -189,7 +183,7 @@
       min-width: 240px;
       display: none;
       flex-direction: column;
-      background: rgba(18,18,18,0.98);
+      background: rgba(18, 18, 18, 0.98);
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
       padding: var(--space-2) 0;
@@ -203,10 +197,6 @@
       white-space: nowrap;
     }
 
-    .dropdown {
-      position: relative;
-    }
-
     .dropdown:hover .submenu {
       display: flex;
     }
@@ -214,7 +204,7 @@
     .menu-toggle {
       display: none;
       background: transparent;
-      border: 1px solid rgba(202,255,0,0.18);
+      border: 1px solid rgba(202, 255, 0, 0.18);
       color: var(--white);
       width: 48px;
       height: 48px;
@@ -222,6 +212,16 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 99px;
     }
 
     .mobile-menu {
@@ -237,9 +237,25 @@
       text-align: center;
       padding: 8rem var(--space-8) var(--space-16);
       background:
-        radial-gradient(ellipse 70% 55% at 50% 38%, rgba(30,42,74,0.85) 0%, transparent 70%),
-        repeating-linear-gradient(0deg, rgba(202,255,0,0.025) 0px, rgba(202,255,0,0.025) 1px, transparent 1px, transparent 60px),
-        repeating-linear-gradient(90deg, rgba(202,255,0,0.025) 0px, rgba(202,255,0,0.025) 1px, transparent 1px, transparent 60px),
+        radial-gradient(
+          ellipse 70% 55% at 50% 38%,
+          rgba(30, 42, 74, 0.85) 0%,
+          transparent 70%
+        ),
+        repeating-linear-gradient(
+          0deg,
+          rgba(202, 255, 0, 0.025) 0px,
+          rgba(202, 255, 0, 0.025) 1px,
+          transparent 1px,
+          transparent 60px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          rgba(202, 255, 0, 0.025) 0px,
+          rgba(202, 255, 0, 0.025) 1px,
+          transparent 1px,
+          transparent 60px
+        ),
         var(--black);
     }
 
@@ -292,14 +308,14 @@
       letter-spacing: 0.07em;
       padding: var(--space-2) var(--space-4);
       border-radius: var(--radius-full);
-      background: rgba(202,255,0,0.07);
-      border: 1px solid rgba(202,255,0,0.25);
+      background: rgba(202, 255, 0, 0.07);
+      border: 1px solid rgba(202, 255, 0, 0.25);
       color: var(--yellow);
     }
 
     .pill.accent {
-      background: rgba(255,71,87,0.08);
-      border-color: rgba(255,71,87,0.3);
+      background: rgba(255, 71, 87, 0.08);
+      border-color: rgba(255, 71, 87, 0.3);
       color: var(--coral);
     }
 
@@ -322,7 +338,7 @@
       text-transform: uppercase;
       letter-spacing: 0.06em;
       text-decoration: none;
-      box-shadow: 0 0 20px rgba(255,71,87,0.35);
+      box-shadow: 0 0 20px rgba(255, 71, 87, 0.35);
       display: inline-flex;
       align-items: center;
       min-height: 52px;
@@ -330,7 +346,7 @@
 
     .btn-primary:hover {
       background: #e03040;
-      box-shadow: 0 0 32px rgba(255,71,87,0.55);
+      box-shadow: 0 0 32px rgba(255, 71, 87, 0.55);
     }
 
     .btn-secondary {
@@ -351,8 +367,8 @@
     }
 
     .btn-secondary:hover {
-      background: rgba(202,255,0,0.08);
-      box-shadow: 0 0 20px rgba(202,255,0,0.2);
+      background: rgba(202, 255, 0, 0.08);
+      box-shadow: 0 0 20px rgba(202, 255, 0, 0.2);
     }
 
     .btn-ghost {
@@ -363,7 +379,7 @@
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
       padding-bottom: 2px;
       display: inline-flex;
       align-items: center;
@@ -415,17 +431,17 @@
     }
 
     .probleme-block {
-      background: rgba(30,42,74,0.3);
+      background: rgba(30, 42, 74, 0.3);
       border-left: 3px solid var(--coral);
       border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
-      padding: var(--space-10) var(--space-10);
+      padding: var(--space-10);
     }
 
     .highlight-quote {
       margin-top: var(--space-6);
       padding: var(--space-5) var(--space-6);
-      background: rgba(255,71,87,0.08);
-      border: 1px solid rgba(255,71,87,0.2);
+      background: rgba(255, 71, 87, 0.08);
+      border: 1px solid rgba(255, 71, 87, 0.2);
       border-radius: var(--radius-md);
       font-family: var(--font-display);
       font-size: var(--text-lg);
@@ -443,28 +459,17 @@
     }
 
     .offre-card {
-      background: rgba(30,42,74,0.38);
-      border: 1px solid rgba(202,255,0,0.12);
+      background: rgba(30, 42, 74, 0.38);
+      border: 1px solid rgba(202, 255, 0, 0.12);
       border-radius: var(--radius-xl);
       padding: var(--space-10);
       display: flex;
       flex-direction: column;
       gap: var(--space-4);
-      transition: border-color var(--transition), box-shadow var(--transition);
-    }
-
-    .offre-card:hover {
-      border-color: rgba(202,255,0,0.3);
-      box-shadow: 0 0 30px rgba(202,255,0,0.06);
     }
 
     .offre-card.featured {
-      border-color: rgba(255,71,87,0.35);
-    }
-
-    .offre-card.featured:hover {
-      border-color: rgba(255,71,87,0.6);
-      box-shadow: 0 0 30px rgba(255,71,87,0.1);
+      border-color: rgba(255, 71, 87, 0.35);
     }
 
     .offre-badge {
@@ -480,15 +485,15 @@
     }
 
     .badge-express {
-      background: rgba(255,71,87,0.15);
+      background: rgba(255, 71, 87, 0.15);
       color: var(--coral);
-      border: 1px solid rgba(255,71,87,0.3);
+      border: 1px solid rgba(255, 71, 87, 0.3);
     }
 
     .badge-obm {
-      background: rgba(202,255,0,0.1);
+      background: rgba(202, 255, 0, 0.1);
       color: var(--yellow);
-      border: 1px solid rgba(202,255,0,0.25);
+      border: 1px solid rgba(202, 255, 0, 0.25);
     }
 
     .offre-card h3 {
@@ -532,509 +537,8 @@
       align-self: flex-start;
     }
 
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: var(--space-5);
-      margin-top: var(--space-8);
-    }
-
-    .why-card {
-      background: rgba(30,42,74,0.3);
-      border: 1px solid rgba(202,255,0,0.09);
-      border-radius: var(--radius-lg);
-      padding: var(--space-8);
-      transition: border-color var(--transition), box-shadow var(--transition);
-    }
-
-    .why-card:hover {
-      border-color: rgba(202,255,0,0.28);
-      box-shadow: 0 0 20px rgba(202,255,0,0.05);
-    }
-
-    .why-icon {
-      font-size: 1.75rem;
-      margin-bottom: var(--space-3);
-    }
-
-    .why-card h3 {
-      color: var(--yellow);
-      font-size: var(--text-base);
-      margin-bottom: var(--space-2);
-    }
-
-    .why-card p {
-      font-size: var(--text-sm);
-      color: var(--text-muted);
-      max-width: 100%;
-    }
-
     .stats-row {
       display: grid;
-      grid-template-columns: repeat(3,1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: var(--space-5);
-      margin-top: var(--space-8);
-    }
-
-    .stat-card {
-      padding: var(--space-6) var(--space-6);
-      background: rgba(255,71,87,0.07);
-      border-left: 3px solid var(--coral);
-      border-radius: 0 var(--radius-md) var(--radius-md) 0;
-    }
-
-    .stat-card strong {
-      font-family: var(--font-display);
-      font-size: var(--text-xl);
-      font-weight: 900;
-      color: var(--coral);
-      display: block;
-    }
-
-    .stat-card p {
-      margin: 0;
-      font-size: var(--text-sm);
-      color: var(--text-muted);
-      max-width: 100%;
-    }
-
-    .apropos-grid {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: var(--space-12);
-      align-items: center;
-    }
-
-    .portrait {
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 3px solid var(--coral);
-      box-shadow: 0 0 40px rgba(255,71,87,0.2);
-      flex-shrink: 0;
-      background: var(--blue-dark);
-    }
-
-    .portrait img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .apropos-text a {
-      display: inline-block;
-      margin-top: var(--space-5);
-      color: var(--yellow);
-      font-weight: 600;
-      text-decoration: none;
-      font-size: var(--text-sm);
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      border-bottom: 1px solid var(--yellow);
-      padding-bottom: 2px;
-    }
-
-    .apropos-text a:hover {
-      color: var(--white);
-      border-color: var(--white);
-    }
-
-    .cta-section {
-      text-align: center;
-      padding: clamp(var(--space-16), 10vw, var(--space-24)) var(--space-8);
-    }
-
-    .cta-section p {
-      margin: var(--space-4) auto var(--space-8);
-      max-width: 560px;
-    }
-
-    .cta-note {
-      margin-top: var(--space-6) !important;
-      font-size: var(--text-xs);
-      color: var(--text-faint);
-    }
-
-    footer {
-      background: rgba(18,18,18,0.98);
-      border-top: 1px solid rgba(202,255,0,0.08);
-      padding: var(--space-8) var(--space-12);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: var(--text-xs);
-      color: var(--text-faint);
-      flex-wrap: wrap;
-      gap: var(--space-4);
-    }
-
-    footer a {
-      color: var(--text-faint);
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      color: var(--white);
-    }
-
-    .footer-links {
-      display: flex;
-      gap: var(--space-6);
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 900px) {
-      nav {
-        padding: var(--space-4) var(--space-5);
-      }
-
-      .logo img {
-        max-width: 160px;
-        height: 54px;
-      }
-
-      .menu-toggle {
-        display: inline-flex;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .mobile-menu {
-        position: fixed;
-        top: 84px;
-        left: var(--space-4);
-        right: var(--space-4);
-        flex-direction: column;
-        gap: var(--space-2);
-        padding: var(--space-4);
-        background: rgba(18,18,18,0.98);
-        border: 1px solid var(--border);
-        border-radius: var(--radius-xl);
-        box-shadow: var(--shadow-lg);
-        z-index: 999;
-      }
-
-      .mobile-menu.open {
-        display: flex;
-      }
-
-      .mobile-menu a,
-      .mobile-menu summary {
-        color: var(--white);
-        text-decoration: none;
-        font-size: var(--text-sm);
-        font-weight: 600;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        padding: var(--space-3) var(--space-2);
-      }
-
-      .mobile-menu a:hover {
-        color: var(--yellow);
-      }
-
-      .mobile-menu details {
-        border-top: 1px solid rgba(255,255,255,0.06);
-        padding: var(--space-1) 0;
-      }
-
-      .mobile-menu summary {
-        list-style: none;
-        cursor: pointer;
-      }
-
-      .mobile-menu summary::-webkit-details-marker {
-        display: none;
-      }
-
-      .mobile-submenu {
-        display: flex;
-        flex-direction: column;
-        padding: var(--space-1) 0 var(--space-3) var(--space-4);
-      }
-
-      .section-wrap {
-        padding: clamp(var(--space-10), 6vw, var(--space-16)) var(--space-5);
-      }
-
-      .offres-split,
-      .why-grid,
-      .stats-row,
-      .apropos-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .stats-row {
-        gap: var(--space-3);
-      }
-
-      .apropos-grid {
-        gap: var(--space-8);
-        text-align: center;
-      }
-
-      .portrait {
-        width: 180px;
-        height: 180px;
-        margin: 0 auto;
-      }
-
-      .hero-ctas {
-        flex-direction: column;
-        width: 100%;
-      }
-
-      .hero-ctas .btn-primary,
-      .hero-ctas .btn-secondary {
-        width: 100%;
-        justify-content: center;
-      }
-
-      .probleme-block {
-        padding: var(--space-6) var(--space-5);
-      }
-
-      footer {
-        padding: var(--space-6) var(--space-5);
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .footer-links {
-        justify-content: center;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- ══ NAV ══ -->
-  <nav aria-label="Navigation principale">
-    <a href="index.html" class="logo" aria-label="Assist by Alicia – Accueil">
-      <img src="Logo.png" alt="Assist by Alicia" width="200" height="68" />
-    </a>
-
-    <ul class="nav-links" role="list">
-      <li><a href="index.html" class="active">Accueil</a></li>
-      <li class="dropdown">
-        <span class="menu-label">Mes offres <span class="dropdown-arrow">▾</span></span>
-        <ul class="submenu" role="list">
-          <li><a href="offres.html">Toutes mes offres</a></li>
-          <li><a href="offre-express.html">Offre Express</a></li>
-          <li><a href="Audit-de-temps.html">Audit de temps</a></li>
-        </ul>
-      </li>
-      <li><a href="qui-suis-je.html">Qui suis-je ?</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-
-    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-label="Ouvrir le menu" aria-controls="mobile-menu">
-      <span></span>
-    </button>
-  </nav>
-
-  <nav class="mobile-menu" id="mobile-menu" aria-label="Menu mobile">
-    <a href="index.html">Accueil</a>
-    <details>
-      <summary>Mes offres</summary>
-      <div class="mobile-submenu">
-        <a href="offres.html">Toutes mes offres</a>
-        <a href="offre-express.html">Offre Express</a>
-        <a href="Audit-de-temps.html">Audit de temps</a>
-      </div>
-    </details>
-    <a href="qui-suis-je.html">Qui suis-je ?</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-
-  <!-- ══ HERO ══ -->
-  <section class="hero" aria-labelledby="hero-h1">
-    <p class="hero-eyebrow">Bras droit · OBM · Automatisation</p>
-    <h1 id="hero-h1">
-      Tu as un business.<br>
-      Il te faut un <span>système</span> —<br>
-      et quelqu'un pour le <em>piloter</em>.
-    </h1>
-    <p class="hero-sub">
-      Notion, IA, automatisation, nocode. J'organise ton business, structure tes systèmes et pilote tes opérations — que ce soit pour une mission express ou un accompagnement OBM au long cours.
-    </p>
-    <div class="hero-pills" role="list">
-      <span class="pill" role="listitem">Notion</span>
-      <span class="pill" role="listitem">Automatisation</span>
-      <span class="pill" role="listitem">IA</span>
-      <span class="pill" role="listitem">No-code</span>
-      <span class="pill accent" role="listitem">OBM</span>
-      <span class="pill accent" role="listitem">Systèmes sur-mesure</span>
-    </div>
-    <div class="hero-ctas">
-      <a href="https://calendar.notion.so/meet/aliciachouquet/30min" class="btn-primary" target="_blank" rel="noopener noreferrer">Réserver un appel diagnostic (30 min)</a>
-      <a href="offres.html" class="btn-secondary">Voir toutes mes offres</a>
-    </div>
-  </section>
-
-  <!-- ══ PROBLÈME ══ -->
-  <article class="section-wrap">
-    <p class="section-tag">Le problème</p>
-    <h2>Tu passes plus de temps à <span>gérer</span> qu'à <em>avancer</em></h2>
-    <div class="probleme-block">
-      <p>
-        Outils dispersés, process qui tiennent dans ta tête, tâches répétitives qui mangent tes heures. Tu jongles entre Trello, Google Drive, des tableurs qui traînent et des e-mails partout. Le problème, ce n'est pas le manque d'outils : c'est l'absence d'un système — et de quelqu'un pour le faire tourner.
-      </p>
-      <p style="margin-top: var(--space-4);">
-        Certains ont besoin d'un <strong style="color:var(--coral)">coup de boost ponctuel</strong> : un système Notion livré en 7 jours. D'autres ont besoin d'un <strong style="color:var(--yellow)">bras droit opérationnel</strong> qui pilote, automatise et structure au long cours. Je fais les deux.
-      </p>
-      <div class="highlight-quote">
-        Résultat : tu reprends le contrôle de ton business. Toi, tu te concentres sur ce que tu fais de mieux.
-      </div>
-    </div>
-  </article>
-
-  <!-- ══ DOUBLE OFFRE ══ -->
-  <article class="section-wrap" style="padding-top: 0;">
-    <p class="section-tag">Mes offres</p>
-    <h2>Un seul point d'entrée,<br><em>deux façons</em> de travailler ensemble</h2>
-    <p>Selon où tu en es — besoin immédiat ou accompagnement régulier — je m'adapte. Les deux approches reposent sur Notion, l'IA et l'automatisation.</p>
-
-    <div class="offres-split">
-      <div class="offre-card featured">
-        <span class="offre-badge badge-express">Offre ponctuelle</span>
-        <h3>Express Notion</h3>
-        <p>Un système Notion sur-mesure livré en 7 jours. On cible le point de friction qui te coûte le plus de temps, et je construis la solution — avec automatisations et IA intégrées.</p>
-        <ul class="offre-liste" role="list">
-          <li>Diagnostic de ton organisation actuelle</li>
-          <li>Système Notion opérationnel avec tes vraies données</li>
-          <li>Automatisations et IA intégrées selon ton besoin</li>
-          <li>Formation pour utiliser en autonomie</li>
-          <li>2h de ton temps sur 7 jours. Le reste, c'est moi.</li>
-        </ul>
-        <a href="offre-express.html" class="btn-primary">Découvrir l'offre Express →</a>
-      </div>
-
-      <div class="offre-card">
-        <span class="offre-badge badge-obm">Mission OBM</span>
-        <h3>Bras droit opérationnel</h3>
-        <p>Tu as besoin de quelqu'un qui prend en charge tes opérations au quotidien — pas seulement un outil, mais une personne qui pilote, coordonne et optimise en continu.</p>
-        <ul class="offre-liste" role="list">
-          <li>Pilotage et coordination des opérations</li>
-          <li>Mise en place et optimisation de tes process</li>
-          <li>Automatisation des tâches répétitives (N8N, Make…)</li>
-          <li>Gestion des outils et intégrations nocode</li>
-          <li>Reporting, suivi de projet, communication d'équipe</li>
-        </ul>
-        <a href="offres.html" class="btn-secondary">Explorer les missions OBM →</a>
-      </div>
-    </div>
-  </article>
-
-  <!-- ══ STATS ══ -->
-  <article class="section-wrap" style="padding-top: 0;">
-    <div class="stats-row">
-      <div class="stat-card">
-        <strong>2h</strong>
-        <p>Ton temps sur 7 jours pour l'offre Express. Le reste, c'est moi.</p>
-      </div>
-      <div class="stat-card">
-        <strong>5–10h</strong>
-        <p>Gagnées chaque mois une fois le système en place et automatisé.</p>
-      </div>
-      <div class="stat-card">
-        <strong>100%</strong>
-        <p>Sur-mesure. Pas de template. Pas de copier-coller. Ton vrai besoin.</p>
-      </div>
-    </div>
-  </article>
-
-  <!-- ══ POURQUOI MOI ══ -->
-  <article class="section-wrap" style="padding-top: 0;">
-    <p class="section-tag">Pourquoi moi ?</p>
-    <h2>Pas juste Notion.<br>Un <span>vrai système</span> qui <em>tourne</em>.</h2>
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="why-icon">⚙️</div>
-        <h3>Notion + Automatisation + IA</h3>
-        <p>Je combine structuration Notion, automatisations (N8N, Make, Zapier) et IA pour créer un système fluide, simple et rapide à piloter.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">🎯</div>
-        <h3>Vision opérationnelle OBM</h3>
-        <p>Je ne livre pas un bel espace Notion. Je construis une organisation qui tient debout dans ton quotidien d'entrepreneur — et je peux aussi la piloter pour toi.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">🔧</div>
-        <h3>No-code de bout en bout</h3>
-        <p>Intégrations API, webhooks, bases de données connectées, dashboards automatisés. Tout ce que tu pensais impossible sans développeur.</p>
-      </div>
-    </div>
-  </article>
-
-  <!-- ══ À PROPOS ══ -->
-  <article class="section-wrap" style="padding-top: 0;">
-    <p class="section-tag">Qui suis-je ?</p>
-    <div class="apropos-grid">
-      <figure class="portrait">
-        <img
-          src="Photo de profil.png"
-          alt="Portrait d'Alicia Chouquet, OBM spécialisée Notion et automatisation"
-          width="220"
-          height="220"
-          loading="lazy"
-        />
-      </figure>
-      <div class="apropos-text">
-        <h2 style="margin-bottom:var(--space-4);">Alicia, <em>bras droit</em> des entrepreneurs <span>organisés</span></h2>
-        <p>
-          J'aide les entrepreneurs à transformer une organisation dispersée en un système clair, centralisé et automatisé — et, quand ils le souhaitent, je pilote les opérations à leur place.
-        </p>
-        <p style="margin-top:var(--space-3);">
-          J'ai commencé comme assistante digitale, puis j'ai compris que le vrai frein n'était pas le manque de temps, mais l'absence de système solide. Aujourd'hui, je structure, j'automatise et je coordonne pour que tu puisses te concentrer sur ce qui compte.
-        </p>
-        <a href="qui-suis-je.html">En savoir plus sur mon approche →</a>
-      </div>
-    </div>
-  </article>
-
-  <!-- ══ CTA FINAL ══ -->
-  <section class="cta-section" aria-labelledby="cta-h2">
-    <p class="section-tag">Prêt·e à passer à l'action ?</p>
-    <h2 id="cta-h2">On clarifie ton besoin en <em>30 minutes</em></h2>
-    <p>Appel gratuit, sans engagement. Objectif : t’aider à y voir plus clair — mission Express, accompagnement OBM ou autre besoin — même si tu ne travailles pas avec moi ensuite.</p>
-    <div style="display:flex; gap:var(--space-4); justify-content:center; flex-wrap:wrap;">
-      <a href="https://calendar.notion.so/meet/aliciachouquet/30min" class="btn-primary" target="_blank" rel="noopener noreferrer">Réserver mon appel diagnostic</a>
-      <a href="contact.html" class="btn-ghost">Tu préfères écrire d'abord ? →</a>
-    </div>
-    <p class="cta-note">Disponible pour des missions Express Notion et des accompagnements en OBM.</p>
-  </section>
-
-  <!-- ══ FOOTER ══ -->
-  <footer>
-    <span>© 2025 Assist by Alicia – Tous droits réservés</span>
-    <nav class="footer-links" aria-label="Liens légaux">
-      <a href="Mention légale - CGV.html">Mentions légales / CGV</a>
-      <a href="Politique de confidentialité.html">Politique de confidentialité</a>
-    </nav>
-  </footer>
-
-  <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    menuToggle.addEventListener('click', () => {
-      const isOpen = mobileMenu.classList.toggle('open');
-      menuToggle.classList.toggle('active', isOpen);
-      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      menuToggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
-    });
-
-    document.querySelectorAll('.mobile-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        menuToggle.classList.remove('active');
-        menuToggle.setAttribute('aria-expanded', 'false');
-      });
-    });
-  </script>
-</body>
-</html>
+      
