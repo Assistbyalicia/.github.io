@@ -39,8 +39,8 @@
   />
   <meta name="twitter:image" content="https://assistbyalicia.github.io/Photo%20de%20profil.png" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=League+Spartan:wght@700;900&family=Satisfy&display=swap" rel="stylesheet" />
 
   <style>
@@ -123,10 +123,14 @@
     }
 
     .menu-label {
-      cursor: default;
+      background: none;
+      border: none;
+      cursor: pointer;
       display: inline-flex;
       align-items: center;
       gap: 0.45rem;
+      padding: 0;
+      font-family: inherit;
     }
 
     .dropdown-arrow {
@@ -136,20 +140,22 @@
       transition: transform 0.2s ease;
     }
 
-    .dropdown:hover .dropdown-arrow {
+    .dropdown:hover .dropdown-arrow,
+    .dropdown:focus-within .dropdown-arrow {
       transform: translateY(-1px) rotate(180deg);
     }
 
     .nav-links a:hover,
     .nav-links a.active,
-    .dropdown:hover .menu-label {
+    .dropdown:hover .menu-label,
+    .dropdown:focus-within .menu-label {
       color: var(--yellow);
     }
 
     .submenu {
       list-style: none;
       position: absolute;
-      top: 100%;
+      top: calc(100% + 0.75rem);
       left: 0;
       min-width: 240px;
       display: none;
@@ -173,7 +179,8 @@
       white-space: nowrap;
     }
 
-    .dropdown:hover .submenu {
+    .dropdown:hover .submenu,
+    .dropdown:focus-within .submenu {
       display: flex;
     }
 
@@ -743,26 +750,44 @@
 
     <ul class="nav-links">
       <li><a href="index.html">Accueil</a></li>
+
       <li class="dropdown">
-        <span class="menu-label">Mes offres <span class="dropdown-arrow">▾</span></span>
-        <ul class="submenu">
+        <button
+          class="menu-label"
+          type="button"
+          aria-expanded="false"
+          aria-controls="desktop-submenu"
+        >
+          Mes offres <span class="dropdown-arrow">▾</span>
+        </button>
+
+        <ul class="submenu" id="desktop-submenu">
           <li><a href="offres.html">Toutes mes offres</a></li>
           <li><a href="offre-express.html" class="active">Express</a></li>
           <li><a href="bras-droit.html">Bras droit</a></li>
           <li><a href="audit-de-temps.html">Audit</a></li>
         </ul>
       </li>
+
       <li><a href="qui-suis-je.html">Qui suis-je ?</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
 
-    <button class="menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+    <button
+      class="menu-toggle"
+      id="menu-toggle"
+      aria-label="Ouvrir le menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      type="button"
+    >
       <span></span>
     </button>
   </nav>
 
   <div class="mobile-menu" id="mobile-menu">
     <a href="index.html">Accueil</a>
+
     <details open>
       <summary>Mes offres</summary>
       <div class="mobile-submenu">
@@ -772,6 +797,7 @@
         <a href="audit-de-temps.html">Audit</a>
       </div>
     </details>
+
     <a href="qui-suis-je.html">Qui suis-je ?</a>
     <a href="contact.html">Contact</a>
   </div>
@@ -955,6 +981,7 @@
     <section>
       <p class="section-tag">Tes questions</p>
       <h2>🤔 Les questions que tu te poses <em>(et mes réponses honnêtes)</em></h2>
+
       <div class="faq-item">
         <h3>"Pourquoi je paierais 290€ alors que je peux le faire moi-même ?"</h3>
         <p>Tu peux, oui. Mais soyons honnêtes : tu vas cramer 10 à 15h à chercher, tester, te planter, recommencer… pour un résultat moyen.</p>
@@ -984,6 +1011,7 @@
     <section>
       <p class="section-tag">Pratique</p>
       <h2>❓ Questions <em>pratiques</em></h2>
+
       <div class="faq-item">
         <h3>Comment je réserve ma place ?</h3>
         <p>Tu cliques sur "Réserver mon appel diagnostic". On se parle 30 min. Si c’est OK, tu payes les 290€ TTC et on cale les dates. Si ça ne matche pas, aucune obligation.</p>
@@ -1031,21 +1059,23 @@
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
 
-    menuToggle.addEventListener('click', () => {
-      const isOpen = mobileMenu.classList.toggle('open');
-      menuToggle.classList.toggle('active', isOpen);
-      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      menuToggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
-    });
-
-    document.querySelectorAll('.mobile-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        menuToggle.classList.remove('active');
-        menuToggle.setAttribute('aria-expanded', 'false');
-        menuToggle.setAttribute('aria-label', 'Ouvrir le menu');
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.toggle('open');
+        menuToggle.classList.toggle('active', isOpen);
+        menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        menuToggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
       });
-    });
+
+      document.querySelectorAll('.mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('open');
+          menuToggle.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.setAttribute('aria-label', 'Ouvrir le menu');
+        });
+      });
+    }
   </script>
 
   <script type="application/ld+json">
