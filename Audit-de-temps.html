@@ -2,18 +2,43 @@
 <html lang="fr">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-90P7VG23F7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-90P7VG23F7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-90P7VG23F7');
+  </script>
 
-  gtag('config', 'G-90P7VG23F7');
-</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Audit de temps – Assist by Alicia</title>
-  <meta name="description" content="Télécharge gratuitement ton audit de temps et gagne en clarté sur ton organisation." />
+
+  <title>Audit de temps gratuit | Template Notion à télécharger – Assist by Alicia</title>
+  <meta
+    name="description"
+    content="Télécharge gratuitement ton audit de temps sur Notion pour identifier où part ton temps, gagner en clarté et mieux organiser ton activité."
+  />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://assistbyalicia.github.io/Audit-de-temps.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Assist by Alicia" />
+  <meta property="og:title" content="Audit de temps gratuit – Template Notion à télécharger" />
+  <meta
+    property="og:description"
+    content="Un template Notion gratuit pour analyser ton temps, reprendre la main sur ton organisation et gagner en clarté."
+  />
+  <meta property="og:url" content="https://assistbyalicia.github.io/Audit-de-temps.html" />
+  <meta property="og:image" content="https://assistbyalicia.github.io/Capture%20-%20Audit%20de%20temps.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Audit de temps gratuit – Template Notion à télécharger" />
+  <meta
+    name="twitter:description"
+    content="Télécharge gratuitement ton template d’audit de temps sur Notion et identifie où part vraiment ton temps."
+  />
+  <meta name="twitter:image" content="https://assistbyalicia.github.io/Capture%20-%20Audit%20de%20temps.png" />
+
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=League+Spartan:wght@700;900&family=Satisfy&display=swap" rel="stylesheet" />
 
   <style type="text/css">
@@ -704,12 +729,12 @@
       <li><a href="index.html">Accueil</a></li>
       <li class="dropdown">
         <span class="menu-label">Mes offres <span class="dropdown-arrow">▾</span></span>
-        <ul class="submenu"><br>
-  <li><a href="offres.html">Toutes mes offres</a></li><br>
-  <li><a href="offre-express.html">Express</a></li><br>
-  <li><a href="Bras droit.html">Bras droit</a></li><br>
-  <li><a href="Audit-de-temps.html">Audit</a></li><br>
-</ul><br>
+        <ul class="submenu">
+          <li><a href="offres.html">Toutes mes offres</a></li>
+          <li><a href="offre-express.html">Express</a></li>
+          <li><a href="Bras droit.html">Bras droit</a></li>
+          <li><a href="Audit-de-temps.html" class="active">Audit</a></li>
+        </ul>
       </li>
       <li><a href="qui-suis-je.html">Qui suis-je ?</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -722,17 +747,15 @@
 
   <div class="mobile-menu" id="mobile-menu">
     <a href="index.html">Accueil</a>
-
     <details open>
       <summary>Mes offres</summary>
-      <div class="mobile-submenu"><br>
-  <a href="offres.html">Toutes mes offres</a><br>
-  <a href="offre-express.html">Express</a><br>
-  <a href="Bras droit.html">Bras droit</a><br>
-  <a href="Audit-de-temps.html">Audit</a><br>
-</div><br>
+      <div class="mobile-submenu">
+        <a href="offres.html">Toutes mes offres</a>
+        <a href="offre-express.html">Express</a>
+        <a href="Bras droit.html">Bras droit</a>
+        <a href="Audit-de-temps.html" class="active">Audit</a>
+      </div>
     </details>
-
     <a href="qui-suis-je.html">Qui suis-je ?</a>
     <a href="contact.html">Contact</a>
   </div>
@@ -819,12 +842,12 @@
                     <div class="ml-form-fieldRow">
                       <div class="ml-field-group ml-field-name ml-validate-required">
                         <input
-                          aria-label="name"
+                          aria-label="Prénom"
                           aria-required="true"
                           type="text"
                           class="form-control"
                           name="fields[name]"
-                          placeholder="Nom"
+                          placeholder="Prénom"
                           autocomplete="given-name"
                         />
                       </div>
@@ -833,12 +856,12 @@
                     <div class="ml-form-fieldRow ml-last-item">
                       <div class="ml-field-group ml-field-last_name ml-validate-required">
                         <input
-                          aria-label="last_name"
+                          aria-label="Nom"
                           aria-required="true"
                           type="text"
                           class="form-control"
                           name="fields[last_name]"
-                          placeholder="Prénom"
+                          placeholder="Nom"
                           autocomplete="family-name"
                         />
                       </div>
@@ -920,8 +943,26 @@
   </script>
 
   <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
-  <script>
-    fetch("https://assets.mailerlite.com/jsonp/2258522/forms/184344403738887629/takel");
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Offer",
+    "name": "Audit de temps gratuit",
+    "description": "Template Notion gratuit pour analyser son temps et gagner en clarté sur son organisation.",
+    "price": "0",
+    "priceCurrency": "EUR",
+    "url": "https://assistbyalicia.github.io/Audit-de-temps.html",
+    "itemOffered": {
+      "@type": "DigitalDocument",
+      "name": "Template Notion d’audit de temps"
+    },
+    "seller": {
+      "@type": "ProfessionalService",
+      "name": "Assist by Alicia",
+      "url": "https://assistbyalicia.github.io/"
+    }
+  }
   </script>
 </body>
 </html>
