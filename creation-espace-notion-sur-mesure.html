@@ -566,6 +566,25 @@
       gap: var(--space-6);
     }
 
+    .duo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-6);
+      align-items: stretch;
+    }
+
+    .duo-card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .duo-full {
+      grid-column: 1 / -1;
+      width: 100%;
+    }
+
     .cta-section {
       text-align: center;
       padding: clamp(var(--space-16), 10vw, var(--space-24)) var(--space-8);
@@ -693,8 +712,13 @@
         padding: clamp(var(--space-10), 6vw, var(--space-16)) var(--space-5);
       }
 
-      .content-grid {
+      .content-grid,
+      .duo-grid {
         grid-template-columns: 1fr;
+      }
+
+      .duo-full {
+        grid-column: auto;
       }
 
       .hero-ctas {
@@ -816,31 +840,21 @@
       <p class="section-tag">Le vrai besoin</p>
       <h2>Un espace Notion qui te <span>soulage</span>, pas qui t’<em>alourdit</em></h2>
 
-      <div class="content-grid">
-        <div class="section-stack">
-          <div class="content-card">
-            <p>
-              Tu as peut-être déjà essayé Notion. Quelques pages, une base de données,
-              un template prometteur… puis un espace laissé de côté, parce qu’il ne
-              collait pas à ta réalité.
-            </p>
-            <p style="margin-top: var(--space-4);">
-              Un bon espace Notion n’est pas juste “joli” ou “bien rangé”. C’est un
-              système de travail pensé pour ton business : simple à utiliser, logique,
-              clair, centralisé et réellement utile dans ton quotidien.
-            </p>
-          </div>
-
-          <div class="quote-card">
-            <strong>Mon objectif n’est pas de te vendre Notion.</strong>
-            <p>
-              Mon objectif, c’est de t’aider à mieux piloter ton activité avec un
-              système qui tient vraiment dans le temps.
-            </p>
-          </div>
+      <div class="duo-grid">
+        <div class="content-card duo-card">
+          <p>
+            Tu as peut-être déjà essayé Notion. Quelques pages, une base de données,
+            un template prometteur… puis un espace laissé de côté, parce qu’il ne
+            collait pas à ta réalité.
+          </p>
+          <p style="margin-top: var(--space-4);">
+            Un bon espace Notion n’est pas juste “joli” ou “bien rangé”. C’est un
+            système de travail pensé pour ton business : simple à utiliser, logique,
+            clair, centralisé et réellement utile dans ton quotidien.
+          </p>
         </div>
 
-        <aside class="list-card">
+        <aside class="list-card duo-card">
           <h3>Concrètement, tu peux centraliser</h3>
           <ul>
             <li>tes tâches et priorités,</li>
@@ -851,6 +865,14 @@
             <li>et certaines automatisations utiles.</li>
           </ul>
         </aside>
+
+        <div class="quote-card duo-card duo-full">
+          <strong>Mon objectif n’est pas de te vendre Notion.</strong>
+          <p>
+            Mon objectif, c’est de t’aider à mieux piloter ton activité avec un
+            système qui tient vraiment dans le temps.
+          </p>
+        </div>
       </div>
     </article>
 
@@ -953,8 +975,8 @@
         </p>
       </div>
 
-      <div class="content-grid" style="margin-top: var(--space-6);">
-        <div class="list-card">
+      <div class="duo-grid" style="margin-top: var(--space-6);">
+        <div class="list-card duo-card">
           <h3>Tu te reconnais si</h3>
           <ul>
             <li>tu jongles entre trop d’outils,</li>
@@ -965,7 +987,7 @@
           </ul>
         </div>
 
-        <div class="quote-card">
+        <div class="quote-card duo-card">
           <strong>Un système clair change tout.</strong>
           <p>
             Tu prends de meilleures décisions, tu respires davantage et tu pilotes ton
