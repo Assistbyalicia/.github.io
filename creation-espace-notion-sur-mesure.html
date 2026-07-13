@@ -30,4 +30,345 @@ nav{position:fixed;inset:0 0 auto 0;z-index:1000;background:rgba(18,18,18,.92);b
 .pills{display:flex;gap:var(--s2);flex-wrap:wrap;justify-content:center;margin-top:var(--s6)}
 .pill{font-family:var(--display);font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;padding:.5rem 1rem;border-radius:999px;background:rgba(202,255,0,.07);border:1px solid rgba(202,255,0,.24);color:var(--yellow)}
 .pill.accent{background:rgba(255,71,87,.08);border-color:rgba(255,71,87,.3);color:var(--coral)}
-.card,.quote,.problem,.solution,.step,.deliverable,details{background:rgba(30,42,74,.22);border:1px solid rgba(202,255,0,.10);bo
+.card,.quote,.problem,.solution,.step,.deliverable,details{background:rgba(30,42,74,.22);border:1px solid rgba(202,255,0,.10);border-radius:var(--r);padding:var(--s6)}
+.quote{background:rgba(255,71,87,.08);border-color:rgba(255,71,87,.18)}
+.quote strong{display:block;font-family:var(--display);font-size:1.2rem;text-transform:uppercase;margin-bottom:var(--s3)}
+ul{list-style:none}
+.card ul,.problem ul,.solution ul{display:flex;flex-direction:column;gap:var(--s3)}
+.card li,.problem li,.solution li{display:flex;gap:.65rem;color:var(--muted)}
+.card li:before{content:"→";color:var(--yellow);font-weight:700}
+.problem{background:rgba(255,71,87,.06);border-color:rgba(255,71,87,.15)}
+.solution{background:rgba(202,255,0,.04);border-color:rgba(202,255,0,.15)}
+.label{font-family:var(--display);font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:var(--s4)}
+.problem .label{color:var(--coral)}.solution .label{color:var(--yellow)}
+.three-layout{display:grid;grid-template-columns:1fr 1fr;gap:var(--s6)}
+.full{grid-column:1/-1}
+.content-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--s8)}
+.stack{display:flex;flex-direction:column;gap:var(--s6)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:var(--s6)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s5);margin-top:var(--s8)}
+.step-num{font-family:var(--display);font-size:3rem;color:rgba(202,255,0,.12);line-height:1;margin-bottom:var(--s3)}
+.deliverables{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--s5);margin-top:var(--s8)}
+.deliverable{display:grid;grid-template-columns:48px 1fr;gap:var(--s4);background:rgba(18,18,18,.7)}
+.iconbox{width:48px;height:48px;border-radius:12px;background:rgba(202,255,0,.07);border:1px solid rgba(202,255,0,.15);display:flex;align-items:center;justify-content:center}
+.section-alt{background:rgba(30,42,74,.15);border-top:1px solid rgba(202,255,0,.07);border-bottom:1px solid rgba(202,255,0,.07)}
+.faq{display:flex;flex-direction:column;gap:var(--s3);margin-top:var(--s8)}
+details{padding:0;background:rgba(18,18,18,.7)}
+summary{padding:var(--s5) var(--s6);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;font-family:var(--display);text-transform:uppercase;font-weight:700}
+summary::-webkit-details-marker{display:none}
+.answer{padding:0 var(--s6) var(--s6);color:var(--faint)}
+.cta{text-align:center;padding:clamp(var(--s16),10vw,var(--s24)) 2rem}
+.cta p{margin:var(--s4) auto var(--s8)}
+.btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn1,.btn2{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:.9rem 2rem;border-radius:8px;font-family:var(--display);font-size:.9rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.btn1{background:var(--coral);color:#fff}
+.btn2{border:1.5px solid var(--yellow);color:var(--yellow)}
+footer{border-top:1px solid rgba(202,255,0,.08);padding:2rem}
+.footer{max-width:var(--max);margin:auto;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;color:var(--faint);font-size:.8rem}
+.footer a{color:var(--faint)}
+@media (max-width:900px){
+nav{padding:1rem 1.25rem}
+.nav-links{display:none}
+.three-layout,.content-grid,.two,.steps,.deliverables{grid-template-columns:1fr}
+.full{grid-column:auto}
+.hero{min-height:auto;padding-top:7rem}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="index.html">Assist by Alicia</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="offres.html">Mes offres</a></li>
+    <li><a href="qui-suis-je.html">Qui suis-je ?</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+<section class="hero">
+  <p class="eyebrow">Notion · Organisation · Système sur-mesure</p>
+  <h1>Pourquoi créer un espace <span>Notion</span> sur-<em>mesure</em> ?</h1>
+  <p>Cette page présente ce qu'est un espace Notion sur-mesure, ce qu'il permet de faire, ses avantages et la manière dont il peut être pensé pour répondre à une organisation réelle plutôt qu'à un modèle générique.</p>
+  <div class="pills">
+    <span class="pill">Comprendre</span>
+    <span class="pill">Structurer</span>
+    <span class="pill">Centraliser</span>
+    <span class="pill accent">Sur-mesure</span>
+    <span class="pill">Simplifier</span>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="tag">De quoi parle-t-on ?</p>
+    <h2>Un espace Notion <span>sur-mesure</span>, c'est quoi <em>concrètement</em> ?</h2>
+    <div class="three-layout">
+      <div class="card full">
+        <p>Un espace Notion sur-mesure est un espace de travail conçu à partir d'un besoin réel, d'une manière de fonctionner et d'une organisation déjà existante. Il ne s'agit pas simplement d'ajouter des pages, mais de construire une structure cohérente, utile et lisible au quotidien.</p>
+        <p style="margin-top:1rem">L'objectif est de regrouper les informations importantes, de les relier entre elles et de créer un environnement qui aide à mieux suivre l'activité, les priorités, les contenus, les clients, les documents ou les process.</p>
+      </div>
+      <aside class="card">
+        <h3>Ce qui le caractérise</h3>
+        <ul>
+          <li>il part d'un usage concret et non d'un modèle générique</li>
+          <li>il s'adapte à un fonctionnement réel</li>
+          <li>il relie plusieurs besoins dans un même système</li>
+          <li>il cherche à rester clair, utile et évolutif</li>
+        </ul>
+      </aside>
+      <aside class="quote">
+        <strong>Un espace utile avant tout.</strong>
+        <p>Le but n'est pas d'accumuler des pages ou des bases de données, mais d'avoir un espace simple à comprendre, agréable à utiliser et réellement utile dans le quotidien.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="tag">Pourquoi c'est utile ?</p>
+    <h2>Un outil qui aide à <span>mieux organiser</span>, mieux <em>voir</em> et mieux <em>suivre</em></h2>
+    <div class="two">
+      <div class="problem">
+        <p class="label">Quand l'organisation est dispersée</p>
+        <ul>
+          <li>les informations sont réparties entre plusieurs outils</li>
+          <li>certaines données se répètent ou se perdent</li>
+          <li>les priorités manquent de visibilité</li>
+          <li>le suivi devient plus lourd que nécessaire</li>
+          <li>les process restent implicites au lieu d'être structurés</li>
+        </ul>
+      </div>
+      <div class="solution">
+        <p class="label">Ce qu'un espace sur-mesure apporte</p>
+        <ul>
+          <li>une centralisation plus claire des informations utiles</li>
+          <li>une lecture plus simple de l'activité</li>
+          <li>des vues adaptées aux besoins du quotidien</li>
+          <li>un meilleur lien entre les informations</li>
+          <li>une organisation plus stable et plus cohérente</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section aria-label="Pourquoi le sur-mesure est différent">
+  <div class="wrap">
+    <p class="tag">Pourquoi sur-mesure ?</p>
+    <h2>Parce qu'un <span>template</span> ne répond pas toujours au <em>vrai usage</em></h2>
+    <div class="three-layout">
+      <div class="card full">
+        <p>Les templates peuvent être utiles pour découvrir Notion ou tester une première structure. En revanche, ils restent souvent génériques : ils ne prennent pas en compte les habitudes de travail, les contraintes, les priorités ou les liens entre les différentes dimensions d'une activité.</p>
+        <p style="margin-top:1rem">Le sur-mesure permet au contraire de partir de l'existant, de clarifier ce qui doit être suivi et d'organiser l'information de manière plus logique et plus durable.</p>
+      </div>
+      <div class="card">
+        <h3>Limites fréquentes d'un template</h3>
+        <ul>
+          <li>une logique trop standardisée</li>
+          <li>des blocs inutiles ou mal adaptés</li>
+          <li>un espace parfois difficile à maintenir</li>
+          <li>une structure vite abandonnée</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Ce que permet le sur-mesure</h3>
+        <ul>
+          <li>partir d'un besoin réel</li>
+          <li>construire une logique claire</li>
+          <li>relier les informations entre elles</li>
+          <li>faire évoluer l'espace avec l'activité</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="wrap">
+    <p class="tag">Ce qu'on peut faire</p>
+    <h2>Quelques <em>exemples</em> d'usages dans un espace <span>Notion</span></h2>
+    <div class="deliverables">
+      <article class="deliverable">
+        <div class="iconbox">🗂️</div>
+        <div>
+          <h3>Espace de pilotage</h3>
+          <p>Un tableau de bord global pour suivre les priorités, les tâches, les échéances et les éléments importants de l'activité.</p>
+        </div>
+      </article>
+      <article class="deliverable">
+        <div class="iconbox">👥</div>
+        <div>
+          <h3>Suivi clients et projets</h3>
+          <p>Une structure pour suivre les échanges, les prestations, les étapes de mission et les documents associés.</p>
+        </div>
+      </article>
+      <article class="deliverable">
+        <div class="iconbox">✍️</div>
+        <div>
+          <h3>Organisation éditoriale</h3>
+          <p>Un espace pour relier idées, planning, statuts, contenus en cours et publications déjà sorties.</p>
+        </div>
+      </article>
+      <article class="deliverable">
+        <div class="iconbox">📚</div>
+        <div>
+          <h3>Base de connaissances</h3>
+          <p>Un endroit pour centraliser ressources, notes, procédures, références et informations réutilisables.</p>
+        </div>
+      </article>
+      <article class="deliverable">
+        <div class="iconbox">⚙️</div>
+        <div>
+          <h3>Process internes</h3>
+          <p>Des étapes claires pour structurer des actions récurrentes et éviter les oublis ou le travail en double.</p>
+        </div>
+      </article>
+      <article class="deliverable">
+        <div class="iconbox">📊</div>
+        <div>
+          <h3>Tableaux de bord ciblés</h3>
+          <p>Des vues spécifiques pour suivre un objectif, un type d'activité ou une partie précise de l'organisation.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="tag">Les avantages</p>
+    <h2>Ce que permet un espace <span>bien pensé</span> au <em>quotidien</em></h2>
+    <div class="two">
+      <div class="card">
+        <h3>Avantages concrets</h3>
+        <ul>
+          <li>retrouver plus rapidement l'information</li>
+          <li>voir plus clairement les priorités</li>
+          <li>réduire la dispersion entre les outils</li>
+          <li>mieux suivre ce qui avance et ce qui bloque</li>
+          <li>alléger la charge mentale liée à l'organisation</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Effets dans le temps</h3>
+        <ul>
+          <li>une organisation plus stable</li>
+          <li>une base plus facile à faire évoluer</li>
+          <li>des process plus simples à transmettre</li>
+          <li>une meilleure lecture globale de l'activité</li>
+          <li>un outil qui soutient le travail au lieu de le compliquer</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="tag">Comment on fait ?</p>
+    <h2>La création se fait en plusieurs <em>étapes logiques</em>, pas en empilant des <span>pages</span></h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Comprendre l'existant</h3>
+        <p>Observer l'organisation actuelle, les outils utilisés et les points de friction.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>Définir la structure</h3>
+        <p>Identifier les bases utiles, les pages nécessaires et les liens entre les informations.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Construire l'espace</h3>
+        <p>Configurer une structure cohérente avec une navigation claire et des vues adaptées.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h3>Ajuster l'usage</h3>
+        <p>Vérifier que l'espace reste lisible, utile et suffisamment souple pour évoluer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="tag">Pour qui c'est pertinent ?</p>
+    <h2>Quand l'activité devient plus riche, le <span>sur-mesure</span> devient souvent plus <em>utile</em></h2>
+    <div class="stack">
+      <div class="card">
+        <h3>Cette approche est pertinente quand…</h3>
+        <ul class="audience-list">
+          <li>plusieurs types d'informations doivent cohabiter</li>
+          <li>l'activité repose sur des clients, contenus ou projets à suivre</li>
+          <li>les outils actuels créent de la dispersion</li>
+          <li>un template ne suffit plus</li>
+          <li>il faut clarifier le fonctionnement global</li>
+          <li>l'objectif est d'avoir un système utile et cohérent</li>
+        </ul>
+      </div>
+      <div class="quote">
+        <strong>Le but n'est pas seulement d'avoir un bel espace.</strong>
+        <p>Le but est d'avoir un espace réellement utilisé, compréhensible et pratique. Un bon espace Notion sur-mesure aide à retrouver, suivre, relier et structurer plus facilement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="tag">Questions fréquentes</p>
+    <h2>Ce qu'on se demande souvent avant de créer un <span>espace Notion</span></h2>
+    <div class="faq">
+      <details>
+        <summary>Faut-il déjà bien connaître Notion ? <span>+</span></summary>
+        <p class="answer">Non. Un espace sur-mesure peut justement être pensé pour rendre Notion plus clair et plus simple à utiliser.</p>
+      </details>
+      <details>
+        <summary>Est-ce que tout doit être dans Notion ? <span>+</span></summary>
+        <p class="answer">Pas forcément. Notion peut devenir un centre d'organisation, sans remplacer tous les autres outils.</p>
+      </details>
+      <details>
+        <summary>Peut-on partir d'un espace déjà existant ? <span>+</span></summary>
+        <p class="answer">Oui. Il est tout à fait possible de restructurer, alléger ou clarifier un espace déjà en place.</p>
+      </details>
+      <details>
+        <summary>Est-ce utile même pour une petite activité ? <span>+</span></summary>
+        <p class="answer">Oui, dès que plusieurs flux d'informations doivent être suivis de façon plus claire et plus cohérente.</p>
+      </details>
+      <details>
+        <summary>Quelle différence avec un simple template ? <span>+</span></summary>
+        <p class="answer">Le template propose une structure générique. Le sur-mesure part d'un contexte précis, d'un besoin concret et d'une logique propre à l'activité.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap" style="padding-top:0;padding-bottom:0;max-width:900px">
+    <p class="tag">Aller plus loin</p>
+    <h2>Besoin d'un regard <em>plus concret</em> sur ton <span>organisation</span> ?</h2>
+    <p>Si tu veux échanger autour de ton fonctionnement actuel, de ce qui bloque ou de ce qu'un espace Notion pourrait contenir dans ton cas, tu peux me contacter ou découvrir l'offre express.</p>
+    <div class="btns">
+      <a class="btn1" href="contact.html">Me contacter</a>
+      <a class="btn2" href="offre-express.html">Découvrir l'offre express</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer">
+    <span>© 2026 Assist by Alicia – Tous droits réservés</span>
+    <div>
+      <a href="mention-légale-cgv.html">Mentions légales / CGV</a> ·
+      <a href="politique-de-confidentialité.html">Politique de confidentialité</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
