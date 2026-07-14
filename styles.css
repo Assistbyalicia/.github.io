@@ -1214,3 +1214,12 @@ footer span {
   color: var(--yellow);
   font-weight: 700;
 }
+.grid-2,
+      .grid-3,
+      .timeline-card {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-card {
+        gap: var(--space-3);
+      }
