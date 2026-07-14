@@ -1214,32 +1214,37 @@ footer span {
   color: var(--yellow);
   font-weight: 700;
 }
- .timeline {
-      display: grid;
-      gap: var(--space-4);
-      margin-top: var(--space-8);
-    }
+ /* ─── TIMELINE "CONCRÈTEMENT" ─── */
 
-    .timeline-card {
-      padding: var(--space-6) var(--space-8);
-      display: grid;
-      grid-template-columns: 90px 1fr;
-      gap: var(--space-5);
-      align-items: start;
-    }
+.timeline {
+  display: grid;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+}
 
-    .timeline-step {
-      font-family: var(--font-display);
-      color: var(--coral);
-      font-size: var(--text-lg);
-      font-weight: 900;
-      text-transform: uppercase;
-    }
+.timeline-card {
+  background: rgba(30, 42, 74, 0.28);
+  border: 1px solid rgba(202, 255, 0, 0.10);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6) var(--space-8);
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: var(--space-5);
+  align-items: start;
+}
 
-    .timeline-card h3 {
-      margin-bottom: var(--space-2);
-    }
+.timeline-step {
+  font-family: var(--font-display);
+  color: var(--coral);
+  font-size: var(--text-lg);
+  font-weight: 900;
+  text-transform: uppercase;
+}
 
-    .timeline-card p {
-      max-width: 100%;
-    }
+.timeline-card h3 {
+  margin-bottom: var(--space-2);
+}
+
+.timeline-card p {
+  max-width: 100%;
+}
