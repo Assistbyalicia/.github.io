@@ -1256,3 +1256,22 @@ footer span {
     gap: var(--space-3);
   }
 }
+/* ─── GRID 2 COLONNES ─── */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: var(--space-6);
+  align-items: start;
+  margin-top: var(--space-6);
+}
+
+/* Responsive : une colonne sur mobile */
+@media (max-width: 900px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-2 .card {
+    margin-top: var(--space-6);
+  }
+}
