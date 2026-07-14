@@ -1214,12 +1214,32 @@ footer span {
   color: var(--yellow);
   font-weight: 700;
 }
-.grid-2,
-      .grid-3,
-      .timeline-card {
-        grid-template-columns: 1fr;
-      }
+.timeline {
+      display: grid;
+      gap: var(--space-4);
+      margin-top: var(--space-8);
+    }
 
-      .timeline-card {
-        gap: var(--space-3);
-      }
+    .timeline-card {
+      padding: var(--space-6) var(--space-8);
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: var(--space-5);
+      align-items: start;
+    }
+
+    .timeline-step {
+      font-family: var(--font-display);
+      color: var(--coral);
+      font-size: var(--text-lg);
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .timeline-card h3 {
+      margin-bottom: var(--space-2);
+    }
+
+    .timeline-card p {
+      max-width: 100%;
+    }
