@@ -44,192 +44,124 @@
  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div id="site-header"></div>
+  <div id="site-header"></div>
 
-  <main>
+  <main class="hero-wrap">
+    <div class="container">
 
-  <section class="hero-audit">
-    <div class="hero-left">
-      <p class="hero-tag">Audit de temps · Notion</p>
-      <h1 class="hero-title">
-        Ton audit de <span>temps</span>
-      </h1>
-      <p class="hero-sub">
-        Entre ton email pour accéder gratuitement au template d’audit de temps
-        et gagner en clarté sur ton organisation. Tu identifies où part vraiment
-        ton temps pour reprendre la main sur ton agenda.
-      </p>
+      <section class="hero-card">
+        <div class="hero-grid">
 
-      <ul class="benefits">
-        <li>
-          <span class="icon">1</span>
-          <div>
-            <strong>Un template prêt à l’emploi</strong>
-            <p>Tu peux le dupliquer en 2 clics dans ton propre Notion.</p>
+          <!-- ── HERO INTRO ── -->
+          <div class="hero-intro">
+            <div class="eyebrow">Ressource gratuite · Notion</div>
+            <h1>Ton audit de <span style="color: var(--yellow);">temps</span></h1>
+            <p class="text-muted" style="margin: 1.5rem auto 0; max-width: 600px;">
+              Entre ton email pour accéder gratuitement au template d'audit de temps et gagner en clarté sur ton organisation.
+              Tu identifies où part vraiment ton temps pour reprendre la main sur ton agenda.
+            </p>
           </div>
-        </li>
-        <li>
-          <span class="icon">2</span>
-          <div>
-            <strong>Une vision claire de ta semaine</strong>
-            <p>Tu vois enfin quelles tâches te volent le plus de temps.</p>
+
+          <!-- ── 3 BÉNÉFICES ── -->
+          <div class="offres-split" style="grid-template-columns: repeat(3, 1fr); margin-top: 2rem;">
+
+            <div class="hero-card" style="padding: 1.5rem; text-align: center;">
+              <div class="step-num">1</div>
+              <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Un template prêt à l'emploi</h3>
+              <p class="text-muted" style="font-size: 0.9rem;">Tu peux le dupliquer en 2 clics dans ton propre Notion.</p>
+            </div>
+
+            <div class="hero-card" style="padding: 1.5rem; text-align: center;">
+              <div class="step-num">2</div>
+              <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Une vision claire de ta semaine</h3>
+              <p class="text-muted" style="font-size: 0.9rem;">Tu vois enfin quelles tâches te volent le plus de temps.</p>
+            </div>
+
+            <div class="hero-card" style="padding: 1.5rem; text-align: center;">
+              <div class="step-num">3</div>
+              <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Accès au Discord + aide</h3>
+              <p class="text-muted" style="font-size: 0.9rem;">Tu peux poser tes questions et je t'aide à analyser les résultats de ton audit.</p>
+            </div>
+
           </div>
-        </li>
-        <li>
-          <span class="icon">3</span>
-          <div>
-            <strong>Accès au Discord + aide</strong>
-            <p>Tu peux poser tes questions et je t’aide si besoin à analyser les résultats de ton audit.</p>
-          </div>
-        </li>
-      </ul>
-    </div>
 
-    <div class="card-audit">
-      <div class="card-audit-inner">
-        <p class="card-tag">Gratuit</p>
-        <h2 class="card-title">Accède au template</h2>
-        <p class="card-sub">
-          Remplis le formulaire ci-dessous et reçois directement le lien
-          d’accès dans ta boîte mail.
-        </p>
+          <!-- ── FORMULAIRE ── -->
+          <div class="hero-card" style="margin-top: 2rem; padding: 2.5rem; text-align: center;">
+            <div class="eyebrow" style="display: block; margin-bottom: 1rem;">Accède au template</div>
+            <p class="text-muted" style="margin-bottom: 2rem;">
+              Remplis le formulaire ci-dessous et reçois directement le lien d'accès dans ta boîte mail.
+            </p>
 
-        <div class="card-divider"></div>
-
-        <div class="audit-preview audit-preview-card">
-          <p class="audit-preview-label">Aperçu du template</p>
-          <img src="Capture - Audit de temps.png" alt="Aperçu du template Audit de temps dans Notion" />
-        </div>
-
-        <div id="mlb2-39707517" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-39707517">
-          <div class="ml-form-align-center">
-            <div class="ml-form-embedWrapper embedForm">
-              <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
-                <form
-                  class="ml-block-form"
-                  action="https://assets.mailerlite.com/jsonp/2258522/forms/184344403738887629/subscribe"
-                  data-code=""
-                  method="post"
-                  target="_blank"
-                >
-                  <div class="ml-form-formContent">
-                    <div class="ml-form-fieldRow">
-                      <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                        <input
-                          aria-label="email"
-                          aria-required="true"
-                          type="email"
-                          class="form-control"
-                          name="fields[email]"
-                          placeholder="Email"
-                          autocomplete="email"
-                        />
+            <div id="mlb2-39707517" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-39707517">
+              <div class="ml-form-align-center">
+                <div class="ml-form-embedWrapper embedForm">
+                  <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                    <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1704588/forms/156453524065065073/subscribe" data-code="" method="post" target="_blank">
+                      <div class="ml-form-formContent">
+                        <div class="ml-form-fieldRow">
+                          <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                            <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Email" autocomplete="email" style="width:100%; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: white; margin-bottom: 0.75rem;" />
+                          </div>
+                        </div>
+                        <div class="ml-form-fieldRow">
+                          <div class="ml-field-group ml-field-name">
+                            <input aria-label="name" type="text" class="form-control" data-inputmask="" name="fields[name]" placeholder="Prénom" autocomplete="given-name" style="width:100%; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: white; margin-bottom: 0.75rem;" />
+                          </div>
+                        </div>
+                        <div class="ml-form-fieldRow">
+                          <div class="ml-field-group ml-field-last_name">
+                            <input aria-label="last_name" type="text" class="form-control" data-inputmask="" name="fields[last_name]" placeholder="Nom" autocomplete="family-name" style="width:100%; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: white; margin-bottom: 0.75rem;" />
+                          </div>
+                        </div>
                       </div>
-                    </div>
-
-                    <div class="ml-form-fieldRow">
-                      <div class="ml-field-group ml-field-name ml-validate-required">
-                        <input
-                          aria-label="Prénom"
-                          aria-required="true"
-                          type="text"
-                          class="form-control"
-                          name="fields[name]"
-                          placeholder="Prénom"
-                          autocomplete="given-name"
-                        />
+                      <div class="ml-form-checkboxRow ml-validate-required" style="margin-bottom: 1.5rem; text-align: left;">
+                        abel class="checkbox">
+                          <input type="checkbox" name="gdpr[]" value="J'accepte de recevoir les emails d'Assist by Alicia" />
+                          <span class="label-description" style="font-size: 0.8rem; color: rgba(255,255,255,0.4);">
+                            J'accepte de recevoir les emails d'Assist by Alicia (désinscription possible à tout moment).
+                          </span>
+                        </label>
                       </div>
-                    </div>
-
-                    <div class="ml-form-fieldRow ml-last-item">
-                      <div class="ml-field-group ml-field-last_name ml-validate-required">
-                        <input
-                          aria-label="Nom"
-                          aria-required="true"
-                          type="text"
-                          class="form-control"
-                          name="fields[last_name]"
-                          placeholder="Nom"
-                          autocomplete="family-name"
-                        />
+                      <input type="hidden" name="ml-submit" value="1" />
+                      <div class="ml-form-embedSubmit">
+                        <button type="submit" class="btn-primary" style="width: 100%; cursor: pointer; border: none;">
+                          Envoyer
+                        </button>
+                        <button disabled="disabled" style="display:none;" type="button" class="btn-primary" style="width: 100%;">
+                          <div class="ml-form-embedSubmitLoad"></div>
+                        </button>
                       </div>
+                      <input type="hidden" name="anticsrf" value="true" />
+                    </form>
+                  </div>
+                  <div class="ml-form-successBody row-success" style="display:none; text-align: center; padding: 2rem;">
+                    <div class="ml-form-successContent">
+                      <h4 style="color: var(--yellow); margin-bottom: 1rem;">Merci !</h4>
+                      <p class="text-muted">Tu vas bientôt recevoir dans tes mails le lien d'accès. N'hésite pas à vérifier tes spams.</p>
                     </div>
                   </div>
-
-                  <div class="ml-form-checkboxRow ml-validate-required">
-                    <label class="checkbox">
-                      <input type="checkbox" />
-                      <div class="label-description">
-                        <p>J’accepte de recevoir les emails d’Assist by Alicia (désinscription possible à tout moment).</p>
-                      </div>
-                    </label>
-                  </div>
-
-                  <input type="hidden" name="ml-submit" value="1" />
-
-                  <div class="ml-form-embedSubmit">
-                    <button type="submit" class="primary">Envoyer</button>
-                    <button disabled="disabled" style="display: none;" type="button" class="loading">
-                      <div class="ml-form-embedSubmitLoad"></div>
-                      <span class="sr-only">Loading...</span>
-                    </button>
-                  </div>
-
-                  <input type="hidden" name="anticsrf" value="true" />
-                </form>
-              </div>
-
-              <div class="ml-form-successBody row-success" style="display: none">
-                <div class="ml-form-successContent">
-                  <h4>Merci</h4>
-                  <p>Tu vas bientôt recevoir dans tes mails le lien d'accès. N’hésite pas à vérifier tes spams.</p>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
+      </section>
 
-      </div>
     </div>
-  </section>
+  </main>
 
-  <footer>
-    </main>
   <div id="site-footer"></div>
+
   <script src="includes.js"></script>
-  </footer>
 
   <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    if (menuToggle && mobileMenu) {
-      menuToggle.addEventListener('click', () => {
-        const isOpen = mobileMenu.classList.toggle('open');
-        menuToggle.classList.toggle('active', isOpen);
-        menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        menuToggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
-      });
-
-      document.querySelectorAll('.mobile-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-          mobileMenu.classList.remove('open');
-          menuToggle.classList.remove('active');
-          menuToggle.setAttribute('aria-expanded', 'false');
-          menuToggle.setAttribute('aria-label', 'Ouvrir le menu');
-        });
-      });
-    }
-
     function ml_webform_success_39707517() {
-      var $ = window.ml_jQuery || window.jQuery;
-      if ($) {
-        $('.ml-subscribe-form-39707517 .row-success').show();
-        $('.ml-subscribe-form-39707517 .row-form').hide();
-      }
+      var $ = ml_jQuery || jQuery;
+      $('.ml-subscribe-form-39707517 .row-success').show();
+      $('.ml-subscribe-form-39707517 .row-form').hide();
     }
   </script>
-
   <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
 
   <script type="application/ld+json">
@@ -243,7 +175,7 @@
     "url": "https://assistbyalicia.github.io/audit-de-temps.html",
     "itemOffered": {
       "@type": "DigitalDocument",
-      "name": "Template Notion d’audit de temps"
+      "name": "Template Notion d'audit de temps"
     },
     "seller": {
       "@type": "ProfessionalService",
@@ -252,5 +184,6 @@
     }
   }
   </script>
+
 </body>
 </html>
