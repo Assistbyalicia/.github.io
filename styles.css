@@ -1214,7 +1214,7 @@ footer span {
   color: var(--yellow);
   font-weight: 700;
 }
- /* ─── TIMELINE "CONCRÈTEMENT" ─── */
+ /* ─── TIMELINE "L'ACCOMPAGNEMENT ?" ─── */
 
 .timeline {
   display: grid;
@@ -1247,4 +1247,12 @@ footer span {
 
 .timeline-card p {
   max-width: 100%;
+}
+
+/* Responsive : une colonne sur mobile */
+@media (max-width: 900px) {
+  .timeline-card {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
 }
