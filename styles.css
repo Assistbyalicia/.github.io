@@ -1155,7 +1155,7 @@ footer span {
 }
 /* Section compacte pour rapprocher les cartes */
 .section-wrap-tight-above {
-  padding-top: var(--space-4);
+  padding-top: var(--space-10);
 }
 .section-wrap-tight-above.tight {
   padding-bottom: var(--space-10);
