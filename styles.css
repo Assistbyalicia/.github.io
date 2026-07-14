@@ -1132,3 +1132,10 @@ footer span {
   margin: 0 auto;
   padding: 0 1.5rem;        /* évite que le contenu touche les bords */
 }
+/* Carte de texte principale */
+.intro-card {
+  background: rgba(30, 42, 74, 0.28);
+  border: 1px solid rgba(202, 255, 0, 0.10);
+  border-radius: var(--radius-xl);
+  padding: var(--space-10);
+}
