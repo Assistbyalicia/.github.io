@@ -1168,7 +1168,15 @@ footer span {
   margin-top: var(--space-6);
 }
 
-/* ─── CARTES "CE QUE JE FAIS" ─── */
+/* ─── CE QUE JE FAIS : GRID 3 CARTES ─── */
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+}
+
 .card {
   background: rgba(30, 42, 74, 0.28);
   border: 1px solid rgba(202, 255, 0, 0.10);
@@ -1206,5 +1214,3 @@ footer span {
   color: var(--yellow);
   font-weight: 700;
 }
-
-
