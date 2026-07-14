@@ -82,14 +82,14 @@
       </div>
     </section>
 
-    <!-- POUR QUI -->
-      <section class="section-wrap section-stack-top">
-  <p class="section-tag">Pour qui ?</p>
-  <h2 class="h2-with-card">
-    Tu avances, mais ton <span>business</span> repose encore trop sur <em>toi</em>
-  </h2>
+    <!-- POUR QUI + QUOTE dans la même section -->
+    <section class="section-wrap">
+      <p class="section-tag">Pour qui ?</p>
+      <h2 class="h2-with-card">
+        Tu avances, mais ton <span>business</span> repose encore trop sur <em>toi</em>
+      </h2>
 
-  <div class="intro-card narrow">
+      <div class="intro-card narrow">
         <p>
           Tu gères mille sujets à la fois. Les idées sont là, les clientes aussi, mais l'organisation
           ne suit plus. Tu pilotes à vue, tu portes la coordination, les outils ne communiquent pas
@@ -99,16 +99,13 @@
           L'offre Bras droit est faite pour toi si tu veux sortir du bricolage permanent, poser un cadre
           solide et être soutenue par quelqu'un qui comprend à la fois la stratégie, l'opérationnel et les systèmes.
         </p>
-       </div>
-</section>
+      </div>
 
-<!-- QUOTE, juste en dessous -->
-<section class="section-wrap tight section-stack-bottom">
-  <div class="quote-card">
-    Tu n'as pas besoin de faire plus.<br />
-    Tu as besoin d'un business qui tourne mieux.
-  </div>
-</section>
+      <div class="quote-card" style="margin-top: var(--space-4);">
+        Tu n'as pas besoin de faire plus.<br />
+        Tu as besoin d'un business qui tourne mieux.
+      </div>
+    </section>
 
     <!-- CE QUE JE FAIS -->
     <section class="section-wrap tight">
@@ -222,136 +219,4 @@
       <p class="section-tag">Modalités</p>
       <h2>Une collaboration pensée pour le <span>long terme</span>, avec un cadre <em>clair</em></h2>
 
-      <div class="pricing-card">
-        <span class="pricing-badge">Accompagnement Bras droit</span>
-        <h3>À partir de 3 mois</h3>
-        <div class="price">Sur devis <small>selon tes besoins, ton rythme et le périmètre</small></div>
-        <p>
-          Chaque accompagnement Bras droit est construit sur-mesure. Le tarif dépend du niveau d'implication attendu,
-          des missions confiées et du temps de pilotage nécessaire chaque semaine.
-        </p>
-
-        <ul class="pricing-list">
-          <li>Appel diagnostic avant toute proposition</li>
-          <li>Cadre clair sur le périmètre, le rythme et les priorités</li>
-          <li>Accompagnement pensé pour produire des résultats concrets</li>
-          <li>Possibilité de démarrer progressivement</li>
-        </ul>
-
-        <a
-          href="https://calendar.notion.so/meet/aliciachouquet/30min"
-          class="btn-primary"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Parler de ton besoin
-        </a>
-
-        <p class="pricing-note">
-          Le bon format dépend de ton niveau de structuration actuel, de ton volume d'activité et de ce que tu veux vraiment déléguer.
-        </p>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="section-wrap tight">
-      <p class="section-tag">Questions fréquentes</p>
-      <h2>Tu te demandes peut-être si c'est le <span>bon moment</span> ou le bon <em>format</em></h2>
-
-      <div class="faq">
-        <div class="faq-item">
-          <h3>Est-ce que c'est fait pour moi si je n'ai pas encore d'équipe ?</h3>
-          <p>Oui. L'accompagnement Bras droit ne sert pas uniquement à coordonner une équipe. Il sert aussi à structurer ton activité, clarifier tes priorités et préparer une croissance plus saine.</p>
-        </div>
-
-        <div class="faq-item">
-          <h3>Est-ce que tu fais uniquement du Notion ?</h3>
-          <p>Non. Notion est souvent la base, mais mon rôle va plus loin : pilotage, organisation, process, automatisations, coordination et logique de fonctionnement globale.</p>
-        </div>
-
-        <div class="faq-item">
-          <h3>Et si j'ai surtout besoin de régler un problème précis ?</h3>
-          <p>Dans ce cas, l'offre Express est peut-être plus adaptée. L'appel diagnostic permet justement de voir si tu as besoin d'une mission ponctuelle ou d'un accompagnement Bras droit.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA FINALE -->
-    <section class="cta-section">
-      <p class="section-tag">Prête à respirer un peu ?</p>
-      <h2>On voit ensemble si l'offre <span>Bras droit</span> est faite pour <em>toi</em></h2>
-      <p>
-        Pendant l'appel, on fait le point sur ton fonctionnement actuel, ce qui te prend trop d'énergie et le type de soutien dont tu as vraiment besoin.
-      </p>
-      <div class="hero-ctas">
-        <a
-          href="https://calendar.notion.so/meet/aliciachouquet/30min"
-          class="btn-primary"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Réserver mon appel diagnostic
-        </a>
-        <a href="contact.html" class="btn-secondary">Me contacter d'abord</a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div id="site-footer"></div>
-  </footer>
-
-  <script src="includes.js"></script>
-
-  <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    if (menuToggle && mobileMenu) {
-      menuToggle.addEventListener('click', () => {
-        const isOpen = mobileMenu.classList.toggle('open');
-        menuToggle.classList.toggle('active', isOpen);
-        menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        menuToggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
-      });
-
-      document.querySelectorAll('.mobile-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-          mobileMenu.classList.remove('open');
-          menuToggle.classList.remove('active');
-          menuToggle.setAttribute('aria-expanded', 'false');
-          menuToggle.setAttribute('aria-label', 'Ouvrir le menu');
-        });
-      });
-    }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Bras droit opérationnel",
-    "provider": {
-      "@type": "ProfessionalService",
-      "name": "Assist by Alicia",
-      "url": "https://assistbyalicia.github.io/"
-    },
-    "url": "https://assistbyalicia.github.io/bras-droit.html",
-    "description": "Accompagnement bras droit pour structurer, piloter et fluidifier un business avec Notion, IA et automatisation.",
-    "areaServed": {
-      "@type": "Country",
-      "name": "France"
-    },
-    "offers": {
-      "@type": "Offer",
-      "priceSpecification": {
-        "@type": "PriceSpecification",
-        "priceCurrency": "EUR"
-      },
-      "availability": "https://schema.org/InStock",
-      "url": "https://assistbyalicia.github.io/bras-droit.html"
-    }
-  }
-  </script>
-</body>
-</html>
+      
