@@ -850,3 +850,105 @@ footer span {
         justify-content: center;
       }
     }
+/* ─── LAYOUT PAGES ─── */
+
+.hero-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 0 48px;
+}
+
+.container {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+/* ─── HERO CARD ─── */
+
+.hero-card {
+  background: linear-gradient(180deg, rgba(30, 42, 74, 0.98), rgba(22, 31, 54, 0.98));
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(202, 255, 0, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(202, 255, 0, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  opacity: 0.22;
+}
+
+.hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  padding: 56px 48px 48px;
+  align-items: center;
+}
+
+.hero-intro {
+  max-width: 920px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  margin-bottom: 16px;
+}
+
+/* ─── STEPS ─── */
+
+.steps {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.step {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  text-align: center;
+}
+
+.step-num {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--yellow);
+  margin-bottom: 8px;
+}
+
+/* ─── RESPONSIVE ─── */
+
+@media (max-width: 900px) {
+  .hero-wrap {
+    padding: 100px 0 40px;
+  }
+
+  .hero-grid {
+    padding: 32px 24px 32px;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+  }
+}
