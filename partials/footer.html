@@ -1,55 +1,8 @@
 <footer>
- <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    if (menuToggle && mobileMenu) {
-      menuToggle.addEventListener('click', () => {
-        const isOpen = mobileMenu.classList.toggle('open');
-        menuToggle.classList.toggle('active', isOpen);
-        menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        menuToggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
-      });
-
-      document.querySelectorAll('.mobile-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-          mobileMenu.classList.remove('open');
-          menuToggle.classList.remove('active');
-          menuToggle.setAttribute('aria-expanded', 'false');
-          menuToggle.setAttribute('aria-label', 'Ouvrir le menu');
-        });
-      });
-    }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Assist by Alicia",
-    "url": "https://assistbyalicia.github.io/",
-    "image": "https://assistbyalicia.github.io/Photo%20de%20profil.png",
-    "logo": "https://assistbyalicia.github.io/Logo.png",
-    "description": "Alicia, bras droit opérationnel freelance. Systèmes Notion sur-mesure, automatisation no-code (N8N, Make) et IA pour entrepreneurs.",
-    "founder": {
-      "@type": "Person",
-      "name": "Alicia Chouquet"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Sotteville-lès-Rouen",
-      "addressRegion": "Normandie",
-      "addressCountry": "FR"
-    },
-    "areaServed": {
-      "@type": "Country",
-      "name": "France"
-    },
-    "serviceType": [
-      "Systèmes Notion sur-mesure",
-      "Automatisation no-code",
-      "Organisation opérationnelle",
-      "Bras droit opérationnel"
-    ]
-  }
-  </script>
+ <div class="footer-content">
+      <span>© 2026 Assist by Alicia – Tous droits réservés</span>
+      <div class="footer-links">
+        <a href="mention-légale-cgv.html">Mentions légales / CGV</a>
+        <a href="politique-de-confidentialité.html">Politique de confidentialité</a>
+      </div>
+    </div>
