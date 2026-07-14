@@ -219,4 +219,136 @@
       <p class="section-tag">Modalités</p>
       <h2>Une collaboration pensée pour le <span>long terme</span>, avec un cadre <em>clair</em></h2>
 
-      
+      <div class="pricing-card">
+        <span class="pricing-badge">Accompagnement Bras droit</span>
+        <h3>À partir de 3 mois</h3>
+        <div class="price">Sur devis <small>selon tes besoins, ton rythme et le périmètre</small></div>
+        <p>
+          Chaque accompagnement Bras droit est construit sur-mesure. Le tarif dépend du niveau d'implication attendu,
+          des missions confiées et du temps de pilotage nécessaire chaque semaine.
+        </p>
+
+        <ul class="pricing-list">
+          <li>Appel diagnostic avant toute proposition</li>
+          <li>Cadre clair sur le périmètre, le rythme et les priorités</li>
+          <li>Accompagnement pensé pour produire des résultats concrets</li>
+          <li>Possibilité de démarrer progressivement</li>
+        </ul>
+
+        <a
+          href="https://calendar.notion.so/meet/aliciachouquet/30min"
+          class="btn-primary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Parler de ton besoin
+        </a>
+
+        <p class="pricing-note">
+          Le bon format dépend de ton niveau de structuration actuel, de ton volume d'activité et de ce que tu veux vraiment déléguer.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-wrap tight">
+      <p class="section-tag">Questions fréquentes</p>
+      <h2>Tu te demandes peut-être si c'est le <span>bon moment</span> ou le bon <em>format</em></h2>
+
+      <div class="faq">
+        <div class="faq-item">
+          <h3>Est-ce que c'est fait pour moi si je n'ai pas encore d'équipe ?</h3>
+          <p>Oui. L'accompagnement Bras droit ne sert pas uniquement à coordonner une équipe. Il sert aussi à structurer ton activité, clarifier tes priorités et préparer une croissance plus saine.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Est-ce que tu fais uniquement du Notion ?</h3>
+          <p>Non. Notion est souvent la base, mais mon rôle va plus loin : pilotage, organisation, process, automatisations, coordination et logique de fonctionnement globale.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Et si j'ai surtout besoin de régler un problème précis ?</h3>
+          <p>Dans ce cas, l'offre Express est peut-être plus adaptée. L'appel diagnostic permet justement de voir si tu as besoin d'une mission ponctuelle ou d'un accompagnement Bras droit.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINALE -->
+    <section class="cta-section">
+      <p class="section-tag">Prête à respirer un peu ?</p>
+      <h2>On voit ensemble si l'offre <span>Bras droit</span> est faite pour <em>toi</em></h2>
+      <p>
+        Pendant l'appel, on fait le point sur ton fonctionnement actuel, ce qui te prend trop d'énergie et le type de soutien dont tu as vraiment besoin.
+      </p>
+      <div class="hero-ctas">
+        <a
+          href="https://calendar.notion.so/meet/aliciachouquet/30min"
+          class="btn-primary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Réserver mon appel diagnostic
+        </a>
+        <a href="contact.html" class="btn-secondary">Me contacter d'abord</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div id="site-footer"></div>
+  </footer>
+
+  <script src="includes.js"></script>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.toggle('open');
+        menuToggle.classList.toggle('active', isOpen);
+        menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        menuToggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+      });
+
+      document.querySelectorAll('.mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('open');
+          menuToggle.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.setAttribute('aria-label', 'Ouvrir le menu');
+        });
+      });
+    }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Bras droit opérationnel",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "Assist by Alicia",
+      "url": "https://assistbyalicia.github.io/"
+    },
+    "url": "https://assistbyalicia.github.io/bras-droit.html",
+    "description": "Accompagnement bras droit pour structurer, piloter et fluidifier un business avec Notion, IA et automatisation.",
+    "areaServed": {
+      "@type": "Country",
+      "name": "France"
+    },
+    "offers": {
+      "@type": "Offer",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceCurrency": "EUR"
+      },
+      "availability": "https://schema.org/InStock",
+      "url": "https://assistbyalicia.github.io/bras-droit.html"
+    }
+  }
+  </script>
+</body>
+</html>
