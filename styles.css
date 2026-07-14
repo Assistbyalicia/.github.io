@@ -1214,7 +1214,7 @@ footer span {
   color: var(--yellow);
   font-weight: 700;
 }
-.timeline {
+ .timeline {
       display: grid;
       gap: var(--space-4);
       margin-top: var(--space-8);
@@ -1242,11 +1242,4 @@ footer span {
 
     .timeline-card p {
       max-width: 100%;
-    }
-.timeline-step {
-      font-family: var(--font-display);
-      color: var(--coral);
-      font-size: var(--text-lg);
-      font-weight: 900;
-      text-transform: uppercase;
     }
