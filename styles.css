@@ -693,39 +693,38 @@
     }
 
     footer {
-      margin-top: auto;
-      background: rgba(18, 18, 18, 0.98);
-      border-top: 1px solid rgba(202, 255, 0, 0.08);
-      padding: var(--space-8) var(--space-12);
-    }
+  background: rgba(18, 18, 18, 0.98);
+  border-top: 1px solid rgba(202, 255, 0, 0.08);
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;   /* texte à gauche, liens à droite */
+  align-items: center;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.35);
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 3rem;
+}
 
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: var(--text-xs);
-      color: var(--text-faint);
-      flex-wrap: wrap;
-      gap: var(--space-4);
-    }
+footer span {
+  white-space: nowrap;              /* évite le retour à la ligne du texte */
+}
 
-    .footer-links {
+.footer-links {
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
-  margin-left: auto;      /* pousse le bloc à droite */
-  text-align: right;      /* les textes des liens sont alignés à droite */
+  justify-content: flex-end;        /* aligne les liens à droite */
 }
 
-    footer a {
-      color: var(--text-faint);
-      text-decoration: none;
-    }
+.footer-links a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+}
 
-    footer a:hover {
-      color: var(--white);
-    }
-
+.footer-links a:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
     @media (max-width: 900px) {
       nav {
         padding: 1rem 1.5rem;
