@@ -1127,3 +1127,8 @@ footer span {
   color: rgba(255, 255, 255, 0.35);
   font-size: 0.9rem;
 }
+.container {
+  max-width: 1100px;        /* si ce n’est pas déjà le cas */
+  margin: 0 auto;
+  padding: 0 1.5rem;        /* évite que le contenu touche les bords */
+}
