@@ -1160,5 +1160,51 @@ footer span {
 .section-wrap-tight-above.tight {
   padding-bottom: var(--space-10);
 }
+/* ─── GRID 3 COLONNES POUR LES CARTES ─── */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+}
+
+/* ─── CARTES "CE QUE JE FAIS" ─── */
+.card {
+  background: rgba(30, 42, 74, 0.28);
+  border: 1px solid rgba(202, 255, 0, 0.10);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+}
+
+.card h3 {
+  margin-bottom: var(--space-3);
+  color: var(--yellow);
+}
+
+.card p {
+  max-width: 100%;
+  font-size: var(--text-sm);
+}
+
+.card ul {
+  list-style: none;
+  margin-top: var(--space-4);
+  display: grid;
+  gap: var(--space-2);
+  padding-left: 0;
+}
+
+.card li {
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  display: flex;
+  gap: 0.6rem;
+}
+
+.card li::before {
+  content: "→";
+  color: var(--yellow);
+  font-weight: 700;
+}
 
 
