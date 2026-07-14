@@ -1160,3 +1160,14 @@ footer span {
 .section-wrap-tight-above.tight {
   padding-bottom: var(--space-10);
 }
+/* ─── SECTIONS STACKÉES (cartes presque collées) ─── */
+
+/* Première section (intro-card) : on réduit le padding bas */
+.section-stack-top {
+  padding-bottom: var(--space-4);
+}
+
+/* Seconde section (quote-card) : on réduit le padding haut */
+.section-stack-bottom {
+  padding-top: var(--space-2);
+}
