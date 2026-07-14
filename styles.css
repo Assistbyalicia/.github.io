@@ -1153,3 +1153,10 @@ footer span {
   max-width: 900px;
   margin: 0 auto;
 }
+/* Section compacte pour rapprocher les cartes */
+.section-wrap-tight-above {
+  padding-top: var(--space-4);
+}
+.section-wrap-tight-above.tight {
+  padding-bottom: var(--space-10);
+}
