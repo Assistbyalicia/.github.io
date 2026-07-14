@@ -710,10 +710,12 @@
     }
 
     .footer-links {
-      display: flex;
-      gap: var(--space-6);
-      flex-wrap: wrap;
-    }
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-left: auto;      /* pousse le bloc à droite */
+  text-align: right;      /* les textes des liens sont alignés à droite */
+}
 
     footer a {
       color: var(--text-faint);
