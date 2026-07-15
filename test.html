@@ -18,75 +18,88 @@
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=League+Spartan:wght@700;900&family=Satisfy&display=swap"
     rel="stylesheet"
   />
-    <link rel="stylesheet" href="styles.css" />
-
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-   <body>
   <div id="site-header"></div>
-</div>
-     <main>
+
+  <main>
+    <!-- HERO CONTACT -->
     <section class="hero">
-      <p class="section-tag">Contact</p>
-      <h1>On échange sur ton <span>besoin</span> ?</h1>
-      <p>
-        Si tu veux clarifier ce qui coince dans ton organisation, vérifier si une offre est adaptée à ta situation, ou simplement me poser une question, tu peux me contacter ici.
-      </p>
+      <div class="container">
+        <div class="hero-intro">
+          <p class="section-tag">Contact</p>
+          <h1>On échange sur ton <span>besoin</span> ?</h1>
+          <p class="hero-sub">
+            Si tu veux clarifier ce qui coince dans ton organisation, vérifier si une offre est adaptée
+            à ta situation, ou simplement me poser une question, tu peux me contacter ici.
+          </p>
+        </div>
+      </div>
     </section>
 
-    <section class="contact-grid">
-      <article class="contact-card">
-        <h2>Réserver un <span>appel</span></h2>
-        <p>
-          Le plus simple si tu veux qu’on parle directement de ton business, de ton organisation ou d’un besoin précis.
-        </p>
-        <div class="contact-info">
-          <div>Appel diagnostic gratuit</div>
-          <div>30 minutes</div>
-          <div>Sans engagement</div>
-        </div>
-        <div class="buttons-stack">
-          <a
-            class="btn-primary"
-            href="https://calendar.notion.so/meet/aliciachouquet/30min"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Réserver un appel
-          </a>
-        </div>
-      </article>
+    <!-- BLOCS CONTACT -->
+    <section class="section-wrap">
+      <div class="grid-2">
+        <article class="card">
+          <p class="section-tag">Prendre rendez-vous</p>
+          <h2>Réserver un <span>appel</span></h2>
+          <p>
+            Le plus simple si tu veux qu’on parle directement de ton business, de ton organisation ou d’un besoin précis.
+          </p>
+          <div style="margin-top: var(--space-4); display: grid; gap: var(--space-2);">
+            <div>Appel diagnostic gratuit</div>
+            <div>30 minutes</div>
+            <div>Sans engagement</div>
+          </div>
+          <div class="hero-ctas" style="margin-top: var(--space-6);">
+            <a
+              class="btn-primary"
+              href="https://calendar.notion.so/meet/aliciachouquet/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Réserver un appel
+            </a>
+          </div>
+        </article>
 
-      <article class="contact-card">
-        <h2>M’écrire <span>directement</span></h2>
-        <p>
-          Si tu préfères commencer par un message, tu peux aussi m’écrire par email. Je reviendrai vers toi dès que possible.
-        </p>
-        <div class="contact-info">
-          <div><strong>Email :</strong> <a href="mailto:contact@assistbyalicia.fr">contact@assistbyalicia.fr</a></div>
-          <div><strong>Localisation :</strong> Sotteville-lès-Rouen</div>
-          <div><strong>Réponse :</strong> dès que possible en semaine</div>
-        </div>
-        <div class="buttons-stack">
-          <a class="btn-secondary" href="mailto:contact@assistbyalicia.fr">
-            Envoyer un email
-          </a>
-        </div>
-      </article>
+        <article class="card">
+          <p class="section-tag">M’écrire</p>
+          <h2>M’écrire <span>directement</span></h2>
+          <p>
+            Si tu préfères commencer par un message, tu peux aussi m’écrire par email. Je reviendrai vers toi dès que possible.
+          </p>
+          <div style="margin-top: var(--space-4); display: grid; gap: var(--space-2);">
+            <div><strong>Email :</strong> <a href="mailto:contact@assistbyalicia.fr">contact@assistbyalicia.fr</a></div>
+            <div><strong>Localisation :</strong> Sotteville-lès-Rouen</div>
+            <div><strong>Réponse :</strong> dès que possible en semaine</div>
+          </div>
+          <div class="hero-ctas" style="margin-top: var(--space-6);">
+            <a class="btn-secondary" href="mailto:contact@assistbyalicia.fr">
+              Envoyer un email
+            </a>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <div class="note-box">
-      <p>
-        Tu ne sais pas encore quelle offre choisir ? Commence par l’appel diagnostic : ce sera le plus simple pour faire le tri.
-      </p>
-    </div>
+    <!-- NOTE -->
+    <section class="section-wrap tight">
+      <div class="quote-card">
+        <p>
+          Tu ne sais pas encore quelle offre choisir ? Commence par l’appel diagnostic : ce sera le plus simple pour faire le tri.
+        </p>
+      </div>
+    </section>
   </main>
 
   <footer>
-    </main>
-  <div id="site-footer"></div>
-  <script src="includes.js"></script>
+    <div id="site-footer"></div>
   </footer>
+
+  <script src="includes.js"></script>
 
   <script>
     const menuToggle = document.getElementById('menu-toggle');
