@@ -341,10 +341,13 @@
 
     .hero-sub {
       margin-top: var(--space-6);
+      margin-left: auto;
+      margin-right: auto;
       font-size: var(--text-base);
       max-width: 620px;
       color: var(--text-muted);
       line-height: 1.8;
+      text-align: center;
     }
 
     .hero-pills {
