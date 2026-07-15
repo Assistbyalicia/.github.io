@@ -1,4 +1,4 @@
-:root {
+ :root {
       --coral: #ff4757;
       --yellow: #caff00;
       --blue-dark: #1e2a4a;
@@ -295,10 +295,10 @@
         ),
         var(--black);
     }
-/* ─── HERO CONTACT ─── */
+/* â”€â”€â”€ HERO CONTACT â”€â”€â”€ */
 .hero-contact {
-  min-height: auto;                    /* pas plein écran */
-  padding: 10rem var(--space-8) 4rem;  /* dégage bien le header fixe */
+  min-height: auto;                    /* pas plein Ã©cran */
+  padding: 10rem var(--space-8) 4rem;  /* dÃ©gage bien le header fixe */
 }
 
 .hero-contact .hero-intro {
@@ -587,7 +587,7 @@
     }
 
     .offre-liste li::before {
-      content: "→";
+      content: "â†’";
       color: var(--yellow);
       font-weight: 700;
       flex-shrink: 0;
@@ -722,7 +722,7 @@
   border-top: 1px solid rgba(202, 255, 0, 0.08);
   padding: 2rem 4rem;
   display: flex;
-  justify-content: space-between;   /* texte à gauche, liens à droite */
+  justify-content: space-between;   /* texte Ã  gauche, liens Ã  droite */
   align-items: center;
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.35);
@@ -732,14 +732,14 @@
 }
 
 footer span {
-  white-space: nowrap;              /* évite le retour à la ligne du texte */
+  white-space: nowrap;              /* Ã©vite le retour Ã  la ligne du texte */
 }
 
 .footer-links {
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
-  justify-content: flex-end;        /* aligne les liens à droite */
+  justify-content: flex-end;        /* aligne les liens Ã  droite */
 }
 
 .footer-links a {
@@ -875,7 +875,7 @@ footer span {
         justify-content: center;
       }
     }
-/* ─── LAYOUT PAGES ─── */
+/* â”€â”€â”€ LAYOUT PAGES â”€â”€â”€ */
 
 .hero-wrap {
   min-height: 100vh;
@@ -889,7 +889,7 @@ footer span {
   margin: 0 auto;
 }
 
-/* ─── HERO CARD ─── */
+/* â”€â”€â”€ HERO CARD â”€â”€â”€ */
 
 .hero-card {
   background: linear-gradient(180deg, rgba(30, 42, 74, 0.98), rgba(22, 31, 54, 0.98));
@@ -938,7 +938,7 @@ footer span {
   margin-bottom: 16px;
 }
 
-/* ─── STEPS ─── */
+/* â”€â”€â”€ STEPS â”€â”€â”€ */
 
 .steps {
   margin-top: 16px;
@@ -970,7 +970,7 @@ footer span {
   flex-shrink: 0;
 }
 
-/* ─── RESPONSIVE ─── */
+/* â”€â”€â”€ RESPONSIVE â”€â”€â”€ */
 
 @media (max-width: 900px) {
   .hero-wrap {
@@ -985,7 +985,7 @@ footer span {
     grid-template-columns: 1fr;
   }
 }
-/* ─── HERO SPLIT (2 colonnes) ─── */
+/* â”€â”€â”€ HERO SPLIT (2 colonnes) â”€â”€â”€ */
 .hero-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1121,7 +1121,7 @@ footer span {
     grid-template-columns: 1fr;
   }
 }
-/* ─── INFO CARDS ─── */
+/* â”€â”€â”€ INFO CARDS â”€â”€â”€ */
 .info-card {
   background: rgba(30, 42, 74, 0.4);
   border: 1px solid rgba(202, 255, 0, 0.1);
@@ -1134,7 +1134,7 @@ footer span {
   display: block;
 }
 
-/* ─── CTA ENCADRÉ ─── */
+/* â”€â”€â”€ CTA ENCADRÃ‰ â”€â”€â”€ */
 .cta-box {
   max-width: 760px;
   margin: 2rem auto 0;
@@ -1145,7 +1145,7 @@ footer span {
   text-align: center;
 }
 
-/* ─── NOTE DE BAS ─── */
+/* â”€â”€â”€ NOTE DE BAS â”€â”€â”€ */
 .cta-note {
   margin-top: 1.5rem;
   text-align: center;
@@ -1153,9 +1153,9 @@ footer span {
   font-size: 0.9rem;
 }
 .container {
-  max-width: 1100px;        /* si ce n’est pas déjà le cas */
+  max-width: 1100px;        /* si ce nâ€™est pas dÃ©jÃ  le cas */
   margin: 0 auto;
-  padding: 0 1.5rem;        /* évite que le contenu touche les bords */
+  padding: 0 1.5rem;        /* Ã©vite que le contenu touche les bords */
 }
 /* Carte de texte principale */
 .intro-card {
@@ -1164,7 +1164,7 @@ footer span {
   border-radius: var(--radius-xl);
   padding: var(--space-10);
 }
-/* ─── QUOTE CARD ─── */
+/* â”€â”€â”€ QUOTE CARD â”€â”€â”€ */
 .quote-card {
   background: rgba(255, 71, 87, 0.08);
   border: 1px solid rgba(255, 71, 87, 0.2);
@@ -1183,7 +1183,7 @@ footer span {
   padding-top: var(--space-6);
   padding-bottom: var(--space-8);
 }
-/* ─── GRID 3 COLONNES POUR LES CARTES ─── */
+/* â”€â”€â”€ GRID 3 COLONNES POUR LES CARTES â”€â”€â”€ */
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1191,7 +1191,7 @@ footer span {
   margin-top: var(--space-6);
 }
 
-/* ─── CE QUE JE FAIS : GRID 3 CARTES ─── */
+/* â”€â”€â”€ CE QUE JE FAIS : GRID 3 CARTES â”€â”€â”€ */
 
 .grid-3 {
   display: grid;
@@ -1238,11 +1238,11 @@ footer span {
 }
 
 .card li::before {
-  content: "→";
+  content: "â†’";
   color: var(--yellow);
   font-weight: 700;
 }
- /* ─── TIMELINE "L'ACCOMPAGNEMENT ?" ─── */
+ /* â”€â”€â”€ TIMELINE "L'ACCOMPAGNEMENT ?" â”€â”€â”€ */
 
 .timeline {
   display: grid;
@@ -1284,7 +1284,7 @@ footer span {
     gap: var(--space-3);
   }
 }
-/* ─── GRID 2 COLONNES ─── */
+/* â”€â”€â”€ GRID 2 COLONNES â”€â”€â”€ */
 .grid-2 {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
@@ -1303,7 +1303,7 @@ footer span {
     margin-top: var(--space-6);
   }
 }
-/* ─── PRICING CARD "ACCOMPAGNEMENT BRAS DROIT" ─── */
+/* â”€â”€â”€ PRICING CARD "ACCOMPAGNEMENT BRAS DROIT" â”€â”€â”€ */
 
 .pricing-card {
   margin-top: var(--space-6);
@@ -1371,7 +1371,7 @@ footer span {
 }
 
 .pricing-list li::before {
-  content: "✔";
+  content: "âœ”";
   color: var(--yellow);
   font-weight: 700;
 }
@@ -1382,13 +1382,13 @@ footer span {
   color: var(--text-faint);
 }
 
-/* ══════════════════════════════════════════════════
-   AJOUTS — pour rapprocher la page Contact du rendu
-   de référence (grille égale, lignes encadrées,
-   boutons calés en bas, encart de note en jaune)
-   ══════════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   AJOUTS â€” pour rapprocher la page Contact du rendu
+   de rÃ©fÃ©rence (grille Ã©gale, lignes encadrÃ©es,
+   boutons calÃ©s en bas, encart de note en jaune)
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
-/* Grille contact à colonnes égales (au lieu de 1.5fr/1fr) */
+/* Grille contact Ã  colonnes Ã©gales (au lieu de 1.5fr/1fr) */
 .grid-2.contact-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: stretch;
@@ -1403,7 +1403,7 @@ footer span {
   margin-top: auto;
 }
 
-/* Lignes d'info encadrées (coral, comme la page de référence) */
+/* Lignes d'info encadrÃ©es (coral, comme la page de rÃ©fÃ©rence) */
 .contact-info {
   display: grid;
   gap: var(--space-2);
