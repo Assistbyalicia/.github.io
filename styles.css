@@ -295,6 +295,24 @@
         ),
         var(--black);
     }
+/* ─── HERO CONTACT ─── */
+.hero-contact {
+  min-height: auto;                    /* pas plein écran */
+  padding: 6rem var(--space-8) 4rem;   /* moins d'espace haut/bas */
+}
+
+.hero-contact .hero-intro {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.hero-contact h1 {
+  margin-bottom: var(--space-4);
+}
+
+.hero-contact .hero-sub {
+  margin-top: var(--space-4);
+}
 
     .hero-eyebrow {
       font-family: var(--font-script);
