@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-90P7VG23F7"></script>
+  <!-- Google Analytics chargé en différé après le rendu -->
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-90P7VG23F7');
+    window.addEventListener('load', function() {
+      var script = document.createElement('script');
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-90P7VG23F7';
+      script.async = true;
+      document.head.appendChild(script);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-90P7VG23F7', { 'send_page_view': true });
+    });
   </script>
 
   <meta charset="UTF-8" />
@@ -19,7 +25,7 @@
     content="Découvre l'offre Bras droit d'Assist by Alicia : pilotage opérationnel, structuration, Notion, IA et automatisation pour les entrepreneures qui veulent un business plus fluide et mieux organisé."
   />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://assistbyalicia.github.io/bras-droit.html" />
+  //assistbyalicia.github.io/bras-droit.html" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Assist by Alicia" />
@@ -39,18 +45,19 @@
   />
   <meta name="twitter:image" content="https://assistbyalicia.github.io/Photo%20de%20profil.png" />
 
-  <!-- FIX CLS/LCP : Google Fonts chargées en différé -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800;900&family=Satisfy&family=Montserrat:wght@400;500;600&display=swap"
+  <!-- FIX FCP + CLS : preload ciblé sur les graisses principales + chargement différé du reste -->
+  //fonts.googleapis.com" />
+  //fonts.gstatic.com" crossorigin />
+  
+    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;900&family=Montserrat:wght@400;600&display=swap"
+  />
+  //fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800;900&family=Satisfy&family=Montserrat:wght@400;500;600&display=swap"
     rel="stylesheet"
     media="print"
     onload="this.media='all'"
   />
   <noscript>
-    <link
-      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800;900&family=Satisfy&family=Montserrat:wght@400;500;600&display=swap"
+    //fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800;900&family=Satisfy&family=Montserrat:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
   </noscript>
