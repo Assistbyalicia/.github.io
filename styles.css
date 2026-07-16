@@ -1643,3 +1643,252 @@ footer span {
     justify-content: center;
   }
 }
+
+/* ══════════════════════════════════════════════════
+   STYLES POUR LA PAGE TEST.HTML
+   (éléments spécifiques à l'offre express)
+   ══════════════════════════════════════════════════ */
+
+/* --- Chiffres hero --- */
+.chiffres-hero {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+  margin: var(--space-10) auto 0;
+  max-width: var(--content-default);
+  padding: 0 var(--space-8);
+}
+
+.chiffre-card {
+  background: rgba(30, 42, 74, 0.4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  text-align: center;
+}
+
+.chiffre-card strong {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 900;
+  color: var(--coral);
+  display: block;
+  margin-bottom: var(--space-2);
+}
+
+.chiffre-card p {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+/* --- Aside block (alternative) --- */
+.aside-block {
+  background: rgba(30, 42, 74, 0.4);
+  border-left: 3px solid var(--coral);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  padding: var(--space-10);
+  margin: var(--space-6) 0;
+}
+
+.aside-block p {
+  margin-bottom: var(--space-3);
+}
+
+/* --- Check lists --- */
+.check-list,
+.cross-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-6) 0;
+}
+
+.check-list li {
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-3);
+  background: rgba(30, 42, 74, 0.3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: var(--text-sm);
+}
+
+.cross-list li {
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-3);
+  background: rgba(255, 71, 87, 0.06);
+  border: 1px solid rgba(255, 71, 87, 0.15);
+  border-radius: var(--radius-md);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: var(--text-sm);
+}
+
+/* --- Timeline --- */
+.timeline {
+  margin: var(--space-6) 0;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: var(--space-5);
+  margin-bottom: var(--space-8);
+  align-items: start;
+}
+
+.timeline-icon {
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.timeline-content {
+  background: rgba(30, 42, 74, 0.3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+
+.timeline-content p {
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-3);
+}
+
+.timeline-note {
+  color: var(--yellow);
+  font-size: var(--text-sm);
+  margin-bottom: 0;
+  font-weight: 700;
+}
+
+/* --- FAQ items (non-accordion version) --- */
+.faq-item {
+  border-bottom: 1px solid var(--border);
+  padding: var(--space-8) 0;
+}
+
+.faq-item h3 {
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: var(--space-4);
+}
+
+.faq-item p {
+  font-size: var(--text-sm);
+  margin-bottom: 0;
+  color: var(--text-muted);
+}
+
+/* --- Highlight box --- */
+.highlight-box {
+  background: rgba(202, 255, 0, 0.05);
+  border: 1px solid rgba(202, 255, 0, 0.2);
+  border-radius: var(--radius-lg);
+  padding: var(--space-10);
+  text-align: center;
+  margin: var(--space-8) 0;
+}
+
+.highlight-box p {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--yellow);
+  margin-bottom: var(--space-3);
+  text-transform: uppercase;
+}
+
+/* --- Refund highlight --- */
+.refund-highlight {
+  color: var(--yellow);
+  font-size: 1.1em;
+  font-weight: 700;
+}
+
+/* --- CTA final --- */
+.cta-final {
+  text-align: center;
+  padding: var(--space-20) var(--space-8);
+  max-width: 100%;
+}
+
+.cta-final h2 {
+  margin-bottom: var(--space-4);
+}
+
+.cta-final p {
+  max-width: 560px;
+  margin: 0 auto var(--space-10);
+  color: var(--text-muted);
+}
+
+/* --- Note --- */
+.note {
+  margin-top: var(--space-6);
+  font-size: var(--text-xs);
+  color: var(--text-faint);
+}
+
+/* --- Custom section styling for test.html --- */
+section.test-section {
+  padding: var(--space-16) var(--space-8);
+  max-width: var(--content-default);
+  margin: 0 auto;
+}
+
+/* Responsive for custom elements */
+@media (max-width: 900px) {
+  .chiffres-hero {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+    margin-top: var(--space-6);
+    padding: 0 var(--space-5);
+  }
+
+  .chiffre-card {
+    padding: var(--space-6);
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .timeline-icon {
+    text-align: left;
+    font-size: 1.5rem;
+  }
+
+  .timeline-content {
+    padding: var(--space-5);
+  }
+
+  .aside-block,
+  .highlight-box {
+    padding: var(--space-6) var(--space-5);
+  }
+
+  .check-list li,
+  .cross-list li {
+    padding: var(--space-4) var(--space-4);
+  }
+
+  .faq-item {
+    padding: var(--space-6) 0;
+  }
+
+  .cta-final {
+    padding: var(--space-16) var(--space-5);
+  }
+
+  .cta-final .btn-primary {
+    width: 100%;
+  }
+
+  section.test-section {
+    padding: var(--space-12) var(--space-5);
+  }
+}
