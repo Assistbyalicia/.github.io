@@ -1444,3 +1444,190 @@ footer span {
   color: rgba(255, 255, 255, 0.8);
   max-width: 100%;
 }
+
+/* ══════════════════════════════════════════════════
+   AJOUTS — page "Création d'espace Notion sur-mesure"
+   (three-layout, deliverables, faq, two, stack, btns)
+   ══════════════════════════════════════════════════ */
+
+/* Layout "1 carte pleine largeur + 2 cartes côte à côte" */
+.three-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+  margin-top: var(--space-8);
+}
+
+.three-layout .full {
+  grid-column: 1 / -1;
+}
+
+/* Petite carte "citation" à l'intérieur d'un three-layout ou d'un stack */
+.quote {
+  background: rgba(255, 71, 87, 0.06);
+  border: 1px solid rgba(255, 71, 87, 0.2);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+}
+
+.quote strong {
+  display: block;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  color: var(--white);
+  font-size: var(--text-base);
+  margin-bottom: var(--space-3);
+}
+
+.quote p {
+  font-size: var(--text-sm);
+  max-width: 100%;
+}
+
+/* Grille "problème / solution" à deux colonnes égales */
+.two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+  margin-top: var(--space-6);
+}
+
+/* Étiquette au-dessus des listes problème/solution */
+.label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--yellow);
+  margin-bottom: var(--space-3);
+}
+
+.problem {
+  border-left: 3px solid var(--coral);
+}
+
+.solution {
+  border-left: 3px solid var(--yellow);
+}
+
+/* Grille des livrables (icône + texte) */
+.deliverables {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+  margin-top: var(--space-8);
+}
+
+.deliverable {
+  background: rgba(30, 42, 74, 0.28);
+  border: 1px solid rgba(202, 255, 0, 0.10);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+
+.deliverable h3 {
+  color: var(--yellow);
+  font-size: var(--text-base);
+  margin-bottom: var(--space-2);
+}
+
+.deliverable p {
+  font-size: var(--text-sm);
+  max-width: 100%;
+}
+
+.iconbox {
+  font-size: 1.5rem;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(202, 255, 0, 0.08);
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+/* Empilement vertical (section "pour qui") */
+.stack {
+  display: grid;
+  gap: var(--space-6);
+  margin-top: var(--space-6);
+}
+
+/* FAQ en accordéon */
+.faq {
+  margin-top: var(--space-6);
+  display: grid;
+  gap: var(--space-3);
+}
+
+.faq details {
+  background: rgba(30, 42, 74, 0.24);
+  border: 1px solid rgba(202, 255, 0, 0.10);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-6);
+}
+
+.faq summary {
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-base);
+  color: var(--white);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary span {
+  color: var(--yellow);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.faq .answer {
+  margin-top: var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  max-width: 100%;
+}
+
+/* Rangée de boutons dans une section CTA */
+.btns {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: var(--space-6);
+}
+
+/* Responsive : passage en une colonne sur mobile */
+@media (max-width: 900px) {
+  .three-layout,
+  .two,
+  .deliverables {
+    grid-template-columns: 1fr;
+  }
+
+  .btns {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btns a {
+    width: 100%;
+    justify-content: center;
+  }
+}
