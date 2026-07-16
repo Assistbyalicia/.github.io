@@ -2273,3 +2273,109 @@ section {
     padding: 4rem 1.2rem;
   }
 }
+
+/* ══════════════════════════════════════════════════
+   CORRECTIONS DES ESPACEMENTS POUR OFFRE-EXPRESS.HTML
+   (écrase les définitions précédentes pour corriger les espacements)
+   ══════════════════════════════════════════════════ */
+
+/* Stats row - Chiffres en haut de page */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 4rem auto 0;
+  max-width: 900px;
+  padding: 0 2rem;
+}
+
+/* Stat card - Chaque carte de chiffre */
+.stat-card {
+  background: rgba(30, 42, 74, 0.4);
+  border: 1px solid rgba(202, 255, 0, 0.12);
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.stat-card strong {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--coral);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.stat-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Offre liste - Listes à puces */
+.offre-liste {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.offre-liste li {
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.8rem;
+  background: rgba(30, 42, 74, 0.3);
+  border: 1px solid rgba(202, 255, 0, 0.1);
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+}
+
+/* Section - Espacement des sections */
+section {
+  padding: 5rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Hero - Espacement du hero */
+.hero {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8rem 2rem 4rem;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 40%, rgba(30, 42, 74, 0.8) 0%, transparent 70%),
+    repeating-linear-gradient(0deg, rgba(202, 255, 0, 0.03) 0px, rgba(202, 255, 0, 0.03) 1px, transparent 1px, transparent 60px),
+    repeating-linear-gradient(90deg, rgba(202, 255, 0, 0.03) 0px, rgba(202, 255, 0, 0.03) 1px, transparent 1px, transparent 60px),
+    var(--black);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .stats-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 2.5rem;
+    padding: 0 1.2rem;
+  }
+
+  .stat-card {
+    padding: 1.4rem;
+  }
+
+  .offre-liste li {
+    padding: 0.85rem 0.9rem;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 7.5rem 1.2rem 3rem;
+  }
+
+  section {
+    padding: 4rem 1.2rem;
+  }
+}
