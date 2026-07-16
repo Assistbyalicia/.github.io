@@ -2379,3 +2379,11 @@ section {
     padding: 4rem 1.2rem;
   }
 }
+
+/* Ajout des flèches pour les listes */
+.offre-liste li::before {
+  content: "→";
+  color: var(--yellow);
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
