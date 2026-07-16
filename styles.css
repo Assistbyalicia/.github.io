@@ -2202,3 +2202,8 @@ footer span {
         gap: 1rem;
       }
     }
+
+/* Utilitaire pour centrer le texte */
+.text-center {
+  text-align: center;
+}
