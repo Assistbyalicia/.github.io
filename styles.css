@@ -1242,6 +1242,18 @@ footer span {
   color: var(--yellow);
   font-weight: 700;
 }
+
+.card p a,
+.card li a {
+  color: var(--yellow);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.card p a:hover,
+.card li a:hover {
+  color: var(--white);
+}
  /* ─── TIMELINE "L'ACCOMPAGNEMENT ?" ─── */
 
 .timeline {
