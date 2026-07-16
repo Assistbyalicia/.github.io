@@ -21,14 +21,6 @@
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://assistbyalicia.github.io/bras-droit.html" />
 
-  <!-- FIX LCP : préchargement de l'image hero -->
-  <link
-    rel="preload"
-    as="image"
-    href="https://assistbyalicia.github.io/Photo%20de%20profil.png"
-    fetchpriority="high"
-  />
-
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Assist by Alicia" />
   <meta property="og:title" content="Bras droit opérationnel – Assist by Alicia" />
@@ -84,16 +76,6 @@
             opérationnel qui clarifie, structure, pilote et optimise ton business avec Notion, l'IA et
             l'automatisation.
           </p>
-          <!-- FIX LCP : fetchpriority + loading eager + dimensions explicites -->
-          <img
-            src="https://assistbyalicia.github.io/Photo%20de%20profil.png"
-            alt="Alicia Chouquet – Bras droit opérationnel Notion & automatisation"
-            width="400"
-            height="400"
-            fetchpriority="high"
-            loading="eager"
-            decoding="async"
-          />
           <div class="hero-ctas">
             <a
               href="https://calendar.notion.so/meet/aliciachouquet/30min"
@@ -218,7 +200,6 @@
         <div>
           <p class="section-tag">Ce que ça change</p>
           <h2>Un business plus <span>lisible</span>, plus léger à piloter, et plus <em>stable</em></h2>
-          <!-- FIX GEO : stats concrètes ajoutées -->
           <p>
             Mon rôle n'est pas de te rajouter une couche d'organisation théorique. Mon rôle, c'est de créer les conditions
             pour que ton business soit plus fluide : des priorités claires, un espace centralisé, moins de charge mentale
@@ -394,7 +375,7 @@
   }
   </script>
 
-  <!-- FIX Rich Results : FAQPage schema ajouté -->
+  <!-- FAQPage schema pour rich results Google -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
