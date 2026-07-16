@@ -2202,3 +2202,78 @@ footer span {
       }
     }
 
+
+/* ══════════════════════════════════════════════════
+   STYLES MANQUANTS POUR OFFRE-EXPRESS.HTML
+   ══════════════════════════════════════════════════ */
+
+/* Stats row (pour chiffres-hero) */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+  margin: var(--space-10) auto 0;
+  max-width: var(--content-default);
+  padding: 0 var(--space-8);
+}
+
+/* Stat card (pour chiffre-card) */
+.stat-card {
+  background: rgba(30, 42, 74, 0.4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  text-align: center;
+}
+
+.stat-card strong {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 900;
+  color: var(--coral);
+  display: block;
+  margin-bottom: var(--space-2);
+}
+
+.stat-card p {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+/* Offre liste (pour check-list et cross-list) */
+.offre-liste {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: var(--space-6) 0;
+  padding-left: 0;
+}
+
+.offre-liste li {
+  padding: var(--space-4) var(--space-5);
+  background: rgba(30, 42, 74, 0.3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: var(--text-sm);
+}
+
+/* Responsive pour les nouvelles classes */
+@media (max-width: 900px) {
+  .stats-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+    margin-top: var(--space-6);
+    padding: 0 var(--space-5);
+  }
+
+  .stat-card {
+    padding: var(--space-6);
+  }
+
+  .offre-liste li {
+    padding: var(--space-4) var(--space-4);
+  }
+}
