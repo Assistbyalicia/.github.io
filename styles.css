@@ -943,7 +943,7 @@ footer span {
 .steps {
   margin-top: 16px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 18px;
 }
 
@@ -1515,7 +1515,7 @@ footer span {
 /* Grille des livrables (icône + texte) */
 .deliverables {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--space-5);
   margin-top: var(--space-8);
 }
