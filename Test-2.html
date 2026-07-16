@@ -39,9 +39,12 @@
   />
   <meta name="twitter:image" content="https://assistbyalicia.github.io/Photo%20de%20profil.png" />
 
-  <!-- FIX CLS/LCP : Google Fonts chargées en différé -->
+  <!-- FIX FCP + CLS : preload ciblé sur les graisses principales + chargement différé du reste -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;900&family=Montserrat:wght@400;600&display=swap"
+  />
   <link
     href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800;900&family=Satisfy&family=Montserrat:wght@400;500;600&display=swap"
     rel="stylesheet"
@@ -195,37 +198,37 @@
     </section>
 
     <!-- CE QUE ÇA CHANGE -->
-<section class="section-wrap tight">
-  <p class="section-tag">Ce que ça change</p>
-  <h2>Un business plus <span>lisible</span>, plus léger à piloter, et plus <em>stable</em></h2>
+    <section class="section-wrap tight">
+      <p class="section-tag">Ce que ça change</p>
+      <h2>Un business plus <span>lisible</span>, plus léger à piloter, et plus <em>stable</em></h2>
 
-  <div class="grid-2">
-    <div>
-      <p>
-        Mon rôle n'est pas de te rajouter une couche d'organisation théorique. Mon rôle, c'est de créer les conditions
-        pour que ton business soit plus fluide : des priorités claires, un espace centralisé, moins de charge mentale
-        et des process qui te soutiennent vraiment. En moyenne, mes clientes récupèrent <strong>5 à 8 heures par semaine</strong>
-        en réduisant les allers-retours, les oublis et les tâches répétitives non automatisées.
-      </p>
-      <p style="margin-top: var(--space-4);">
-        Tu gardes la vision. Je t'aide à faire tourner le reste avec méthode, structure et bon sens.
-        Mes accompagnements durent en général <strong>3 à 6 mois</strong>, avec des résultats visibles
-        dès les premières semaines de structuration.
-      </p>
-    </div>
+      <div class="grid-2">
+        <div>
+          <p>
+            Mon rôle n'est pas de te rajouter une couche d'organisation théorique. Mon rôle, c'est de créer les conditions
+            pour que ton business soit plus fluide : des priorités claires, un espace centralisé, moins de charge mentale
+            et des process qui te soutiennent vraiment. En moyenne, mes clientes récupèrent <strong>5 à 8 heures par semaine</strong>
+            en réduisant les allers-retours, les oublis et les tâches répétitives non automatisées.
+          </p>
+          <p style="margin-top: var(--space-4);">
+            Tu gardes la vision. Je t'aide à faire tourner le reste avec méthode, structure et bon sens.
+            Mes accompagnements durent en général <strong>3 à 6 mois</strong>, avec des résultats visibles
+            dès les premières semaines de structuration.
+          </p>
+        </div>
 
-    <div class="card">
-      <h3>Tu peux attendre de moi</h3>
-      <ul>
-        <li>Une vraie logique d'organisation, pas seulement de l'exécution</li>
-        <li>Une approche sur-mesure adaptée à ton fonctionnement</li>
-        <li>Une maîtrise de Notion, des outils no-code et des automatisations</li>
-        <li>Une présence fiable pour suivre et faire avancer</li>
-        <li>Des recommandations concrètes, pas du blabla</li>
-      </ul>
-    </div>
-  </div>
-</section>
+        <div class="card">
+          <h3>Tu peux attendre de moi</h3>
+          <ul>
+            <li>Une vraie logique d'organisation, pas seulement de l'exécution</li>
+            <li>Une approche sur-mesure adaptée à ton fonctionnement</li>
+            <li>Une maîtrise de Notion, des outils no-code et des automatisations</li>
+            <li>Une présence fiable pour suivre et faire avancer</li>
+            <li>Des recommandations concrètes, pas du blabla</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
     <!-- TARIFS -->
     <section class="section-wrap tight" id="tarifs">
