@@ -12,101 +12,519 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Politique de confidentialité – Assist by Alicia</title>
 
-  <title>Mes offres | Notion, automatisation & bras droit opérationnel – Assist by Alicia</title>
-  <meta
-    name="description"
-    content="Découvre les offres Assist by Alicia : Express pour débloquer un besoin précis en 7 jours, ou Bras droit opérationnel pour structurer, automatiser et piloter ton business."
-  />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://assistbyalicia.github.io/offres.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=League+Spartan:wght@700;900&family=Satisfy&display=swap" rel="stylesheet" />
 
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Mes offres | Notion, automatisation & bras droit opérationnel – Assist by Alicia" />
-  <meta
-    property="og:description"
-    content="Découvre mes offres Express et Bras droit pour structurer, automatiser et piloter ton business."
-  />
-  <meta property="og:url" content="https://assistbyalicia.github.io/offres.html" />
-  <meta property="og:image" content="https://assistbyalicia.github.io/Photo%20de%20profil.png" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Mes offres | Notion, automatisation & bras droit opérationnel – Assist by Alicia" />
-  <meta
-    name="twitter:description"
-    content="Express en 7 jours ou accompagnement Bras droit : deux façons de structurer et fluidifier ton business."
-  />
-  <meta name="twitter:image" content="https://assistbyalicia.github.io/Photo%20de%20profil.png" />
+    :root {
+      --blue: #1E2A4A;
+      --coral: #FF4757;
+      --yellow: #CAFF00;
+      --black: #121212;
+      --white: #FFFFFF;
+    }
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=League+Spartan:wght@700;900&family=Satisfy&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="styles.css" />
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(18,18,18,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(202,255,0,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 4rem;
+    }
+
+    .logo {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      position: relative;
+      z-index: 1002;
+    }
+
+    .logo img {
+      display: block;
+      width: auto;
+      max-width: 220px;
+      height: 75px;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .nav-links li {
+      list-style: none;
+      position: relative;
+    }
+
+    .nav-links a,
+    .menu-label {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .menu-label {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0;
+      font-family: inherit;
+    }
+
+    .dropdown-arrow {
+      font-size: 0.7rem;
+      line-height: 1;
+      transform: translateY(-1px);
+      transition: transform 0.2s ease;
+    }
+
+    .dropdown:hover .dropdown-arrow,
+    .dropdown:focus-within .dropdown-arrow {
+      transform: translateY(-1px) rotate(180deg);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active,
+    .dropdown:hover .menu-label,
+    .dropdown:focus-within .menu-label {
+      color: var(--yellow);
+    }
+
+    .submenu {
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 240px;
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  background: rgba(18,18,18,0.98);
+  border: 1px solid rgba(202,255,0,0.12);
+  border-radius: 10px;
+  padding: 0.5rem 0;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+    .submenu li {
+      width: 100%;
+    }
+
+    .submenu a {
+      display: block;
+      padding: 0.85rem 1rem;
+      font-size: 0.78rem;
+      white-space: nowrap;
+    }
+
+    .dropdown:hover .submenu,
+    .dropdown:focus-within .submenu {
+      display: flex;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid rgba(202,255,0,0.18);
+      color: var(--white);
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+      z-index: 1002;
+    }
+
+    .menu-toggle span,
+    .menu-toggle span::before,
+    .menu-toggle span::after {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--white);
+      position: relative;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+      content: "";
+    }
+
+    .menu-toggle span::before {
+      position: absolute;
+      top: -6px;
+    }
+
+    .menu-toggle span::after {
+      position: absolute;
+      top: 6px;
+    }
+
+    .menu-toggle.active span {
+      background: transparent;
+    }
+
+    .menu-toggle.active span::before {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    .menu-toggle.active span::after {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+
+    .page-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 9rem 2rem 6rem;
+    }
+
+    .page-title {
+      font-family: 'League Spartan', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2rem, 5vw, 3rem);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      line-height: 1.05;
+    }
+
+    .page-subtitle {
+      font-family: 'Satisfy', cursive;
+      color: var(--coral);
+      font-size: 1.2rem;
+      margin-bottom: 3rem;
+    }
+
+    .legal-section {
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(202,255,0,0.08);
+    }
+
+    .legal-section:last-of-type {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .legal-section h2 {
+      font-family: 'League Spartan', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      color: var(--yellow);
+      letter-spacing: 0.06em;
+      margin-bottom: 1.2rem;
+      line-height: 1.3;
+    }
+
+    .legal-section p {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.95rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .legal-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .legal-section a {
+      color: var(--coral);
+      text-decoration: none;
+    }
+
+    .legal-section a:hover {
+      text-decoration: underline;
+    }
+
+    .info-block {
+      background: rgba(30,42,74,0.4);
+      border-left: 3px solid var(--coral);
+      border-radius: 0 8px 8px 0;
+      padding: 1.5rem 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .info-block p {
+      margin-bottom: 0.5rem;
+      font-size: 0.92rem;
+    }
+
+    .info-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    .label-strong {
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    footer {
+      background: rgba(18,18,18,0.98);
+      border-top: 1px solid rgba(202,255,0,0.08);
+      padding: 2rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    footer a {
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--white);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      nav {
+        padding: 1rem 1.5rem;
+      }
+
+      .logo img {
+        max-width: 170px;
+        height: 56px;
+        object-fit: contain;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .mobile-menu {
+        position: fixed;
+        top: 88px;
+        left: 1rem;
+        right: 1rem;
+        display: none;
+        flex-direction: column;
+        gap: 0.4rem;
+        padding: 1rem;
+        background: rgba(18,18,18,0.98);
+        border: 1px solid rgba(202,255,0,0.12);
+        border-radius: 14px;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+        z-index: 999;
+      }
+
+      .mobile-menu.open {
+        display: flex;
+      }
+
+      .mobile-menu a,
+      .mobile-menu summary {
+        color: var(--white);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        padding: 0.9rem 0.4rem;
+      }
+
+      .mobile-menu a.active {
+        color: var(--yellow);
+      }
+
+      .mobile-menu details {
+        border-top: 1px solid rgba(255,255,255,0.06);
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+        padding: 0.2rem 0;
+      }
+
+      .mobile-menu summary {
+        list-style: none;
+        cursor: pointer;
+      }
+
+      .mobile-menu summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .mobile-submenu {
+        display: flex;
+        flex-direction: column;
+        padding: 0.2rem 0 0.5rem 0.8rem;
+      }
+
+      .page-content {
+        padding: 8.3rem 1.2rem 4rem;
+      }
+
+      .page-subtitle {
+        font-size: 1.05rem;
+        margin-bottom: 2rem;
+      }
+
+      .legal-section {
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+      }
+
+      .info-block {
+        padding: 1.2rem 1rem;
+      }
+
+      footer {
+        padding: 2rem 1.2rem;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-links {
+        justify-content: center;
+        gap: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
     <div id="site-header"></div>
 
-  <main>
-    <p class="section-tag" style="text-align: center; margin-left: auto; margin-right: auto; width: fit-content;">Mes offres</p>
-    <h1>Un système sur-mesure.<br><em>Choisis la bonne façon d’avancer.</em></h1>
-    <p class="intro">
-      Deux façons de travailler ensemble : une offre Express pour débloquer rapidement un point précis, ou un accompagnement Bras droit pour structurer, automatiser et piloter ton business dans la durée.
-    </p>
+  <main class="page-content">
+    <h1 class="page-title">Politique de confidentialité</h1>
+    <p class="page-subtitle">Protection des données personnelles</p>
 
-    <div class="offers-grid">
-      <article class="card">
-        <div class="badge">Disponible</div>
-        <div class="card-icon">⚡</div>
-        <h2>Express</h2>
-        <p>
-          Ton urgence n°1 réglée en 7 jours. Un diagnostic, un système Notion opérationnel, une formation pour être autonome.
-        </p>
-        <div class="price">290 € TTC</div>
-        <div class="meta">
-          <div><strong>Durée :</strong> 7 jours</div>
-          <div><strong>Ton temps :</strong> 2h sur 7 jours</div>
-          <div><strong>Résultat :</strong> 5 à 10h gagnées par semaine</div>
-        </div>
-        <a class="btn-primary" href="offre-express.html">Voir l’offre</a>
-      </article>
-
-      <article class="card">
-        <div class="badge">Accompagnement</div>
-        <div class="card-icon">◈</div>
-        <h2>Bras droit</h2>
-        <p>
-          Un accompagnement opérationnel pour structurer, piloter et fluidifier ton business au quotidien.
-        </p>
-        <p>
-          Process, organisation, automatisations, coordination et suivi : je deviens ton bras droit pour que ton activité tourne mieux, sans reposer uniquement sur toi.
-        </p>
-        <div class="price">Sur devis</div>
-        <div class="meta">
-          <div><strong>Format :</strong> accompagnement sur-mesure</div>
-          <div><strong>Objectif :</strong> structurer et piloter tes opérations</div>
-          <div><strong>Idéal pour :</strong> entrepreneurs qui veulent déléguer et optimiser</div>
-        </div>
-        <a class="btn-secondary" href="bras-droit.html">Voir l’offre</a>
-      </article>
-    </div>
-
-    <section class="cta-block">
-      <h2>Tu ne sais pas quelle <span>offre</span> est faite pour toi ?</h2>
+    <section class="legal-section">
       <p>
-        Réserve un appel diagnostic gratuit. On clarifie ton besoin ensemble, et je te dirai honnêtement si l’offre Express ou l’accompagnement Bras droit est la meilleure option.
+        Cette politique a pour objectif d'encadrer la conformité des traitements de données à caractère personnelles et le respect des droits des personnes concernées pour la mise en place du site web <a href="index.html">assistbyalicia.fr</a> par EI Assist By Alicia.
       </p>
-      <a class="btn-primary" href="https://calendar.notion.so/meet/aliciachouquet/30min" target="_blank" rel="noopener noreferrer">Réserver un appel</a>
+      <p>
+        Les textes de références de cette politique sont le RGPD (Règlement Général pour la Protection des Données) et la Loi dite « Informatique et Libertés ». Les notions utilisées dans cette politique sont définies dans le RGPD, notamment les notions de traitement, de données personnelles ou données à caractère personnelles, personnes concernées et responsable de traitement.
+      </p>
+      <p>
+        <a href="http://assistbyalicia.fr" target="_blank" rel="noopener noreferrer">assistbyalicia.fr</a> est attaché au respect et à la protection des données personnelles. Nous nous engageons à définir et appliquer les mesures adéquates afin de garantir la sécurité du traitement de vos données personnelles.
+      </p>
+    </section>
+
+    <section class="legal-section">
+      <h2>Finalité de la collecte des données</h2>
+      <p>
+        Les données personnelles et professionnelles, ainsi que les informations liées aux produits et services du Client relevant de la confidentialité (non concurrence, droits d'auteur, autres), qui seront récoltées auront pour but de fournir les services prévus et commandés par le Client, tels que créer des systèmes Notion sur-mesure, mettre en place des automatisations, structurer et centraliser l'organisation opérationnelle du Client, etc. (liste non exhaustive).
+      </p>
+    </section>
+
+    <section class="legal-section">
+      <h2>Types de données collectées</h2>
+      <p>
+        Noms, prénoms, adresses mails, adresse, numéro de téléphone, identifiants et mots de passe.
+      </p>
+    </section>
+
+    <section class="legal-section">
+      <h2>Base légale de la collecte</h2>
+      <p>
+        Les données collectées sont nécessaires à la réalisation des prestations de service définies par le Client et le Prestataire. Ce contrat est considéré conclu et consenti librement à la signature du devis.
+      </p>
+    </section>
+
+    <section class="legal-section">
+      <h2>Durée de conservation des données</h2>
+      <p>
+        Les données confiées par le Client seront conservées pendant la durée de la relation commerciale, puis 3 ans après le dernier contact, conformément aux obligations légales.
+      </p>
+    </section>
+
+    <section class="legal-section">
+      <h2>Destinataires des données</h2>
+      <p>
+        Les données seront partagées dans le cadre strict de l'équipe du Prestataire et en fonction des besoins spécifiques à la collaboration.
+      </p>
+    </section>
+
+    <section class="legal-section">
+      <h2>Droits des utilisateurs</h2>
+      <p>
+        Le Client a tout droit sur ses données. Il peut, sur simple demande par mail, voir, rectifier, modifier, ou demander la suppression de ses données.
+      </p>
+    </section>
+
+    <section class="legal-section">
+      <h2>Consentement</h2>
+      <p>
+        Le consentement du traitement des données est considéré comme accordé à la signature du devis.
+      </p>
+    </section>
+
+    <section class="legal-section">
+      <h2>Sécurité des données</h2>
+      <p>
+        Les données sont stockées sur des logiciels adaptés, sécurisés par des identifiants et mots de passe. Le Prestataire s'engage à ne pas divulguer celles-ci, autrement que selon les besoins spécifiques et dans la stricte limite de son équipe.
+      </p>
+      <p>
+        Toutefois, les attaques contre ces logiciels adaptés découlant en une fuite des données du Client ne pourront être de la responsabilité du Prestataire qui n'a pas la main sur lesdits logiciels.
+      </p>
+    </section>
+
+    <section class="legal-section">
+      <h2>Contact</h2>
+      <div class="info-block">
+        <p><span class="label-strong">Email :</span> <a href="mailto:contact@assistbyalicia.fr">contact@assistbyalicia.fr</a></p>
+        <p><span class="label-strong">Téléphone :</span> 07 49 55 99 62</p>
+        <p><span class="label-strong">Adresse :</span> 58 rue Benjamin Normand, 76300 Sotteville-lès-Rouen</p>
+      </div>
     </section>
   </main>
 
-
-    </main>
+  
   <div id="site-footer"></div>
   <script src="includes.js"></script>
- 
+
 
   <script>
     const menuToggle = document.getElementById('menu-toggle');
@@ -129,26 +547,6 @@
         });
       });
     }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Mes offres - Assist by Alicia",
-    "url": "https://assistbyalicia.github.io/offres.html",
-    "description": "Découvre les offres Assist by Alicia : Express pour débloquer un besoin précis en 7 jours, ou Bras droit opérationnel pour structurer, automatiser et piloter ton business.",
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "Assist by Alicia",
-      "url": "https://assistbyalicia.github.io/"
-    },
-    "about": {
-      "@type": "ProfessionalService",
-      "name": "Assist by Alicia",
-      "url": "https://assistbyalicia.github.io/"
-    }
-  }
   </script>
 </body>
 </html>
