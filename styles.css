@@ -1892,3 +1892,562 @@ section.test-section {
     padding: var(--space-12) var(--space-5);
   }
 }
+
+/* ══════════════════════════════════════════════════
+   STYLES POUR LA PAGE OFFRES.HTML
+   (copiés depuis offres.html pour test.html)
+   ══════════════════════════════════════════════════ */
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --blue: #1e2a4a;
+      --coral: #ff4757;
+      --yellow: #caff00;
+      --black: #121212;
+      --white: #ffffff;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at top left, rgba(255, 71, 87, 0.08), transparent 30%),
+        radial-gradient(circle at top right, rgba(202, 255, 0, 0.06), transparent 25%),
+        repeating-linear-gradient(0deg, rgba(202, 255, 0, 0.03) 0px, rgba(202, 255, 0, 0.03) 1px, transparent 1px, transparent 60px),
+        repeating-linear-gradient(90deg, rgba(202, 255, 0, 0.03) 0px, rgba(202, 255, 0, 0.03) 1px, transparent 1px, transparent 60px),
+        var(--black);
+      color: var(--white);
+      font-family: "Montserrat", sans-serif;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(18,18,18,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(202,255,0,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 4rem;
+    }
+
+    .logo {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      position: relative;
+      z-index: 1002;
+    }
+
+    .logo img {
+      display: block;
+      width: auto;
+      max-width: 220px;
+      height: 75px;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .nav-links li {
+      list-style: none;
+      position: relative;
+    }
+
+    .nav-links a,
+    .menu-label {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .menu-label {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0;
+      font-family: inherit;
+    }
+
+    .dropdown-arrow {
+      font-size: 0.7rem;
+      line-height: 1;
+      transform: translateY(-1px);
+      transition: transform 0.2s ease;
+    }
+
+    .dropdown:hover .dropdown-arrow,
+    .dropdown:focus-within .dropdown-arrow {
+      transform: translateY(-1px) rotate(180deg);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active,
+    .dropdown:hover .menu-label,
+    .dropdown:focus-within .menu-label {
+      color: var(--yellow);
+    }
+
+    .submenu {
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 240px;
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  background: rgba(18,18,18,0.98);
+  border: 1px solid rgba(202,255,0,0.12);
+  border-radius: 10px;
+  padding: 0.5rem 0;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+    .submenu li {
+      width: 100%;
+    }
+
+    .submenu a {
+      display: block;
+      padding: 0.85rem 1rem;
+      font-size: 0.78rem;
+      white-space: nowrap;
+    }
+
+    .dropdown:hover .submenu,
+    .dropdown:focus-within .submenu {
+      display: flex;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid rgba(202,255,0,0.18);
+      color: var(--white);
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+      z-index: 1002;
+    }
+
+    .menu-toggle span,
+    .menu-toggle span::before,
+    .menu-toggle span::after {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--white);
+      position: relative;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+      content: "";
+    }
+
+    .menu-toggle span::before {
+      position: absolute;
+      top: -6px;
+    }
+
+    .menu-toggle span::after {
+      position: absolute;
+      top: 6px;
+    }
+
+    .menu-toggle.active span {
+      background: transparent;
+    }
+
+    .menu-toggle.active span::before {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    .menu-toggle.active span::after {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+
+    main {
+      padding: 10rem 2rem 6rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-tag {
+      font-family: "Satisfy", cursive;
+      color: var(--coral);
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: "League Spartan", sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.5rem, 3.4vw, 2.8rem);
+      text-transform: uppercase;
+      line-height: 1.1;
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 1.5rem;
+    }
+
+    h2 {
+      font-family: "League Spartan", sans-serif;
+      font-weight: 900;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin-bottom: 1.6rem;
+    }
+
+    h3 {
+      font-family: "League Spartan", sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--yellow);
+      margin-bottom: 0.6rem;
+    }
+
+    h1 em {
+      color: var(--yellow);
+      font-style: normal;
+    }
+
+    .intro {
+      max-width: 760px;
+      margin: 0 auto 4rem;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 1rem;
+    }
+
+    .offers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: rgba(30, 42, 74, 0.5);
+      border: 1px solid rgba(202, 255, 0, 0.12);
+      border-radius: 10px;
+      padding: 2.2rem;
+      position: relative;
+      box-shadow: 0 0 30px rgba(30, 42, 74, 0.18);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .badge {
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      background: var(--coral);
+      color: var(--white);
+      font-family: "League Spartan", sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.35rem 0.9rem;
+      border-radius: 0 10px 0 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .card-icon {
+      color: var(--yellow);
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .card h2 {
+      font-family: "League Spartan", sans-serif;
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+      line-height: 1;
+    }
+
+    .card p {
+      color: rgba(255, 255, 255, 0.75);
+      margin-bottom: 1rem;
+    }
+
+    .price {
+      color: var(--yellow);
+      font-family: "League Spartan", sans-serif;
+      font-size: 1.6rem;
+      font-weight: 900;
+      margin: 1.4rem 0;
+    }
+
+    .meta {
+      display: grid;
+      gap: 0.8rem;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .meta div {
+      padding: 0.8rem 1rem;
+      background: rgba(255, 71, 87, 0.08);
+      border-left: 3px solid var(--coral);
+      border-radius: 0 6px 6px 0;
+      font-size: 0.95rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-family: "League Spartan", sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.95rem 1.6rem;
+      border-radius: 4px;
+      transition: 0.2s ease;
+      min-height: 52px;
+    }
+
+    .btn-primary {
+      background: var(--coral);
+      color: var(--white);
+      box-shadow: 0 0 20px rgba(255, 71, 87, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: #e03343;
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--yellow);
+      color: var(--yellow);
+      background: transparent;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(202, 255, 0, 0.08);
+    }
+
+    .cta-block {
+      margin-top: 5rem;
+      padding: 3rem;
+      background: rgba(30, 42, 74, 0.38);
+      border: 1px solid rgba(202, 255, 0, 0.12);
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .cta-block h2 {
+      font-family: "League Spartan", sans-serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      line-height: 1.08;
+    }
+
+    .cta-block h2 span {
+      color: var(--coral);
+    }
+
+    .cta-block p {
+      max-width: 580px;
+      margin: 0 auto 2rem;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    footer {
+      border-top: 1px solid rgba(202, 255, 0, 0.08);
+      padding: 2rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.35);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    footer a {
+      color: rgba(255, 255, 255, 0.35);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--white);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      nav {
+        padding: 1rem 1.5rem;
+      }
+
+      .logo img {
+        max-width: 170px;
+        height: 56px;
+        object-fit: contain;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .mobile-menu {
+        position: fixed;
+        top: 88px;
+        left: 1rem;
+        right: 1rem;
+        display: none;
+        flex-direction: column;
+        gap: 0.4rem;
+        padding: 1rem;
+        background: rgba(18,18,18,0.98);
+        border: 1px solid rgba(202,255,0,0.12);
+        border-radius: 14px;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+        z-index: 999;
+      }
+
+      .mobile-menu.open {
+        display: flex;
+      }
+
+      .mobile-menu a,
+      .mobile-menu summary {
+        color: var(--white);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        padding: 0.9rem 0.4rem;
+      }
+
+      .mobile-menu a.active {
+        color: var(--yellow);
+      }
+
+      .mobile-menu details {
+        border-top: 1px solid rgba(255,255,255,0.06);
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+        padding: 0.2rem 0;
+      }
+
+      .mobile-menu summary {
+        list-style: none;
+        cursor: pointer;
+      }
+
+      .mobile-menu summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .mobile-submenu {
+        display: flex;
+        flex-direction: column;
+        padding: 0.2rem 0 0.5rem 0.8rem;
+      }
+
+      main {
+        padding: 8.3rem 1.2rem 4rem;
+      }
+
+      .section-tag {
+        font-size: 1.2rem;
+      }
+
+      .intro {
+        margin-bottom: 2.5rem;
+        font-size: 0.96rem;
+      }
+
+      .offers-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+
+      .card {
+        padding: 1.5rem 1.2rem;
+      }
+
+      .card h2 {
+        font-size: 1.5rem;
+      }
+
+      .price {
+        font-size: 1.35rem;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+      }
+
+      .cta-block {
+        margin-top: 3rem;
+        padding: 2rem 1.2rem;
+      }
+
+      .cta-block .btn-primary {
+        width: 100%;
+      }
+
+      footer {
+        padding: 2rem 1.2rem;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-links {
+        justify-content: center;
+        gap: 1rem;
+      }
+    }
