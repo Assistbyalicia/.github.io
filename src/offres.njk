@@ -1,0 +1,110 @@
+---
+layout: base.njk
+title: "Mes offres | Assist by Alicia"
+description: "Découvrez les offres de Alicia : mission Express Notion en 7 jours ou accompagnement Bras droit opérationnel pour entrepreneurs."
+---
+<body>
+    
+
+  <main>
+    <section class="hero hero-compact">
+      <p class="hero-eyebrow">Mes offres</p>
+      <h1>Un système sur-mesure.<br /><em>Choisis la bonne façon d'avancer.</em></h1>
+      <p class="hero-sub">
+        Deux façons de travailler ensemble : une offre Express pour débloquer rapidement un point précis, ou un accompagnement Bras droit pour structurer, automatiser et piloter ton business dans la durée.
+      </p>
+    </section>
+
+    <section>
+      <div class="section-wrap">
+        <div class="offres-split">
+          <div class="offre-card featured">
+            <span class="offre-badge badge-express">Disponible</span>
+            <h3>Express</h3>
+            <p>
+              Ton urgence n°1 réglée en 7 jours. Un diagnostic, un système Notion opérationnel, une formation pour être autonome.
+            </p>
+            <div class="price">290 € TTC</div>
+            <ul class="pricing-list">
+              <li><strong>Durée :</strong> 7 jours</li>
+              <li><strong>Ton temps :</strong> 2h sur 7 jours</li>
+              <li><strong>Résultat :</strong> 5 à 10h gagnées par semaine</li>
+            </ul>
+            <a class="btn-primary" href="offre-express.html">Voir l'offre</a>
+          </div>
+
+          <div class="offre-card">
+            <span class="offre-badge badge-Bras-droit">Accompagnement</span>
+            <h3>Bras droit</h3>
+            <p>
+              Un accompagnement opérationnel pour structurer, piloter et fluidifier ton business au quotidien.
+            </p>
+            <p>
+              Process, organisation, automatisations, coordination et suivi : je deviens ton bras droit pour que ton activité tourne mieux, sans reposer uniquement sur toi.
+            </p>
+            <div class="price">Sur devis</div>
+            <ul class="pricing-list">
+              <li><strong>Format :</strong> accompagnement sur-mesure</li>
+              <li><strong>Objectif :</strong> structurer et piloter tes opérations</li>
+              <li><strong>Idéal pour :</strong> entrepreneurs qui veulent déléguer et optimiser</li>
+            </ul>
+            <a class="btn-secondary" href="bras-droit.html">Voir l'offre</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section" aria-labelledby="cta-offres-h2">
+      <h2 id="cta-offres-h2">Tu ne sais pas quelle <span>offre</span> est faite pour toi ?</h2>
+      <p>
+        Réserve un appel diagnostic gratuit. On clarifie ton besoin ensemble, et je te dirai honnêtement si l'offre Express ou l'accompagnement Bras droit est la meilleure option.
+      </p>
+      <a class="btn-primary" href="https://calendar.notion.so/meet/aliciachouquet/30min" target="_blank" rel="noopener noreferrer">Réserver un appel</a>
+    </section>
+  </main>
+
+ 
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.toggle('open');
+        menuToggle.classList.toggle('active', isOpen);
+        menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        menuToggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+      });
+
+      document.querySelectorAll('.mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('open');
+          menuToggle.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.setAttribute('aria-label', 'Ouvrir le menu');
+        });
+      });
+    }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Mes offres - Assist by Alicia",
+    "url": "https://assistbyalicia.github.io/offres.html",
+    "description": "Découvre les offres Assist by Alicia : Express pour débloquer un besoin précis en 7 jours, ou Bras droit opérationnel pour structurer, automatiser et piloter ton business.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Assist by Alicia",
+      "url": "https://assistbyalicia.github.io/"
+    },
+    "about": {
+      "@type": "ProfessionalService",
+      "name": "Assist by Alicia",
+      "url": "https://assistbyalicia.github.io/"
+    }
+  }
+  </script>
+</body>

@@ -1,0 +1,152 @@
+---
+layout: base.njk
+title: "Politique de confidentialité | Assist by Alicia"
+description: "Politique de confidentialité et gestion des données personnelles d'Assist by Alicia."
+permalink: /politique-de-confidentialite.html
+---
+
+<main class="container">
+ 
+  <article class="section-wrap" style="margin-top: 7rem;">
+    <h1 class="hero-qsj-text">
+      Politique de confidentialité
+    </h1>
+    <p class="section-tag">
+      Protection des données personnelles
+    </p>
+
+    <div class="card" style="margin-bottom: 2rem;">
+      <p>
+        Cette politique a pour objectif d'encadrer la conformité des traitements de données à caractère personnelles et le respect des droits des personnes concernées pour la mise en place du site web
+        <a href="index.html">assistbyalicia.fr</a>
+        par EI Assist By Alicia.
+      </p>
+      <p>
+        Les textes de références de cette politique sont le RGPD (Règlement Général pour la Protection des Données) et la Loi dite « Informatique et Libertés ». Les notions utilisées dans cette politique sont définies dans le RGPD, notamment les notions de traitement, de données personnelles ou données à caractère personnelles, personnes concernées et responsable de traitement.
+      </p>
+      <p>
+        <a href="http://assistbyalicia.fr" target="_blank" rel="noopener noreferrer">assistbyalicia.fr</a>
+        est attaché au respect et à la protection des données personnelles. Nous nous engageons à définir et appliquer les mesures adéquates afin de garantir la sécurité du traitement de vos données personnelles.
+      </p>
+    </div>
+
+    <div class="card" style="margin-bottom: 2rem;">
+      <h2>
+        Finalité de la collecte des données
+      </h2>
+      <p>
+        Les données personnelles et professionnelles, ainsi que les informations liées aux produits et services du Client relevant de la confidentialité (non concurrence, droits d'auteur, autres), qui seront récoltées auront pour but de fournir les services prévus et commandés par le Client, tels que créer des systèmes Notion sur-mesure, mettre en place des automatisations, structurer et centraliser l'organisation opérationnelle du Client, etc. (liste non exhaustive).
+      </p>
+    </div>
+
+    <div class="card" style="margin-bottom: 2rem;">
+      <h2>
+        Types de données collectées
+      </h2>
+      <p>
+        Noms, prénoms, adresses mails, adresse, numéro de téléphone, identifiants et mots de passe.
+      </p>
+    </div>
+
+    <div class="card" style="margin-bottom: 2rem;">
+      <h2>
+        Base légale de la collecte
+      </h2>
+      <p>
+        Les données collectées sont nécessaires à la réalisation des prestations de service définies par le Client et le Prestataire. Ce contrat est considéré conclu et consenti librement à la signature du devis.
+      </p>
+    </div>
+
+    <div class="card" style="margin-bottom: 2rem;">
+      <h2>
+        Durée de conservation des données
+      </h2>
+      <p>
+        Les données confiées par le Client seront conservées pendant la durée de la relation commerciale, puis 3 ans après le dernier contact, conformément aux obligations légales.
+      </p>
+    </div>
+
+    <div class="card" style="margin-bottom: 2rem;">
+      <h2>
+        Destinataires des données
+      </h2>
+      <p>
+        Les données seront partagées dans le cadre strict de l'équipe du Prestataire et en fonction des besoins spécifiques à la collaboration.
+      </p>
+    </div>
+
+    <div class="card" style="margin-bottom: 2rem;">
+      <h2>
+        Droits des utilisateurs
+      </h2>
+      <p>
+        Le Client a tout droit sur ses données. Il peut, sur simple demande par mail, voir, rectifier, modifier, ou demander la suppression de ses données.
+      </p>
+    </div>
+
+    <div class="card" style="margin-bottom: 2rem;">
+      <h2>
+        Consentement
+      </h2>
+      <p>
+        Le consentement du traitement des données est considéré comme accordé à la signature du devis.
+      </p>
+    </div>
+
+    <div class="card" style="margin-bottom: 2rem;">
+      <h2>
+        Sécurité des données
+      </h2>
+      <p>
+        Les données sont stockées sur des logiciels adaptés, sécurisés par des identifiants et mots de passe. Le Prestataire s'engage à ne pas divulguer celles-ci, autrement que selon les besoins spécifiques et dans la stricte limite de son équipe.
+      </p>
+      <p>
+        Toutefois, les attaques contre ces logiciels adaptés découlant en une fuite des données du Client ne pourront être de la responsabilité du Prestataire qui n'a pas la main sur lesdits logiciels.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>
+        Contact
+      </h2>
+      <div class="info-card">
+        <p>
+          <span>Email :</span>
+          <a href="mailto:contact@assistbyalicia.fr">contact@assistbyalicia.fr</a>
+        </p>
+        <p>
+          <span>Téléphone :</span>
+          07 49 55 99 62
+        </p>
+        <p>
+          <span>Adresse :</span>
+          58 rue Benjamin Normand, 76300 Sotteville-lès-Rouen
+        </p>
+      </div>
+    </div>
+
+  </article>
+</main>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      menuToggle.classList.toggle('active', isOpen);
+      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      menuToggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+    });
+
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Ouvrir le menu');
+      });
+    });
+  }
+</script>

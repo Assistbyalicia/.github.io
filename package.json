@@ -1,0 +1,25 @@
+{
+  "name": "vs.assistbyalicia.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "includes.js",
+  "scripts": {
+  "start": "eleventy --serve",
+  "build": "eleventy"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Assistbyalicia/assistbyalicia.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Assistbyalicia/assistbyalicia.github.io/issues"
+  },
+  "homepage": "https://github.com/Assistbyalicia/assistbyalicia.github.io#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6"
+  }
+}
