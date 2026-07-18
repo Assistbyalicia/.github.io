@@ -10,6 +10,39 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="google-site-verification" content="HWhfPFN8uf_NsmKGTMZrq2MwtHhI8PG_IZ5kqOcKD4E" />
+
+<!-- Canonical -->
+<link rel="canonical" href="https://assistbyalicia.fr{{ page.url }}" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="{{ ogTitle or pageTitle or title }}" />
+<meta property="og:description" content="{{ ogDescription or description }}" />
+<meta property="og:image" content="{{ ogImage or 'https://assistbyalicia.fr/Photo%20de%20profil.png' }}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://assistbyalicia.fr{{ page.url }}" />
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:site_name" content="Assist by Alicia" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ ogTitle or pageTitle or title }}" />
+<meta name="twitter:description" content="{{ ogDescription or description }}" />
+<meta name="twitter:image" content="{{ ogImage or 'https://assistbyalicia.fr/Photo%20de%20profil.png' }}" />
+
+<!-- Schema WebSite global -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Assist by Alicia",
+  "url": "https://assistbyalicia.fr/",
+  "description": "Bras droit opérationnel freelance. Systèmes Notion sur-mesure, automatisation no-code et IA pour entrepreneurs.",
+  "publisher": {
+    "@type": "Person",
+    "name": "Alicia Chouquet",
+    "url": "https://assistbyalicia.fr/"
+  }
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800;900&family=Satisfy&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet" />
