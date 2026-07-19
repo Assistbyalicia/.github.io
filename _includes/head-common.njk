@@ -1,5 +1,5 @@
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-90P7VG23F7"></script>
+<!-- Google Analytics — chargé en différé pour améliorer le LCP mobile -->
+<script defer src="https://www.googletagmanager.com/gtag/js?id=G-90P7VG23F7"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -42,6 +42,17 @@
   }
 }
 </script>
+
+<!-- BreadcrumbList — injecté par page si défini -->
+{% if breadcrumbs %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": {{ breadcrumbs | dump | safe }}
+}
+</script>
+{% endif %}
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
