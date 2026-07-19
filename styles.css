@@ -1451,3 +1451,68 @@ footer span { white-space: nowrap; }
   footer { padding: var(--space-6) var(--space-5); flex-direction: column; text-align: center; }
   .footer-links { justify-content: center; }
 }
+/* ═══════════════════════════════════════
+   TABLEAU
+   ═══════════════════════════════════════ */
+
+.table-wrap {
+  margin-top: var(--space-6);
+  overflow-x: auto;
+  border-radius: 10px;
+}
+
+.table-wrap table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 30px rgba(30, 42, 74, 0.12);
+}
+
+.table-wrap thead {
+  background: rgba(30, 42, 74, 0.45);
+}
+
+.table-wrap th,
+.table-wrap td {
+  padding: 1rem 1.1rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  line-height: 1.6;
+}
+
+.table-wrap th {
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.table-wrap td {
+  color: var(--text-muted);
+  font-size: 0.98rem;
+}
+
+.table-wrap tbody tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.table-wrap tbody tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .table-wrap table {
+    min-width: 640px;
+  }
+
+  .table-wrap th,
+  .table-wrap td {
+    padding: 0.9rem;
+    font-size: 0.92rem;
+  }
+}
