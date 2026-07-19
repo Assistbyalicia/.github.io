@@ -1,144 +1,67 @@
----
-layout: base.njk
-title: "Audit de temps | Assist by Alicia"
-description: "Faites votre audit de temps gratuit avec Alicia pour identifier les tâches chronophages et optimiser votre organisation."
-permalink: /audit-de-temps.html
----
+async function loadInclude(id, file) {
+  const container = document.getElementById(id);
+  if (!container) return;
 
-<main class="hero-wrap">
-  <div class="container">
-    <div class="hero-split">
+  try {
+    const res = await fetch(file);
+    if (!res.ok) throw new Error(res.statusText);
+    const html = await res.text();
+    container.innerHTML = html;
 
-      <!-- COLONNE GAUCHE -->
-      <div class="hero-left">
-        <span class="hero-tag">Audit de temps · Notion</span>
-        <h1 class="hero-title">Ton audit de <span style="color: var(--coral);">temps</span></h1>
-        <p class="text-muted" style="margin-top: 1.25rem; max-width: 520px; line-height: 1.7;">
-          Entre ton email pour accéder gratuitement au template d'audit de temps et gagner en clarté sur ton organisation.
-          Tu identifies où part vraiment ton temps pour reprendre la main sur ton agenda.
-        </p>
-
-        <ul class="benefits">
-          <li>
-            <span class="benefit-num">1</span>
-            <div>
-              <strong>Un template prêt à l'emploi</strong>
-              <p>Tu peux le dupliquer en 2 clics dans ton propre Notion.</p>
-            </div>
-          </li>
-          <li>
-            <span class="benefit-num">2</span>
-            <div>
-              <strong>Une vision claire de ta semaine</strong>
-              <p>Tu vois enfin quelles tâches te volent le plus de temps.</p>
-            </div>
-          </li>
-          <li>
-            <span class="benefit-num">3</span>
-            <div>
-              <strong>Accès au Discord + aide</strong>
-              <p>Tu peux poser tes questions et je t'aide si besoin à analyser les résultats de ton audit.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <!-- COLONNE DROITE : FORMULAIRE -->
-      <div class="form-card">
-        <span class="form-label">Gratuit</span>
-        <h2>Accède au template</h2>
-        <div class="form-divider"></div>
-        <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 1.25rem;">
-          Remplis le formulaire ci-dessous et reçois directement le lien d'accès dans ta boîte mail.
-        </p>
-
-        <div class="form-preview">
-          <span class="form-preview-label">Aperçu du template</span>
-          <img src="Capture - Audit de temps.png" alt="Aperçu du template Notion d'audit de temps" />
-        </div>
-
-        <div id="mlb2-39707517" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-39707517">
-          <div class="ml-form-embedWrapper embedForm">
-
-            <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
-              <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2258522/forms/184344403738887629/subscribe" data-code="" method="post">
-                <div class="ml-form-formContent">
-                  <div class="ml-form-fieldRow">
-                    <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                      <input aria-label="email" aria-required="true" type="email" class="form-control" name="fields[email]" placeholder="Email" autocomplete="email" />
-                    </div>
-                  </div>
-                  <div class="ml-form-fieldRow">
-                    <div class="ml-field-group ml-field-name ml-validate-required">
-                      <input aria-label="name" aria-required="true" type="text" class="form-control" name="fields[name]" placeholder="Nom" autocomplete="family-name" />
-                    </div>
-                  </div>
-                  <div class="ml-form-fieldRow ml-last-item">
-                    <div class="ml-field-group ml-field-last_name ml-validate-required">
-                      <input aria-label="last_name" aria-required="true" type="text" class="form-control" name="fields[last_name]" placeholder="Prénom" autocomplete="given-name" />
-                    </div>
-                  </div>
-                </div>
-
-                <div style="display: flex; align-items: flex-start; gap: 0.6rem; margin: 0 0 1.25rem 0;">
-                  <input type="checkbox" id="gdpr-audit" name="gdpr[]" value="consent" style="margin-top: 3px; flex-shrink: 0; width: 16px; height: 16px; cursor: pointer;" />
-                  <p style="font-size: 0.82rem; color: #aaa; margin: 0; line-height: 1.5;">
-                    J'accepte de recevoir les emails d'Assist by Alicia (désinscription possible à tout moment).
-                  </p>
-                </div>
-
-                <input type="hidden" name="ml-submit" value="1" />
-
-                <button type="submit" class="btn-primary" style="width: 100%; border: none; cursor: pointer;">
-                  Envoyer
-                </button>
-
-                <input type="hidden" name="anticsrf" value="true" />
-              </form>
-            </div>
-
-            <div class="ml-form-successBody row-success" style="display:none; text-align: center; padding: 2rem;">
-              <h4 style="color: var(--coral); margin-bottom: 1rem;">Merci !</h4>
-              <p class="text-muted">Tu vas bientôt recevoir dans tes mails le lien d'accès. N'hésite pas à vérifier tes spams.</p>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</main>
-
-<script>
-  function ml_webform_success_39707517() {
-    var $ = ml_jQuery || jQuery;
-    $('.ml-subscribe-form-39707517 .row-success').show();
-    $('.ml-subscribe-form-39707517 .row-form').hide();
-  }
-</script>
-<script src="https://assets.mailerlite.com/js/universal.js" defer></script>
-<script>
-  ml('account', '2258522');
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Offer",
-  "name": "Audit de temps gratuit",
-  "description": "Template Notion gratuit pour analyser son temps et gagner en clarte sur son organisation.",
-  "price": "0",
-  "priceCurrency": "EUR",
-  "url": "https://assistbyalicia.fr/audit-de-temps.html",
-  "itemOffered": {
-    "@type": "DigitalDocument",
-    "name": "Template Notion audit de temps"
-  },
-  "seller": {
-    "@type": "ProfessionalService",
-    "name": "Assist by Alicia",
-    "url": "https://assistbyalicia.fr/"
+    if (id === "site-header") {
+      initMenuToggle();
+      setActiveNavLink();
+    }
+  } catch (e) {
+    console.error("Erreur include", file, e);
   }
 }
-</script>
+
+function initMenuToggle() {
+  const menuToggle = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+  if (!menuToggle || !mobileMenu) return;
+
+  menuToggle.addEventListener("click", () => {
+    const isOpen = mobileMenu.classList.toggle("open");
+    menuToggle.classList.toggle("active", isOpen);
+    menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    menuToggle.setAttribute(
+      "aria-label",
+      isOpen ? "Fermer le menu" : "Ouvrir le menu"
+    );
+  });
+
+  document.querySelectorAll(".mobile-menu a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.remove("open");
+      menuToggle.classList.remove("active");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Ouvrir le menu");
+    });
+  });
+}
+
+function setActiveNavLink() {
+  const path = window.location.pathname.split("/").pop() || "index.html";
+  const selectors = [
+    ".nav-links a",
+    ".mobile-menu a"
+  ];
+
+  selectors.forEach((sel) => {
+    document.querySelectorAll(sel).forEach((link) => {
+      const href = link.getAttribute("href");
+      if (!href) return;
+      if (href === path) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+  });
+}
+
+// Charger header + footer
+loadInclude("site-header", "partials/header.html");
+loadInclude("site-footer", "partials/footer.html");
