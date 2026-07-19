@@ -19,18 +19,21 @@ permalink: /audit-de-temps.html
         </p>
 
         <ul class="benefits">
+          <li>
             <span class="benefit-num">1</span>
             <div>
               <strong>Un template prêt à l'emploi</strong>
               <p>Tu peux le dupliquer en 2 clics dans ton propre Notion.</p>
             </div>
           </li>
+          <li>
             <span class="benefit-num">2</span>
             <div>
               <strong>Une vision claire de ta semaine</strong>
               <p>Tu vois enfin quelles tâches te volent le plus de temps.</p>
             </div>
           </li>
+          <li>
             <span class="benefit-num">3</span>
             <div>
               <strong>Accès au Discord + aide</strong>
@@ -124,18 +127,18 @@ permalink: /audit-de-temps.html
   "@context": "https://schema.org",
   "@type": "Offer",
   "name": "Audit de temps gratuit",
-  "description": "Template Notion gratuit pour analyser son temps et gagner en clarté sur son organisation.",
+  "description": "Template Notion gratuit pour analyser son temps et gagner en clarte sur son organisation.",
   "price": "0",
   "priceCurrency": "EUR",
-  "url": "https://assistbyalicia.github.io/audit-de-temps.html",
+  "url": "https://assistbyalicia.fr/audit-de-temps.html",
   "itemOffered": {
     "@type": "DigitalDocument",
-    "name": "Template Notion d'audit de temps"
+    "name": "Template Notion audit de temps"
   },
   "seller": {
     "@type": "ProfessionalService",
     "name": "Assist by Alicia",
-    "url": "https://assistbyalicia.github.io/"
+    "url": "https://assistbyalicia.fr/"
   }
 }
 </script>
