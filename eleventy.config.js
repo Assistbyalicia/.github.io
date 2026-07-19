@@ -5,7 +5,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addPassthroughCopy("sitemap.xml");
   eleventyConfig.addPassthroughCopy({ "src/Logo.png": "Logo.png" });
-  eleventyConfig.addPassthroughCopy("Photo-de-profil.png");
+  eleventyConfig.addPassthroughCopy("src/Photo-de-profil.png");
   eleventyConfig.addPassthroughCopy("Capture - Audit de temps.png");
   eleventyConfig.addPassthroughCopy("partials");
   eleventyConfig.addPassthroughCopy("llms.txt");
