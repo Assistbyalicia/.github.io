@@ -655,6 +655,13 @@ h3 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: stretch;
 }
+@media (max-width: 900px) {
+  /* ... tes règles existantes ... */
+
+  .grid-2.contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 .grid-2.contact-grid .card { height: 100%; }
 .contact-grid .card .hero-ctas { margin-top: auto; }
