@@ -2,6 +2,9 @@
 layout: base.njk
 pageTitle: "Bras droit sur-mesure : structurer, piloter, avancer"
 description: "Découvrez les offres de Alicia : mission Express Notion en 7 jours ou accompagnement Bras droit opérationnel pour entrepreneurs."
+breadcrumbs:
+  - {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://assistbyalicia.fr/"}
+  - {"@type": "ListItem", "position": 2, "name": "Mes offres", "item": "https://assistbyalicia.fr/offres.html"}
 ---
 <body>
   <main>
@@ -15,8 +18,10 @@ description: "Découvrez les offres de Alicia : mission Express Notion en 7 jour
       </p>
     </section>
 
-    <section>
+    <section aria-labelledby="h2-deux-offres">
       <div class="section-wrap">
+        <h2 id="h2-deux-offres">Deux façons de travailler ensemble</h2>
+        <p>Selon où tu en es et ce dont tu as besoin, je propose deux niveaux d'accompagnement : une intervention ciblée et rapide, ou un soutien opérationnel sur la durée.</p>
         <div class="offres-split">
           <div class="offre-card featured">
             <span class="offre-badge badge-express">Disponible</span>
@@ -54,18 +59,53 @@ description: "Découvrez les offres de Alicia : mission Express Notion en 7 jour
       </div>
     </section>
 
+    <section aria-labelledby="h2-offre-express">
+      <div class="section-wrap">
+        <h2 id="h2-offre-express">L'offre Express : qu'est-ce que tu obtiens en 7 jours ?</h2>
+        <p>
+          L'offre Express est faite pour toi si tu as un problème précis à régler rapidement : une gestion de projet qui déborde, un suivi client inexistant, ou une organisation qui te coûte des heures chaque semaine. En 7 jours, on pose un diagnostic, je construis ton système Notion sur-mesure, et tu repars autonome avec une formation incluse.
+        </p>
+        <p><strong>Résultat concret :</strong> 5 à 10 heures gagnées par semaine dès la première semaine.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="h2-bras-droit">
+      <div class="section-wrap">
+        <h2 id="h2-bras-droit">L'accompagnement Bras droit : comment ça fonctionne ?</h2>
+        <p>
+          L'accompagnement Bras droit est un soutien opérationnel sur la durée. Je prends en charge la structuration de tes process, l'automatisation de tes tâches répétitives et le pilotage de ton activité au quotidien — pour que tu puisses te concentrer sur ce que tu fais de mieux.
+        </p>
+        <p>
+          Chaque mission est construite sur-mesure après un diagnostic de ton activité. Le tarif est établi en fonction du périmètre et de la durée de la collaboration.
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="h2-collaboration">
+      <div class="section-wrap">
+        <h2 id="h2-collaboration">Comment se passe notre collaboration ?</h2>
+        <ol class="steps-list">
+          <li><strong>Un appel diagnostic gratuit</strong> — on clarifie ton besoin et je t'indique quelle offre est la plus adaptée.</li>
+          <li><strong>Un devis ou une proposition</strong> — selon l'offre choisie, tu reçois une proposition claire avant de te lancer.</li>
+          <li><strong>On démarre</strong> — je prends en main ton projet avec des points réguliers pour avancer ensemble.</li>
+          <li><strong>Tu gagnes du temps</strong> — systèmes posés, process en place, tu reprends le contrôle de ton activité.</li>
+        </ol>
+      </div>
+    </section>
+
     <section class="cta-section" aria-labelledby="cta-offres-h2">
       <h2 id="cta-offres-h2">Tu ne sais pas quelle <span>offre</span> est faite pour toi ?</h2>
       <p>
         Réserve un appel diagnostic gratuit. On clarifie ton besoin ensemble, et je te dirai honnêtement si l'offre Express ou l'accompagnement Bras droit est la meilleure option.
       </p>
-<a class="btn-primary" 
-   href="https://calendar.notion.so/meet/aliciachouquet/30min" 
-   target="_blank" 
-   rel="noopener noreferrer"
-   role="button">
-   Réserver un appel
-</a>    </section>
+      <a class="btn-primary"
+         href="https://calendar.notion.so/meet/aliciachouquet/30min"
+         target="_blank"
+         rel="noopener noreferrer"
+         role="button">
+         Réserver un appel
+      </a>
+    </section>
   </main>
 
   <script>
