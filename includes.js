@@ -9,8 +9,10 @@ async function loadInclude(id, file) {
     container.innerHTML = html;
 
     if (id === "site-header") {
-      initMenuToggle();
-      setActiveNavLink();
+      requestAnimationFrame(() => {
+        initMenuToggle();
+        setActiveNavLink();
+      });
     }
   } catch (e) {
     console.error("Erreur include", file, e);
