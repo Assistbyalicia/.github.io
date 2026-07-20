@@ -52,9 +52,9 @@
     <loc>https://assistbyalicia.fr/politique-de-confidentialite.html</loc>
     <lastmod>2026-07-18</lastmod>
   </url>
+  <url>
+    <loc>https://assistbyalicia.fr/bras-droit-notion.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
-<url>
-  <loc>https://assistbyalicia.fr/bras-droit-notion.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
-</url>
