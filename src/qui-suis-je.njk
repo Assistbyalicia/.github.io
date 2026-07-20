@@ -15,7 +15,8 @@ permalink: /qui-suis-je.html
         alt="Portrait d'Alicia, bras droit spécialisée en systèmes Notion sur-mesure"
         width="320"
         height="320"
-        loading="lazy"
+        loading="eager"
+        fetchpriority="high"
         decoding="async"
       />
     </div>
@@ -142,7 +143,7 @@ permalink: /qui-suis-je.html
     </p>
 
     <div class="cta-buttons">
-      <a
+      
         class="btn-primary"
         href="https://calendar.notion.so/meet/aliciachouquet/30min"
         target="_blank"
@@ -155,6 +156,27 @@ permalink: /qui-suis-je.html
 
     <p class="note">30 minutes · Gratuit · Sans engagement</p>
   </section>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Accueil",
+        "item": "https://assistbyalicia.fr/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Qui suis-je ?",
+        "item": "https://assistbyalicia.fr/qui-suis-je.html"
+      }
+    ]
+  }
+  </script>
 
   <script>
     const menuToggle = document.getElementById('menu-toggle');
