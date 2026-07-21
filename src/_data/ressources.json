@@ -1,0 +1,82 @@
+{
+  "clusters": [
+    {
+      "nom": "Notion",
+      "tag": "Structurer ton activité",
+      "pages": [
+        {
+          "titre": "Création d'espace Notion sur-mesure",
+          "url": "/creation-espace-notion-sur-mesure.html",
+          "resume": "Créer un système Notion personnalisé pour centraliser clients, projets et tâches.",
+          "statut": "en-ligne"
+        },
+        {
+          "titre": "Organisation entreprise avec Notion",
+          "url": "/organisation-entreprise-notion.html",
+          "resume": "Structurer Notion comme système central pour une équipe, TPE ou PME.",
+          "statut": "en-ligne"
+        },
+        {
+          "titre": "Consultante Notion",
+          "url": "/consultante-notion.html",
+          "resume": "",
+          "statut": "a-venir"
+        },
+        {
+          "titre": "Notion pour freelance",
+          "url": "/notion-freelance.html",
+          "resume": "",
+          "statut": "a-venir"
+        }
+      ]
+    },
+    {
+      "nom": "Automatisation",
+      "tag": "Gagner du temps sans coder",
+      "pages": [
+        {
+          "titre": "Automatisation No-Code : n8n, Make, Zapier",
+          "url": "/automatisation-no-code.html",
+          "resume": "Automatiser tes tâches répétitives sans coder, seul·e ou en solo.",
+          "statut": "en-ligne"
+        },
+        {
+          "titre": "Automatisation Entreprise : TPE, PME",
+          "url": "/automatisation-entreprise.html",
+          "resume": "Automatiser les process qui impliquent plusieurs personnes dans ton équipe.",
+          "statut": "en-ligne"
+        }
+      ]
+    },
+    {
+      "nom": "Assistance & organisation",
+      "tag": "Reprendre le contrôle de ton temps",
+      "pages": [
+        {
+          "titre": "Pourquoi faire un audit de temps ?",
+          "url": "/pourquoi-faire-un-audit-de-temps.html",
+          "resume": "Comprendre où passe réellement ton temps, avec un template gratuit.",
+          "statut": "en-ligne"
+        },
+        {
+          "titre": "Bras droit digital",
+          "url": "/bras-droit-digital.html",
+          "resume": "",
+          "statut": "a-venir"
+        },
+        {
+          "titre": "Gestion des process en entreprise",
+          "url": "/gestion-process-entreprise.html",
+          "resume": "",
+          "statut": "a-venir"
+        },
+        {
+          "titre": "Centraliser son organisation",
+          "url": "/centraliser-son-organisation.html",
+          "resume": "",
+          "statut": "a-venir"
+        }
+      ]
+    }
+  ]
+}

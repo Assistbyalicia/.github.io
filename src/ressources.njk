@@ -1,0 +1,55 @@
+---
+layout: base.njk
+permalink: /ressources.html
+pageTitle: "Ressources : Notion, automatisation, organisation"
+title: "Ressources : Notion, automatisation, organisation"
+description: "Toutes les ressources pour structurer ton activité avec Notion, automatiser tes process et reprendre le contrôle de ton organisation."
+---
+<main>
+
+  <section class="hero">
+    <p class="hero-eyebrow">Ressources</p>
+    <h1>
+      Tout ce qu'il faut pour <span>structurer</span> et <em>piloter</em> ton activité
+    </h1>
+    <p class="hero-sub">
+      Des guides pratiques sur Notion, l'automatisation et l'organisation, classés par thème.
+      Pas de blabla théorique : du concret, à appliquer directement à ton business.
+    </p>
+  </section>
+
+  {% for cluster in ressources.clusters %}
+  <article class="section-wrap" style="{% if not loop.first %}padding-top: 0;{% endif %}">
+    <p class="section-tag">{{ cluster.tag }}</p>
+    <h2>{{ cluster.nom }}</h2>
+
+    <div class="grid-3">
+      {% for page in cluster.pages %}
+        {% if page.statut == "en-ligne" %}
+        <div class="card">
+          <span class="pill" style="margin-bottom: var(--space-4); display: inline-block;">En ligne</span>
+          <h3><a href="{{ page.url }}">{{ page.titre }}</a></h3>
+          <p>{{ page.resume }}</p>
+        </div>
+        {% else %}
+        <div class="card" style="opacity: 0.5;">
+          <span class="pill accent" style="margin-bottom: var(--space-4); display: inline-block;">Bientôt</span>
+          <h3>{{ page.titre }}</h3>
+          <p>Cette page arrive prochainement.</p>
+        </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </article>
+  {% endfor %}
+
+  <section class="cta-section">
+    <p class="section-tag">Besoin d'un accompagnement ?</p>
+    <h2>Ces ressources t'aident à <em>voir clair</em> — un appel t'aide à <em>passer à l'action</em></h2>
+    <div class="btns">
+      <a class="btn-primary" href="https://calendar.notion.so/meet/aliciachouquet/30min" target="_blank" rel="noopener noreferrer">Réserver un appel diagnostic</a>
+      <a class="btn-secondary" href="/offres.html">Voir mes offres</a>
+    </div>
+  </section>
+
+</main>
