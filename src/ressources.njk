@@ -27,18 +27,8 @@ description: "Toutes les ressources pour structurer ton activité avec Notion, a
       {% for page in cluster.pages %}
         {% if page.statut == "en-ligne" %}
         <div class="card">
-          <span class="pill" style="margin-bottom: var(--space-4); display: inline-block;">En ligne</span>
           <h3><a href="{{ page.url }}">{{ page.titre }}</a></h3>
           <p>{{ page.resume }}</p>
-        </div>
-        {% endif %}
-      {% endfor %}
-    </div>
-        {% else %}
-        <div class="card" style="opacity: 0.5;">
-          <span class="pill accent" style="margin-bottom: var(--space-4); display: inline-block;">Bientôt</span>
-          <h3>{{ page.titre }}</h3>
-          <p>Cette page arrive prochainement.</p>
         </div>
         {% endif %}
       {% endfor %}
