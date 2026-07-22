@@ -52,7 +52,13 @@
           "url": "/gestion-process-entreprise.html",
           "resume": "Cartographier et prioriser tes process avant de les structurer ou de les automatiser.",
           "statut": "en-ligne"
-        }
+        },
+        {
+  "titre": "Centraliser son organisation",
+  "url": "/centraliser-son-organisation.html",
+  "resume": "Trop d'outils dispersés ? Par où commencer pour centraliser ton organisation, seul ou en équipe.",
+  "statut": "en-ligne"
+}
         
       ]
     }
