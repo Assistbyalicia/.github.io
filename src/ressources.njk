@@ -36,9 +36,24 @@ description: "Toutes les ressources pour structurer ton activité avec Notion, a
   </article>
   {% endfor %}
 
+  <article class="section-wrap" style="padding-top: 0;">
+    <p class="section-tag">Questions fréquentes</p>
+    <h2>Comment utiliser ces ressources ?</h2>
+    <div class="faq-grid">
+      <details class="faq-item">
+        <summary>Par où commencer si je ne sais pas quel sujet me concerne ?</summary>
+        <p>Le cluster "Assistance & organisation" est souvent le bon point de départ : il aide à identifier précisément ce qui bloque avant de choisir un outil ou une automatisation.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Ces ressources remplacent-elles un accompagnement personnalisé ?</summary>
+        <p>Non, elles expliquent les principes et donnent des méthodes concrètes ; un appel diagnostic reste le meilleur moyen d'adapter ça à ta situation exacte.</p>
+      </details>
+    </div>
+  </article>
+
   <section class="cta-section">
     <p class="section-tag">Besoin d'un accompagnement ?</p>
-    <h2>Ces ressources t'aident à <em>voir clair</em> — un appel t'aide à <em>passer à l'action</em></h2>
+    <h2>Ces ressources t'aident à <em>voir clair</em>, un appel t'aide à <em>passer à l'action</em></h2>
     <div class="btns">
       <a class="btn-primary" href="https://calendar.notion.so/meet/aliciachouquet/30min" target="_blank" rel="noopener noreferrer">Réserver un appel diagnostic</a>
       <a class="btn-secondary" href="/offres.html">Voir mes offres</a>
@@ -46,3 +61,37 @@ description: "Toutes les ressources pour structurer ton activité avec Notion, a
   </section>
 
 </main>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      menuToggle.classList.toggle('active', isOpen);
+      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      menuToggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+    });
+
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Ouvrir le menu');
+      });
+    });
+  }
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://assistbyalicia.fr/" },
+    { "@type": "ListItem", "position": 2, "name": "Ressources", "item": "https://assistbyalicia.fr/ressources.html" }
+  ]
+}
+</script>
