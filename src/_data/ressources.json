@@ -54,7 +54,7 @@
           "resume": "Cartographier et prioriser tes process avant de les structurer ou de les automatiser.",
           "statut": "en-ligne"
         },
-        {
+              {
   "titre": "Centraliser son organisation",
   "url": "/centraliser-son-organisation.html",
   "resume": "Trop d'outils dispersés ? Par où commencer pour centraliser ton organisation, seul ou en équipe.",
@@ -62,6 +62,14 @@
 }
         
       ]
+    }
+  ],
+  "hors_cluster": [
+    {
+      "titre": "Ma méthode d'accompagnement",
+      "url": "/methode-accompagnement.html",
+      "resume": "Comment se déroule un accompagnement avec moi : diagnostic, système Notion, puis automatisation.",
+      "statut": "en-ligne"
     }
   ]
 }

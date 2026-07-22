@@ -36,6 +36,24 @@ description: "Toutes les ressources pour structurer ton activité avec Notion, a
   </article>
   {% endfor %}
 
+  {% if ressources.hors_cluster %}
+  <article class="section-wrap" style="padding-top: 0;">
+    <p class="section-tag">Comment je travaille</p>
+    <h2>Ma méthode</h2>
+
+    <div class="grid-3">
+      {% for page in ressources.hors_cluster %}
+        {% if page.statut == "en-ligne" %}
+        <div class="card">
+          <h3><a href="{{ page.url }}">{{ page.titre }}</a></h3>
+          <p>{{ page.resume }}</p>
+        </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </article>
+  {% endif %}
+
   <article class="section-wrap" style="padding-top: 0;">
     <p class="section-tag">Questions fréquentes</p>
     <h2>Comment utiliser ces ressources ?</h2>
