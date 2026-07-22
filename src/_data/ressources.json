@@ -15,7 +15,13 @@
           "url": "/organisation-entreprise-notion.html",
           "resume": "Structurer Notion comme système central pour une équipe, TPE ou PME.",
           "statut": "en-ligne"
-        }
+        },
+        {
+  "titre": "Notion pour freelance",
+  "url": "/notion-freelance.html",
+  "resume": "Pourquoi Notion peut aider un freelance à suivre plusieurs clients, ses devis et sa facturation.",
+  "statut": "en-ligne"
+}
         
       ]
     },
