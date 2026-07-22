@@ -64,11 +64,17 @@
       ]
     }
   ],
-  "hors_cluster": [
+ "hors_cluster": [
     {
       "titre": "Ma méthode d'accompagnement",
       "url": "/methode-accompagnement.html",
       "resume": "Comment se déroule un accompagnement avec moi : diagnostic, système Notion, puis automatisation.",
+      "statut": "en-ligne"
+    },
+    {
+      "titre": "Études de cas",
+      "url": "/etudes-de-cas.html",
+      "resume": "Quatre systèmes Notion réels, construits autour de la façon de travailler de chaque personne.",
       "statut": "en-ligne"
     }
   ]
