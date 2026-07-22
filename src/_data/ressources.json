@@ -16,12 +16,7 @@
           "resume": "Structurer Notion comme système central pour une équipe, TPE ou PME.",
           "statut": "en-ligne"
         },
-        {
-  "titre": "Notion pour freelance",
-  "url": "/notion-freelance.html",
-  "resume": "Pourquoi Notion peut aider un freelance à suivre plusieurs clients, ses devis et sa facturation.",
-  "statut": "en-ligne"
-}
+        
         
       ]
     },
@@ -32,7 +27,7 @@
         {
           "titre": "Automatisation No-Code : n8n, Make, Zapier",
           "url": "/automatisation-no-code.html",
-          "resume": "Automatiser tes tâches répétitives sans coder, seul·e ou en solo.",
+          "resume": "Automatiser tes tâches répétitives sans coder, seul ou en solo.",
           "statut": "en-ligne"
         },
         {
