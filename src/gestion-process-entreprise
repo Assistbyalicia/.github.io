@@ -1,0 +1,243 @@
+---
+layout: base.njk
+permalink: /gestion-process-entreprise.html
+pageTitle: "Gestion des process d'entreprise : diagnostic et priorisation"
+title: "Gestion des Process Entreprise : diagnostic TPE, PME"
+description: "Cartographie et priorise les process de ton entreprise avant de les structurer ou de les automatiser. Un diagnostic clair en 3 temps."
+---
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-eyebrow">TPE · PME · Diagnostic</p>
+    <h1>
+      Avant d'automatiser,<br /><br />
+      identifie <span>ce qu'il y a</span> à <em>automatiser</em>.
+    </h1>
+    <p class="hero-sub">
+      Tu ne peux pas structurer un process que tu n'as jamais vraiment regardé. Ce diagnostic,
+      c'est l'étape qu'on saute presque toujours — celle qui fait la différence entre une entreprise
+      qui tourne sans toi et une qui repose encore sur ta mémoire.
+    </p>
+    <div class="hero-pills">
+      <span class="pill">TPE</span>
+      <span class="pill accent">PME</span>
+      <span class="pill">Cartographie</span>
+      <span class="pill">Priorisation</span>
+    </div>
+  </section>
+
+  <!-- DE QUOI PARLE-T-ON -->
+  <article class="section-wrap">
+    <p class="section-tag">De quoi parle-t-on ?</p>
+    <h2>Cartographier tes process, <em>concrètement</em></h2>
+
+    <div class="intro-card">
+      <p>
+        Avant de toucher à Notion ou à l'automatisation, une question simple : quels process
+        existent vraiment chez toi ? Lesquels tiennent debout, lesquels sont bancals, lesquels
+        n'existent que dans ta tête ?
+      </p>
+      <h3 style="margin-top: var(--space-6);">Ce que ça implique</h3>
+      <ul>
+        <li>Lister les grands domaines de ton activité — pilotage, opérations, clients, production.</li>
+        <li>Évaluer chacun honnêtement : solide, à renforcer, ou absent.</li>
+        <li>Prioriser selon l'impact et l'urgence, pas selon ce qui est le plus facile.</li>
+        <li>Documenter dans un format que ton équipe utilise vraiment.</li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- POURQUOI C'EST UTILE -->
+  <article class="section-wrap tight">
+    <p class="section-tag">Pourquoi c'est utile</p>
+    <h2>Pourquoi ce diagnostic vient <em>avant</em> le reste</h2>
+
+    <div class="grid-3">
+      <div class="card">
+        <h3>Tu évites de te tromper de cible</h3>
+        <p>Le process qui te coûte le plus cher n'est pas toujours celui qui saute aux yeux.</p>
+      </div>
+
+      <div class="card">
+        <h3>Tu sais où concentrer ton énergie</h3>
+        <p>Une vision d'ensemble avant de choisir tes outils, plutôt qu'un chantier au hasard.</p>
+      </div>
+
+      <div class="card">
+        <h3>Tu peux mesurer les progrès</h3>
+        <p>Un point de départ clair pour voir, plus tard, ce qui a vraiment changé.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- COMMENT ON PROCÈDE -->
+  <article class="section-wrap tight">
+    <p class="section-tag">Comment on procède</p>
+    <h2>Un diagnostic en <span>3 temps</span></h2>
+
+    <div class="timeline">
+      <div class="timeline-card">
+        <div class="timeline-step">01</div>
+        <div>
+          <h3>Cartographie</h3>
+          <p>On liste ensemble les grands domaines de ton activité et les process qui les composent. Sans jugement à ce stade.</p>
+        </div>
+      </div>
+
+      <div class="timeline-card">
+        <div class="timeline-step">02</div>
+        <div>
+          <h3>Évaluation</h3>
+          <p>Solide, à renforcer, ou absent ? On regarde aussi l'impact et l'urgence de chacun.</p>
+        </div>
+      </div>
+
+      <div class="timeline-card">
+        <div class="timeline-step">03</div>
+        <div>
+          <h3>Priorisation</h3>
+          <p>2 à 3 priorités claires. Jamais plus — pour rester réaliste sur ce que tu peux vraiment mettre en place.</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- POUR QUI -->
+  <article class="section-wrap tight">
+    <p class="section-tag">Pour qui c'est pertinent</p>
+    <h2>C'est le bon moment quand…</h2>
+
+    <div class="card">
+      <ul class="audience-list">
+        <li>Tu ne sais pas par où commencer pour structurer ton entreprise.</li>
+        <li>Tu as déjà tenté de "tout organiser d'un coup" et tu t'es essoufflé·e.</li>
+        <li>Tu veux investir ton temps ou ton budget au bon endroit, pas au hasard.</li>
+        <li>Ton équipe grandit et certains process n'existent que dans ta tête.</li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- FAQ -->
+  <article class="section-wrap tight">
+    <p class="section-tag">Questions fréquentes</p>
+    <h2>Ce qu'on se demande avant ce <span>diagnostic</span></h2>
+
+    <div class="faq">
+      <details>
+        <summary>Faut-il déjà avoir une idée de mes priorités avant de commencer ? <span>+</span></summary>
+        <p class="answer">Non — repartir sans a priori est même préférable.</p>
+      </details>
+
+      <details>
+        <summary>Ce diagnostic remplace-t-il un système Notion ? <span>+</span></summary>
+        <p class="answer">
+          Non, il vient avant. Une fois les priorités identifiées,
+          <a href="/organisation-entreprise-notion.html">structurer un système Notion</a>
+          ou <a href="/automatisation-entreprise.html">automatiser certains process</a>
+          devient la suite logique.
+        </p>
+      </details>
+
+      <details>
+        <summary>Combien de temps ça prend ? <span>+</span></summary>
+        <p class="answer">Une à deux séances de travail, pas plus. L'objectif est d'agir vite après, pas de s'éterniser sur le diagnostic.</p>
+      </details>
+
+      <details>
+        <summary>Et si je découvre que presque tout est à revoir ? <span>+</span></summary>
+        <p class="answer">Fréquent, et pas grave — la règle reste de ne jamais travailler sur plus de 2-3 priorités à la fois.</p>
+      </details>
+    </div>
+  </article>
+
+  <!-- CTA FINALE -->
+  <section class="cta-section" aria-labelledby="cta-h2">
+    <p class="section-tag">Prêt·e à voir où concentrer ton énergie ?</p>
+    <h2 id="cta-h2">On fait ce <span>diagnostic</span> ensemble ?</h2>
+    <p>
+      Appel gratuit, sans engagement. Objectif : cartographier tes process et repartir avec
+      2 à 3 priorités claires, pas une liste de 40 chantiers.
+    </p>
+    <div class="hero-ctas">
+      <a href="https://calendar.notion.so/meet/aliciachouquet/30min" class="btn-primary" target="_blank" rel="noopener noreferrer">Réserver mon appel diagnostic</a>
+      <a href="/bras-droit.html" class="btn-secondary">Découvrir l'accompagnement Bras droit</a>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      menuToggle.classList.toggle('active', isOpen);
+      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      menuToggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+    });
+
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Ouvrir le menu');
+      });
+    });
+  }
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Gestion des Process Entreprise : diagnostic TPE, PME",
+  "url": "https://assistbyalicia.fr/gestion-process-entreprise.html",
+  "description": "Cartographie et priorise les process de ton entreprise avant de les structurer ou de les automatiser. Un diagnostic clair en 3 temps.",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "Assist by Alicia",
+    "url": "https://assistbyalicia.fr/"
+  },
+  "mainEntity": {
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Faut-il déjà avoir une idée de mes priorités avant de commencer ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Non, repartir sans a priori est même préférable." }
+      },
+      {
+        "@type": "Question",
+        "name": "Ce diagnostic remplace-t-il un système Notion ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Non, il vient avant. Une fois les priorités identifiées, structurer un système Notion ou automatiser certains process devient la suite logique." }
+      },
+      {
+        "@type": "Question",
+        "name": "Combien de temps ça prend ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Une à deux séances de travail, pas plus." }
+      },
+      {
+        "@type": "Question",
+        "name": "Et si je découvre que presque tout est à revoir ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "C'est fréquent, la règle reste de ne jamais travailler sur plus de 2-3 priorités à la fois." }
+      }
+    ]
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://assistbyalicia.fr/" },
+    { "@type": "ListItem", "position": 2, "name": "Gestion des Process Entreprise", "item": "https://assistbyalicia.fr/gestion-process-entreprise.html" }
+  ]
+}
+</script>
+</main>
