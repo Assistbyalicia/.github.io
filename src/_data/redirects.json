@@ -1,0 +1,12 @@
+[
+  { "from": "/a-propos/", "to": "/qui-suis-je.html" },
+  { "from": "/contact/", "to": "/contact.html" },
+  { "from": "/conditions-generales-de-vente/", "to": "/mention-legale-cgv.html" },
+  { "from": "/assistante-digitale/", "to": "/" },
+  { "from": "/outils-digitaux/", "to": "/automatisation-no-code.html" },
+  { "from": "/blog/", "to": "/ressources.html" },
+  { "from": "/choisir-les-taches-a-deleguer/", "to": "/bras-droit.html" },
+  { "from": "/sortir-de-sa-zone-de-confort/", "to": "/" },
+  { "from": "/category/delegation/", "to": "/ressources.html" },
+  { "from": "/category/outils-digitaux/", "to": "/automatisation-no-code.html" }
+]
