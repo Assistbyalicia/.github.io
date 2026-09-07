@@ -59,8 +59,19 @@
   "url": "/centraliser-son-organisation.html",
   "resume": "Trop d'outils dispersés ? Par où commencer pour centraliser ton organisation, seul ou en équipe.",
   "statut": "en-ligne"
-}
-        
+},
+        {
+          "titre": "Comment choisir ses outils digitaux",
+          "url": "/outils-digitaux.html",
+          "resume": "Niveau, activité, besoins, budget, fonctionnement : 5 critères pour choisir des outils que tu gardes.",
+          "statut": "en-ligne"
+        },
+        {
+          "titre": "Comment choisir les tâches à déléguer",
+          "url": "/choisir-les-taches-a-deleguer.html",
+          "resume": "Inventaire, priorisation, analyse du temps et process : la méthode pour déléguer les bonnes tâches.",
+          "statut": "en-ligne"
+        }
       ]
     }
   ],
