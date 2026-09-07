@@ -59,3 +59,115 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700;800;900&family=Satisfy&family=Montserrat:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700;800;900&family=Satisfy&family=Montserrat:wght@400;500;600&display=swap" /></noscript>
 <link rel="stylesheet" href="/styles.css" />
+
+<!-- Suivi des clics — événements GA4 détaillés (quel bouton, quelle page, quelle section) -->
+<script>
+(function () {
+  var PAGE_ID = (location.pathname.replace(/^\/+/, "").replace(/\.html$/, "").replace(/\/$/, "")) || "accueil";
+
+  function track(name, params) {
+    if (typeof gtag !== "function") return;
+    gtag("event", name, Object.assign({
+      transport_type: "beacon",
+      page_id: PAGE_ID,
+      page_path: location.pathname
+    }, params));
+  }
+
+  function clean(s) {
+    return String(s || "").trim().replace(/\s+/g, " ");
+  }
+
+  function slug(s) {
+    return clean(s).toLowerCase()
+      .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 50);
+  }
+
+  function classOf(node) {
+    return String((node.className && node.className.baseVal) || node.className || "").toLowerCase();
+  }
+
+  // Où se trouve le bouton dans la page : data-loc explicite sinon déduit du DOM
+  function ctaLocation(el) {
+    if (el.dataset && el.dataset.loc) return el.dataset.loc;
+    var node = el;
+    while (node && node !== document.body) {
+      var cls = classOf(node);
+      if (node.tagName === "FOOTER" || cls.indexOf("footer") > -1) return "footer";
+      if (node.tagName === "NAV" || cls.indexOf("nav") > -1) return "nav";
+      if (cls.indexOf("hero") > -1) return "hero";
+      if (cls.indexOf("cta-section") > -1) return "cta-final";
+      if (node.tagName === "SECTION" && node.id) return node.id;
+      node = node.parentElement;
+    }
+    return "corps";
+  }
+
+  // Titre de la section qui contient le bouton (pour se repérer dans les rapports)
+  function sectionTitle(el) {
+    var sec = el.closest("section, .hero, .cta-section, footer");
+    var h = sec && sec.querySelector("h1, h2, h3");
+    return h ? clean(h.textContent).slice(0, 80) : "";
+  }
+
+  function linkText(el) {
+    return clean(el.textContent).slice(0, 100);
+  }
+
+  // Identifiant unique et lisible du bouton : "page / section / libellé"
+  function ctaId(el, loc, text) {
+    if (el.dataset && el.dataset.cta) return el.dataset.cta;
+    return [PAGE_ID, loc, slug(text)].filter(Boolean).join(" / ");
+  }
+
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a[href]");
+    if (!a) return;
+    var href = a.getAttribute("href") || "";
+    var text = linkText(a);
+    var loc = ctaLocation(a);
+    var base = {
+      cta_id: ctaId(a, loc, text),
+      cta_location: loc,
+      section_title: sectionTitle(a),
+      link_text: text,
+      link_url: a.href
+    };
+
+    if (href.indexOf("calendar.notion.so") > -1) {
+      track("generate_lead", Object.assign({ lead_source: "appel_decouverte" }, base));
+    } else if (href.indexOf("mailto:") === 0) {
+      track("contact_email_click", base);
+    } else if (/(linkedin|facebook|instagram)\.com/.test(href)) {
+      track("social_click", Object.assign({ social_network: href.match(/(linkedin|facebook|instagram)/)[1] }, base));
+    } else if (a.hasAttribute("download") || /\.(pdf|zip|docx?|xlsx?|pptx?|csv)($|[?#])/i.test(href)) {
+      var ext = (href.split(/[?#]/)[0].split(".").pop() || "").toLowerCase();
+      track("file_download", Object.assign({ file_name: text || ext, file_extension: ext }, base));
+    } else if (a.dataset.track === "offer") {
+      track("offer_click", Object.assign({ offer_name: a.dataset.offer || text }, base));
+    }
+  }, true);
+
+  // Lead magnet MailerLite (page « Audit de temps »)
+  document.addEventListener("DOMContentLoaded", function () {
+    var form = document.querySelector(".ml-block-form");
+    if (!form) return;
+
+    form.addEventListener("submit", function () {
+      track("lead_magnet_submit", { form_name: "audit-de-temps" });
+    }, true);
+
+    var success = document.querySelector(".ml-form-successBody");
+    if (success) {
+      var obs = new MutationObserver(function () {
+        if (getComputedStyle(success).display !== "none") {
+          track("generate_lead", { lead_source: "lead_magnet_audit", form_name: "audit-de-temps" });
+          obs.disconnect();
+        }
+      });
+      obs.observe(success, { attributes: true, attributeFilter: ["style", "class"] });
+    }
+  });
+})();
+</script>
