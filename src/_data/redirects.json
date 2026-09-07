@@ -4,7 +4,7 @@
   { "from": "/conditions-generales-de-vente/", "to": "/mention-legale-cgv.html" },
   { "from": "/mentions-legales/", "to": "/mention-legale-cgv.html" },
   { "from": "/politique-de-confidentialite-des-donnees-personnelles/", "to": "/politique-de-confidentialite.html" },
-  { "from": "/assistante-digitale/", "to": "/" },
+  { "from": "/assistante-digitale/", "to": "/assistante-digitale.html" },
   { "from": "/outils-digitaux/", "to": "/outils-digitaux.html" },
   { "from": "/blog/", "to": "/ressources.html" },
   { "from": "/choisir-les-taches-a-deleguer/", "to": "/choisir-les-taches-a-deleguer.html" },
